@@ -1,0 +1,357 @@
+<section xml:id="section-separable-des">
+  <title>Separable Equations</title>
+  <p>
+    After some sections on qualitative methods, stability, and
+    linearization, I am now going to try to actually <em>solve</em>
+    some first order DEs. The easiest type of first order DE to solve
+    is a separable equation.
+  </p>
+  <definition>
+    <statement>
+      <p>
+        A <term>separable equation</term> is a DE which has the
+        following form, for some expressions <m>f</m> and <m>g</m>.
+        <me>
+          \frac{dy}{dt} = f(y) g(t)
+        </me>
+      </p>
+    </statement>
+  </definition>
+  <example>
+    <statement>
+      <p>
+        The equation 
+        <me>
+          \frac{dy}{dt} = \left( y^2 + 2y - 1 \right) \left(
+          \frac{1}{t^2 +1} \right) 
+        </me>
+        is a separable equation. On the right side, there are two
+        expressions, one only involving <m>y</m> and one only
+        involving <m>t</m>, which are multiplied together. 
+      </p>
+    </statement>
+  </example>
+  <example>
+    <statement>
+      <p>
+        The equation 
+        <me>
+          \frac{dy}{dt} = \sin y \left( e^{t^2 + 1} - t^2 \right) 
+        </me>
+        is a separable equation. On the right side, there are two
+        expressions, one only involving <m>y</m> and one only
+        involving <m>t</m>, which are multiplied together.
+      </p>
+    </statement>
+  </example>
+  <example>
+    <statement>
+      <p>
+        <me>
+          \frac{dy}{dt} = ty + t^2 y^2 + t^3 y^3 
+        </me>
+        is not a separable equation, since there is no way to factor
+        the right side into two multiplied expressions <m>f(y)
+        g(t)</m>.  Even though each piece of the sum on right side has
+        this form, the entire right side needs to be factorable this
+        way to satisfy the definition.
+      </p>
+    </statement>
+  </example>
+  <p>
+    Separable equations are the first type of differential equation
+    that I will actually solve in this course. They have a universal
+    method (at least, a long as we can make sense of the resulting
+    integrals.) First, I will take the expression involving the
+    dependent variable and bring it to the left side. (I have to worry
+    a bit about values of <m>y</m> that result in <m>g(y) = 0</m>, but
+    I'll worry about that issue in a later section.)
+    <me>
+      \frac{1}{f(y)} \frac{dy}{dt} = g(t)
+    </me>
+    <m>y</m> is the dependent variable: the DE is built upon the
+    assumption that <m>y</m> is some function of <m>t</m>. This means
+    that both sides of the equations are functions of <m>t</m>; the
+    left side implicity and the right side explicitly. Therefore, I'll
+    integrate both sides in <m>t</m>.
+    <me>
+      \int \frac{1}{f(y)} \frac{dy}{dt} dt  = \int g(t) dt
+    </me>
+    Now I use a strange looking substitution <m>y = y(t)</m> on the
+    left side of the integral. The differential piece of the
+    substitution is <m>dy = \frac{dy}{dt} dt</m>, which conveniently
+    replaces a big piece of the left side integral. 
+    <me>
+      \int \frac{1}{f(y)} dy = \int g(t) dt  
+    </me>
+    To finish, I do both the integrals. The result is some expression
+    in <m>y</m> on the left and some function of <m>t</m> on the right.
+    If I can, I simplify to solve for <m>y</m> on the left,
+    which gives <m>y</m> as a function of <m>t</m> as desired. The
+    function will include a constant of integration that arises from
+    the integration step as well. If I cannot solve for <m>y</m>, I
+    can leave the solution implicit. Even if I can solve for <m>y</m>,
+    often the implicit for is preferred. 
+  </p>
+  <p>
+    I should make one note about the constant on integration that
+    arises in this solution method (and in many other as well). Since
+    the constant of integraiton will eventually be determined by an
+    initial value, mathematicians are often quite careless with the
+    artihmetic of this constant. For example, if the following
+    expression shows up <m>2(t+c)</m>, I would often simplify this to
+    <m>2t+c</m> instead of <m>2t + 2c</m>, since whether I eventually
+    figure out the constant from <m>c</m> or from <m>2c</m> later, its
+    value is still determined by the initial condition. This is a
+    strange carelessness after all the care mathematicians have always
+    preached about arithmetic and algebra, but it is, in fact,
+    justified. Let me now move on to some examples of solving
+    separable equations.
+  </p>
+  <example>
+    <statement>
+      <figure xml:id="figure-direction-field6">
+        <caption>
+          Direction Field for <m>\frac{dy}{dt}= \frac{\sin t}{y}</m>
+        </caption>
+        <image xml:id="figure16" width="80%">
+          <asymptote>
+            size(10cm,0);
+            import contour;
+            import stats;
+            import graph;
+
+            xlimits(-3,3);  
+            ylimits(3,3);  
+            yaxis("$y$");
+            xaxis("$t$");
+  
+            path vector(pair z) {return (0,0)--(1/(sqrt(1 +
+            ((sin(z.x))/z.y)^2)), ((sin(z.x))/z.y)/(sqrt(1 +
+            ((sin(z.x))/z.y)^2)));}
+  
+            add(vectorfield(vector,(-6,-6),(6,-0.1)));
+            add(vectorfield(vector,(-6,0.1),(6,6)));
+          </asymptote>
+        </image>
+      </figure>
+      <figure xml:id="figure-direction-field6-curves">
+        <caption>
+            Direction Field with Solutions for <m>\frac{dy}{dt}=
+            \frac{\sin t}{y}</m>
+          </caption>
+        <image xml:id="figure17" width="80%">
+          <asymptote>
+            size(10cm,0);
+            import contour;
+            import stats;
+            import graph;
+  
+            xlimits(-3,3);  
+            ylimits(3,3);  
+            yaxis("$y$");
+            xaxis("$t$");
+  
+            real f(real x, real y) {return (y^2)/2 + cos(x);}
+  
+            real[] value=uniform(0,20,40);
+  
+            draw(contour(f,(-6,-6),(6,6),value));
+  
+            path vector(pair z) {return (0,0)--(1/(sqrt(1 +
+            ((sin(z.x))/z.y)^2)), ((sin(z.x))/z.y)/(sqrt(1 +
+            ((sin(z.x))/z.y)^2)));}
+  
+            add(vectorfield(vector,(-6,-6),(6,-0.1)));
+            add(vectorfield(vector,(-6,0.1),(6,6)));
+          </asymptote>
+        </image>
+      </figure>
+      <p>
+        Here is a separable DE, which I solve with the method
+        described above, separating the variables, integrating both
+        sides, and solving for the dependent variable. Note in the
+        integration step that I only need to add the constant of
+        integration on one side; if there were two constants, I could
+        bring them over to one side and combine them into one. 
+        <md>
+          <mrow>
+            \frac{dy}{dt} \amp = \frac{\sin t}{y}
+          </mrow>
+          <mrow>
+            y \frac{dy}{dt} \amp = \sin t 
+          </mrow>
+          <mrow>
+            \int y \frac{dy}{dt} dt \amp = \sin t dt
+          </mrow>
+          <mrow>
+            \int y dy \amp = \sin t dt
+          </mrow>
+          <mrow>
+            \frac{y^2}{2} \amp = - \cos t + c
+          </mrow>
+          <mrow>
+            y \amp = \pm \sqrt{c - 2\cos t}
+          </mrow>
+        </md>
+        Note that the constant of integration ends up incorporated
+        into the expression. I need to add it in the integration step
+        and them move it around with the algebra; I can't calculate
+        <m>y</m> and then just add the <m>+ c</m> at the very end. 
+      </p>
+      <p>
+        If I impose an initial condition of <m>y(0) = 1</m>, I can
+        determined the value of the constant of integration and thus a
+        unique solution.
+        <md>
+          <mrow>
+            1 \amp = \sqrt{c - 2 \cos (0)} = \sqrt{c-2}
+          </mrow>
+          <mrow>
+            1 \amp = c-2
+          </mrow>
+          <mrow>
+            c \amp = 3
+          </mrow>
+          <mrow>
+            y \amp = \sqrt{3 - 2 \cos t}
+          </mrow>
+        </md>
+        <xref ref="figure-direction-field6" /> shows the direction
+        field and for this example and <xref
+        ref="figure-direction-field6-curves" /> shows several solution
+        graphs. Notice the strange domain issues with this implicit
+        plot. When <m>|c| \leq 2</m>, the solutions have a restricted
+        domain, represented by the closed curves. There are no
+        solutions at all when <m>c \lt -2</m>. There are solutions
+        with domain <m>\RR</m> only for <m>c \gt 2</m>. When <m>c =
+        2</m>, the solution is the crossed graph, which is not always
+        differentiable. When <m>c=-2</m>. the <sq>solution</sq> is
+        only defined at discrete points
+      </p>
+    </statement>
+  </example>
+  <example>
+    <statement>
+      <figure xml:id="figure-direction-field7">
+        <caption>
+          The Direction Field for <m>\frac{dy}{dt} = y^2-4</m>
+        </caption>
+        <image xml:id="figure18" width="80%"> 
+          <asymptote>
+            size(10cm,0);
+            import contour;
+            import stats;
+            import graph;
+  
+            xlimits(-3,3);  
+            ylimits(3,3);  
+            yaxis("$y$");
+            xaxis("$x$");
+    
+            path vector(pair z) {return (0,0)--(1/(sqrt(1 + ((z.y)^2
+            -4)^2)), ((z.y)^2 -4)/(sqrt(1 + ((z.y)^2 -4)^2)));}
+  
+            add(vectorfield(vector,(-6,-4),(6,4)));
+          </asymptote>
+        </image>
+      </figure>
+      <figure xml:id="figure-direction-field7-curves">
+        <caption>
+          The Integral Curves for <m>\frac{dy}{dt} = y^2-4</m>
+        </caption>
+        <image xml:id="figure19" width="80%">
+          <asymptote>
+            size(10cm,0);
+            import contour;
+            import stats;
+            import graph;
+    
+            xlimits(-3,3);  
+            ylimits(3,3);  
+            yaxis("$y$");
+            xaxis("$x$");
+    
+            real f0(real x) {return 2 tanh(-2x - 12);}
+            real f1(real x) {return 2 tanh(-2x - 9);}
+            real f2(real x) {return 2 tanh(-2x - 6);}
+            real f3(real x) {return 2 tanh(-2x - 3);}
+            real f4(real x) {return 2 tanh(-2x );}
+            real f5(real x) {return 2 tanh(-2x + 3);}
+            real f6(real x) {return 2 tanh(-2x + 6);}
+            real f7(real x) {return 2 tanh(-2x + 9);}
+            real f8(real x) {return 2 tanh(-2x + 12);}
+    
+            draw(graph(f0,-6,6));
+            draw(graph(f1,-6,6));
+            draw(graph(f2,-6,6));
+            draw(graph(f3,-6,6));
+            draw(graph(f4,-6,6));
+            draw(graph(f5,-6,6));
+            draw(graph(f6,-6,6));
+            draw(graph(f7,-6,6));
+            draw(graph(f8,-6,6));
+            
+            path vector(pair z) {return (0,0)--(1/(sqrt(1 + ((z.y)^2
+            -4)^2)), ((z.y)^2 -4)/(sqrt(1 + ((z.y)^2 -4)^2)));}
+  
+            add(vectorfield(vector,(-6,-4),(6,4)));
+          </asymptote>
+        </image>
+      </figure>
+      <p>
+        Here is a separable DE, which I solve with the method
+        described above, separating the variables, integrating both
+        sides, and solving for the dependent variable. This is an
+        autonomous example, so the right side integral is trivial. 
+        <md>
+          <mrow>
+            \frac{dy}{dt} \amp = y^2 - 4
+          </mrow>
+          <mrow>
+            \int \frac{1}{y^2-4} dy \amp = \int 1 dt
+          </mrow>
+          <mrow>
+            \frac{-1}{2} \arctanh \left( \frac{y}{2} \right) \amp = t
+            + c
+          </mrow>
+          <mrow>
+            \arctanh \left( \frac{y}{2} \right) \amp = -2t + c
+          </mrow>
+          <mrow>
+            \frac{y}{2} \amp = \tanh (-2t + c)
+          </mrow>
+          <mrow>
+            y \amp = 2 \tanh (-2t + c)
+          </mrow>
+        </md>
+        Since this is an autonomous equation, I should look for 
+        singular solutions when the right side of the equation
+        vanishes <mdash /> these will be the steady states of the
+        autonomous equation. On the graph, the steady state solutions
+        should be horizontal lines, since the function never changes.
+        Here, <m>y=2</m> and <m>y=-2</m> are steady states. Moreover,
+        <m>y=2</m> is stable and <m>y=-2</m> is unstable. This can be
+        seen in the direction field in <xref
+        ref="figure-direction-field7" /> and the graphs of some
+        solution curves in <xref ref="figure-direction-field7-curves"
+        />. Near the stable steady state, the solutions go towards the
+        horizontal line. Near the unstable steady state, the solutions
+        go away from the horizontal line.
+      </p>
+      <p>
+        It is also interesting to note that the range of <m>\tanh</m>
+        is only the interval <m>(-1,1)</m>, so it is impossible to get
+        <m>y \leq -2</m> or <m>y \geq 2</m>. I might wonder if there
+        are solutions in this range at all. In the implicit plot, I
+        could draw curves with these <m>y</m> values, since there are
+        slopes in that part of the cartesian plane. These other curves
+        can be found by doing the integral differently, since both
+        hyperbolic tangent and hyperbolic cotangent have the same
+        anti-derivative. <m>y=2 \coth (-2t + c)</m> is also a
+        solution and the range of <m>coth</m> covers exactly what is
+        missing from <m>\tanh</m>. 
+      </p>
+    </statement>
+  </example>
+</section>

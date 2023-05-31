@@ -1,0 +1,173 @@
+<section xml:id="section-laplace-algebraic">
+  <title>Algebraic Properties of the Laplace Transform</title>
+  <p>
+    The Laplace transform is linear, but it is not multiplicative. How
+    does it interact with product of function.  To start, it is easier
+    to think in reverse: if there is a product <m>FG</m> in the
+    <m>s</m>-domain, where did it come from in the <m>t</m>-domain?
+    Here is the relevant integration calculation, using a
+    substitution. (The change in the order of
+    integration near the end is jutified by theorems in real
+    analysis.)
+    <md>
+      <mrow>
+        FG \amp = \int_0^\infty e^{-st} f(t) df \int_0^\infty e^{-su}
+        g(t) du
+      </mrow>
+      <mrow>
+        \amp = \int_0^\infty \int_0^\infty e^{-s(u+t)} f(t)g(u) dt du
+      </mrow>
+      <mrow>
+        \amp = \int_0^\infty f(t) \left[ \int_0^\infty e^{-s(u+t)}
+        g(u) du \right] du
+      </mrow>
+      <mrow>
+        v \amp = u + t
+      </mrow>
+      <mrow>
+        \amp = \int_0^\infty f(t) \left[ \int_t^\infty e^{-sv} g(v-t)
+        dv \right) dt
+      </mrow>
+      <mrow>
+        \amp = \int_0^\infty e^{-sv} \left[\int_0^t f(t) g(v-t) dt
+        \right] dv
+      </mrow>
+      <mrow>
+        \amp = \calL \left\{ \int_0^t f(t) g(v-t) dt \right\}
+      </mrow>
+    </md>
+    The product <m>FG</m> in the <m>s</m>-domain turns into this
+    strange integral-based combination of the function <m>f</m> and
+    <m>g</m>. This is a new <sq>product</sq>; it is called a
+    convolution.
+  </p>
+  <definition>
+    <statement>
+      <p>
+        Let <m>f,g</m> be integrable functions on <m>[0,\infty)</m>.
+        Their convoluiton is defined by this integral.
+        <me>
+          f \star g (t) = \int_0^t f(\tau) g(t-\tau) d \tau
+        </me>.
+      </p>
+    </statement>
+  </definition>
+  <p>
+    The convolution takes two functions and produces a new function,
+    so it is a product. However, it is a strange product with new
+    properties.
+  </p>
+  <proposition>
+    <statement>
+      <p><ul>
+        <li>
+          The convolution is commutative: <m>f \star g = g \star f</m>.
+        </li>
+        <li>
+          The convolution is associative: <m>(f \star g) \star h = f
+          \star (g \star h)</m>.
+        </li>
+        <li>
+          The convolution is distributive: <m>f \star (g \pm h) = f
+          \star g \pm f \star h</m>.
+        </li>
+        <li>
+          The convolution respect constants. <m>a (f \star g) = (af)
+          \star g = f \star (ag)</m>
+        </li>
+        <li>
+          The Laplace transform turns convolutions into products:
+          <me>
+            \calL \left\{ f \star g \right\} = F(s) G(s)
+          </me>
+        </li>
+      </ul></p>
+    </statement>
+  </proposition>
+  <p>
+    Here is an interesting question: if this is a product, what is the
+    identity? That is, what function <m>g</m> satisfies
+    <me>
+      f \star g = \int_0^t f(\tau) g(t-\tau) d \tau = f(t)
+    </me>?
+    In this question, the integral needs to evaluate <m>f(\tau)</m> at
+    <m>\tau = t</m>. I know a <sq>function</sq> that does this:
+    <m>\delta_0</m>.
+    <me>
+      f \star \delta_0 = \int_0^t f(\tau) \delta_0 (t-\tau) d \tau = f(t)
+    </me>
+  </p>
+  <proposition>
+    <statement>
+      <p>
+        The <m>\delta</m>-function at 0 is the identity for the
+        convolution.
+      </p>
+    </statement>
+  </proposition>
+  <p>
+    The convolution behaves well with differentiation.
+    <me>
+      \frac{d}{dt} (f \star g) = \frac{df}{dt} \star g + f \star
+      \frac{dg}{dt}
+    </me>
+    It also behaves well with integration.
+    <me>
+      \int_0^\infty f \star g dt = \int_0^\infty f(t) dt \int_0^\infty
+      g(t) dt
+    </me>
+    Finally, it lets me understand inverse Lapalce transforms of
+    products. I'll show an example.
+  </p>
+  <example>
+    <statement>
+      <p>
+        In this example, I'll look at the inverse transform of a
+        two rational functions that transform back to sine functions.
+        <md>
+          <mrow>
+            \calL^{-t} \left\{ \frac{k^2}{(s^2+k^2)^2} \right\} \amp =
+            \calL^{-1} \left\{ \frac{k}{s^2+k^2} \frac{k}{s^2+k^2}
+            \right\}
+          </mrow>
+          <mrow>
+            \amp = \sin kt \star \sin kt
+          </mrow>
+        </md>
+        The inverse transformation goes to the convolution. What does
+        this convolution actually look like? I'll need a trig identity
+        to approach the integral. 
+        <md>
+          <mrow>
+            \sin kt \star \sin kt \amp = \int_0^t \sin ku \sin (kt-ku) du
+          </mrow>
+          <mrow>
+            \sin A \sin B \amp = \frac{1}{2} \cos
+            (A-B) - \cos (A+B) 
+          </mrow>
+          <mrow>
+            \sin kt \star \sin kt \amp = \frac{1}{2} \int_0^t \cos (ku
+            - kt + ku) - \cos (ku + kt - ku) du
+          </mrow>
+          <mrow>
+            \amp = \frac{1}{2} \int_0^t \cos (2ku - 2t) - \cos (kt) du
+          </mrow>
+          <mrow>
+            \amp = \frac{1}{2} \left. \frac{\sin (2ku - kt)}{2k}
+            \right|_0^t - \left. \frac{1}{2} u \cos (kt) \right|_0^t
+          </mrow>
+          <mrow>
+            \amp = \frac{\sin (2kt-kt) - \sin (-kt)}{4k} - \frac{t\cos
+            kt}{2}
+          </mrow>
+          <mrow>
+            \amp = \frac{\sin (kt)}{2k} - \frac{t\cos kt}{2} = \frac{\sin
+            kt - kt \cos kt}{2k}
+          </mrow>
+        </md>
+        This is the value of the convolution, hence the inverse
+        transform of the starting rational function.  
+      </p>
+    </statement>
+  </example>
+</section>

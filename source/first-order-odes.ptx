@@ -1,0 +1,13 @@
+<chapter xmlns:xi="http://www.w3.org/2001/XInclude"
+  xml:id="chapter-first-order-odes">
+  <title>First Order DEs</title>
+  <xi:include  href="what-is-de.ptx" />
+  <xi:include  href="qualitative-methods.ptx" />
+  <xi:include  href="stability-and-linearization.ptx" />
+  <xi:include  href="separable-des.ptx" />
+  <xi:include  href="existence-and-uniqueness.ptx" />
+  <xi:include  href="linear-des.ptx" />
+  <xi:include  href="substitutions.ptx" />
+  <xi:include  href="approximation-methods.ptx" />
+  <xi:include  href="first-order-activity.ptx" />
+</chapter>

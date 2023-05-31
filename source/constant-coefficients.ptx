@@ -1,0 +1,728 @@
+<section xml:id="section-constant-coefficients">
+  <title>Linear DEs with Constant Coefficients</title>
+  <introduction>
+    <definition>
+      <statement>
+        <p>
+          Let <m>a(t)</m>, <m>b(t)</m>, <m>c(t)</m> and <m>f(t)</m> be
+          functions. A <term>second order linear differential
+          equation</term> is an equation of the form
+          <me>
+            a(t) \frac{d^2y}{dt^2} + b(t) \frac{dy}{dt} + c(t) y = f(t)
+          </me>.
+          As with the first order case, this is called
+          <term>homogeneous</term> if <m>f(t) = 0</m>.
+        </p>
+      </statement>
+    </definition>
+    <definition>
+      <statement>
+        <p>
+          A <term>second order linear differential operator</term>
+          is an operator of the form.
+          <me>
+            L = a(t) \frac{d^2}{dt^2} + b(t) \frac{d}{dt} + c(t)
+          </me>.
+          In operator notation, a second order linear differential
+          equation is <m>Ly = f(t)</m>. The principles of linearity
+          and superposition defined for first order equation in <xref
+          ref="section-linear-des" /> still hold for higher-order
+          linear equations.
+        </p>
+      </statement>
+    </definition>
+    <p>
+      General second order equations are usually impossible to solve
+      with direct methods; I will focus almost exclusively on second
+      order linear differential equations in this course. Even though,
+      however, present substantial challenge in general. I need to 
+      restrict even further, to the simplest case where the
+      coefficient functions are constant.
+    </p>
+    <definition>
+      <statement>
+        <p>
+          Let <m>a,b,c \in \RR</m>. A <term>second order constant
+          coefficient linear operator</term> has the form
+          <me>
+            L = a \frac{d^2}{dt^2} + b \frac{d}{dt} + c
+          </me>.
+          The corresponding homogeneous equation is <m>Ly=0</m> and
+          the corresponding non-homogeneous equation is
+          <m>Ly=f(t)</m>. o avoid writing a lengthy name over and
+          over again, I'll write SOCCLDE for a second order constant
+          coefficient linear differential equation. Note that though
+          the coefficients of the linear equation are constant, the
+          function in the non-homogenous equation, <m>f(t)</m>, does
+          not need to be a constant. 
+        </p>
+      </statement>
+    </definition>
+    <p>
+      Second order constant coefficient linear differential equations,
+      even with their very restricted form, are quite important for
+      applied mathematics. They give models to understand both
+      harmonic motion and alternating current electric curcuits, among
+      other applications. I'm going to start with harmonic motion and
+      use that application to explain and motivate the those theory of
+      SOCCLDEs. Harmonic motion (in one dimension) can describe a
+      variety of phenomena: an object attached to a spring, a pendulum
+      or swing, a shock in a bicycle or car, a string on a musical
+      instrument, the sway of structures in wind, a trampoline, a
+      drum, etc. 
+    </p>
+  </introduction>
+  <subsection xml:id="subsection-harmonic-motion">
+    <title>Harmonic Motion</title>
+    <p>
+      I want to consider a system with one dimension of movement
+      described by a function <m>x(t)</m>. In harmonic motion, the
+      system has some rest state where there are no forces; by
+      convention, the rest state will always be at <m>x=0</m> and will
+      be a steady state of the system. If the system is disturbed from
+      its rest, there is an elastic force that wants to return the
+      system to its rest state. Hooke's Law gives the elastic for: 
+      <m>F = -kx(t)</m>. Then, using Newton's first law, I can write
+      this force as <m>F = ma = m \frac{d^2 x}{dt^2}</m>. Equating
+      these two expressions for the elastic force produces a
+      differential equation. 
+      <md>
+        <mrow>
+          F \amp = -k x(t)
+        </mrow>
+        <mrow>
+          F \amp = ma = m \frac{d^2 x}{dt^2} 
+        </mrow>
+        <mrow>
+          -kx(t) \amp = m \frac{d^2 x}{dt^2} 
+        </mrow>
+        <mrow>
+          m\frac{d^2 x}{dt^2} + k x(t) \amp = 0
+        </mrow>
+      </md>
+      This is homogeneous SOCCLDE with <m>a=m</m>, <m>b=0</m>
+      and <m>c=k</m>. If there are no other forces involved, this is
+      the simplest possible situation for harmomic motion and there
+      are two solutions.
+      <md>
+        <mrow>
+          x_1(t) \amp = \sin \left( \sqrt{\frac{k}{m}} t \right) 
+        </mrow>
+        <mrow>
+          x_2(t) \amp = \cos \left( \sqrt{\frac{k}{m}} t \right)
+        </mrow>
+      </md>
+      Since I know these two homogeneous solution, I can use
+      superposition to produce a general solution by taking any linear
+      combination of these two solutions. For any two numbers <m>A,B
+      \in \RR</m>, this is the general solution:
+      <me>
+        x(t) = A \sin \left( \sqrt{\frac{k}{m}} t \right) + B \cos
+        \left( \sqrt{\frac{k}{m}} t \right)
+      </me>.
+    </p>
+    <p>
+      As an aside: if I want, If a sine and cosine function share the
+      same period, I can express the sums of the two trig functions as
+      a single way. There is a relatively obscure but useful trig
+      identity that show how to accomplish this. 
+    </p>
+    <proposition xml:id="proposition-wave-combination">
+      <statement>
+        The sum of a sine and cosine wave with the same frequency (but
+        possibly different amplitude) is still a sinusoidal wave. The
+        new amplitude is a pythagorean combination of the original
+        amplutide and the way is shifted by some angle <m>\phi</m>
+        Explicitly:
+        <md>
+          <mrow>
+            \amp a \sin t + b \cos t = \sqrt{a^2+b^2} \sin (t + \phi)
+            \amp \amp \text{ where } \amp \amp \phi = \arcsin
+            \left( \frac{b}{\sqrt{a^2+b^2}} \right)
+          </mrow>
+        </md>
+      </statement>
+    </proposition>
+    <p>
+      This identity shows me that combinations of sine and cosine, at
+      least when they share a period, are still just a single
+      sinusoidal wve wave. This is very useful for the general
+      solution to simple harmonic motion: even the linear combination
+      will still produce the expected behaviour of sinusoidal
+      oscillations.
+    </p>
+    <p>
+      Hooke's Law is the starting point for understanding harmonic
+      motion. However, these SOCCLDEs have no <m>b</m> term. I should
+      wonder: what could <m>b</m> be?  This <m>b</m> is a coefficient
+      of the first derivative, the velocity of the system. Velocity
+      causes friction in the system, and the greater the velocity the
+      greater the friction. Hooke's law was an idealization which
+      ignored friction; by adding in a non-zero <m>b</m> coefficient,
+      I account for friction in the harmonic system. Again, I will
+      set up Hooke's law as a force quation using Newton's laws of
+      motion, but now include a friction term. 
+      <md>
+        <mrow>
+          F \amp = -k x(t) - b \frac{dx}{dt}
+        </mrow>
+        <mrow>
+          F \amp = m \frac{d^2 x}{dt^2} 
+        </mrow>
+        <mrow>
+          m \frac{d^2 x}{dt^2} \amp = -k x(t) - b \frac{dx}{dt}
+        </mrow>
+        <mrow>
+          m\frac{d^2 x}{dt^2} + b \frac{dx}{dt} + k x(t) \amp = 0
+        </mrow>
+      </md>
+      Harmonic systems with friction are called <term>damped harmonic
+      systems</term>; systems without friction are
+      <term>undamped</term>.  The solution to the undamped system was
+      never ending sinusoidal oscillation. This makes sense from the
+      perspective of conservation of energy: without friction to
+      remove energy from the system, the oscillations will continue
+      for ever. Frication removes energy, so I that friction should
+      cause the oscillations to eventually slow down. I expect the
+      solutions to show decay in the amplitude of the sine wave.
+    </p>
+    <p>
+      Having used friction to interpret the constant <m>b</m>, the
+      only piece that remains to interpret is the function <m>f(t)</m>
+      in a non-homogeneous SOCCLDe. In the harmonic motion
+      intepretation so far, all these terms in the equation are terms
+      of force. If the equation is to make any sense, <m>f(t)</m> must
+      also be a force. However, <m>f(t)</m> doesn't directly relate to
+      the position at all: the dependent variable <m>x</m> doesn't
+      show up. Therefore, <m>f(t)</m> must be a force which is not
+      dependent on the current position, velocity or acceleration of
+      the system. The only option is an external form on the system.
+      In this way, homogenous equations represent a system free of
+      external forces and non-homogeneous equations represent a system
+      under the influence of an external force. 
+    </p>
+  </subsection>
+  <subsection xml:id="subsection-curcuits">
+    <title>Alternating Current Circuits</title>
+    <p>
+      Before moving on to actual solution techinques, I want to talk
+      about the second major interpretations of SOCCLDEs: alternating
+      current circuits. The DE that will result is exactly the same as
+      that for harmonic motion, but the interpretation of each of the
+      coefficients is quite different. Instead of a position function
+      <m>x(t)</m>, the system describes a charge function <m>q(t)</m>;
+      the movement of that charge will be the alternating current. In
+      this system, there are four components to a circuit: resistors,
+      capacitors, inductors and an external electro-motive force. Let
+      me describe these each in turn. 
+    </p>
+    <p><ul>
+      <li>
+        Resistors allow for energy leaving the system and they
+        represent the resistance to energy flow. The resistance is
+        written <m>R</m> and measured in ohms. It acts like friction
+        in the mechanical system in that it wants to slow down the
+        flow of current. Resistance will result in a decrease in current
+        over time, if there is no external forcing. Resistors
+        represent the devices powered by the circuit, whatever those
+        devices are. As the parallel of friction, resistance should
+        show up as the coefficient of <m>\frac{dq}{dt}</m>. 
+      </li>
+      <li>
+        Capacitors are storage devices for electrical energy in
+        electric fields. They have a measurement <m>c</m> called
+        capacitance, which has units of farads (coloumbs per volt).
+        They stabilize alternating current flow; as such, they can be
+        see as controlling the natural way in which current flows.
+        Thise idea (up to a reciprocal) aligns with the idea of spring
+        constant, which represented the stiffness of the spring and
+        controlled the natural behaviour of the harmonic system
+        (before friction and external forces). As the analogue of the
+        spring constant, capacitance should show up as the coefficient
+        of <m>x(t)</m>. 
+      </li>
+      <li>
+        Inductors are storage devices for electrical energy in a
+        magnetic field. They have a measurement <m>L</m> called
+        inductance, which has units of henrys. Inductors block
+        alternating current; as such, they represent the difficulty of
+        moving charge through the system. In the harmonic system, the
+        difficult of moving the object was its mass (indeed, a simple
+        definition of mass is a measure of how difficult it is to move
+        an object). As the analogue of the mass, inductance should
+        show up as the coefficient of <m>\frac{d^2 x}{dt^2}</m>
+      </li>
+      <li>
+        Electromotive forces are external forces to the system, from
+        batteries or generators. They are written <m>E(t)</m> and
+        have units of volts. Like the forces that add movement to a
+        harmonic system, these electromotive forces add charge to a
+        circuit. Matching up most directly with the harmonic system,
+        the electromotive force should be the non-homogeneous function
+        in a non-homogeneous DE. 
+      </li>
+      <li>
+        To give a complete account of the units, charge is written
+        <m>q</m> and measured in coloumbs. The movement of charge is
+        current, represented by the derivative <m>\frac{dq}{dt}</m>.
+        The SOCCLDE that models an alternating current is 
+        <me>
+          L \frac{d^2 q}{dt^2} + R \frac{dq}{dt} + \frac{1}{c} q = E(t)
+        </me>.
+        If there is no resistance and no electromotive force, the
+        solution is sinusoidal oscillation as before (hence
+        <em>alternating</em> current). Under resistance, where there is
+        energy leaving the system, I expect damped oscillations. 
+      </li>
+    </ul></p>
+    <p>
+      The parallel of harmonic motion/alternating currents is a great
+      example of a common occurence in applied mathematics and the
+      study of differential equations: the same differential equation
+      can describe a variety of seemingly unrelated systems. I find it
+      quite fascinating to think of alternating currents as an
+      electro-magnetic analogue of springs. Since alternating current
+      is so ubiquitous in the world, this mental model of what is
+      going on with electricity gives me a handle on the strange
+      system of power plants, wires, and devices that affect so much
+      of my life. 
+    </p>
+  </subsection>
+  <subsection xml:id="subsection-solving-soccldes">
+    <title>Solving SOCCLDEs</title>
+    <p>
+      Now that I have described the two most important
+      interpretations, I need to move on to actually solving SOCCLDEs.
+      I'll make heavy use of the differential operator notation, so
+      let me remind you of the general form of the second order
+      constant coefficient operator. 
+      <me>
+        L = a \frac{d^2}{dt^2} + b \frac{d}{dt} + c
+      </me>.
+      Then the DE that I am trying to solve is
+      <me>
+        Ly = f(t) 
+      </me>
+      for some (probably continuous) <m>f(t)</m>. How do I even start?
+      One common strategy in DEs is to look at easier but similar
+      equations and see if the type of solutions from the easier case
+      can extend. The easier case, here, is first-order linear
+      equations. In particular, the homogeneous constant-coefficient
+      first order case, <m>\frac{dy}{dt} = \alpha y</m>, is just the
+      standard percentage growth equation. The solution is an
+      exponential function <m>y = e^{\alpha t}</m>. Therefore, I'm
+      going to guess that exponential functions might also solve the
+      second-order case, at least for homogeneous equations. I will
+      simply assume that the solution to <m>Ly =0</m> has the form
+      <m>y = e^{r t}</m> for some <m>r \in \RR</m>. If there is such a
+      solution, what must <m>r</m> be?  To find out, I'll put the
+      assumed formed into the DE and investigate. This is also a
+      common strategy for DEs: assume (hopefully with some
+      justification) that the solution must have a particular form,
+      then put that form into the differential equation and see what
+      the details must be.
+    </p>
+    <p>
+      I'll calculate the derivative of the proposed solution so that I
+      can calculate the action of the differential operator. 
+      <md>
+        <mrow>
+          \frac{d}{dt} e^{r t} \amp = r e^{r t}
+        </mrow>
+        <mrow>
+          \frac{d^2}{dt^2} e^{r t} \amp = r^2 e^{r t}
+        </mrow>
+        <mrow>
+          L e^{r t} \amp = a r^2 e^{rt} + br e^{rt} + ce^{rt} = e^{rt}
+          (ar^2 + br + c)
+        </mrow>
+      </md>
+      If <m>Ly = 0</m>, then the differential equation equation is
+      only satisfied if <m>ar^2 + br + c = 0</m>, since <m>e^{rt}</m>
+      is not the constant zero function. This is an accomplishment:
+      I've turned a differential equation into an algebraic equation. 
+    </p>
+    <definition>
+      <statement>
+        <p>
+          This equation is called the <term>characteristic
+          equation</term> of the SOCCLDE.
+        </p>
+      </statement>
+    </definition>
+    <p>
+      The characteristic equation has two roots (with a possible
+      repeated root).
+      <me>
+        r = \frac{-b \pm \sqrt{b^2-4ac}}{2a}
+      </me>
+      Recall that the term <m>b^2 -4ac</m> in a quadratic is called
+      the discriminant; the sign of the discriminat controls the roots
+      of the quadratic. There are three cases. 
+    </p>
+    <p><ol>
+      <li>
+        <m>b^2 -4ac > 0 \implies</m> two real roots.
+      </li>
+      <li>
+        <m>b^2 -4ac = 0 \implies</m> one real repeated root.
+      </li>
+      <li>
+        <m>b^2 -4ac \lt 0 \implies</m> two complex roots. This is one
+        of the few places where I will need the material from <xref
+        ref="section-complex-numbers" />. 
+      </li>
+    </ol></p>
+  </subsection>
+  <subsection xml:id="subsection-two-real-roots">
+    <title>Case 1: Two Real Roots</title>
+    <p>
+      In this case, the solutions are real exponential functions
+      <m>e^{r_1 t}</m> and <m>e^{r_2 t}</m>. Since the roots are
+      distinct, these are linearly independent solutions (neither
+      exponential function is a multiple of the other). I can simply
+      check that they satisfy the DE.
+      <me>
+        L e^{rt} = e^{rt} ( ar^2 + br+ c) = 0
+      </me>
+      Since I expect two linearly indepedent solutions to a linear
+      equation, the are no other solutions. The general solution is a
+      superposition (linear combination) of the two solutions. 
+      <me>
+        y= Ae^{r_1 t} + Be^{r_2t}
+      </me>
+      The behaviour is exponential growth or decay, depending on
+      whether <m>r_1</m> and <m>r_2</m> are positive or negative.
+    </p>
+    <p>
+      Let me return to harmonic motion. In a harmonic system, the
+      spring constnat <m>k</m>, the coefficient of friction <m>b</m>
+      and the mass <m>m</m> are all positive numbers: all the constant
+      coefficients in the DE are positive. Looking at the general form
+      of the characteristic equation again, if <m>a</m>, <m>b</m> and
+      <m>c</m> are positive, I can determine the sign of the roots. In
+      the solution given by the quadratic forumla
+      <me>
+      \frac{-b \pm \sqrt{b^2 - 4ac}}{2a}
+      </me>
+      since the discriminant is positive, I can make the following
+      calculation.
+      <me>
+        \sqrt{b^2 - 4ac} \leq \sqrt{b^2} = b 
+      </me>
+      The numerator of the fraction is obviously negative if I choose
+      negative for the <m>\pm</m>. However, if I choose positive, then
+      the term I am adding to <m>-b</m>, by the above inequatliy, is
+      less than <m>b</m>; I am not adding enough to make the numerator
+      positive. Therefore, in both cases, the numerator is negative.
+      The denominator is <m>2a</m> and I assumed all the coefficients
+      were positive, so the whole fraction must be negative.
+      Therefore, for harmonic motion (and equivalently for alternating
+      circuit), if there are real roots, they must be negative. This
+      implies that both solutions are exponential decay. This means
+      that the harmonic system will decay to equilibrium with no
+      oscillations. The discriminant condition is <m>b^2 > 4ac</m>
+      and recall that <m>b</m> was the coefficient of friction. The
+      case of two real roots only happens if <m>b</m> is large enough
+      (larger than <m>4ac</m>). Exponential decay is the behaviour
+      that results from a surplus of friction. There is too much
+      friction even to have oscillations: the system only displays
+      exponential decay to equilibrium. These situations are called
+      <term>overdamped</term> harmonic systems.
+    </p>
+    <example>
+      <statement>
+        <p>
+          I'll start with a simple example. 
+          <me>
+            y^{\prime\prime} - y = 0
+          </me>
+          The characteristic equation is is <m>r^2 -1=0</m> which has
+          roots <m>r = \pm 1</m>. The solutions are <m>y=e^t</m> and
+          <m>y=e^{-t}</m>. The general solution is <m>y=Ae^t +
+          Be^{-t}</m>. Initial conditions of <m>y(0) =
+          1</m> and <m>y^\prime(0) = 0</m>, produce a system of two
+          equations for <m>A</m> and <m>B</m>,   (Since there are
+          two unknowns in the general form, two initial conditions are
+          required for a specific solution.) 
+          In this case, the system is <m>A+B=1</m> and
+          <m>A-B=0</m>, which is solved by <m>A = B = \frac{1}{2}</m>.
+          The final solution is <m>\frac{1}{2} e^t + \frac{1}{2}
+          e^{-t}</m>. This is just the exponential definition of <m>\cosh
+          t</m>! Indeed, I could have prediced this solution if I
+          tried to interpret the original DE. What does this DE ask?
+          It asks: what function returns to itself after two
+          derivatives?  The hyperbolic functions are the unique
+          functions that have this behaviour, so they must be the
+          solutions to this DE. (Hyperbolic sine is also a solution
+          for a different set of initial condition.) 
+        </p>
+        <p>
+          I could have made different choices for the initial
+          linearly independent solutions by taking <m>y_1 = \cosh
+          t</m> and <m>y_2 = \sinh t</m>. The linearily independent
+          solutions are not unique. This can be expressed nicely in
+          linear algebra language. The <term>solution space</term> for
+          this DE is the span of two functions. Such a solution space
+          may have many bases: many choices of two functions which
+          span the space. The set <m>\{e^t, e^{-t}\}</m> is one basis
+          for the solution space. The set <m>\{\cosh t, \sinh t\}</m>
+          is another basis for the solution space. 
+        </p>
+      </statement>
+    </example>
+  </subsection>
+  <subsection xml:id="subsection-repeated-real-root">
+    <title>Case 2: Repeated Real Roots</title>
+    <p>
+      If the characteristic equation factors as <m>(x-r)^2</m>, then
+      <m>r</m> is a repeated real root (with value
+      <m>\frac{-b}{2a}</m>). The result is  only one exponential
+      solution: <m>e^{rt}</m>. This is a problem, since I expect two
+      linearly independent solutions.
+    </p>
+    <p>
+      The solution to this problem is a bit strange, but turns out to
+      be a common trick for linear equations: multiply by the
+      independent variable. The second solution is <m>te^{rt}</m>. I
+      can demonstrate that this work by puting <m>t e^{rt}</m> into
+      the DE, simply verifying that it is a solution. (The fact that
+      <m>r = \frac{-b}{2a}</m> is necessary here; I use it in the
+      second last line of the algebra.) 
+      <md>
+        <mrow>
+          y \amp = te^{rt}
+        </mrow>
+        <mrow>
+          y^\prime \amp = rte^{rt} + e^{rt}
+        </mrow>
+        <mrow>
+          y^{\prime\prime} \amp = r^2 t e^{rt} + 2re^{rt}
+        </mrow>
+        <mrow>
+          a y^{\prime\prime} + a y^\prime + yc \amp = a (r^2 t e^{rt}
+          + 2 re^{rt}) + b (rte^{rt} + e^{rt} ) + cte^{rt}
+        </mrow>
+        <mrow>
+          \amp = e^{rt} (ar^2 t + 2ar + brt + b + ct )
+        </mrow>
+        <mrow>
+          \amp = e^{rt} ( t(ar^2 + br + c) + 2ar + b)
+        </mrow>
+        <mrow>
+          \amp = e^{rt} ( t \cdot 0 + 2a \frac{-b}{2a} + b ) = 0
+        </mrow>
+      </md>
+      (Now there are two linearly indepedent solutions: <m>y_1 =
+      e^{rt}</m> and <m>y_2 = te^{rt}</m>. I already understand the
+      first, since it is similar to the case of two distinct real
+      roots. For harmonic systems where the coefficients are all
+      positive, , <m>r - \frac{-b}{2a} \lt 0</m>. Therefore, as
+      before, the first solution is exponential decay.
+      The second solution is also exponential decay, since
+      asymptotically the <m>e^{-rt}</m> dominates over <m>t</m>.
+      However, it allows for one oscillation before decay.
+    </p>
+    <p>
+      The situation of repeated roots happens when <m>b^2 = 4ac</m>,
+      so that the <m>\pm</m> disappears from the solutions to the
+      quadratic. For harmonic systems, this only happens if the
+      friction is exactly <m>b = \sqrt{4ac}</m> (since this leads to
+      <m>b^2 - 4ac = 0</m>. This is the exact friction that allows
+      for this one oscillation before exponential decay. These
+      systems are called <term>critically damped</term>. This is the
+      tipping point for friction: there is exactly enough friction to
+      result in exponential decay.
+    </p>
+    <example>
+      <statement>
+        <p>
+          <me>
+            y^{\prime\prime} -2y^\prime + y = 0
+          </me>
+          The characteristic equation is <m>r^2 = 2r + 1 =
+          (r-1)^2</m>. The solutions are <m>y = e^t</m> and
+          <m>y=te^t</m>, so the general solution is <m>y= Ae^t +
+          Bte^t</m>. If <m>y(0) = 1</m> and <m>y^\prime(0) = 0</m>,
+          if I substitute the initial values and solve the associated
+          system, I can calculate that <m>A=1</m> and <m>B=-1</m> for
+          a specific solution of <m>e^t - te^t</m>.
+        </p>
+      </statement>
+    </example>
+  </subsection>
+  <subsection xml:id="subsection-complex-roots">
+    <title>Case 3: Complex Roots</title>
+    <p>
+      The roots are complex numbers when <m>b^2 - 4ac \lt 0</m>. Here
+      is where I need a little bit of arithmetic for complex numbers
+      to understand the solutions (as well as the use of Euler's
+      formula). I can factor <m>\imath</m> out of the square root to
+      get a real root. 
+      <me> 
+        r = \frac{-b \pm \sqrt{b^2-4ac}}{2a} = \frac{-b}{2a} \pm
+        \imath \frac{\sqrt{4ac-b^2}}{2a} 
+      </me> 
+      The roots are a pair of complex numbers <m>x \pm y \imath</m>
+      with the real part <m>x = \frac{-b}{2a}</m> and imaginary part
+      <m>y = \frac{ \sqrt{4ac-b^2}}{2a}</m>. They are a conjugate
+      pair (each is the conjugate of the other). This is expected
+      behaviour: the complex roots to a real quadratic always come as
+      a conjugate pair. To write this more succinctly, I'll define
+      two new constants.
+      <md>
+        <mrow>
+          \amp \alpha = \frac{-b}{2a} \amp \amp \beta =
+          \frac{\sqrt{4ac-b^2}}{2a}
+        </mrow>
+      </md>
+      Then the complex roots are described via these constants:
+      <m>\alpha \pm \imath \beta</m>. The solutions to the DE are
+      <me>
+        e^{(\alpha \pm \imath \beta)t} = e^{\alpha t} e^{\pm \imath
+        \beta t}
+      </me>.
+      What do these complex functions means? The <m>e^{\alpha t}</m>
+      term is fine, it is just a real exponential. The complex
+      exponential is understood through Euler's formula (<xref
+      ref="prop-eulers-formula"  /> in <xref
+      ref="section-complex-numbers" />).
+      <me>
+        e^{\alpha t} e^{\pm \imath \beta t} = e^{\alpha t} ( \cos
+        (\beta t) \pm \imath \sin (\beta t))
+      </me>
+      These solutions are still problematic because they involve
+      complex numbers. I am trying to solve a real system with real
+      coefficient and I want real solutions. To find them, I need to
+      take clever linear combinations (over <m>\CC</m>!) of the two
+      solutions.
+      <md>
+        <mrow>
+          \frac{1}{2} e^{\alpha t}(\cos \beta t + \imath \sin \beta t)
+          + \frac{1}{2} e^{\alpha t}(\cos \beta t - \imath \sin \beta
+          t) \amp = e^{\alpha t} \cos \beta t
+        </mrow>
+        <mrow>
+          \frac{1}{2\imath } e^{\alpha t}(\cos \beta t + \imath \sin
+          \beta t) - \frac{1}{2\imath} e^{\alpha t}(\cos \beta t -
+          \imath \sin \beta t) \amp = e^{\alpha t} \sin \beta
+        </mrow>
+      </md>
+      On the basis of these linear combinations, I conclude that the
+      following two functions are the linearly independent real
+      solutions.
+      <md>
+        <mrow>
+          \amp y_1 = e^{\alpha t} \sin \beta t \amp \amp  y_2 =
+          e^{\alpha t} \cos \beta t
+        </mrow>
+      </md>
+      The general, real-valued solutions are linear combinations of
+      the two linearly independent solutions.
+      <me>
+        y = A e^{\alpha t} \sin \beta t + B e^{\alpha t} \cos \beta t
+      </me>
+      The complex numbers, via Euler's formula, product sine and
+      cosine instead of exponential growth or decay. In a harmonic
+      system, this behaviour happens when
+      <m>b^2 \lt 4ac</m>, that is, when friction is small enough. If
+      there is some friction, but not too much, harmonic systems have
+      the oscillations that we expect. The real exponential term will
+      be decay (<m>\alpha \lt 0</m> in harmonic systems since all the
+      coefficient are positive). The total result is oscillations with
+      exponentially declining amplitude. Such harmonic systems are
+      called <term>underdamped</term>.
+    </p>
+    <example>
+      <statement>
+        <p>
+          I'll go back to the very first example of simple,
+          frictionless harmonic motion. 
+          <me>
+            y^{\prime \prime} + y = 0
+          </me>
+          The characteristic equation is <m>r^2 +1</m> which has roots
+          <m>\pm \imath</m>. Therefore <m>\alpha = 0</m> and <m>\beta
+          = 1</m>, so the solutions are <m>\cos t</m> and <m>\sin
+          t</m>, with the general solution of <m>A \cos t + B \sin
+          t</m>. If <m>y(0) = 1</m> and <m>y^\prime(0) = 0</m>,
+          substitution into the equation gives <m>A=1</m> and
+          <m>B=0</m> for <m>y = \cos t</m> as the unique solution.
+        </p>
+      </statement>
+    </example>
+    <example>
+      <statement>
+        <p>
+          <me>
+            y^{\prime \prime} - 2y^\prime + 5y  = 0   
+          </me>
+          I write the characteristic equation.
+          <me>
+            r^2 + 2r + 5  = 0
+          </me>
+          I find the roots. 
+          <me>
+            r = \frac{2}{2} \pm \frac{\sqrt{4-20}}{2} = 1 \pm
+            \frac{\sqrt{-16}}{2} = 1 \pm \imath 2 
+          </me>
+          I can identify the two pieces of the complex roots.
+          <md>
+            <mrow>
+              \alpha \amp = 1 \amp \amp  \beta = 2
+            </mrow>
+          </md>
+          Then I can write the general solution. 
+          <me>
+            y = A e^t \cos 2t + B e^t \sin 2t 
+          </me>
+          Now I'll impose initial condition of <m>y(0) = 4</m> and
+          <m>y^\prime(0) = 6</m>. If I put these into the general
+          equation, I get a system of two linear equations. The
+          solution of that system is <m>A = 4</m> and <m>B = 1</m>,
+          which leads to a specific solution to the initial value
+          problem. 
+          <me>
+            y = 4e^t \cos 2t + e^t \sin 2t 
+          </me>
+        </p>
+      </statement>
+    </example>
+    <example>
+      <statement>
+        <p>
+          <me>
+            y^{\prime \prime} + 3y^\prime + 4y = 0 
+          </me>
+          I write the characteristic equation.
+          <me>
+            r^2 + 3r + 4 = 0
+          </me>
+          I solve the characteristic equation.
+          <me>
+            r = \frac{-3}{2} \pm \frac{\sqrt{9-16}}{2} =
+            \frac{-3}{2} \pm \frac{\sqrt{-7}}{2} = \frac{-3}{2} \pm
+            \imath \sqrt{7} 
+          </me>
+          The two parts of the complex number are <m>\alpha =
+          \frac{-3}{2}</m> and <m>\beta = \sqrt{7}</m>. This lets me
+          write the general solution. 
+          <me>
+            y = A e^{-\frac{3t}{2}} \cos \sqrt{7}t + B
+            e^{-\frac{3t}{2}} \sin \sqrt{7}t 
+          </me>
+          If I am given initial conditions of <m>y(0) = 2</m> and
+          <m>y^\prime(0) = 2</m>, then I can put those into the
+          general form to get a system of two equations. The solution
+          of the system is <m>A = 2</m> and <m>B =
+          \frac{5}{\sqrt{7}}</m>. This gives a specific solution to
+          the initial value problem.
+          <me>
+            y = 2e^{-\frac{3t}{2}} \cos \sqrt{7} t +
+            \frac{5}{\sqrt{7}} e^{-\frac{3t}{2}} \sin \sqrt{7} t 
+          </me>
+        </p>
+      </statement>
+    </example>
+  </subsection>
+</section>

@@ -1,0 +1,628 @@
+<section xml:id="section-qualitative-methods">
+  <title>Qualitative Methods for First Order DEs</title>
+  <introduction>
+    <p>
+      As I discussed in <xref ref="section-what-is-a-de" />, many DEs
+      are very difficult or impossible to solve directly (using known
+      functions). Implicit or qualitative methods try to say something
+      about the solutions without actually finding the solutions. Even
+      when I can exactly solve an equation, these methods are still
+      very useful for interpreting the behaviour of the solutions.
+    </p>
+  </introduction>
+  <subsection xml:id="subsection-phase-line">
+    <title>Autonomous DEs and Phase-Line Analysis</title>
+    <p>
+      Consider a population model <m>p(t)</m> with its autonomous DE.
+      <me>
+        \frac{dp}{dt} = f(p)
+      </me>
+      There is a lovely piece of qualitative analysis for autonomous
+      equations called the <em>phase line analysis</em>. This is
+      hopefully familiar from Calculus I, but I'll review the whole
+      theory here, since it is such a good first example of a
+      qualitative method. Phase line analysis looks at the right side
+      of the equation and asks: what values of <m>p</m> set the right
+      side to zero?  What does this mean?  When the right side of the
+      differential equation is 0, the left side is 0 as well. The left
+      side is the growth rate, so that means the growth rate is zero.
+      Therefore, the special value of <m>p</m> where the right side is
+      zero is a value of the population where there is no growth.
+    </p>
+    <definition>
+      <statement>
+        <p>
+          In an autonomous DE, a value of the function where the
+          derivative vanishes is called a <term>steady state</term>.
+          Note this is a value of the <em>dependent variable</em>, not
+          the independent variable. In a population that depends on
+          time, a steady state is a population count, not a specific
+          time.
+        </p>
+      </statement>
+    </definition>
+    <p>
+      If the population is exactly at its steady state, it will not
+      change; steady states are constant populations which do no grow
+      or decline. (For population models, I can make the reasonable
+      assumptions that <m>p \geq 0</m> and <m>p=0</m> is always a
+      steady state. In other models that may include negative values,
+      the steady state could be any real number.)
+    </p>
+    <p>
+      Once I have found the steady states, I can ask what happens
+      between each steady state. Assuming that the DE is reasonable,
+      the sign of the derivative will either be always positive or
+      always negative between the steady states. When it is positive,
+      there is positive growth rate and the population increases. When
+      it is negative, there is negative growth rate and the population
+      decreases.
+    </p>
+    <definition>
+      <statement>
+        <p>
+          In an autonomous DE, the direction of growth negative or
+          positive, called the <term>trajectory</term> of the
+          popluation.
+        </p>
+      </statement>
+    </definition>
+    <p>
+      Steady states and trajectories give a remarkably robust
+      understanding of the population.
+    </p>
+    <p><ul>
+      <li>
+        If the popluation is at a steady state, it doesn't change.
+      </li>
+      <li>
+        If the popluation is not at a steady state, I look at the
+        trajectory.
+      </li>
+      <li>
+        If the trajectory is positive, the popluation grows either to
+        the closest larger steady state or to infinity.
+      </li>
+      <li>
+        If the trajectory is neagative, the population declines either
+        to the closest smaller steady state or to zero.
+      </li>
+    </ul></p>
+    <p>
+      I can summarize this information is a phase line diagram. I
+      take a ray representing <m>p \geq 0</m> and put dots on the ray
+      for the steady states. In between, I draw arrows to show the
+      trajectories. Its best to see the phase line diagrams through
+      examples.
+    </p>
+    <example>
+      <statement>
+        <figure xml:id="figure-phase-line1">
+          <caption>
+            A Phase Line Diagram for <m>\frac{dp}{dt} = p^2 - p</m>
+          </caption>
+          <image xml:id="figure02" width="80%">
+            <asymptote>
+              size(16cm,0,IgnoreAspect);
+              dot("$0$",(0,0),N);
+              dot("$1$",(2,0),N);
+              dot("$\infty$",(4,0),N);
+              draw((2,0)--(0,0),MidArrow);
+              draw((2,0)--(4,0),MidArrow);
+            </asymptote>
+          </image>
+        </figure>
+        <p>
+          <me>
+            \frac{dp}{dt} = p^2 - p
+          </me>
+          The right side is zero when <m>p=0</m> or <m>p=1</m>, so
+          those are the steady states. When <m>p \in (0,1)</m> the
+          derivative is negative, so the trajectory is decreasing.
+          When <m>p \in (1, \infty)</m>, the derivative is positive,
+          so the trajectory is increasing. <xref
+          ref="figure-phase-line1" /> shows the resulting phase-line.
+        </p>
+      </statement>
+    </example>
+    <example>
+      <statement>
+        <figure xml:id="figure-logistic-phase-line">
+          <caption>The Logistic Phase-Line Diagram</caption>
+          <image xml:id="figure03" width="80%">
+            <asymptote>
+              size(16cm,0);
+              dot("$0$",(0,0),N);
+              dot("$4$",(4,0),N);
+              dot("$\infty$",(8,0),N);
+              draw((0,0)--(4,0),MidArrow);
+              draw((8,0)--(4,0),MidArrow);
+            </asymptote>
+          </image>
+        </figure>
+        <p>
+          This example is a specific instance of a form known as the
+          logistic equation.
+          <me>
+            \frac{dp}{dt} = 4p-p^2
+          </me>
+          The right side is zero when <m>p=0</m> or <m>p=4</m>, so
+          those are the steady states. When <m>p \in (0,4)</m> the
+          derivative is positive, so the trajectory is increasing.
+          When <m>p \in (4, \infty)</m>, the derivative is negative,
+          so the trajectory is decreasing. <xref
+          ref="figure-logistic-phase-line" /> shows the resulting
+          phase-line.
+        </p>
+      </statement>
+    </example>
+    <figure xml:id="figure-exponential-growth">
+      <caption>Exponential and Logistic Growth</caption>
+      <image xml:id="figure04" width="80%">
+        <asymptote>
+          import graph;
+          size(16cm,10cm,IgnoreAspect);
+          yaxis("$p$",Ticks());
+          xaxis("$t$",Ticks());
+          real f(real x) {return exp(x/5);}
+          draw(graph(f,0,10));
+          real g(real x) {return (6*exp(4*x/5))/(6+(exp(4*x/5)-1));}
+          draw(graph(g,0,10));
+          draw((0,6)--(10,6),dashed);
+          label("Exponential Growth",(7.4,3.2),E);
+          label("$\frac{dp}{dt} = \frac{1}{5}p$",(7.4,2.3),E);
+          label("Logistic  Growth",(0.4,5.3),E);
+          label("$\frac{dp}{dt} = \frac{4}{5}p(6-p)$",(0.4,4.4),E);
+        </asymptote>
+      </image>
+    </figure>
+    <p>
+      The previous example was a logistic equation. The general form
+      of the logistic equation is 
+      <me>
+        \frac{dp}{dt} = cp(p-K)
+      </me> 
+      for some constants <m>c</m> and <m>K</m> with <m>K \gt 0</m>.
+      The logistic equation leads to logistic growth.  logistic
+      growth, <m>p = K</m> is always a steady state and the starting
+      values of the population always want to revert to this steady
+      state. <m>K</m> is called the <term>carrying capacity</term> of
+      the population. From below, the population wants to grow up to
+      the carrying capacity. From above, the population wants to decay
+      down to the carrying capacity.  After exponential growth,
+      logistic growth is the most commonly used model for populations.
+      <xref ref="figure-exponential-growth" /> shows both exponential
+      and logistic growth (where the carrying capacity for the
+      logistic model is at <m>p=6</m>.)
+    </p>
+    <example>
+      <statement>
+        <figure xml:id="figure-phase-line2">
+          <caption>
+            Phase Line Diagram for <m>\frac{dp}{dt} = p^3 - 7p^2 +
+            10p</m>
+          </caption>
+          <image xml:id="figure05" width="80%">
+            <asymptote>
+              size(16cm,0);
+              dot("$0$",(0,0),N);
+              dot("$2$",(2,0),N);
+              dot("$5$",(5,0),N);
+              dot("$\infty$",(10,0),N);
+              draw((0,0)--(2,0),MidArrow);
+              draw((5,0)--(2,0),MidArrow);
+              draw((5,0)--(10,0),MidArrow);
+            </asymptote>
+          </image>
+        </figure>
+        <p>
+          <me>
+            \frac{dp}{dt} = p^3 -7p^2 + 10p
+          </me>
+          The right side factors as <m>p(p-2)(p-5)</m>, so it is zero
+          then <m>p=0</m>, <m>p=2</m> or <m>p=5</m>. Those are the
+          steady states. When <m>p \in (0,4)</m> the derivative is
+          positive, so the trajectory is increasing. When <m>f \in
+          (2,5)</m>, the derivative is negative, so the trajectory is
+          decreasing. When <m>p \in (5,\infty)</m>, the derivative is
+          positive, so the trajectory is increasing. <xref
+          ref="figure-phase-line2" /> shows the phase line.
+        </p>
+      </statement>
+    </example>
+  </subsection>
+  <subsection xml:id="subsection-direction-fields">
+    <title>Direction Fields</title>
+    <p>
+      If a first order differential equation is not autonomous, then
+      the phase-line is too simple a tool to capture the details.
+      However, if I can solve for the derivative term in the DE, I can
+      write a first order DE in this way, for some expression <m>F</m>
+      in two variables.  
+      <me>
+        \frac{dy}{dx} = F(x,y)
+      </me>
+      This allows a very useful interpretation: the left side is the
+      slope of a graph, the right side is a function on <m>\RR^2</m>,
+      giving a value at every point in the plane. Together, these data
+      determine a slope at every point in the plane.
+    </p>
+    <definition>
+      <statement>
+        <p>
+          A determination of a slope at all point in a subset <m>U</m>
+          of <m>\RR^2</m> is called a <term>direction field</term> or
+          a <term>slope field</term>.
+        </p>
+      </statement>
+    </definition>
+    <p>
+      A direction field give a qualitative sense of the solutions of
+      the differential equation, since those solutions are functions
+      whose graphs must match the direction field. I can even draw
+      curves that following the directions of the direction field.
+      Such curves are called <term>integral curves</term> and they
+      give a good picture of the expected solutions. This is best seen
+      in examples. The first example is an autonomous equation, just
+      to show that I can also apply this more complicated technique to
+      autonomous equations. The examples following give direction
+      fields and qualitative analysis for equations I already
+      discussed in <xref ref="subsection-interesting-examples" />. 
+    </p>
+    <example>
+      <statement>
+        <figure xml:id="figure-direction-field1">
+          <caption>
+            The Direction Field for <m>\frac{dy}{dx} = y</m>.
+          </caption>
+          <image xml:id="figure06" width="80%">
+            <asymptote>
+              size(10cm,0);
+              import contour;
+              import stats;
+              import graph;
+    
+              xlimits( -1, 5);  
+              ylimits( -2, 2);  
+              yaxis("$y$");
+              xaxis("$x$");
+    
+              path vector(pair z) {return
+              (0,0)--(1/(sqrt(1+(z.y)^2)),z.y/(sqrt(1+(z.y)^2)));}
+    
+              add(vectorfield(vector,(-1,-2),(5,2)));
+            </asymptote>
+          </image>
+        </figure>
+        <figure xml:id="figure-direction-field1-curves">
+          <caption>
+            The Integral Curves for <m>\frac{dy}{dx} = y</m>.
+          </caption>
+          <image xml:id="figure07" width="80%">
+            <asymptote>
+              size(10cm,0);
+              import contour;
+              import stats;
+              import graph;
+    
+              xlimits( -1, 5);  
+              ylimits( -2, 2);  
+              yaxis("$y$");
+              xaxis("$x$");
+    
+              real f(real x, real y) {return y*exp(-1*x);}
+    
+              real[] value=uniform(-0.5,0.5,20);
+    
+              draw(contour(f,(-1,-2),(5,2),value));
+    
+              path vector(pair z) {return
+              (0,0)--(1/(sqrt(1+(z.y)^2)),z.y/(sqrt(1+(z.y)^2)));}
+    
+              add(vectorfield(vector,(-1,-2),(5,2)));
+            </asymptote>
+          </image>
+        </figure>
+        <p>
+          <me>
+            \frac{dy}{dx} = y
+          </me>
+          The slope at a point <m>(x,y)</m> is <m>y</m>, so the slope
+          at <m>(3,4)</m> is <m>4</m>, the slope at <m>(-2,-3)</m> is
+          <m>-3</m> and the slope at <m>(32,0)</m> is <m>0</m>. <xref
+          ref="figure-direction-field1" /> shows the direction field.
+        </p>
+        <p>
+          The solutions must fit the direction field. Therefore,
+          if I can draw and understand the direction field, I get a
+          sense of the solutions. Notice that since the direction
+          field fills <m>\RR^2</m> (or a portion of it), I expect an
+          infinite family of graphs of functions to match all the
+          slopes. <xref ref="figure-direction-field1" /> shows the
+          graphs of the infinite family of solutions.
+        </p>
+      </statement>
+    </example>
+    <example>
+      <statement>
+        <figure xml:id="figure-direction-field2">
+          <caption>
+            The Direction Field for <m>\frac{dy}{dx} = x \sqrt{y}</m>.
+          </caption>
+          <image xml:id="figure08" width="80%">
+            <asymptote>
+              size(10cm,0);
+              import contour;
+              import stats;
+              import graph;
+
+              xlimits( -5, 5);  
+              ylimits( 0, 5);  
+              yaxis("$y$");
+              xaxis("$x$");
+
+              path vector(pair z) {return
+              (0,0)--(1/(sqrt(1+(z.x*sqrt(z.y))^2))
+              ,(z.x*sqrt(z.y))/(sqrt(1+(z.x*sqrt(z.y))^2)));}
+              
+              add(vectorfield(vector,(-5,0),(5,5)));
+            </asymptote>
+          </image>
+        </figure>
+        <figure xml:id="figure-direction-field2-curves">
+          <caption>
+            The Integral Curves for <m>\frac{dy}{dx} = x \sqrt{y}</m>.
+          </caption>
+          <image xml:id="figure09" width="80%">
+            <asymptote>
+              size(10cm,0);
+              import contour;
+              import stats;
+              import graph;
+
+              xlimits( -5, 5);  
+              ylimits( 0, 5);  
+              yaxis("$y$");
+              xaxis("$x$");
+    
+              real f(real x, real y) {return sqrt(y) - (x^2)/4;}
+        
+              real[] value=uniform(-4,4,20);
+    
+              draw(contour(f,(-5,0),(5,5),value));
+    
+              path vector(pair z) {return
+              (0,0)--(1/(sqrt(1+(z.x*sqrt(z.y))^2))
+              ,(z.x*sqrt(z.y))/(sqrt(1+(z.x*sqrt(z.y))^2)));}
+    
+              add(vectorfield(vector,(-5,0),(5,5)));
+            </asymptote>
+          </image>
+        </figure>
+        <p>
+          <me>
+            \frac{dy}{dx} = x \sqrt{y}
+          </me>
+          <xref ref="figure-direction-field2" /> shows the direction
+          field and the infinite family of solutions. I can see the
+          entire family <m>y = (\frac{x^2}{4} + c)^2</m>, but I also
+          see the singular solution <m>y=0</m>.
+        </p>
+      </statement>
+    </example>
+    <example>
+      <statement>
+        <figure xml:id="figure-direction-field3">
+          <caption>
+            The Direction Field for <m>\frac{dy}{dx} = \frac{4y}{x}</m>.
+          </caption>
+          <image xml:id="figure10" width="80%">
+            <asymptote>
+              size(10cm,0);
+              import contour;
+              import stats;
+              import graph;
+    
+              xlimits(-5,5);  
+              ylimits(5,5);  
+              yaxis("$y$");
+              xaxis("$x$");
+    
+              path vector(pair z) {return (0,0)--(1/(sqrt(1 +
+              (4*z.y/z.x)^2)), (4*z.y/z.x) /(sqrt(1 +
+              (4*z.y/z.x)^2)));}
+
+              add(vectorfield(vector,(-5,-5),(-1,5)));
+              add(vectorfield(vector,(1,-5),(5,5)));
+            </asymptote>
+          </image>
+        </figure>
+        <figure xml:id="figure-direction-field3-curves">
+          <caption>
+            The Integral Curves for <m>\frac{dy}{dx} = \frac{4y}{x}</m>.
+          </caption>
+          <image xml:id="figure11" width="80%">
+            <asymptote>
+              size(10cm,0);
+              import contour;
+              import stats;
+              import graph;
+    
+              xlimits(-5,5);  
+              ylimits(5,5);  
+              yaxis("$y$");
+              xaxis("$x$");
+
+              real f(real x, real y) {return y/(x^4);}
+              
+              real[] value=uniform(-0.1,0.1,20);
+    
+              draw(contour(f,(-5,-5),(-0.01,5),value));
+              draw(contour(f,(0.01,-5),(5,5),value));
+    
+              path vector(pair z) {return (0,0)--(1/(sqrt(1 +
+              (4*z.y/z.x)^2)), (4*z.y/z.x) /(sqrt(1 +
+              (4*z.y/z.x)^2)));}
+
+              add(vectorfield(vector,(-5,-5),(-1,5)));
+              add(vectorfield(vector,(1,-5),(5,5)));
+            </asymptote>
+          </image>
+        </figure>
+        <p>
+          <me>
+            \frac{dy}{dx} = \frac{4y}{x}
+          </me>
+          There is a family of solutions <m>y = cx^4</m> which fits
+          the direction field. The singular solutions are put
+          together from one positive and one negative piece. <xref
+          ref="figure-direction-field3" /> shows the direction field
+          and the infinite family of solutions.
+        </p>
+      </statement>
+    </example>
+    <example>
+      <statement>
+        <figure xml:id="figure-direction-field4">
+          <caption>
+            The Direction Field for <m>\frac{dy}{dx} = xy</m>.
+          </caption>
+          <image xml:id="figure12" width="80%">
+            <asymptote>
+              size(10cm,0);
+              import contour;
+              import stats;
+              import graph;
+    
+              xlimits(-5,5);  
+              ylimits(5,5);  
+              yaxis("$y$");
+              xaxis("$x$");
+    
+              path vector(pair z) {return (0,0)--(1/(sqrt(1 +
+              (z.x*z.y)^2)), (z.x*z.y)/(sqrt(1 + (z.x*z.y)^2)));}
+
+              add(vectorfield(vector,(-5,-5),(-1,5)));
+              add(vectorfield(vector,(1,-5),(5,5)));
+            </asymptote>
+          </image>
+        </figure>
+        <figure xml:id="figure-direction-field4-curves">
+          <caption>
+            The Integral Curves for <m>\frac{dy}{dx} = xy</m>.
+          </caption>
+          <image xml:id="figure13" width="80%">
+            <asymptote>
+              size(10cm,0);
+              import contour;
+              import stats;
+              import graph;
+
+              xlimits(-5,5);  
+              ylimits(5,5);  
+              yaxis("$y$");
+              xaxis("$x$");
+
+              real f(real x, real y) {return y/(exp(x^2));}
+    
+              real[] value=uniform(-1,1,20);
+    
+              draw(contour(f,(-5,-5),(-0.01,5),value));
+              draw(contour(f,(0.01,-5),(5,5),value));
+    
+              path vector(pair z) {return (0,0)--(1/(sqrt(1 +
+              (z.x*z.y)^2)), (z.x*z.y)/(sqrt(1 + (z.x*z.y)^2)));}
+
+              add(vectorfield(vector,(-5,-5),(-1,5)));
+              add(vectorfield(vector,(1,-5),(5,5)));
+            </asymptote>
+          </image>
+        </figure>
+        <p>
+          <me>
+            \frac{dy}{dx} = xy
+          </me>
+          This is solved by <m>y = ce^{x^2}</m>, including <m>c=0</m>
+          for <m>y=0</m> as a trivial solution. The direction field
+          also shows the stability behaviour of the function: in this
+          case, the functions grows very quickly away from the origin
+          except for the stable and trivial <m>y=0</m> solution.
+          <xref ref="figure-direction-field4" /> shows the direction
+          field and the infinite family of solutions.
+        </p>
+      </statement>
+    </example>
+    <example>
+      <statement>
+        <figure xml:id="figure-direction-field5">
+          <caption>
+            The Direction Field for <m>\frac{dy}{dx} = \frac{x}{y}</m>.
+          </caption>
+          <image xml:id="figure14" width="80%">
+            <asymptote>
+              size(10cm,0);
+              import contour;
+              import stats;
+              import graph;
+
+              xlimits(-3,3);  
+              ylimits(3,3);  
+              yaxis("$y$");
+              xaxis("$x$");
+
+              path vector(pair z) {return (0,0)--(1/(sqrt(1 +
+              (-1*z.x/z.y)^2)), (-1*z.x/z.y)/(sqrt(1 +
+              (-1*z.x/z.y)^2)));}
+
+              add(vectorfield(vector,(-3,-3),(3,-0.1)));
+              add(vectorfield(vector,(-3,0.1),(3,3)));
+            </asymptote>
+          </image>
+        </figure>
+        <figure xml:id="figure-direction-field5-curves">
+          <caption>
+            The Integral Curves for <m>\frac{dy}{dx} = \frac{x}{y}</m>.
+          </caption>
+          <image xml:id="figure15" width="80%">
+            <asymptote>
+              size(10cm,0);
+              import contour;
+              import stats;
+              import graph;
+    
+              xlimits(-3,3);  
+              ylimits(3,3);  
+              yaxis("$y$");
+              xaxis("$x$");
+    
+              real f(real x, real y) {return y^2+x^2;}
+    
+              real[] value=uniform(0,9,20);
+    
+              draw(contour(f,(-3,-3),(3,3),value));
+    
+              path vector(pair z) {return (0,0)--(1/(sqrt(1 +
+              (-1*z.x/z.y)^2)), (-1*z.x/z.y)/(sqrt(1 +
+              (-1*z.x/z.y)^2)));}
+
+              add(vectorfield(vector,(-3,-3),(3,-0.1)));
+              add(vectorfield(vector,(-3,0.1),(3,3)));
+            </asymptote>
+          </image>
+        </figure>
+        <p>
+          <me>
+            \frac{dy}{dx} = -\frac{x}{y}
+          </me>
+          This is solved by <m>y = \pm \sqrt{c-x^2}</m>, which gives a
+          series of circles. The direction field shows the bounded,
+          relatively stable behaviour which is confirmed by the
+          solutions. Notice that these solution have finite domains:
+          I am not guaranteed solutions with domains that include all
+          real numbers. <xref ref="figure-direction-field5" /> shows
+          the direction field and the infinite family of solutions.
+        </p>
+      </statement>
+    </example>
+  </subsection>
+</section>

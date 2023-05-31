@@ -1,0 +1,141 @@
+<section xml:id="section-laplace-properties">
+  <title>Properties of the Laplace Transform</title>
+  <subsection xml:id="subsection-first-properties">
+    <title>First Properties</title>
+    <proposition>
+      <statement>
+        <p>
+          The Laplace transform (like all reasonable operations in
+          analysis) is linear.
+          <md>
+            <mrow>
+              \calL \{ f+ g \} \amp = \calL \{ f \} + \calL \{ g \}
+            </mrow>
+            <mrow>\
+              \calL \{ c f(t)\} \amp = c \calL \{ f \}
+            </mrow>
+          </md>
+        </p>
+      </statement>
+    </proposition>
+    <p>
+      As I will demonstrate, the Laplace transform is not
+      multiplicative. There is no good, general way to deal with 
+      (<m>\calL \{ fg \}</m>), though particular product have
+      identities which I will show later. 
+    </p>
+    <p>
+      Second, the asymptotic order of <m>f</m> was important to
+      allowing the definition of the Laplace transform. However, all
+      the transforms I've shown so far produce decaying functions. This
+      is a general statment: for any function <m>f(t)</m> of
+      exponential order <m>c > 0</m>, it is true that
+      <me>
+        \lim_{s \rightarrow \infty} \calL \{ f(t) \} (s) = 0
+      </me>.
+      This property is a useful check: if you ever get a Laplace
+      transform which doesn't have this limit, you've made a mistake.
+    </p>
+    <p>
+      For same students who like linear algebra, I can use linear
+      algebra language to describe the Laplace transform. Let
+      <m>EOF(0,\infty)</m> be the space of piecewise-continuous
+      functions of exponential order defined on <m>(0, \infty)</m>
+      (<m>EOF</m> for exponential order functions). Let <m>DF^+</m>
+      be the set of continuous functions which are defined on <m>(a,
+      \infty)</m> for some <m>a > 0</m> and have limit <m>0</m> as
+      <m>s \rightarrow \infty</m> (DF for decay functions). These are
+      both linear spaces, since addition, subtraction and
+      multiplication by constants preserve the properties of
+      definition. The the Laplace transform is a linear
+      transformation between these vector spaces.
+      <me>
+        \calL : EOF(0,\infty) \rightarrow DF^+
+      </me>
+    </p>
+  </subsection>
+  <subsection xml:id="subsection-shifts">
+    <title>Shifts</title>
+    <p>
+      One of the product that does work well for Laplace transforms is
+      multiplication by exponential functions.
+    </p>
+    <proposition>
+      <statement>
+        <p>
+          <md>
+            <mrow>
+              \calL \{ e^{at} f(t) \} (s) \amp = \int_0^\infty e^{at}
+              f(t) e^{-st} dt
+            </mrow>
+            <mrow>
+              \amp = \int_0^\infty f(t) e^{at-st} dt = \int_0^\infty
+              f(t) e^{(a-s)t} dt
+            </mrow>
+            <mrow>
+              \amp = \calL \{ f(t) \} (s-a)
+            </mrow>
+          </md>
+          Multiplication by <m>e^{at}</m> in the <m>t</m> domain
+          results in a shift by <m>a</m> in the <m>s</m> domain. This
+          also adjust the domain of <m>s</m>, reflected the fact that
+          multiplication by <m>e^{at}</m> adjusts the exponential
+          order.
+        </p>
+      </statement>
+    </proposition>
+    <p>
+      Shifts are quite important in the whole theory.  What happens
+      when the shift is in the <m>t</m> domain?
+    </p>
+    <definition>
+      <statement>
+        <p>
+          The <term>unit step function</term> <m>u_a(t)</m> is a
+          piecewise function defined as follows. 
+          <me>
+            u_a(t) = \left\{ \begin{matrix} 0 \amp t \lt  a \\ 1 \amp
+            t \geq a. \end{matrix} \right.
+          </me>
+        </p>
+      </statement>
+    </definition>
+    <p>
+      The unit step function multiplied by some other function
+      (<m>u_a(t) f(t)</m>) cancels any part of
+      <m>f</m> for <m>t\lt a</m>, but preserves <m>f</m> for <m>t \geq
+      a</m>. To define a shift of <m>f</m>, I can write <m>u_a(t)
+      f(t-a)</m> to remove anything before <m>t=0</m> from <m>f</m>.
+      (Remember that piecewise continuous functions work with
+      Laplace transforms.) I calculate to find the result of this
+      shift in the <m>t</m>-domain.
+      <md>
+        <mrow>
+          \calL \{ u_a(t) \} (s) \amp = \int_0^\infty u_a(t) e^{-st}
+          dt = \int_a^\infty e^{-st} dt
+        </mrow>
+        <mrow>
+          \amp = \left. \frac{-e^{-st}}{s} \right|_a^\infty =
+          \frac{e^{-as}}{s}
+        </mrow>
+        <mrow>
+          \calL \{ u_a (t) f(t-a)\} (s) \amp = \int_a^\infty e^{-st}
+          f(t-a) dt
+        </mrow>
+        <mrow>
+          v \amp = t-a
+        </mrow>
+        <mrow>
+          \amp = \int_0^\infty e^{-s(v+a)} f(v) dv = e^{-sa}
+          \int_0^\infty e^{-sv} f(v) dv
+        </mrow>
+        <mrow>
+          \amp = e^{-sa} \calL \{ f(t) \} (s) = e^{-sa} F(s)
+        </mrow>
+      </md>
+      There is a nice parallel here, though it's not a perfect
+      symmetry. Shifts in one domain correspond to multiplication by
+      exponentials in the other domain.
+    </p>
+  </subsection>
+</section>

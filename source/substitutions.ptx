@@ -1,0 +1,358 @@
+<section xml:id="section-substitutions">
+  <title>Substitutions</title>
+  <introduction>
+    <p>
+      The third and final technique I will present for first order DEs
+      is substitution. At some level, solving DEs is a more
+      complicated and involved version of doing integrals, since the
+      process is trying to undo the results of differentiation.
+      Substitution is the most common and important technique for
+      solving integrals. It takes complicated integrals and changes
+      their setup to make them more approachable. The technique is
+      exactly the same here: I change the DE with some substitution
+      operation to turn it into something I already know how to do.
+      As with substitution for integrals, I can recognize some typical
+      forms, but many others require creativity and ingenuity to
+      solve. In this section, I'll introduce two forms which use
+      substitution, just as examples of how the techinque works.
+      Thoughout the wide study of differential equations, a host of
+      different substitutions can occur.
+    </p>
+  </introduction>
+  <subsection xml:id="subsection-homogeneous">
+    <title>Homogeneous DEs</title>
+    <p>
+      The first substitution is for a class of DEs called homogenous
+      equations. Unfortunately, this is a terrible term: this
+      <sq>homogeneous</sq> has <em>nothing</em> to do with the
+      previous use of the term for linear equations. The word here
+      comes from a different use of the term in algebra. This is
+      deeply confusing and unfortunate, but it is the situation. In
+      any case, a homogenous DE has the following form.
+      <me>
+        \frac{dy}{dt} = f \left( \frac{y}{t} \right)
+      </me>
+      The substitution that simplifies these equations is <m>v =
+      \frac{y}{t}</m>. The right side of the equation easily turns
+      into <m>f(v)</m>, but the transformation of the left side is
+      trickier. Let me do some algebra to try to demonstrate it.
+      First, in the substitution I can solve for <m>y</m>. Then I can
+      differentiate this expression in <m>t</m>. 
+      <md>
+        <mrow>
+          y \amp = tv
+        </mrow>
+        <mrow>
+          \frac{d}{dt} y \amp = \frac{d}{dt} tv = v + t \frac{dv}{dt} 
+        </mrow>
+      </md>
+      Now I have an expression that I can use to replace the left
+      side. Changing both the left and the right sides gives a new
+      differential equation in the new function <m>v(t)</m>.
+      <me>
+        v + t \frac{dv}{dt} = f(v) 
+      </me>
+      Now I solve for <m>\frac{dv}{dt}</m> to put this new DE in a
+      conventional form. 
+      <me>
+        \frac{dv}{dt} = \frac{f(v) - v}{t} 
+      </me>
+      This is now a separable equation. The substitution has changed a
+      potentially strange and difficult equation into one I know how
+      to do from a previous techique. 
+    </p>
+    <example>
+      <statement>
+        <p>
+          This example is already a separable equation, so I don't
+          really need the technique of substitution. However is it a
+          nice, relatively easy example to show how this kind of
+          substitution works.
+          <md>
+            <mrow>
+              \frac{dy}{dt} \amp = \frac{t}{y}
+            </mrow>
+            <mrow>
+              v \amp = \frac{y}{t}
+            </mrow>
+            <mrow>
+              f(v) \amp = \frac{1}{v}
+            </mrow>
+            <mrow>
+              \frac{dv}{dt} \amp = \frac{\frac{1}{v} - v}{t}
+            </mrow>
+          </md>
+          This is the new seperable equation. I'll solve it in the
+          conventional method. 
+          <md>
+            <mrow>
+              \int \frac{v}{1-v^2} dv \amp = \ln |t| + c
+            </mrow>
+            <mrow>
+              \frac{-1}{2} \ln |1-v^2| \amp = \ln |t| + C
+            </mrow>
+            <mrow>
+              \frac{1}{\sqrt{1-v^2}} \amp = ct
+            </mrow>
+            <mrow>
+              \sqrt{1-v^2} \amp = \frac{c}{t}
+            </mrow>
+            <mrow>
+              1-v^2 \amp = \frac{c}{t^2}
+            </mrow>
+            <mrow>
+              v^2 \amp = 1 - \frac{c}{t^2}
+            </mrow>
+            <mrow>
+              v \amp = \pm \sqrt{ 1 - \frac{c}{t^2}}
+            </mrow>
+          </md>
+          After solving the separable equation, now I reverse the
+          substitution and try to solve for the original function
+          <m>y</m>. 
+          <md>
+            <mrow>
+              \frac{y}{t} \amp = \pm \sqrt{ 1 - \frac{c}{t^2}}
+            </mrow>
+            <mrow>
+              y \amp = \pm t \sqrt{1 - \frac{c}{t^2}} = \pm \sqrt{t^2
+              - c}
+            </mrow>
+          </md>
+        </p>
+      </statement>
+    </example>
+    <example>
+      <statement>
+        <p>
+          <me>
+            \frac{dy}{dt} = \frac{-y^2 - yt }{t^2} = \frac{-y^2}{t^2}
+            - \frac{y}{t}
+          </me>
+          This is a homogeneous equation, so I set up the
+          substitution. 
+          <md>
+            <mrow>
+              v \amp = \frac{y}{t}
+            </mrow>
+            <mrow>
+              f(v) \amp = -v^2 -v
+            </mrow>
+            <mrow>
+              \frac{dv}{dt} \amp = \frac{f(v) - v}{t} = \frac{-v^2 -v
+              -v}{t} = \frac{-v^2 - 2v}{t}
+            </mrow>
+          </md>
+          Now I have my separable equation, which I proceed to
+          solve. This isn't the easiest separable equation. On the
+          left, in the <m>v</m> integral, I need to use partial
+          fractions to break up the rational function into easier
+          pieces. 
+          <md>
+            <mrow>
+              \int \frac{dv}{-v^2-2v} \amp = \int \frac{dt}{t} = \ln
+              |t| + c
+            </mrow>
+            <mrow>
+              \frac{1}{-v^2 - 2v} \amp = \frac{-1}{v(2+v)} =
+              \frac{1}{2} \frac{1}{v+2} + \frac{-1}{2} \frac{1}{v}
+            </mrow>
+          </md>
+          After partial fractions, I can proceed with the left
+          integral. After the integral, there is a series of algebraic
+          steps to try to isolate <m>v</m>.
+          <md>
+            <mrow>
+              \frac{1}{2} \int \frac{dv}{v+2} + \frac{-1}{2} \int
+              \frac{dv}{v} \amp = \ln |t| + c
+            </mrow>
+            <mrow>
+              \frac{1}{2} \ln |v+2| + \frac{-1}{2} \ln |v| \amp = \ln
+              |t| + c
+            </mrow>
+            <mrow>
+              \ln |v+2|^{\frac{1}{2}} + \ln |v|^\frac{-1}{2} \amp =
+              \ln |t| + c
+            </mrow>
+            <mrow>
+              \sqrt{1 + \frac{2}{v}} \amp = ct
+            </mrow>
+            <mrow>
+              1 + \frac{2}{v} \amp = ct^2
+            </mrow>
+            <mrow>
+              \frac{2}{v} \amp = ct^2 -1
+            </mrow>
+            <mrow>
+              v \amp = \frac{2}{ct^2 -1}
+            </mrow>
+          </md>
+          Finally, after <m>v</m> is isolated, the substitution can be
+          reversed to find the final answer. 
+          <md>
+            <mrow>
+              \frac{y}{t} \amp = \frac{2}{ct^2 - 1}
+            </mrow>
+            <mrow>
+              y \amp = \frac{2t}{ct^2 -1}
+            </mrow>
+          </md>
+        </p>
+      </statement>
+    </example>
+  </subsection>
+  <subsection xml:id="subsection-bernoulli">
+    <title>Bernoulli Equations</title>
+    <p>
+      The other substitution I want to present is for a class of DEs
+      called Bernoulli equations. These equations are nearly linear,
+      but they have an extra <m>y^n</m> term. They are written in a
+      form very similar to the form for linear DEs. 
+      <me>
+        \frac{dy}{dt} + P(t) y = Q(t) y^n
+      </me>.
+      The substitution that simplifies a Bernoulli equation is <m>v =
+      y^{1-n}</m>. Be careful: this is <m>y^{1-n}</m>, not
+      <m>y^{n-1}</m>. It's a very easy mistake to get this exponent
+      wrong. I transform the DE by looking at the following
+      derivations.
+      <md>
+        <mrow>
+          \frac{dv}{dt} \amp = (1-n) y^{1-n-1} \frac{dy}{dt} =
+          (1-n)y^{-n} \frac{dy}{dt}
+        </mrow>
+        <mrow>
+          \amp = (1-n)y^{-n} \left( Q(t) y^n - P(t) y \right) 
+        </mrow>
+        <mrow>
+          \amp = (1-n) Q(t) - (1-n) P(t) y^{1-n}
+        </mrow>
+        <mrow>
+          \amp = (1-n) Q(t) - (1-n) P(t) v
+        </mrow>
+        <mrow>
+          \frac{dv}{dt} + (1-n)v P(t) \amp = (1-n) Q(t)
+        </mrow>
+      </md>
+      This is now a linear equation in <m>v</m>. I can solve it as a
+      linear equation in <m>v</m> and then use the reverse
+      substitution to get back to <m>y</m>.
+    </p>
+    <example>
+      <statement>
+        <p>
+          <md>
+            <mrow>
+              \frac{dy}{dt} - \frac{1}{2} \frac{y}{t} \amp = -e^t y^3
+            </mrow>
+            <mrow>
+              n \amp =3
+            </mrow>
+            <mrow>
+              v \amp = y^{-2}
+            </mrow>
+            <mrow>
+              \frac{dv}{dt} - (-2) v \frac{1}{2t} \amp = -2 (-e^t) = 2e^t
+            </mrow>
+            <mrow>
+              \frac{dv}{dt} + \frac{v}{t} \amp = 2e^t
+            </mrow>
+          </md>
+          This is a familiar linear equation which was solved in <xref
+          ref="example-linear1" /> Instead of repeating that solution,
+          I'll use the result from the previous example. After solving
+          the linear DE, I reverse the substitution and solve for
+          <m>y</m> to get the final result. 
+          <md>
+            <mrow>
+              v \amp = 2e^t \left( 1 + \frac{1}{t} \right) + \frac{c}{t}
+            </mrow>
+            <mrow>
+              y^{-2} \amp = 2e^t \left( 1 + \frac{1}{t} \right) +
+              \frac{c}{t}
+            </mrow>
+            <mrow>
+              y \amp = \left( 2e^t \left( 1 + \frac{1}{t} \right) +
+              \frac{c}{t} \right)^{\frac{-1}{2}}
+            </mrow>
+            <mrow>
+              y \amp = \frac{\pm1}{\sqrt{2e^t \left( 1 + \frac{1}{t}
+              \right) + \frac{c}{t}}}
+            </mrow>
+          </md>
+        </p>
+      </statement>
+    </example>
+    <example>
+      <statement>
+        <p>
+          <md>
+            <mrow>
+              \frac{dy}{dt} \amp = y(ty^3 -1) = -y + ty^4 
+            </mrow>
+            <mrow>
+              \frac{dy}{dt} + y \amp = ty^4 
+            </mrow>
+            <mrow>
+              n = 4
+            </mrow>
+            <mrow>
+              v = y^{1-4} = y^{-3} 
+            </mrow>
+            <mrow>
+              P(t) \amp = -3
+            </mrow>
+            <mrow>
+              Q(t) \amp = -3t
+            </mrow>
+          </md>
+          These are the setup pieces. I can now write the associated
+          linear DEs. 
+          <md>
+            <mrow>
+              \frac{dv}{dt} - 3v \amp = -3t
+            </mrow>
+          </md>
+          Now I solve the linear DE in the standard method, by
+          calculating the integrating factor, multiplying by the
+          integrating factor and treating the left side of the
+          equation as a product rule derivative. 
+          <md>
+            <mrow>
+              \mu(t) \amp = e^{\int P(t) dt} = e^{-3t}
+            </mrow>
+            <mrow>
+              \frac{d}{dt} e^{-3t} v \amp = -3t e^{-3t}
+            </mrow>
+            <mrow>
+              e^{-3t} v \amp = \int -3t e^{-3t} dt = -3 \left(
+              \frac{te^{-3t}}{-3} - \int \frac{e^{-3t}{-3}} dt
+              \right)
+            </mrow>
+            <mrow>
+              e^{-3t} v \amp = t e^{-3t} - \int e^{-3t} dt = t
+              e^{-3t} + \frac{e^{-3t}}{3} + c
+            </mrow>
+            <mrow>
+              v = \amp t + \frac{1}{3} + ce^{3t} = \frac{3t + 1 +
+              ce^{3t}}{3}
+            </mrow>
+          </md>
+          Now I reverse the substitution and try to solve for the
+          original function. 
+          <md>
+            <mrow>
+              y^{-3} \amp = \frac{3t + 1 + ce^{3t}}{3}
+            </mrow>
+            <mrow>
+              y^3 \amp = \frac{3}{3t + 1 + ce^{3t}}
+            </mrow>
+            <mrow>
+              y \amp = \sqrt[3]{\frac{3}{3t + 1 + ce^{3t}}}
+            </mrow>
+          </md>
+        </p>
+      </statement>
+    </example>
+  </subsection>
+</section>

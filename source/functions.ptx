@@ -1,0 +1,107 @@
+<section xml:id="section-functions">
+  <title>Functions</title>
+  <p>
+    This is a course about function, of course, since the solution of
+    a differential equation is a function. This preliminary section is
+    here to remind you of some definition and notations that will be
+    useful in the course. First, there is some useful notation for
+    sets of function on an interval. 
+  </p>
+  <definition>
+    <statement>
+      <p>
+        Let <m>A</m> be the <m>\RR</m> or an interval subset of <m>\RR</m>.
+      </p>
+      <p><ul>
+        <li>
+          <m>C(A)</m> is the set of continuous real-valued function on
+          <m>A</m>.
+        </li>
+        <li>
+          <m>C^1(A)</m> is the set of continuously differentiable
+          functions on <m>A</m>.
+        </li>
+        <li>
+          <m>C^n(A)</m> is the set of functions on <m>A</m> with
+          <m>n</m> continuous derivatives.
+        </li>
+        <li>
+          <m>C^\infty(A)</m> is the set of infinitly differentiable
+          functions on <m>A</m>.
+        </li>
+      </ul></p>
+    </statement>
+  </definition>
+  <p>
+    I cannot always expect continuous solutions to differential
+    equations. However, almost all of the solutions in this course
+    will be at least piecewise-continuous. That definition is worth
+    reviewing. 
+  </p>
+  <definition>
+    <statement>
+      <p>
+        Let <m>A</m> be a subset of <m>\RR</m>. A function <m>f:A
+        \rightarrow \RR</m> is <term>piecewise-continuous</term> on
+        <m>A</m> if it continous everywhere on <m>A</m> except for a
+        set of isolated point. Likewise, <m>f</m> is
+        <term>piecewise-differentiable</term> on <m>A</m> if it
+        differentiable everywhere on <m>A</m> except for a set of
+        isolated points. Note that <m>A</m> is the domain of the
+        function: these piecewise functions can have jumps or break,
+        but they are defined on all of <m>A</m>. They cannot have,
+        for example, asymptotes at these isolated points.
+      </p>
+    </statement>
+  </definition>
+  <p>
+    There are many exponential functions in this course, since
+    exponential functions solve many important differential equations.
+    As in other calculus courses, I almost exclusively use the base
+    <m>e</m> in this course, since it is the easiest base for
+    derivatives and integrals. Since any other base <m>a^t</m> can be
+    written <m>a^t = e^{\ln a t}</m>, I will very frequently work with
+    functions of the form <m>e^{\alpha t}</m> for some <m>\alpha \in
+    \RR</m>. You can expect that typical exponential function to have
+    this form. 
+  </p>
+  <p>
+    In <xref ref="section-existence-and-uniqueness" />, it will be
+    necessary to talk about functions of two variables. The study of
+    those functions is covered in Calculus III, but since that course
+    is not prerequisite to this material, I should say a little bit
+    about such functions. A function <m>F(x,y)</m> of two variables is
+    an expression in the two variables; alternatively, it is a model
+    which depends on two different independent quantities. 
+  <p>
+  </p>
+    Such function inherent many properties of ordinary function by
+    treating each variable individually. That is, if I momentarily
+    pretent that <m>y</m> is just some constant, I can think of
+    <m>F(x,y)</m> as a single variable function of <m>x</m>; and
+    vice-versa when I think of <m>x</m> momentarily as a constant. 
+    This perspective gives the two properties that I will need in this
+    course. 
+  </p>
+  <definition>
+    <statement>
+      <p>
+        A function <m>F(x,y)</m> of two variables is
+        <term>continuous</term> when it is continuous in each variable
+        independently. Likewise, it is differentiable if is
+        differentiable in each variable independently. Moreover, I can
+        actually take derivatives this way. I can pretend that <m>y</m>
+        is momentarily constant and differentiate in <m>x</m>; or vice
+        versa when I pretend that <m>x</m> is momentarily constant and
+        I differentiate in <m>y</m>. These derivatives are called
+        <term>partial derivatives</term>. The notation for partial
+        derivatives is an adjustment of the usual Leibniz notation.
+        <md>
+          <mrow>
+            \amp \frac{\del f}{\del x} \amp \amp \frac{\del f}{\del y} 
+          </mrow>
+        </md>
+      </p>
+    </statement>
+  </definition>
+</section>

@@ -1,0 +1,475 @@
+<section xml:id="section-resonance">
+  <title>Resonance</title>
+  <introduction>
+    <p>
+      The discussion <xref ref="section-undetermined-coefficients" />
+      about the similarity between forcing terms and the homogeneous
+      solutions leads into the subject of resonance in harmonic
+      sequences. The question of resonance is this: is there a
+      particular frequency for an external force on a harmonic system
+      which produces the strongest effect? 
+    </p>
+    <p>
+      This is an important question in a number of situations. In
+      audio design and acoustics, an engineer may want to design
+      explicitly for resonance. In the safety of structures, an
+      engineer would like to ensure that resonant behaviour is
+      impossible.
+    </p>
+    <p>
+      I'll start with the SOCCLDE describing an underdamped harmonic
+      system. (Underdamped is necessary to allow for the possibility
+      of resonance, as the calculations will show). Recall that
+      for harmonic systems, the coefficients can be identified as mass
+      <m>m</m>, spring constant <m>k</m>, coefficient of friction
+      <m>b</m> and forcing <m>f(t)</m>.
+      <me>
+        m y^{\prime \prime} + b y^{\prime} + ky = f(t)
+      </me>
+      Look at the characterstic equation <m>mr^2 + br + k=0</m>. It
+      has solutions
+      <me>
+        r = \frac{-b}{2m} \pm \frac{\sqrt{b^2-4km}}{2m}
+      </me>.
+      I can define a new constant, called the damping constant, to
+      keep track of the behaviour.
+      <me>
+        \zeta \defeq \frac{b}{2\sqrt{km}}
+      </me>
+      The damping constant gives a nice measure of the friction. If
+      <m>\zeta \lt  1</m> then the system is underdamped and there is 
+      sinusoidal behaviour. If <m>\zeta = 1</m> the situation is
+      critically damped and if <m>\zeta > 1</m>, the situation is
+      overdamped; in both cases, there is exponential decay without
+      oscillations. The frictionless case is <m>\zeta = 0</m>. Let me
+      return to the frictionless case for a moment. The solutions when
+      <m>\zeta = 0</m> are
+      <me>
+        y = A \cos \sqrt{\frac{k}{m}} t + B \sin \sqrt{\frac{k}{m}} t
+      </me>.
+      Now I will define a second important constant. 
+      <me>
+        \omega \defeq \sqrt{\frac{k}{m}}
+      </me>
+      This constant is called the natural frequency. It represents
+      the frequency of sinusoidal oscillation in a perfect system
+      without friction. (Note that all of the frequencies in this
+      section are not true frequencies: they are off by a factor of
+      <m>\frac{1}{2\pi}</m>. However, I'll ignore this fact and keep
+      referring to them as frequencies.)
+    </p>
+    <p>
+      Finally, I'll define a third important constant. 
+      <me>
+        \lambda \defeq \frac{b}{2m}
+      </me>
+      If I look back to the underdamped case, the exponential decay
+      term can be written <m>e^{-\lambda t}</m>. Therefore,
+      <m>\lambda</m> is called the decay coefficient. With these new
+      constants, the roots of the characteristic equation become <m>r
+      = -\lambda +\pm \imath \sqrt{\omega^2 - \lambda^2}</m> and I
+      can rewrite the homogeneous differential equation as <me>
+      y^{\prime \prime} + 2\lambda y^\prime + \omega^2 y = 0 </me>.
+      Now return to the idea of a sinusoidal forcing term
+      <m>f(t) = F\sin \gamma t</m> with some frequency <m>\gamma</m>.
+      I want to look at four situations to understand the effect of
+      this force and the possibility of resonance.
+    </p>
+  </introduction>
+  <subsection xml:id="subsection-no-friction-no-forcing">
+    <title>Situation 1: No Friction, No Forcing</title>
+    <p>
+      This is the trivial base case, where the system just oscillates
+      forever with frequency <m>\omega</m>. This frequency is called
+      the natural frequency because it describes the dynamics of this
+      trival base case, even if the ideal frictionless situation isn't
+      particularly natural.
+    </p>
+  </subsection>
+  <subsection xml:id="subsection-no-friction-forcing">
+    <title>Situation 2: No Friction, Forcing</title>
+    <p>
+      The differential equation in this case has the form
+      <me>
+        y^{\prime \prime} + \omega^2 y = F \sin \gamma t
+      </me>.
+      This is something that I can solve with undetermined
+      coefficients in two subcases. In the first sub-case, I assume
+      that <m>\gamma \neq \omega</m>. Then
+      the forcing term is unlike the homogeneous solutions and I can
+      make the following guess for the particular solution.
+      <md>
+        <mrow>
+          y_p \amp = C \sin \gamma t + D \cos \gamma t
+        </mrow>
+      </md>
+        I'll take the derivatives of the particular solution, put them
+        in the differential equation, and compare coefficients to get
+        a system of two equations. 
+      <md>
+        <mrow>
+          y_p^\prime \amp = \gamma C \cos \gamma t - \gamma D \sin
+          \gamma t
+        </mrow>
+        <mrow>
+          y_p^{\prime \prime} \amp = -\gamma^2 C \sin \gamma t -
+          \gamma^2 D \cos \gamma t
+        </mrow>
+        <mrow>
+          Ly_p \amp = (-\gamma^2 C + \omega^2 C) \sin \gamma t +
+          (-\gamma^2 D + \omega^2 D) \cos \gamma t = F \sin \gamma t
+        </mrow>
+        <mrow>
+          -\gamma^2 C + \omega^2 C \amp = F \implies C =
+          \frac{F}{\omega^2 - \gamma^2 }
+        </mrow>
+      </md>
+        The two equations in the system are independent, since the
+        first only <m>C</m> and the second only involves <m>D</m>.
+        I'll solve them each and use the results to write the
+        particular solution. The full solution is then the homogeneous
+        solution (which is case 1 without forcing, so uses the natural
+        frequency <m>\omega</m>) plus this new particular solution. 
+      <md>
+        <mrow>
+          -\gamma^2 D + \omega^2 D \amp = 0 \implies D = 0
+        </mrow>
+        <mrow>
+          y_p \amp = \frac{F}{\omega^2 - \gamma^2} \sin \gamma t
+        </mrow>
+        <mrow>
+          y \amp = A \sin \omega t + B \cos \omega t +
+          \frac{F}{\omega^2 - \gamma^2} \sin \gamma t
+        </mrow>
+      </md>
+      The particular solution is a sine wave with
+      amplitutde <m>\frac{F}{\omega^2 - \gamma^2}</m>. The closer the
+      forcing frequency is to the natural frequency, the greater the
+      amplitude of the resulting oscillation. (The restriction
+      <m>\gamma \neq \omega</m> is also obviously important here to
+      avoid division by zero.) If I impose the initial conditions
+      <m>y(0) = 0</m> and <m>y^\prime(0) = 0</m>, then the system is
+      initially at rest and the only energy in the system comes from
+      the external forcing. In this case, I can calculate that
+      <m>B=0</m> from the first initial condition. The calculation for
+      the second initial condition is as follows.
+      <md>
+        <mrow>
+          y^{\prime} \amp = \omega A \cos \omega t + \frac{\gamma
+          F}{\omega^2 - \gamma^2} \cos \gamma t
+        </mrow>
+        <mrow>
+          y^\prime (0) \amp = A \omega + \frac{\gamma F}{\omega^2 -
+          \gamma^2} = 0 \implies A = \frac{-\gamma F}{\omega(\omega^2
+          - \gamma^2)}
+        </mrow>
+      </md>
+      Then I can write the unique solution for this initial value
+      problems. I do a bit of algebra to write it in common
+      denominator. 
+      <md>
+        <mrow>
+          y \amp = \frac{-\gamma F}{\omega( \omega^2 - \gamma^2)} \sin
+          \omega t + \frac{F}{\omega^2 - \gamma^2} \sin \gamma t =
+          \frac{-\gamma F \sin \omega t + \omega F \sin \gamma
+          t}{\omega (\omega^2 - \gamma^2)}
+        </mrow>
+      </md>
+      Now, to answer the question of resonance, I'll take the limit 
+      of this solution as <m>\gamma \rightarrow \omega</m>. The
+      denominator is undefined, but the numerator also evaluates to
+      <m>0</m>, so I can apply L'Hôpital's rule to calculate the
+      limit. After the derivative of the numerator and the
+      denominator, the resulting limit can be calculated directly. 
+      <md>
+        <mrow>
+          \lim_{\gamma \rightarrow \omega} \frac{-\gamma F \sin \omega
+          t + \omega F \sin \gamma t}{\omega (\omega^2 - \gamma^2)}
+          \amp = \lim_{\gamma \rightarrow \omega} \frac{-F \sin \omega
+          t + \omega t F \cos \gamma t}{-2\gamma \omega}
+        </mrow>
+        <mrow>
+          \amp = \frac{-F \sin \omega t + \omega t F \cos \omega t}{-2
+          \omega^2}
+        </mrow>
+        <mrow>
+          \amp = \frac{F}{2\omega^2} \sin \omega t - \frac{Ft \cos
+          \omega t}{2\omega}
+        </mrow>
+      </md>
+      The result of the limit has a <m>t \cos \omega t</m> term, which
+      is a sinusoidal wave with linear growth in amplitude. The
+      amplidute of the system will grow linearly without bound. This
+      is the ideal (frictionless) understanding of resonance, where
+      the oscillations of the system continue to grow with larger and
+      larger amplitude.
+    </p>
+    <p>
+      This is a justification, if you want, of why multiplying by
+      <m>t</m> gives the particular solutions when there is a forcing
+      term similar to the homogeneous solutions. When <m>\gamma =
+      \omega</m>, the forcing is already a homogeneous solution
+      That's precisely what happens in the resonant case <mdash /> in
+      the limit <m>\gamma \rightarrow \omega</m>. It is also what we
+      would have found if we with <m>\omega = \gamma</m> and used
+      undetermined coefficients, instead of using the limit process.
+      When the forcing term lines up perfectly with the natural
+      frequency, there is an additional linear growth term in the
+      resulting solution, due to resonance. 
+    </p>
+  </subsection>
+  <subsection xml:id="subsection-friction-no-forcing">
+    <title>Section 3: Friction, No Forcing</title>
+    <p>
+      In the third case, I finally include friction. Using the new
+      constant, I can write the general homogeneous SOCCLDE as
+      folllows 
+      <me>
+        y^{\prime \prime} + 2\lambda y^\prime + \omega^2 y = 0
+      </me>.
+      The characteristic equation is <m>r^2 + 2\lambda r +
+      \omega^2</m> with roots <m>-\lambda \pm \imath \sqrt{\omega^2 -
+      \lambda^2}</m>. If I let <m>\omega_d = \sqrt{\omega^2 -
+      \lambda^2}</m>, then the homogeneous solutions are
+      <me>
+        y= e^{-\lambda t} (A \cos \omega_d t + B \sin \omega_d t)
+      </me>.
+      The new constant <m>\omega_d</m> is called the damped frequency.
+      It is not the same as the natural frequency, since friction
+      changes the <sq>natural</sq> frequency of oscillations of the
+      system. I can explicitly state the relationship between damped
+      and natural frequency via rewriting the constants. From the
+      definitions of the constants, the following identity is true. 
+      <md>
+        <mrow>
+          \amp \lambda^2 = \frac{\zeta^2}{\omega^2} \amp \amp \implies 
+          \amp \amp \lambda^2 \omega^2 = \zeta^2
+        </mrow>
+      </md>.
+      Using this, I can write the relationship between the damped
+      frequency and the natural frequency. 
+      <me>
+        \omega_d = \omega \sqrt{1 - \zeta^2}
+      </me>.
+      With friction involved and no forcing, the system will display
+      sinusoidally decaying oscillations where the frequency is this
+      <m>\omega_d</m>. As an interesting aside, as <m>\zeta</m>
+      approaches <m>1</m> and the systemapproach the critical damped
+      situation with simple exponential decay, this damped frequency
+      approaches zero. This explains the transition from sinusoidal
+      to exponential behaviour, which might have seemed like a strange
+      transition. As friction increases and the system approaches the
+      critically damped situation, the wavelength of the sine wave
+      (which is a reciprocal of frequency) grows to <m>\infty</m>. The
+      wave stretches out further and further until there isn't any
+      wave left at all, just an exponential decay.
+    </p>
+    <p>
+      In this third case, the damped frequency completely described
+      the behaviour (along with the decay coefficient). There isn't
+      resonance until a forcing term is added. 
+    </p>
+  </subsection>
+  <subsection xml:id="subsection-friction-forcing">
+    <title>Situation 4: Friction and Forcing</title>
+    <p>
+      If I finally include both friction and a forcing term, I can use
+      the new constant to rewrite the DE as
+      <me>
+        y^{\prime\prime} + 2\lambda y^\prime + \omega^2 y = F \sin
+        \gamma t
+      </me>
+      where <m>\gamma</m> again is the forcing frequency. 
+      The homogeneous solutions are known from the previous case and
+      depend on the damped frequency. 
+      <me>
+        y_h = e^{-\lambda t} (A \cos \omega_d t + B \sin \omega_d t)
+      </me>
+      Since the forcing lacks the exponential term, it is not the same
+      as the homogeneous solutions even if <m>\gamma = \omega_d</m>. I
+      don't need any subcases here: I can use undetermined
+      coefficients without any alteration. Like case 2, I use
+      undetermined coefficients to solve for the particular solution.
+      I start with the guess for the particular solution based on the
+      forcing term. 
+      <md>
+        <mrow>
+          y_p \amp = C \sin \gamma t + D \cos \gamma t
+        </mrow>
+      </md>
+      Then I differentiate and put the results into the differential
+      equation.
+      <md>
+        <mrow>
+          y_p^\prime \amp = C \gamma \cos \gamma t - D \gamma \sin
+          \gamma t
+        </mrow>
+        <mrow>
+          y_p^{\prime \prime} \amp = - C \gamma^2 \cos \gamma t - D
+          \gamma^2 \sin \gamma t
+        </mrow>
+        <mrow>
+          Ly_p \amp = (-C\gamma^2 - 2\lambda D \gamma + C \omega^2)
+          \sin \gamma t + (-D\gamma^2 + 2\lambda C \gamma + D
+          \omega^2) \cos \gamma t 
+        </mrow>
+        <mrow>
+          \amp = F \sin \gamma t 
+        </mrow>
+      </md>
+      Then I compare the coefficients to get two equations. 
+      <md>
+        <mrow>
+          -C\gamma^2 - 2\lambda D\gamma + C \omega^2 \amp = F
+        </mrow>
+        <mrow>
+          -D\gamma^2 + 2\lambda C\gamma + D \omega^2 \amp = 0
+        </mrow>
+      </md>
+      This is a bit tricky to manipulate in general. I'll set it up as
+      a matrix system and invert the matrix to solve the system. 
+      <md>
+        <mrow>
+          \left( \begin{matrix} 
+            \omega^2 - \gamma^2 \amp -2\lambda \gamma \\
+            2\lambda \gamma \amp \omega^2 - \gamma^2 
+          \end{matrix} \right) 
+          \left( \begin{matrix} 
+            C \\ D 
+          \end{matrix} \right) \amp = 
+          \left( \begin{matrix} 
+            F \\ 0 
+          \end{matrix} \right)
+        </mrow>
+        <mrow>
+          M \amp = \left( \begin{matrix} 
+            \omega^2 - \gamma^2 \amp -2\lambda \gamma \\
+            2\lambda \gamma \amp \omega^2 - \gamma^2 
+          \end{matrix} \right)
+        </mrow>
+        <mrow>
+          \det M \amp = (\omega^2 - \gamma^2)^2 + 4 \lambda^2
+          \gamma^2
+        </mrow>
+        <mrow>
+          M^{-1} \amp = \frac{1}{ \det M} \left( \begin{matrix}
+            \omega^2 - \gamma^2 \amp 2 \lambda \gamma \\
+            -2 \lambda \gamma \amp \omega^2 - \gamma^2 
+          \end{matrix} \right)
+        </mrow>
+        <mrow>
+          \left( \begin{matrix} 
+            C \\ D 
+          \end{matrix} \right) \amp = \frac{1}{\det M} \left(
+          \begin{matrix}  
+            \omega^2 - \gamma^2 \amp 2 \lambda \gamma \\
+            -2 \lambda \gamma \amp \omega^2 - \gamma^2 
+          \end{matrix} \right) \left( \begin{matrix} 
+            F \\ 0 
+          \end{matrix} \right)
+        </mrow>
+        <mrow>
+          C \amp = \frac{(\omega^2 - \gamma^2) F}{(\omega^2 -
+          \gamma^2)^2 + 4 \lambda^2 \gamma^2}
+        </mrow>
+        <mrow>
+          D \amp = \frac{-2\gamma\lambda F}{(\omega^2 - \gamma^2)^2 +
+          4 \lambda^2 \gamma^2}
+        </mrow>
+      </md>
+      Now that I have the coefficients, I can write the particular
+      solution and then the general solution including the homogeneous
+      solution. In the particular solution, the coefficients already
+      have the same denominator, so I can combine the two terms into
+      one fraction. 
+      <md>
+        <mrow>
+          y_p \amp = \frac{(\omega^2 - \gamma^2) F\sin \gamma t - 2
+          \gamma \lambda F \cos \gamma t}{(\omega^2 - \gamma^2)^2 + 4
+          \lambda^2 \gamma^2}
+        </mrow>
+        <mrow>
+          y \amp = e^{-\lambda t} (A \cos \omega_d t + B \sin \omega_d
+          t) + \frac{(\omega^2 - \gamma^2) F\sin \gamma t - 2 \gamma
+          \lambda F \cos \gamma t}{(\omega^2 - \gamma^2) + 4 \lambda^2
+          \gamma^2}
+        </mrow>
+      </md>
+      As time passes, the homogeneous solutions fall out and only the
+      term with the forcing frequency <m>\gamma</m> remains. What is
+      its amplitude? The term is a linear combination of a sine and
+      cosine wave with the same frequencies, so I can use <xref
+      ref="proposition-wave-combination" /> to combine the result into
+      one sinusoidal wave. What I care about, for the purposes of
+      resonance, is just the amplitude of that wave. Using the
+      proposition, I calculate that amplitude. 
+      <me>
+        a = F \frac{\sqrt{(\omega^2 - \gamma^2)^2 + 4 \gamma^2
+        \lambda^2}}{(\omega^2 - \gamma^2)^2 + 4 \gamma^2 \lambda^2} =
+        \frac{F}{\sqrt{(\omega^2 - \gamma^2)^2 + 4 \gamma^2
+        \lambda^2}}
+      </me>
+      The question of resonance is this: if the magnitude of the force
+      <m>F</m> is fixed, what is the maximum amplitude can be achieved
+      by altering the forcing frequency? Note this amplitude is always
+      finite <mdash/> with friction, there is no infinite growth of
+      amplitude as there was in the second case. (This is expected
+      predicted, since I didn't need to multiply by <m>t</m> when we
+      setup the undetermined coefficients.) However, the amplitude can
+      be quite large. This is a optimization problem, so I
+      differentiate the expression for amplitude and find its critical
+      points. (Not that I am looking to optimize by amplitude, so the
+      function and the derivative are in the variable <m>\gamma</m>).
+      <md>
+        <mrow>
+          a(\gamma) \amp = \frac{F}{\sqrt{(\omega^2 - \gamma^2)^2 + 4
+          \gamma^2 \lambda^2}}
+        </mrow>
+        <mrow>
+          a^\prime(\gamma) \amp  = \frac{-F(2 (\omega^2 - \gamma^2)
+          (-2\gamma) + 8 \gamma \lambda^2)}{2((\omega^2 - \gamma^2)^2
+          + 4 \gamma^2 \lambda^2)^{\frac{3}{2}}} = 0
+        </mrow>
+        <mrow>
+          4 \gamma (\omega^2 - \gamma^2) \amp = 8 \gamma \lambda^2
+        </mrow>
+        <mrow>
+          \omega^2 - \gamma^2 \amp  = 2 \lambda^2
+        </mrow>
+        <mrow>
+          \gamma^2 \amp  = \omega^2 - 2 \lambda^2
+        </mrow>
+        <mrow>
+          \gamma \amp  = \sqrt{\omega^2 - 2 \lambda^2}
+        </mrow>
+      </md>
+      I'll skip the testing of intervals to classify this critical
+      point; this is, indeed, a maximum for amplitude. Now I want to
+      write this result is a slightly different way. Recall that
+      <m>\lambda^2 = \omega^2 \zeta^2</m>. I can use that to factor
+      <m>\omega</m> out of the expression for <m>\gamma</m>.
+      <me>
+        \gamma = \sqrt{\omega^2 - 2 \zeta^2 \omega^2} = \omega \sqrt{1
+        - 2 \zeta^2}
+      </me>.
+      This is the resonant frequency. However, how can I be 
+      certain that it exists? I need <m>1-2\zeta^2</m> to be
+      positive to define this square root. This implies, certainly,
+      that <m>\zeta \lt  1</m>, which I assumed when I decided to
+      work with the underdamped case (that assumption is now
+      justified). However, the inequality is stricter.
+      <me>
+        \zeta^2 \leq \frac{1}{2} \implies \zeta \leq
+        \frac{1}{\sqrt{2}}
+      </me>
+      The bound for the damping coefficient is smaller than simply for
+      the underdamped case. I conclude that resonant frequency only
+      exists is the friction is small enough, measured by this
+      <m>\zeta \lt \frac{1}{\sqrt{2}}</m>. In particular, if I am
+      concerned about safety and want to avoid the situation of
+      resonant frequency, this calculation lets me know the minimum
+      friction I need to build into the system to avoid the
+      possibility of resonance.
+    </p>
+  </subsection>
+</section>

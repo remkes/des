@@ -1,0 +1,11 @@
+<chapter xmlns:xi="http://www.w3.org/2001/XInclude"  
+  xml:id="chapter-pdes">
+  <title>Partial Differential Equations</title>
+  <xi:include  href="pdes-intro.ptx" />
+  <xi:include  href="heat-equation.ptx" />
+  <xi:include  href="fourier-series.ptx" />
+  <xi:include  href="heat-equation-boundary.ptx" />
+  <!--
+  <xi:include  href="pdes-activity.ptx" />
+  -->
+</chapter>

@@ -1,0 +1,715 @@
+<section xml:id="section-regular-singular-points">
+  <title>Regular Singular Points</title>
+  <introduction>
+    <p>
+      Let me remind you of the standard form for a homogeneous second
+      order linear equation.
+      <me>
+        y^{\prime \prime} + P(t) y^\prime + Q(t) y = 0
+      </me>
+      Recall that this differential equation has a ordinary point if
+      <m>P(t)</m> and <m>Q(t)</m> are analytic at that point. I've
+      dealt with solutions at ordinary points; now I will consider
+      solutions at singular points. There are particular types of
+      singular points which are reasonable to deal with, since the
+      functions <m>P</m> and <m>Q</m> are quite close to being
+      analytic. I'm going to use a definition from complex variables
+      to understand this situation, since it is a very convenient term
+      for this section.
+    </p>
+    <definition>
+      <statement>
+        <p>
+          Let <m>f(t)</m> be a function which is not defined at <m>t =
+          t_0</m>. The function has a <term>pole</term> of order
+          <m>d \in \NN</m> at <m>t_0</m> if the limit
+          <me>
+            \lim_{t \rightarrow t_0} (t-t_0)^d f(t) 
+          </me>
+          converges to a finite number, but does not converge for any
+          integer exponent smaller than <m>d</m>. 
+        </p>
+      </statement>
+    </definition>
+    <p>
+      The archetypical example is
+      <me>
+        f(t) = \frac{1}{t^d}
+      </me>
+      which has a pole of order <m>d</m> at <m>t=0</m>. However,
+      functions which are not rational functions can also have poles.
+      Having a pole of order <m>d</m> at a point means that, in some
+      way, the function resembles <m>f(t) = \frac{1}{(t-t_0)^d}</m>
+      nead the point <m>t_0</m>. What do I mean by <sq>resembles</sq>?
+      Well, for one, the function <m>f(t) = \frac{1}{(t-t_0)^d}</m>
+      always has a vertical asymptote at <m>t = t_0</m>. Any function
+      with a pole at <m>t = t_0</m> will also have a vertical
+      asymptote. 
+    </p>
+    <p>
+      Now I can return to the differential equation and give the
+      important definition for this section.
+    </p>
+    <definition>
+      <statement>
+        <p>
+          A singular point <m>t_0</m> of this DE is called a
+          <term>regular singular point</term> if the two functions
+          <m>(t-t_0)P(t)</m> and <m>(t-t_0)^2 Q(t)</m> are analytic at
+          <m>t = t_0</m>. Equivalently <m>P(t)</m> can be analytic or
+          have a pole of order 1; and <m>Q(t)</m> can be analytic, have
+          a pole or order 1, or have a pole of over 2. 
+        </p>
+      </statement>
+    </definition>
+  </introduction>
+  <subsection xml:id="subsection-examples-rsp">
+    <title>Examples of Regular Singular Points</title>
+    <example>
+      <statement>
+        <p>
+          <me>
+            y^{\prime \prime} +
+            \frac{y^\prime}{t^3(t-1)^2(t-2)(t-3)(t-4)} + \frac{y}{t^2
+            (t-1)(t-2)^2 (t-3)^2 (t-4)^3} = 0
+          </me>
+          All points other than <m>t=0,1,2,3,4</m> are ordinary
+          points. Of the singular points, only <m>t=2,3</m> are
+          regular singular points. The singular points <m>t=0,1</m>
+          have <m>P(t)</m> with a pole of order 2 or higher (a square
+          term or worse in the denominator), which is not allowed.
+          The singular point <m>t=4</m> has <m>Q(t)</m> with a pole of
+          order 3 (a cubic term in the denominator), which is also not
+          allowed.
+        </p>
+      </statement>
+    </example>
+    <example>
+      <statement>
+        <p>
+          <me>
+            y^{\prime \prime} + \cot t y^\prime + y = 0
+          </me>
+          I use a limit to analyze the singular points. I'll start
+          wiht <m>t=0</m>. 
+          <me>
+            \lim_{t \rightarrow 0} t \cot t = \lim_{t \rightarrow 0}
+            \frac{ t \cos t}{\sin t} = 1
+          </me>
+          The limit shows that <m>t \cot t</m> is analytic at
+          <m>t=0</m> (equivalently, that <m>\cot t</m> has a pole of
+          order 1), so <m>t=0</m> is a regular singular point. Since
+          cotangent is periodic, it's behaviour at any integer
+          multiple of <m>\pi</m> will be the same as its behaviour at
+          0, so all integer multiples of <m>\pi</m> are regular
+          singular points. 
+        </p>
+      </statement>
+    </example>
+  </subsection>
+  <subsection xml:id="subsection-frobenius">
+    <title>The Method of Frobenius</title>
+    <p>
+      The method of Frobenius is a method of constructing solutions at
+      regular singular points. It relies on this existence theorem.
+    </p>
+    <theorem>
+      <statement>
+        <p>
+          Consider a second order homogeneous linear differential
+          equation.
+          <me>
+            y^{\prime \prime} + P(t) y^\prime + Q(t) = 0
+          </me>.
+          If <m>t_0</m> is a regular singular point of this equation,
+          then there exists at least one (but possibly two) <m>r \in
+          \RR</m> such that the differential equation has a series
+          solution of this form (with <m>c_0 \neq 0)</m>).
+          <me>
+            y = (t-t_0)^r \sum_{n=0}^\infty c_n (t-t_0)^n
+          </me>
+          (Note that <m>r</m> can be any real number here: this
+          doesn't need to be an integer power). 
+        </p>
+      </statement>
+    </theorem>
+    <p>
+      This is an extension of the idea of analytic solutions. The
+      solution is analytic if <m>r \in \NN</m>. Otherwise, it is very
+      close, only differing by this multiple <m>(t-t_0)^r</m>. If
+      <m>r</m> is any negative real number, there is an asymptote at
+      <m>t=t_0</m>, so I can't evaluate there. However, I expect
+      convergence on <m>0 \lt |t-t_0| \lt R</m>. If <m>r</m> is a
+      negative integer, there is a name for these series (again, like
+      <sq>pole</sq>, coming from complex analysis). 
+    </p>
+    <definition>
+      <statement>
+        <p>
+          A <term>Laurent series</term> is a series of the form
+          <me>
+            \sum_{n=-\infty}^\infty c_n (t-t_0)^n
+          </me>
+          where <m>c_n \in \RR</m>. This is exactly the form of a
+          Taylor series, but now negative exponents are also allowed. 
+        </p>
+      </statement>
+    </definition>
+    <p>
+      Now I proceed as usual: I throw the form into the differential
+      equation and see what happens. I expect to have a similar
+      process for finding the coefficient <m>c_n</m> of the series.
+      However, I also need a process for finding the number <m>r</m>.
+      I'll assume, for convenience in this derivation, that <m>t_0 =
+      0</m> is the regular singular point.
+    </p>
+    <p>
+      I know that <m>tP(t)</m> and <m>t^2 Q(t)</m> are analytic, from
+      the definition of a regular singular point. This means that
+      <m>P(t)</m> and <m>Q(t)</m> can be written in the form
+      <md>
+        <mrow>
+          \amp P(t) = \frac{p_{-1}}{t} + \sum_{n=0}^\infty p_n t^n
+          \amp \amp Q(t) = \frac{q_{-2}}{t^2} + \frac{q_{-1}}{t} +
+          \sum_{n=0}^\infty q_n t^n
+        </mrow>
+      </md>.
+      I will call these expressions the <term>Laurent forms</term> for
+      <m>P</m> and <m>Q</m>. The coefficients <m>p_1</m> and
+      <m>q_2</m> will be useful a bit later, so here are two useful
+      identities to calculate <m>p_1</m> and <m>q_2</m>.
+      <md>
+        <mrow>
+          \amp p_{-1} = \lim_{t \rightarrow 0 } t P(t) \amp \amp
+          q_{-2} = \lim_{t \rightarrow 0 } t^2 Q(t) 
+        </mrow>
+      </md>
+      Now I start the method of Frobenious by calculating the
+      derivatives of <m>y</m> in this new series form. 
+      <md>
+        <mrow>
+          y \amp = t^r \sum_{n=0}^\infty c_n t^n = \sum_{n=0}^\infty
+          c_n t^{n+r}
+        </mrow>
+        <mrow>
+          y^\prime \amp = \sum_{n=0}^\infty c_n (n+r) t^{n+r-1}
+        </mrow>
+        <mrow>
+          y^{\prime \prime} \amp = \sum_{n=0}^\infty c_n (n+r) (n+r-1)
+          t^{n+r-2}
+        </mrow>
+      </md>
+      (Notice that I don't necessarily lose terms when taking
+      derivatives; if <m>r</m> is not an integer, there are no
+      constant terms in the series which go to zero under
+      differentiation. If <m>r</m> is an integer, I should make a
+      note to worry about derivatives setting constant terms to
+      zero.)
+    </p>
+    <p>
+      With these expressions for <m>y</m>, <m>P</m> and <m>Q</m>, I
+      put it all together into the original DE.
+      <md>
+        <mrow>
+          \sum_{n=0}^\infty c_n (n+r) (n+r-1) t^{n+r-2} + P(t)
+          \sum_{n=0}^\infty c_n (n+r) t^{n+r-1} \amp 
+        </mrow>
+        <mrow>
+          + Q(t) \sum_{n=0}^\infty c_n t^{n+r} \amp = 0
+        </mrow>
+        <mrow>
+          \sum_{n=0}^\infty c_n (n+r) (n+r-1) t^{n+r-2} \amp 
+        </mrow>
+        <mrow>
+          + \left(\frac{p_{-1}}{t} + \sum_{n=0}^\infty p_n t^n \right)
+          \sum_{n=0}^\infty c_n (n+r) t^{n+r-1} \amp
+        </mrow>
+        <mrow>
+          + \left( \frac{q_{-2}}{t^2} + \frac{q_{-1}}{t} +
+          \sum_{n=0}^\infty q_n t^n \right) \sum_{n=0}^\infty c_n
+          t^{n+r} \amp = 0
+        </mrow>
+      </md>
+      This is quite a mess: I have <m>r</m> to determine as well as
+      the series coefficients. However, I can focus on the
+      coefficient of the leading term (<m>t^{r-2}</m>).
+      <md>
+        <mrow>
+          r(r-1) c_0 t^{r-2} + \frac{p_{-1}}{t} r c_0 t^{r-1} +
+          \frac{q_{-2}}{t^2} c_0 t^r \amp = 0
+        </mrow>
+        <mrow>
+          (r(r-1) + p_{-1} r + q_{-2}) c_0 t^{r-2} \amp = 0
+        </mrow>
+        <mrow>
+          r(r-1) + p_{-1}r + q_{-2} \amp = 0 
+        </mrow>
+      </md>
+      The division in the last steps relies on the assumption that
+      <m>c_0 \neq 0</m>. This assumption is necessary for the Method
+      of Frobenius to work. 
+    </p>
+    <definition>
+      <statement>
+        <p>
+          The quadratic 
+          <me>
+            r(r-1) + p_{-1}r + q_{-2} = 0 
+          </me>
+          is called the <term>indicial equation</term>.
+        </p>
+      </statement>
+    </definition>
+    <p>
+      So, before I proceed to find the recurrence relations and the
+      series coefficients, I use this equation to determine <m>r</m>.
+      After finding <m>r</m>, the method looks very similar to
+      solutions at ordinary points. If there are two real roots of
+      the indicial equation, is seems I'll have to repeat the same
+      process for each root. However, in practice, I can leave
+      <m>r</m> undetermined and do the process once, only inserting a
+      value for <m>r</m> quite late in the process.
+    </p>
+  </subsection>
+  <subsection xml:id="subsection-frobenius-examples">
+    <title>Examples</title>
+    <example>
+      <statement>
+        <p>
+          <md>
+            <mrow>
+              3ty^{\prime \prime} + y^\prime - y \amp = 0
+            </mrow>
+          </md>
+            Let me setup and label the pieces I will need. 
+          <md>
+            <mrow>
+              P \amp = \frac{1}{3t}
+            </mrow>
+            <mrow>
+              Q \amp = \frac{-1}{3t}
+            </mrow>
+            <mrow>
+              tP \amp = \frac{1}{3} \implies p_{-1} = \frac{1}{3}
+            </mrow>
+            <mrow>
+              t^2 Q \amp = \frac{-t}{3} \implies q_{-2} = 0
+            </mrow>
+            <mrow>
+              r(r-1) + \frac{r}{3} \amp = 0
+            </mrow>
+            <mrow>
+              3r^2 - 2r = 0 \implies r \amp = 0 \text{ or }  r =
+              \frac{2}{3}
+            </mrow>
+          </md>
+          I'll deal with the <m>r=0</m> case first. (Note that
+          <m>r=0</m> means I get a conventional Taylor series
+          solution.) I go through the conventional steps: taking the
+          derivatives of the Taylor series, inserting those
+          derivatives into the equation, taking the powers of <m>t</m>
+          into the sums, shifting to adjust the exponents, pulling out
+          coefficients to make the indices match, combining the sums,
+          and then grouping everything to find the recurrence
+          relation.
+          <md>
+            <mrow>
+              3t \sum_{n=2}^\infty c_n (n) (n-1) t^{n-2} +
+              \sum_{n=1}^\infty c_n (n) t^{n-1} - \sum_{n=0}^\infty
+              c_n t^{n} \amp = 0
+            </mrow>
+            <mrow>
+              \sum_{n=2}^\infty 3c_n (n) (n-1) t^{n-1} +
+              \sum_{n=1}^\infty c_n (n) t^{n-1} - \sum_{n=0}^\infty
+              c_n t^{n} \amp = 0
+            </mrow>
+            <mrow>
+              \sum_{n=1}^\infty 3c_{n+1} (n+1) n t^n +
+              \sum_{n=1}^\infty c_{n+1} (n+1) t^n - \sum_{n=0}^\infty
+              c_n t^{n} \amp = 0
+            </mrow>
+            <mrow>
+              c_1 - c_0 + \sum_{n=1}^\infty \left[ 3(n+1)n c_{n+1} +
+              (n+1) c_{n+1} - c_n \right] t^n \amp = 0
+            </mrow>
+            <mrow>
+              c_{n+1} = \frac{c_n}{3(n^2+n) + n+1} = \frac{c_n}{3n^2
+              +4n +1} \amp = \frac{c_n}{(3n+1)(n+1)}
+            </mrow>
+          </md>
+          I use the recurrence relationt o start calculating terms. I
+          use the constant term <m>(c_1 - c_0)</m> to determine
+          <m>c_1</m> and apply the recurrence relation to all terms
+          later. This is ony a degree 1 recurrence relation, so I only
+          need one unknown (<m>c_0</m>) to start. 
+          <md>
+            <mrow>
+              c_0 \amp = c_0
+            </mrow>
+            <mrow>
+              c_1 \amp = c_0
+            </mrow>
+            <mrow>
+              c_2 \amp = \frac{c_1}{(4)(2)} = \frac{c_0}{(4)(2)}
+            </mrow>
+            <mrow>
+              c_3 \amp = \frac{c_2}{(7)(3)} =
+              \frac{c_0}{(7)(4)(3)(2)}
+            </mrow>
+            <mrow>
+              c_4 \amp = \frac{c_3}{(10)(4)} =
+              \frac{c_0}{(10)(7)(4)(4)(3)(2)}
+            </mrow>
+            <mrow>
+              c_5 \amp = \frac{c_4}{(13)(5)} =
+              \frac{c_0}{(13)(10)(7)(4)(5)(4)(3)(2)}
+            </mrow>
+          </md>
+          Now I intuit a general pattern and put that pattern into the
+          Taylor series form. 
+          <md>
+            <mrow>
+              c_n \amp = \frac{c_0}{n! (4)(7)(10) \ldots (3n-2)}
+            </mrow>
+            <mrow>
+              y_1 \amp = 1 + \sum_{n=1}^\infty \frac{t^n}{n!
+              (4)(7)(10) \ldots (3n-2)}
+            </mrow>
+          </md>
+          This is the solution for <m>r=0</m>. Now we proceed to the
+          <m>r=\frac{2}{3}</m> case. This is a non-integer exponent,
+          so the solution is not a conventional Taylor series.
+          However, the steps are nearly the same: I take the
+          derivatives and put them into the equation. 
+          <md>
+            <mrow>
+              3t \sum_{n=0}^\infty c_n \left(n + \frac{2}{3} \right)
+              \left(n + \frac{2}{3}-1 \right) t^{n + \frac{2}{3}-2}
+              \amp 
+            </mrow>
+            <mrow>
+              + \sum_{n=0}^\infty c_n \left(n + \frac{2}{3} \right)
+              t^{n + \frac{2}{3}-1} - \sum_{n=0}^\infty c_n t^{n +
+              \frac{2}{3}} \amp = 0
+            </mrow>
+          </md>
+          At this point, I'm going to factor <m>t^{\frac{2}{3}}</m> out
+          of all the term. This will leave me with just integer
+          exponents inside, which I can deal with in the same method
+          as Taylor series solutions. This kind of manipulation, to
+          factor our a common exponent, will always be available for
+          solutions when <m>r</m> is not an integer. Now I proceed
+          with the same Taylor series steps: shift to adjust the
+          exponents, pull out terms to match the indices, combine
+          sums, and look for the recurrence relation. 
+          <md>
+            <mrow>
+              t^{\frac{2}{3}} \left[ \sum_{n=0}^\infty 3c_n \left(n+
+              \frac{2}{3} \right) \left(n - \frac{1}{3} \right)
+              t^{n-1} + \sum_{n=0}^\infty c_n \left(n+ \frac{2}{3}
+              \right) t^{n-1} - \sum_{n=0}^\infty c_n t^{n} \right]
+              \amp = 0
+            </mrow>
+            <mrow>
+              t^{\frac{2}{3}} \left[ \sum_{n=0}^\infty 3c_n \left(n +
+              \frac{2}{3} \right) \left( n - \frac{1}{3} \right) t^{n
+              -1} + \sum_{n=0}^\infty c_n \left(n + \frac{2}{3}
+              \right) t^{n-1} - \sum_{n=1}^\infty c_{n-1} t^{n-1}
+              \right] \amp = 0
+            </mrow>
+            <mrow>
+              t^{\frac{2}{3}} \left[ \left(3\frac{2}{3} \frac{-1}{3} +
+              \frac{2}{3} \right) c_0 t^{-1} \right. \amp 
+            </mrow>
+            <mrow>
+              \left. + \sum_{n=1}^\infty
+              \left[ 3 c_n \left( n+ \frac{2}{3} \right) \left( n -
+              \frac{1}{3} \right) + c_n \left( n + \frac{2}{3} \right)
+              - c_{n-1} \right] t^{n-1} \right] \amp = 0
+            </mrow>
+            <mrow>
+              \left[ \left( n + \frac{2}{3} \right) \left( 3n - 1 + 1
+              \right) \right] c_n - c_{n-1} \amp = 0
+            </mrow>
+            <mrow>
+              c_n = \frac{c_{n-1}}{ \left( n + \frac{2}{3} \right)
+              (3n)} = \frac{c_{n-1}}{(3n+2)n} \amp
+            </mrow>
+            <mrow>
+              c_{n+1} = \frac{c_n}{(3n+5)(n+1)} \amp
+            </mrow>
+          </md>
+          The term in front of <m>c_0</m> reduces to <m>0</m>, so
+          <m>c_0</m> is free. After the first term, there is a degree
+          1 recurrence relation, so I start calculating terms.
+          <md>
+            <mrow>
+              c_0 \amp = c_0
+            </mrow>
+            <mrow>
+              c_1 \amp = \frac{c_0}{5}
+            </mrow>
+            <mrow>
+              c_2 \amp = \frac{c_1}{(8)(2)} = \frac{c_0}{(8)(5)(2)}
+            </mrow>
+            <mrow>
+              c_3 \amp = \frac{c_2}{(11)(3)} =
+              \frac{c_0}{(5)(8)(11)(2)(3)}
+            </mrow>
+            <mrow>
+              c_4 \amp = \frac{c_3}{(14)(4)} =
+              \frac{c_0}{(5)(8)(11)(14)(2)(3)(4)}
+            </mrow>
+            <mrow>
+              c_5 \amp = \frac{c_4}{(17)(5)} =
+              \frac{c_0}{(5)(8)(11)(14)(17)(2)(3)(4)(5)}
+            </mrow>
+          </md>
+          I intuit the pattern and then insert it in the series. 
+          <md>
+            <mrow>
+              c_n \amp = \frac{c_0}{n! (5)(8)(11) \ldots (3n+2)}
+            </mrow>
+            <mrow>
+              y_2 \amp = 1 + \sum_{n=1}^\infty \frac{t^{n +
+              \frac{2}{3}}}{n! (5)(8) \ldots (3n+2)}
+            </mrow>
+          </md>
+          This is the second solution. The general solution is any
+          linear combination of the two solutions.
+          <md>
+            <mrow>
+              y \amp = A \left( 1 + \sum_{n=1}^\infty \frac{t^n}{n!
+              (4)(7)(10) \ldots (3n-2)} \right) + B \left( 1 +
+              \sum_{n=1}^\infty \frac{t^{n + \frac{2}{3}}}{n! (5)(8)
+              \ldots (3n+2)} \right)
+            </mrow>
+          </md>
+          The radius of convergence here is <m>R = \infty</m>, which
+          can be calculated by ratio test. It is good to note, though,
+          that there are no guarantees about the radius of convergence
+          with the method of Frobenius.
+        </p>
+        <p>
+          In this example, I could have gone as far as the recurrence
+          relation using an arbitrary <m>r</m> to avoid repetition.
+          I do need to specify <m>r</m> once I get to the recurrence
+          relation. However, when <m>r</m> is an integer, I will often
+          have to return to the original differential equation and
+          repeat the calculation for each <m>r</m>, in order to keep
+          track of which terms are sent to zero in the series due to
+          taking derivatives. 
+        </p>
+      </statement>
+    </example>
+    <example>
+      <statement>
+        <p>
+          <me>
+            ty^{\prime \prime} + y = 0
+          </me>
+          Here <m>P =0</m> and <m>Q=\frac{1}{t}</m>, so <m>p_{-1} =
+          0</m> and <m>q_{-2} = 0</m>. That means the indicial
+          equation is <m>r(r-1) = 0</m> with roots <m>r=0</m> and
+          <m>r=1</m>, so I expect two Taylor series solutions. I start
+          with the case <m>r=0</m>. I'm going more quickly through the
+          steps of the process now, without repeating all the
+          commentary. 
+          <md>
+            <mrow>
+              t \sum_{n=2}^\infty n(n-1)c_n t^{n-2} +
+              \sum_{n=0}^\infty c_n t^n \amp = 0
+            </mrow>
+            <mrow>
+              \sum_{n=2}^\infty n(n-1)c_n t^{n-1} + \sum_{n=0}^\infty
+              c_n t^n \amp = 0
+            </mrow>
+            <mrow>
+              \sum_{n=1}^\infty (n+1)nc_n t^n + \sum_{n=0}^\infty c_n
+              t^n \amp = 0
+            </mrow>
+            <mrow>
+              c_0 + \sum_{n=1}^\infty \left[ (n+1)nc_n + c_n \right]
+              t^n \amp = 0
+            </mrow>
+            <mrow>
+              c_{n+1} \amp = \frac{-c_n}{(n+1)(n)}
+            </mrow>
+            <mrow>
+              c_0 \amp = 0
+            </mrow>
+            <mrow>
+              c_1 \amp = c_1
+            </mrow>
+            <mrow>
+              c_2 \amp = \frac{-c_1}{2}
+            </mrow>
+            <mrow>
+              c_3 \amp = \frac{-c_2}{(3)(2)} = \frac{c_1}{(3)(2)}
+            </mrow>
+            <mrow>
+              c_4 \amp = \frac{-c_3}{(4)(3)} =
+              \frac{-c_1}{(4)(3)(3)(2)(2)}
+            </mrow>
+            <mrow>
+              c_5 \amp = \frac{-c_4}{(5)(4)} =
+              \frac{c_1}{(5)(4)(4)(3)(3)(2)(2)}
+            </mrow>
+            <mrow>
+              c_n \amp = \frac{(-1)^{n+1} c_1}{n! (n-1)!}
+            </mrow>
+            <mrow>
+              y_1 \amp = \sum_{n=1}^\infty \frac{(-1)^{n+1}
+              t^n}{n!(n-1)!}
+            </mrow>
+          </md>
+          Then I calculate with <m>r=1</m>. Note the bounds in this
+          case: since the series doesn't have a constant term, I only
+          loose one term in the second derivative and the index only
+          shifts by one. 
+          <md>
+            <mrow>
+              t \sum_{n=1}^\infty (n+1)nc_n t^{n-1} +
+              \sum_{n=0}^\infty c_n t^{n+1} \amp = 0
+            </mrow>
+            <mrow>
+              \sum_{n=1}^\infty (n+1)nc_n t^n + \sum_{n=0}^\infty c_n
+              t^{n+1} \amp = 0
+            </mrow>
+            <mrow>
+              \sum_{n=1}^\infty (n+1)nc_n t^n + \sum_{n=1}^\infty
+              c_{n-1} t^n+ \amp = 0
+            </mrow>
+            <mrow>
+              (n+1)n c_n + c_{n-1} \amp = 0
+            </mrow>
+            <mrow>
+              c_n \amp = \frac{-c_{n-1}}{(n+1)(n)}
+            </mrow>
+            <mrow>
+              c_{n+1} \amp = \frac{-c_n}{(n+2)(n+1)}
+            </mrow>
+            <mrow>
+              c_0 \amp = c_0
+            </mrow>
+            <mrow>
+              c_1 \amp = \frac{-c_0}{2}
+            </mrow>
+            <mrow>
+              c_2 \amp = \frac{-c_1}{(3)(2)} = \frac{c_0}{(3)(2)}
+            </mrow>
+            <mrow>
+              c_3 \amp = \frac{-c_2}{(4)(3)} =
+              \frac{-c_0}{(4)(3)(3)(2)(2)}
+            </mrow>
+            <mrow>
+              c_4 \amp = \frac{-c_3}{(5)(4)} =
+              \frac{c_0}{(5)(4)(4)(3)(3)(2)(2)}
+            </mrow>
+            <mrow>
+              c_n \amp = \frac{(-1)^{n} c_0}{(n+1)! n!}
+            </mrow>
+            <mrow>
+              y_1 \amp = \sum_{n=0}^\infty \frac{(-1)^n
+              t^{n+1}}{(n+1)!n!}
+            </mrow>
+            <mrow>
+              y_1 \amp = \sum_{n=1}^\infty \frac{(-1)^{n+1}
+              t^n}{n!(n-1)!}
+            </mrow>
+          </md>
+          Very curiously, I get the same series! The two roots don't
+          lead to two independent series, but to the same series. I
+          would need other information to get the second solutions.
+          In general, finding another solution can be quite difficult.
+          With the method of Frobenius, I am not guaranteed to find
+          both solutions, and this situation where both roots lead to
+          the same series can happen.
+        </p>
+      </statement>
+    </example>
+  </subsection>
+  <subsection xml:id="subsection-frobenius-multiple-solutions">
+    <title>Multiple Solutions in the Method of Frobenius</title>
+    <p>
+      There is a theorem which deals with the situation in the
+      previous example, where both roots gave the same series.
+    </p>
+    <theorem>
+      <statement>
+        <p>
+          In the setting of the method of Frobenius, assume that
+          <m>r_1</m> and <m>r_2</m> are two real roots of the indicial
+          equation. Without loss of generalization, assume that
+          <m>r_1 \geq r_2</m>. Then there are three cases.
+        </p>
+        <p><ul>
+          <li>
+            <title>Case 1:</title>
+            <p>
+              If <m>r_1 - r_2 \notin \NN</m>, then each root will
+              derive a linearly independent series solutions. (The
+              idea here is that different fractional or irrational
+              exponents lead to radically different behaviour.)
+            </p>
+          </li>
+          <li>
+            <title>Case 2:</title>
+            <p>
+              If <m>r_1 - r_2 \in \NN</m> but <m>r_1 \neq r_2</m>,
+              then the second root may not produce a new linearly
+              independent solution. If it doesn't, and both roots
+              produce the solution <m>y_1</m>, then a second solution
+              exists and has the form:
+              <me>
+                y_2 = a y_1 \ln t + \sum_{n=0}^\infty b_n t^{n+r_2}
+              </me>.
+              In this case, I would need to do extra work to find the
+              constant <m>a</m> and the series coefficients
+              <m>b_n</m>.
+            </p>
+          </li>
+          <li>
+            <title>Case 3</title>
+            <p>
+              If the two roots are the same, then (obviously) only one
+              series solution is generated. A second solution exists
+              and has the same form as the previous case.
+            </p>
+          </li>
+        </ul></p>
+      </statement>
+    </theorem>
+    <p>
+      The proof of this theorem relies on another differential
+      equation technique called <em>reduction of order</em>. I've
+      chosen not to cover that technique in this course, but it is
+      good to be aware that it exists. In general, if there is one
+      solution to a second order linear DE, then reduction of order is
+      a method for using that solution to change the second order DE
+      into a first order DE, which can then be solved by first order
+      methods. Let me just state the theorem for you; this can be used
+      to deal with the third case in the Method of Frobenius to find
+      the second linearly independent solution.
+    </p>
+    <theorem>
+      <title>Reduction of Order</title>
+      <statement>
+        <p>
+          Assume that <m>y_1</m> is a solution of homogeneous linear
+          second order DE of the form
+          <me>
+            y^{\prime \prime} + P(t) y^\prime + Q(t) = 0
+          </me>.
+          Then a second linearly independent is given by the formula
+          <me>
+            y_2 = y_1(t) \int \frac{e^{- \int P(t) dt}}{y_1^2(t)} dt
+          </me>.
+          This reduction of order technique is fairly impractical for
+          series solution, since dividing by <m>y_1^2</m> and then
+          integrating is a miserable calculation.
+        </p>
+      </statement>
+    </theorem>
+  </subsection>
+</section>

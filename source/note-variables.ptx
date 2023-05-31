@@ -1,0 +1,26 @@
+<section xml:id="section-note-variables">
+  <title>A Note on Variables</title>
+  <p>
+    Various branches and subdisiplines of mathematics have their own
+    notation conventions. It's useful to make you aware of these
+    conventions, so that you are equiped to understand the
+    mathematical expression efficiently.
+  </p>
+  <p>
+    In differential equations, the name of the independent variable is
+    almost always either <m>x</m> or <m>t</m>.  <m>x</m> is
+    conventional, of course, in calculus; it is also useful for
+    certain geometric interpretation where we want <m>x</m> and
+    <m>y</m> to correspond to the familiar cartesian axes. I will
+    use <m>x</m> as the independent variable at certain points in the
+    courses, particularly when I use these geometric techniques.
+  </p>
+  <p>
+    The vast majority of differential equations that I want to solve
+    involve time derivatives; therefore, <m>t</m> is often the most
+    natural choice for the independent variable.  I will use <m>t</m>
+    instead of <m>x</m> for the majority of this course.  Often in the
+    literature, a derivative in Newton's notation (<m>f^\prime</m>)
+    implies that the independent variable is time.
+  </p>
+</section>

@@ -1,0 +1,99 @@
+<!--
+  This assignment was used for the Fall 2021 term.
+-->
+<section xml:id="section-assignment2">
+  <title>Assignment 2</title>
+  <p><ol>
+    <li>
+      Recall that <m>\imath</m> is the complex number with the
+      property <m>\imath^2 = -1</m>. Treating <m>\imath</m> as just
+      an ordinary constant, prove that both <m>e^{\imath t}</m> and
+      <m>\cos t + \imath \sin t</m> solve the differential equation
+      <m>y^{\prime \prime} + y = 0</m> with initial conditions
+      <m>y(0) = 1</m> and <m>y^\prime(0) = \imath</m>. Second order
+      linear constant coefficient equations have unique solutions
+      (which you can assume here, even though I haven't proved it
+      in the course). Use this fact about unique solutions to
+      conclude an alternate proof for Euler's formula. (8) 
+    </li>
+    <li>
+      <p>
+      Let <m>a</m>, <m>b</m>, and <m>c</m> be real constants and let 
+      <me>
+        L = a \frac{d^2}{dt^2} + b \frac{d}{dt} + c
+      </me>
+      be a second order linear differential operator in the variable
+      <m>t</m>. (8) 
+      </p>
+      <p><ol>
+        <li>
+          If a function <m>f</m> satisfies <m>L f = 0</m> and <m>L
+          (tf) = 0</m>, prove that the function must satisfy the
+          following first order equation.
+          <me>
+            \frac{df}{dt} = \frac{-b}{2a} f(t) 
+          </me>
+        </li>
+        <li>
+          Consider any second order linear constant coefficient
+          homogeneous differential equation where the characteristic
+          equation has a repeated root <m>r</m>. Verify that the
+          initial solution <m>f = e^{rt}</m> satisfies the equation in
+          the previous part of this question. 
+        </li>
+      </ol></p>
+    </li>
+    <li>
+      Solve this initial value problem. (6)
+      <md>
+        <mrow>
+          \amp 9 y^{\prime \prime} - 12y^\prime + 4y = 0 \amp \amp
+          y(0) = 1 \amp \amp y^\prime(0) = 3 
+        </mrow>
+      </md>
+    </li>
+    <li>
+      Solve this differential equation. (3) 
+      <me>
+        4 y^{\prime \prime} + 6y^\prime + 4y = 0 
+      </me>
+    </li>
+    <li>
+      Solve this differential equation. (3) 
+      <me>
+        2 y^{\prime \prime} + 7y^\prime + y = 0 
+      </me>
+    </li>
+    <li>
+      Solve this differential equation. Is this a resonant forcing
+      term? (6) 
+      <me>
+        3 \frac{d^2 f}{dt^2}  + 2 \frac{df}{dt}  + 3f = 4 \sin \left(
+        \frac{\sqrt{7} t}{3} \right)
+      </me>
+    </li>
+    <li>
+      Solve this differential equation. Is this a resonant forcing
+      term? (6) 
+      <me>
+        4 \frac{d^2 f}{dt^2}  + \frac{df}{dt}  + f = 6 \sin \left(
+        \frac{\sqrt{15} t}{8} \right)
+      </me>
+    </li>
+    <li>
+      Solve this differential equation both by undetermined
+      coefficients and by variation of parameters. Which method is
+      more efficient? (For variation of parameters, divide by 3 before
+      doing the calcluation.) (8) 
+      <me>
+        3 \frac{d^2 f}{dt^2}  - 6f = e^{-2t} 
+      </me>
+    </li>
+    <li>
+      Solve this differential equation. (6)
+      <me>
+        \frac{d^2 f}{dt^2} + 2 \frac{df}{dt} + 6f = te^{-t^2} 
+      </me>
+    </li>
+  </ol></p>
+</section>

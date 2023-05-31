@@ -1,0 +1,186 @@
+<section xml:id="section-stability-and-linearization">
+  <title>Stability and Linearization</title>
+  <subsection xml:id="subsection-stability">
+    <title>Stability</title>
+    <p>
+      <xref ref="section-qualitative-methods" /> introduced the indea
+      of analyzing a differential equation qualitatively, often
+      without actually knowing the solution. In qualitative analysis,
+      the goal is often describing a reasonable narrative for the
+      solution. A big part of that narrative can be described in the
+      language of <term>stability</term>. In this section, I want to
+      introduce the concept of stability and how it is used to
+      describe solutions to differential equations.
+    </p>
+    <p>
+      I'll start with an autonomous first order equation. 
+      <me>
+        \frac{dp}{dt} = f(p)
+      </me>
+      For these autonomous equation, stability is a properties of the
+      steady states. Recall that the steady states are the values of
+      the population where the rate of change is zero; the population
+      at a steady state doesn't move. Stability asks: what happens
+      when the initial value of the system is very close to the steady
+      state? 
+    </p>
+    <definition>
+      <statement>
+        <p>
+          The steady states of an autonomous DE are classified by
+          their <term>stability</term>.
+        </p>
+        <p><ul>
+          <li>
+            A steady state <m>P</m> is <term>stable</term> if <m>p(t)
+            \rightarrow P</m> for any initial value close to <m>P</m>.
+            Stable steady states are also called
+            <term>attractors</term>. In the phase line diagram,
+            trajectories points toward stable steady states.
+          </li>
+          <li>
+            A steady state is <term>partially stable</term> if <m>p(t)
+            \rightarrow P</m> for some initial values close to
+            <m>P</m>, but <m>p(t)</m> diverges away from <m>P</m> for
+            other initial values close to <m>P</m>. I can also be a
+            bit more specific here. The state is called <term>stable or
+            attractive from above</term> if <m>p(t)
+            \rightarrow P</m> for initial values slighlty larger than
+            <m>P</m>; likewise, the state is called <term>stable or
+            attractive from below</term> is <m>p(t) \rightarrow P</m>
+            for initial values slightly smaller than <m>P</m>. On the
+            phase line, a partially stable state has one trajectory
+            pointing towards the steady state and one pointing away. 
+          </li>
+          <li>
+            If both trajectories point away, the steady state is
+            called <term>unstable</term>. Unstable steady states are
+            also called <term>repellors</term>.
+          </li>
+        </ul></p>
+      </statement>
+    </definition>
+    <p>
+      I've given the definition of stability for first order
+      autonomous DEs. However, the concept of stability has much
+      broader applications to a variety of differential equations (and
+      particularly to systems of differential equations). I am not
+      going to give a formal definition, but the general idea is the
+      same. More complicated DEs and systems of DEs can also have
+      steady states. They are stable, or attractors, if nearby initial
+      values tend towards the steady steady state. They are unstable,
+      or repellors, if neary initial values tend away from the steady
+      states. In more complicated systems, all kinds of intermediate
+      or partially stable behaviours are also possible. <xref
+      ref="chapter-systems" /> will investigate some of the
+      interesting intermediate behaviours for systems of two linear
+      DEs. 
+    </p>
+  </subsection>
+  <subsection xml:id="subsection-linearization">
+    <title>Linearization</title>
+    <p>
+      Once I have identified a steady state of a DE system, my
+      interest is often limited to the behaviour of initial values
+      close to the steady state. This is the behaviour that stability
+      capture: whether the system approachs or diverges from the
+      steady state when its start a small distance away.
+    </p>
+    <p>
+      Let me take the same setup of an autonomous equation
+      <me>
+        \frac{dp}{dt} = f(p)
+      </me>
+      with steady state <m>P</m>. I'll assume that <m>f(p)</m> is an
+      analytic function. I can define a new function <m>q(t) =
+      p(t) - P</m>. I am essentially moving the steady state to zero
+      with this new function. I can change the differential equation
+      to reflect this new function <m>q(t)</m>. The derivative is the
+      same: <m>\frac{dq}{dt} = \frac{dp}{dt}</m>, since the only
+      difference is the subtraction of a constant. On the left, I can
+      replace <m>p</m> by <m>P+q</m>. That gives a new autonomous
+      differential equation.
+      <me>
+        \frac{dq}{dt} = f(P + q)
+      </me>
+      As desired, <m>q=0</m> is now the steady state of this new DE.
+      Now I'm going to expand the function <m>f</m> as a taylor series
+      centered at <m>P</m>. (Why would I want to expand <m>f</m> as a
+      taylor series? Well, because it accomplishes the goal of this
+      section, as you will see.) This is a bit strange and subtle: the
+      variable for this taylor series is <m>q</m>, not <m>t</m>. Here
+      is the result, just showing the first two terms of the taylor
+      series. 
+      <me>
+        \frac{dq}{dt} = f(P + q) = f(P) + f^\prime(P) (P + q - P) +
+        \ldots 
+      </me>
+      Now <m>f(P) = 0</m> since <m>P</m> was, by definition, a steady
+      state of the original autonomous DE. In the second term, the
+      <m>P</m> cancels off. Let me make those adjustments. 
+      <me>
+        \frac{dq}{dt} = f(P + q) = f(P) + f^\prime(P) (P + q - P) +
+        \ldots = f^\prime(P) q + \ldots
+      </me>
+      Now I want to take an approximation to the differential equation
+      by ignoring everything past the first taylor series term. This
+      is a severe approximaiton, but it is still quite useful. Here is
+      the new approximated DE. 
+      <me>
+        \frac{dq}{dt} \cong f^\prime(P) q 
+      </me>
+    </p>
+    <definition>
+      <statement>
+        <p>
+          The <term>linearization</term> of an autonomous DE at the
+          steady state <m>P</m> is the related differential equation
+          produced by taking only the first term of the taylor series
+          of the right side. 
+          <me>
+            \frac{dq}{dt} = f^\prime(P) q
+          </me>
+        </p>
+      </statement>
+    </definition>
+    <p>
+      The solution to the linearized DE is always an exponential
+      function, since the approximate DE always has the form of the
+      standard percentage growth differential equation. 
+      <me>
+        q(t) = q_0 e^{f^\prime(P) t}
+      </me>
+      Indeed, I can think of the linearization as the best
+      approximation to the solution by an exponential function. 
+    </p>
+    <p>
+      Since it is an exponential function, this linearized solution is
+      either exponential growth or decay, depending on the sign of
+      <m>f^\prime(P)</m>. Therefore, the sign of <m>f^\prime(P)</m>
+      determines the stability: positive and the solution is unstabe,
+      since exponential growth takes the solution away from the steady
+      state; negative and the solution is stable, since exponential
+      decay takes the solution towards the steady state. This can also
+      be seen in the phase line, since the sign of the derivative can
+      indicate the trajectories on either side of the steady state. If
+      <m>f^\prime(P) = 0</m>, then the stability is determined by the
+      higher order terms of the taylor series expansion and the
+      linearization of the differential equation is inconclusive. 
+    </p>
+    <p>
+      For now, there isn't much more I will do with this
+      linearization. However, it is worth introducing here as a theme
+      since it is so central to applied mathematics. Linear equations
+      are almost always the first kind of DE that applied
+      mathematicians try to use, typically since they have elegant and
+      accessible solutions. Everything else gets simply referred to a
+      <sq>non-linear</sq>; in many ways, <sq>non-linear</sq> is a
+      synonmy for annoying and complicated. However, linear models
+      only go so far and often the non-linearity holds the key to
+      understanding a model. Even so, I often want to understand the
+      linear part first and then figure out how to add in the
+      non-linearity in a reasonable fashion to add subtlety to a
+      model.
+    </p>
+  </subsection>
+</section>

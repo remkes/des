@@ -1,0 +1,326 @@
+<section xml:id="section-laplace-examples">
+  <title>
+    More Examples of Solving DEs with Laplace Transforms
+  </title>
+  <example>
+    <statement>
+      <p>
+        Consider a slightly different version of the square wave.
+        <me>
+          f(t) = \left\{ \begin{matrix} 1 \amp t \in [2n, 2n+1) \\ -1
+          \amp t \in [2n+1, 2n+2) \end{matrix} \right.
+        </me>
+        Using initial conditions <m>y(0) = y^\prime(0)= 0</m> I solve
+        the equation <m>y^{\prime \prime} + y = f(t)</m>.
+        <md>
+          <mrow>
+            (s^2+1)Y \amp = \frac{1}{1-e^{-2s}} \int_0^2 e^{-st} f(t)
+            dt
+          </mrow>
+          <mrow>
+            \amp = \frac{1}{1-e^{-2s}} \left[ \int_0^1 e^{-st} dt -
+            \int_1^2 e^{-st} dt \right]
+          </mrow>
+          <mrow>
+            \amp = \frac{1}{1-e^{-2s}} \left[ \left.
+            \frac{e^{-st}}{-s} \right|_0^1 + \left. \frac{e^{-st}}{s}
+            \right|_1^2 \right]
+          </mrow>
+          <mrow>
+            (s^2 + 1) Y \amp = \frac{1}{1-e^{2s}} \left[ \frac{-e^{-s}}{s} +
+            \frac{1}{s} + \frac{e^{-2s}}{s} - \frac{e^{-s}}{s}
+            \right]
+          </mrow>
+        </md>
+        After solving the integral and simplifying the result, I get
+        an algebraic equation in <m>Y</m>. I solve for <m>Y</m>. Then
+        I use partial fractions to split up the rational function and
+        geometric series to expand the term with an exponential decay
+        in the denominator. 
+        <md>
+          <mrow>
+            Y \amp = \frac{1-2s^{-s} + e^{-2s}}{s(s^2+1)}
+            \frac{1}{1-e^{-2s}}
+          </mrow>
+          <mrow>
+            \amp = \frac{1}{s(s^2+1)} (1-2e^{-s} + e^{-2s}) ( 1 -
+            e^{-2s} + e^{-4s} - e^{-6s} + e^{-8s} - \ldots )
+          </mrow>
+          <mrow>
+            \amp = \left( \frac{-s}{s^2+1} + \frac{1}{s} \right) (1 -
+            2e^{-s} + 2e^{-3s} - 2e^{-5s} + 2e^{-7s} - \ldots )
+          </mrow>
+        </md>
+        Then I apply the inverse transform and simplify it into a
+        single sum. 
+        <md>
+          <mrow>
+            y \amp = 1 - \cos t - 2u_1(t) (1-\cos(t-1)) + 2u_3(t)
+            (1-\cos(t-3))
+          </mrow>
+          <mrow>
+            \amp - 2u_5 (t) (1-\cos(t-5)) + 2 u_7(t) (1 -
+            \cos (t-7) ) - \ldots
+          </mrow>
+          <mrow>
+            \amp = 1 - \cos t + 2\sum_{k=0}^\infty (-1)^{k+1} u_{2k+1}
+            (t) (1 - \cos(t-(2k+1)))
+          </mrow>
+        </md>
+        As with the previous square wave solution in <xref
+        ref="example-square-wave" />, this solution involves an
+        infinite series of shifts, each one slightly further along.
+        Unusual periodic functions almost always lead to an infinite
+        series of shifts.
+      </p>
+    </statement>
+  </example>
+  <example>
+    <statement>
+      <p>
+        This examples involves a step function. To transform a step
+        function, I need something like <m>u_a(t) f(t-a)</m>. In this
+        equation, I want to adjust the forcing term to fit this
+        pattern, so that the transform is clear. I do this by adding
+        and subtracting <m>2u_2(t)</m> and factoring to fit the
+        pattern.
+        <md>
+          <mrow>
+            y^{\prime \prime} + 6y^\prime + 5y \amp = t - tu_2(t)
+          </mrow>
+          <mrow>
+            y(0) \amp = 1 
+          </mrow>
+          <mrow>
+            y^\prime(0) \amp = 0
+          </mrow>
+          <mrow>
+            y^{\prime \prime} + 6y^\prime + 5y \amp = t - (t-2) u_2(t)
+            + 2 u_2(t) 
+          </mrow>
+          <mrow>
+            s^2 Y - s + 6sY - 6 + 5Y \amp = \frac{1}{s^2} - e^{-2s}
+            \frac{1}{s^2} + 2\frac{e^{-2s}}{s} 
+          </mrow>
+        </md>
+        This is an algebraic equation. I'll solve for <m>Y</m>. Along
+        the way, I'll factor the quadratic on the left and expand the
+        terms on the right. 
+        <md>
+          <mrow>
+            (s+5)(s+1) Y \amp = \frac{1}{s^2} - \frac{e^{-2s}}{s^2} -
+            \frac{2e^{-2s}}{s} + s + 6  
+          </mrow>
+          <mrow>
+            Y \amp = \frac{1}{s^2(s+1)(s+5)} -
+            \frac{e^{-2s}}{s^2(s+1)(s+5)} -
+            \frac{2e^{-2s}}{s(s+1)(s+5)}  
+          </mrow>
+          <mrow>
+            \amp + \frac{s}{(s+5)(s+1)} +
+            \frac{6}{(s+5)(s+1)}  
+          </mrow>
+        </md>
+        I have five rational functions, some of which also have an
+        exponential (which will eventually turn into a shift). I need
+        partial fractions for all five rational functions. I'll to
+        straight to the result. 
+        <md>
+          <mrow>
+            \amp = \frac{1}{5s^2} + \frac{1}{4(s+1)} -
+            \frac{1}{100(s+5)} - \frac{6}{25s} - \frac{e^{-2s}}{5s^2}
+            - \frac{e^{-2s}}{4(s+1)} + \frac{e^{-2s}}{100(s+5)}  
+          </mrow>
+          <mrow>
+            \amp + \frac{6e^{-2s}}{25s} -
+            \frac{e^{-2s}}{2(s+1)} + \frac{e^{-2s}}{10(s+5)} +
+            \frac{2e^{-2s}}{5s} + \frac{5}{4(s+5)} - \frac{1}{4(s+1)}
+          </mrow>
+          <mrow>
+            \amp - \frac{3}{2(s+1)} + \frac{3}{2(s+5)}
+          </mrow>
+        </md>
+        Before doing the inverse transform, I'll gather like terms to
+        save some work and boil down the expression a bit. 
+        <md>
+          <mrow>
+            Y \amp = \frac{1}{5s^2} - \frac{6}{25s} +
+            \frac{3}{20(s+1)} + \left( \frac{-1}{100} + \frac{5}{4} +
+            \frac{3}{2} \right) \frac{1}{s+5}  
+          </mrow>
+          <mrow>
+            \amp + e^{-2s} \left( \frac{1}{5s^2} + \left(
+            \frac{6}{25} + \frac{2}{5} \right) \frac{1}{s} + \left(
+            \frac{-1}{4} - \frac{1}{2} \right) \frac{1}{s+1} +
+            \left(\frac{1}{100} + \frac{1}{10} \right) \frac{1}{s+5}
+            \right)  
+          </mrow>
+          <mrow>
+            \amp = \frac{1}{5s^2} - \frac{6}{25s} - \frac{3}{2(s+1)} +
+            \frac{137}{50(s+5)}  
+          </mrow>
+          <mrow>
+            \amp + e^{-2s} \left( \frac{1}{5s^2} +
+            \frac{16}{25s} - \frac{3}{4(s+1)} + \frac{11}{100(s+5)}
+            \right)  
+          </mrow>
+        </md>
+        Now I apply the inverse transform, using the exponentials as
+        shifts. After the inverse transform, I can make at least one
+        small simplification, but the result is still pretty
+        complicated. 
+        <md>
+          <mrow>
+            y \amp = \frac{t}{5} - \frac{6}{25} - \frac{3e^{-t}}{2} +
+            \frac{137e^{-5t}}{50} + u_2(t) \left[ \frac{(t-2)}{5} +
+            \frac{16}{25} - \frac{3e^{2-t}}{4} +
+            \frac{11e^{10-5t}}{100} \right]  
+          </mrow>
+          <mrow>
+            y \amp = \frac{t}{5} - \frac{6}{25} - \frac{3e^{-t}}{2} +
+            \frac{137e^{-5t}}{50} + u_2(t) \left[ \frac{t}{5} +
+            \frac{6}{25} - \frac{3e^{2-t}}{4} +
+            \frac{11e^{10-5t}}{100} \right]  
+          </mrow>
+        </md>
+      </p>
+    </statement>
+  </example>
+  <example>
+    <statement>
+      <p>
+        This example uses two <m>\delta</m>-functions, representing
+        two sudden impacts.
+        <md>
+          <mrow>
+            y^{\prime \prime} - 7y^\prime + 6y \amp = e^t +
+            \delta_2(t) + \delta_4(t) 
+          </mrow>
+          <mrow>
+            y(0) \amp = y^\prime(0) = 0
+          </mrow>
+          <mrow>
+            s^2 Y - 7sY + 6Y \amp = \frac{1}{s-1} + e^{-2s} + e^{-4s}
+          </mrow>
+        </md>
+        This is an algebraic function, so I solve for <m>Y</m>. I'll
+        get a function of rational functions, which I split up with
+        partial fractions. 
+        <md>
+          <mrow>
+            Y \amp = \frac{1}{(s-1)(s-6)(s-1)} +
+            \frac{e^{-2s}}{(s-6)(s-1)} + \frac{e^{-4s}}{(s-6)(s-1)}
+          </mrow>
+          <mrow>
+            \amp = \frac{-1}{25(s-1)} - \frac{1}{5(s-1)^2} +
+            \frac{1}{25(s-6)} 
+          </mrow>
+          <mrow>
+            \amp + e^{-2t} \left( \frac{1}{5(s-6)} -
+            \frac{1}{5(s-1)} \right) 
+          </mrow>
+          <mrow>
+            \amp + e^{-4t} \left( \frac{1}{5(s-6)} -
+            \frac{1}{5(s-1)} \right) 
+          </mrow>
+        </md>
+        Then I apply the inverse transform.
+        <md>
+          <mrow>
+            y \amp = \frac{e^{-t}}{25} - \frac{1}{2} \calL^{-1}
+            \left\{ \frac{d}{dt} \frac{-1}{s-1} \right\} +
+            \frac{1}{25} e^{6t} 
+          </mrow>
+          <mrow>
+            \amp \frac{u_2(t)}{5} \left( e^{6(t-2)}-
+            e^{t-2} \right) + \frac{u_4(t)}{5} \left( e^{6(t-4)}-
+            e^{t-4} \right) 
+          </mrow>
+          <mrow>
+            y \amp = \frac{e^{-t}}{25} - \frac{te^t}{5} + \frac{1}{25}
+            e^{6t} 
+          </mrow>
+          <mrow>
+            \amp \frac{u_2(t)}{5} \left( e^{6t-12}-
+            e^{t-2} \right) + \frac{u_4(t)}{5} \left( e^{6t-24}-
+            e^{t-4} \right) 
+          </mrow>
+        </md>
+      </p>
+    </statement>
+  </example>
+  <example>
+    <statement>
+      <p>
+        This is a ridiculous example with infinitely many
+        <m>\delta</m>-functions, representing a new impact at every
+        unit of time. I can treat this forcing sum as a periodic
+        function and use that structure (with period 1) to get the
+        transform. 
+        <md>
+          <mrow>
+            f(t) \amp = \sum_{n=0}^\infty \delta_n (t) 
+          </mrow>
+          <mrow>
+            y^{\prime \prime} + 3 y^\prime + 2y \amp = f(t)
+          </mrow>
+          <mrow>
+            y(0) \amp = y^\prime(0) = 0
+          </mrow>
+          <mrow>
+            s^2 Y + 3sY + 2Y \amp = \frac{1}{1-e^{-s}} \int_0^1 e^{-st}
+            \delta_0 (t) dt = \frac{1}{1-e^{-s}} 
+          </mrow>
+        </md>
+        After solving the integral, this is an algebraic equation. I
+        solve for <m>Y</m>, apply partial fractions to the rational
+        function, and use a geometric series to expand the term with
+        an exponential in the denominator.
+        <md>
+          <mrow>
+            Y \amp = \frac{1}{1-e^{-s}} \frac{1}{(s+2)(s+1)} \amp \amp
+          </mrow>
+          <mrow>
+            Y \amp = \left( \frac{1}{s+1} - \frac{1}{s+2} \right)
+            \left( 1 _ e^{-s} + e^{-2s} + e^{-3s} + e^{-4s} + \ldots
+            \right) \amp \amp
+          </mrow>
+        </md>
+        Then I apply the inverse transform, group term and try to
+        write the result as a single sum. 
+        <md>
+          <mrow>
+            y \amp = e^{-t} - e^{-2t} + u_1(t) \left( e^{-(t-1)} -
+            e^{-(2t-2)} \right) + u_2(t) \left( e^{-(t-2)} -
+            e^{-(2t-4)} \right) \amp \amp
+          </mrow>
+          <mrow>
+            \amp + u_3(t) \left( e^{-(t-3)} - e^{-(2t-6)}
+            \right) + u_4(t) \left( e^{-(t-4)} - e^{-(2t-8)} \right)
+            \amp \amp
+          </mrow>
+          <mrow>
+            y \amp = e^{-t} - e^{-2t} + u_1(t) \left( e^{1-t} -
+            e^{2-2t} \right) + u_2(t) \left( e^{2-t} - e^{4-2t}
+            \right) \amp \amp
+          </mrow>
+          <mrow>
+            \amp + u_3(t) \left( e^{3-t} - e^{6-2t}
+            \right) + u_4(t) \left( e^{4-t} - e^{8-2t} \right) \amp
+            \amp
+          </mrow>
+          <mrow>
+            \amp = \sum_{k=0}^\infty u_k(t) \left( e^{k-t} -
+            e^{2(k-t)} \right) \amp \amp
+          </mrow>
+        </md>
+        This is an interesting superposition of decay functions. They
+        all have the same shape with a slightly higher peak. Adding
+        them all up gives something which slowly rises higher and
+        higher, while still trying to decay. Eventually the system
+        does grow beyond any bounds, even with all the decay
+        functions.
+      </p>
+    </statement>
+  </example>
+</section>

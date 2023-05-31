@@ -1,0 +1,317 @@
+<section xml:id="section-fourier-series">
+  <title>Fourier Series</title>
+  <introduction>
+    <p>
+      The answer to the question at the end of the <xref
+      ref="section-heat-equation" />  is very positive: most functions
+      can, in fact, be approximated by a series with term <m>\sin
+      nx</m>. These series are called Fourier series and I'll spend
+      the current section defining and investigating them.
+    </p>
+  </introduction>
+  <subsection xml:id="subsection-bases">
+    <title>Series and Bases for Functions</title>
+    <p>
+      The series in <xref ref="section-heat-equation" /> only involved
+      sine functions, but the general Fourier series involves both
+      sine and cosine.
+    </p>
+    <definition>
+      <statement>
+        <p>
+          Let <m>a_n</m> and <m>b_n</m> be real numbers. A
+          <term>Fourier series</term> is a series of the form
+          <me>
+            f(x) = \frac{a_0}{2} + \sum_{n=1}^\infty a_n \cos (nx) +
+            \sum_{n=1}^\infty b_n \sin (nx)
+          </me>.
+        </p>
+      </statement>
+    </definition>
+    <p>
+      In general, function as series can be consider a sums over a
+      particular basis. For Taylor series, the basis was the set of
+      monomials: <m>x^n</m> for <m>n \in \NN</m>. A Taylor series is
+      an attempt to write a general function as a sum of these
+      monomials. For Fourier series, the is <m>\{ 1, \cos nx, \sin nx
+      \}</m> for <m>n \in \NN</m>.
+    </p>
+    <p>
+      In a Fourier series, I can split the basis into two pieces: the
+      sine pieces and the cosine pieces (including the constant
+      <m>1</m> in the later). If I restrict to only one piece, I
+      could form a Fourier sine series or Fourier cosine series. The
+      sine pieces are all odd functions; therefore, a Fourier sine
+      series must be an odd function. Likewise, the cosine pieces
+      (including the constant) are all even functions, so a Fourier
+      cosines series must be an even function.
+    </p>
+    <p>
+      Given a general function <m>f</m>, I can write <m>f = f_+
+      + f_-</m> where <m>f_+</m> is even and <m>f_-</m> is odd. The
+      pieces are easy to define: <m>f_+ = \frac{1}{2} (f(x) +
+      f(-x))</m> and <m>f_- = \frac{1}{2} (f(x) - f(-x))</m>. If
+      <m>f</m> has a Fourier series, then <m>f_-</m>, the odd piece,
+      will have a Fourier sine series and <m>f_+</m>, the even piece,
+      will have a Fourier cosine series. The heat equation, since I
+      insisted on starting at <m>(0,0)</m> and only considering
+      positive values, only needs one of the two types. Since sines
+      arose in the solution, I'll assume the solution to the heat
+      equation is odd and rely on Fourier sine series.
+    </p>
+  </subsection>
+  <subsection xml:id="subsection-fourier-scope">
+    <title>Scope of Fourier Series</title>
+    <p>
+      The good news about Fourier series is that they cover a large
+      family of functions.
+    </p>
+    <theorem>
+      <statement>
+        <p>
+          If <m>f</m> is periodic and piecewise continuous on
+          <m>\RR</m> with period <m>2T</m>, the there exists
+          <m>a_n</m> and <m>b_n</m> such that
+          <me>
+            f(x) = \frac{a_0}{2} + \sum_{n=1}^\infty a_n \cos \left(
+            \frac{n\pi x}{T} \right) + \sum_{n=1}^\infty b_n \sin
+            \left( \frac{n\pi x}{T} \right)
+          </me>.
+        </p>
+      </statement>
+    </theorem>
+    <p>
+      If I don't want to work with periodic functions, I can simply
+      look at any piecewise-continuous function defined on
+      <m>[0,2T)</m>, thinking of it as one period, and find a Fourier
+      series for it. (This method works for any finite intervals.)
+    </p>
+    <theorem>
+      <statement>
+        <p>
+          If <m>f</m> is piecewise continuous on <m>[0,2T)</m> then
+          there exists <m>a_n</m> and <m>b_n</m> such that 
+          <me>
+            f(x) = \frac{a_0}{2} + \sum_{n=1}^\infty a_n \cos \left(
+            \frac{n\pi x}{T} \right) + \sum_{n=1}^\infty b_n \sin
+            \left( \frac{n\pi x}{T} \right)
+          </me>.
+        </p>
+      </statement>
+    </theorem>
+    <p>
+      Therefore, I can use Fourier series to approximate any
+      piecewise continuous function on a bounded interval. This is a
+      very large class of functions.
+    </p>
+  </subsection>
+  <subsection xml:id="subsection-fourier-properties">
+    <title>Properties of Fourier Series</title>
+    <p>
+      When I talked about the Legendre polynomials, I derived a very
+      nice orthogonality property for them. As opposed to the
+      ordinary monomials <m>x^n</m>, the Legengre polynomials were
+      pair-wise orthogonal, using integration on <m>[-1,1]</m> as the
+      inner product. When I find a basis for a type of series, it is
+      very convenient for integration if the basis functions are
+      orthogonal. (Like in linear algebra, an orthogonal basis is
+      always easy to use).
+    </p>
+    <p>
+      Fourier series terms have wonderful orthogonality properties.
+      For convenience, these properties are stated for the period <m>T
+      = 2\pi</m>.
+    </p>
+    <proposition>
+      <statement>
+        <p>
+          Let <m>n, m \in \NN</m>, with the possibility that
+          <m>m=0</m> to account for the constant term.
+          <md>
+            <mrow>
+              \int_{-\pi}^{\pi} \cos (mx) \cos (nx) dx \amp = \pi
+              \delta_{mn}
+            </mrow>
+            <mrow>
+              \int_{-\pi}^{\pi} \sin (mx) \sin (nx) dx \amp = \pi
+              \delta_{mn}
+            </mrow>
+            <mrow>
+              \int_{-\pi}^{\pi} \cos (mx) \sin (nx) dx \amp = 0
+            </mrow>
+          </md>
+        </p>
+        <p>
+          Therefore, all the Fourier basis functions are orthogonal
+          under the scalar product given by integration on
+          <m>[-\pi,\pi]</m>.
+        </p>
+      </statement>
+    </proposition>
+    <proof>
+      <p>
+        For the proof, I use the trig identities for products of
+        <m>\sin</m> and <m>\cos</m>, such as
+        <me>
+          \cos A \cos B = \frac{1}{2} \left( \cos(A-B) + \cos (A+B)
+          \right)
+        </me>.
+        I only show the proof of the first of the three statements.
+        The proof is to show a particular integral is zero, so I just
+        calculate that integral. I use a trig identity to make the
+        product into a sum, so that the integral has an antiderivative
+        which is reasonable to find.
+        <md>
+          <mrow>
+            \int_{-\pi}^{\pi} \cos (mx) \cos (nx) dx \amp =
+            \frac{1}{2} \int_{-\pi}^\pi \cos ((m-n)x) +
+            \cos((m+x)x)dx 
+          </mrow>
+          <mrow>
+            \amp = \frac{1}{2} \left. \left[ \frac{-\sin((m-n)x)}{m-n}
+            - \frac{-\sin((m+n)x)}{m+n} \right] \right|_{-\pi}^{\pi} = 0 
+          </mrow>
+          <mrow>
+            \amp \text{ if }  m \neq n
+          </mrow>
+          <mrow>
+            \amp = \frac{1}{2} \int_{-\pi}^\pi 1 + \cos 2m dx 
+          </mrow>
+          <mrow>
+            \amp = \frac{1}{4} \left. \left( \frac{-\sin mx}{m}
+            \right) + \frac{x}{2} \right|_{\pi}^\pi = 0 +
+            \frac{2\pi}{2} = \pi 
+          </mrow>
+          <mrow>
+            \amp \text{ if }  m = n
+          </mrow>
+        </md>
+      </p>
+    </proof>
+    <p>
+      For Taylor series, there were convenient properties for the
+      calculus of the series and the calculation of coefficients.
+      Similar properties exist for Fourier series. If I know a
+      series is convergent, I can integrate and differentiate
+      term-wise. (Not that differentiation and integration change a
+      Fourier sine series into a Fourier cosine series and vice-versa.)
+    </p>
+    <p>
+      A method for the the calculation of coefficients comes from the
+      orthogonality property. Assume that <m>f(x)</m> is expressed as
+      a Fourier series.
+      <me>
+        f(x) = \frac{a_0}{2} + \sum_{n=1}^\infty a_n \cos (nx) +
+        \sum_{n=1}^\infty b_n \sin (nx)
+      </me>
+      Then I can calculate the following integral.
+      <md>
+        <mrow>
+          \int_{-\pi}^\pi f(x) \cos mx dx \amp = \int_{-\pi}^\pi
+          \frac{a_0}{2} dx + \int_{-\pi}^\pi \sum_{n=1}^\infty a_n
+          \cos (nx) dx + \int_{-\pi}^\pi \sum_{n=1}^\infty b_n \sin
+          (nx) dx
+        </mrow>
+        <mrow>
+          \amp = 0 + \sum_{n=1}^\infty a_n \pi \delta_{mn} +
+          \sum_{n=1}^\infty 0
+        </mrow>
+        <mrow>
+          \amp = a_n \pi
+        </mrow>
+      </md>
+    </p>
+    <p>
+      The integral calculates the coefficient <m>a_n</m>. Similarly,
+      the constant coefficient <m>a_0</m> and the sine coefficients
+      are calculated by integrals. This gives a general result for
+      calculating Fourier coefficients, for <m>n \in \NN</m>.
+    </p>
+    <proposition>
+      <statement>
+        <p>
+          If <m>f</m> is expressed as a Fourier series, then the
+          Fourier coefficient <m>a_n</m> and <m>b_n</m> satisfy these
+          equations.
+          <md>
+            <mrow>
+              a_n \amp = \frac{1}{\pi} \int_{-\pi}^\pi f(x) \cos nx
+              dx
+            </mrow>
+            <mrow>
+              b_n \amp = \frac{1}{\pi} \int_{-\pi}^\pi f(x) \sin nx
+              dx
+            </mrow>
+            <mrow>
+              a_0 \amp = \frac{1}{\pi} \int_{-\pi}^\pi f(x) dx
+            </mrow>
+          </md>
+        </p>
+      </statement>
+    </proposition>
+    <example>
+      <statement>
+        <p>
+          I'll express <m>f(x) = x</m> on <m>(-\pi, \pi)</m> as a
+          Fourier series. Notice that <m>f(x)</m> is odd, so only
+          sine terms are expected. I calculate the coefficients of
+          the sine terms with integrals.
+          <md>
+            <mrow>
+              b_n \amp = \frac{1}{\pi} \int_{-\pi}^\pi f(x) \sin nx
+              dx
+            </mrow>
+            <mrow>
+              \amp = \frac{1}{\pi} \int_{-\pi}^\pi x \sin nx dx
+            </mrow>
+            <mrow>
+              \amp = \frac{1}{\pi} \left. \left( \frac{-x\cos nx}{n}
+              \right) \right|_{-\pi}^\pi + \int_{-\pi}^\pi \frac{\cos
+              nx}{n} dx
+            </mrow>
+            <mrow>
+              \amp = \frac{1}{\pi} \left( \frac{ -\pi \cos n \pi }{n}
+              - \frac{ \sin (nx) }{n^2} \Bigg|_{-\pi}^\pi \right) 
+            </mrow>
+            <mrow>
+              \amp = \frac{1}{\pi} \left( \frac{-\pi}{n} \right) \cos
+              n\pi = \frac{-(-1)^n}{n} = (-1)^{n+1}\ \frac{1}{n}
+            </mrow>
+            <mrow>
+              x \amp = \sum_{n=1}^\infty \frac{(-1)^{n+1}}{n} \sin
+              nx
+            </mrow>
+          </md>
+        </p>
+      </statement>
+    </example>
+  </subsection>
+  <subsection xml:id="subsection-finishing-heat-equation">
+    <title>Finishing the Heat Equation Solution</title>
+    <p>
+      If I go back to the heat equation, the initial conditions where
+      <m>u(x,0) = f(x)</m> for some given function <m>f</m> on <m>[0,
+      \pi]</m> with <m>f(0) = f(\pi) = 0</m>. When <m>t=0</m>, I
+      wrote that
+      <me>
+        f(x) = \sum_{n=1}^\infty T_n \sin (nx)
+      </me>.
+      The coefficients <m>T_n</m> in the full solution to the heat
+      equation must be the Fourier coefficients of the initial
+      function <m>f(x)</m>. Now I know how to calculate these
+      coefficients. Since this is a sine series, we expect that
+      <m>f</m> is odd, and we extend it to <m>(-\pi,\pi)</m> as an odd
+      function. Then I integrate to find the coefficients.
+      <me>
+        T_n = \frac{2}{\pi} \int_0^\pi f(x) \sin nx dx
+      </me>
+      Therefore, the full solution to the heat equation, with initial
+      conditions <m>f(t)</m> and boundary conditions <m>u(0,t) =
+      u(\pi,t) = 0</m>, is the following function.
+      <me>
+        u(x,t) = \frac{2}{\pi} \sum_{n=1}^\infty \left[ \int_0^\pi
+        f(x) \sin (nx) dx \right] e^{-kn^2t} \sin (nx)
+      </me>
+    </p>
+  </subsection>
+</section>

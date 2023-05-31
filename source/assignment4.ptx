@@ -1,0 +1,105 @@
+<!--
+  This assignment was used for the Fall 2021 term.
+-->
+<section xml:id="section-assignment4">
+  <title>Assignment 4</title>
+  <p><ol>
+    <li>
+      Solve this differential equation using Laplace transforms. (6) 
+      <md>
+        <mrow>
+          y^{\prime \prime} + 4y^{\prime} + 3y \amp = u_{\pi}(t) \sin
+          t
+        </mrow>
+        <mrow>
+          y(0) \amp = 0
+        </mrow>
+        <mrow>
+          y^\prime(0) \amp = 1
+        </mrow>
+      </md>
+    </li>
+    <li>
+      Solve this differential equation using Laplace transforms. (6) 
+      <md>
+        <mrow>
+          y^{\prime \prime} + y^{\prime} + 7y \amp = 3 + 3 \delta_4(t) 
+        </mrow>
+        <mrow>
+          y(0) \amp = 3
+        </mrow>
+        <mrow>
+          y^\prime(0) \amp = 0
+        </mrow>
+      </md>
+    </li>
+    <li>
+      Solve this differential equation using Laplace transforms. (6) 
+      <md>
+        <mrow>
+          y^{\prime \prime} + 2y^{\prime} + y \amp = \delta_1(t) +
+          \delta_2(t) + \delta_3(t)
+        </mrow>
+        <mrow>
+          y(0) \amp = 0
+        </mrow>
+        <mrow>
+          y^\prime(0) \amp = 1
+        </mrow>
+      </md>
+    </li>
+    <li>
+      Solve this differential equation using Laplace transforms. (6) 
+      <md>
+        <mrow>
+          y^{\prime \prime} + y^{\prime} + y \amp = e^t \sinh t
+        </mrow>
+        <mrow>
+          y(0) \amp = 0
+        </mrow>
+        <mrow>
+          y^\prime(0) \amp = 1
+        </mrow>
+      </md>
+    </li>
+    <li>
+      Solve these two differential equations.
+      <md>
+        <mrow>
+          y^{\prime \prime} + 4y^{\prime} + 4y \amp = 0
+        </mrow>
+        <mrow>
+          y(0) \amp = 0
+        </mrow>
+        <mrow>
+          y^\prime(0) \amp = 4
+        </mrow>
+        <mrow>
+          y^{\prime \prime} + 4y^{\prime} + 4y \amp = 4\delta_0(t) 
+        </mrow>
+        <mrow>
+          y(0) \amp = 0
+        </mrow>
+        <mrow>
+          y^\prime(0) \amp = 0
+        </mrow>
+      </md>
+      Explain the connection between the two equations. (8) 
+    </li>
+    <li>
+      Consider the following odd claim about distributions.
+      <me>
+        \frac{d}{dt} u_a(t) = \delta_a(t)
+      </me>
+      Explain why this might possibly be true. Then apply the Laplace
+      transform to the equation to show that, at least after the
+      transform, both sides of the equation are equal. (6)
+    </li>
+    <li>
+      Describe the behaviour you expect out of an overdamped system
+      forced by a square wave? You can answer qualitatively or
+      quantitatively, with explanations or calculations, but you  must
+      give reasons for the behaviour you predict. (6) 
+    </li>
+  </ol></p>
+</section>

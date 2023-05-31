@@ -1,0 +1,43 @@
+<section xml:id="section-second-order-odes-general">
+  <title>Second Order Linear Differential Equations</title>
+  <introduction>
+    <p>
+      A second order (ordinary) differential equation involves the
+      second derivative of a function of one variable.  In full
+      generality, this could be any ridiculously complicated
+      expression involving the independent variable, the function, its
+      first derivative, and its second derivative.
+    </p>
+    <example>
+      <statement>
+        <p>
+          <me>
+            \left( \frac{d^2 f}{dt^2} \right)^2 + \frac{\frac{df}{dt}
+            - t^2 f^2}{\frac{df}{dt} - \frac{d^2 f}{dt^2}} = \frac{t^2
+            - \sin t}{f}
+        </me>
+        </p>
+      </statement>
+    </example>
+    <p>
+      We have basiclaly no idea and no hope for approaching such
+      complicated general cases.  In this chapter, even more than with
+      first order equations, we will restrict to very particular cases
+      where there are useful techniques of solutions.  The general
+      restriction will be to linear equations, but even inside that
+      restriction, we will make further assumptions about the
+      structure.
+    </p>
+    <p>
+      As with first order equations, we solve initial value problems.
+      However, since we have a second derivative involved, we expect
+      (at least implicitly) to have to integrate twice.  This results
+      in two constants of integration.  Therefore, we will require two
+      initial values.  Typically, for an equation about a function
+      <m>f(t)</m>, there will be an initial value for the function
+      <m>f(t_0) = a</m> and an initial value for the derivative
+      <m>f^\prime(t_1) = b</m>.  In most cases, a specific solution
+      can only be found if both initial values are specified.
+    </p>
+  </introduction>
+</section>

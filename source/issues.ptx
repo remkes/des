@@ -1,0 +1,37 @@
+<section xml:id="section-issues">
+  <title>Issues and Next Directions</title>
+  <p>
+    After the initial examples of series solutions, two of questions
+    seem natural. First, I might observe that <m>P</m> and <m>Q</m>
+    were, so far, only rational functions, which means that I only
+    dealt with polynomials in the calculation. What if <m>P</m>
+    and <m>Q</m> were other analytic functions? In this cases, we
+    would have to expand <m>P</m> and <m>Q</m> as series about the
+    ordinary point and then multiply them by the series for <m>y</m>
+    in the calculation. This is possible, but miserable.
+  </p>
+  <p>
+    I might also wonder why I restricted myself to homogeneous cases. What
+    happens if I add a forcing term <m>f(t)</m>? I can certainly do
+    this is <m>f</m> is analytic on the same domain as <m>P</m> and
+    <m>Q</m>. In all our examples so far, I compared the
+    coefficients to <m>0</m>. If there is a forcing terms, I would
+    instead compare the coefficients to the coefficients of <m>f</m>
+    instead of <m>0</m>. This leads to more complications, since the
+    relationship between the coefficients may no longer be a linear
+    recurrence relation.
+  </p>
+  <p>
+    In both of these situations (non-polynomial <m>P</m> and <m>Q</m>
+    or non-homogeneous DE with forcing), I can easily end up in a
+    situation were the challenges of computation prevent me from
+    finding a nice form for the coefficients of <m>y</m>. Quite
+    frequently, I will only decide to calculate the first few terms.
+    The result is a Taylor polynomial approximation to the solution,
+    instead of a complete Taylor series solution. However,
+    approximate solutions (if they have sufficient precision) are
+    often sufficient. One of the advantages of working with Taylor
+    series solutions is the easy availability of Taylor polynomial
+    approximations. 
+  </p>
+</section>

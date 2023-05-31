@@ -1,0 +1,192 @@
+<section xml:id="distributions">
+  <title>Distributions</title>
+  <p>
+    In analysis (the world of transformation, non-elementary
+    functions, etc.) I can extend the notion of a function in strange
+    and novel ways. While I'm not going to give a formal definition,
+    these extensions are called distributions. The basic idea is that
+    a distribution may not be a well-defined function, but it is
+    something that behaves well in integration. (If the word
+    <sq>distribution</sq> reminds you of probability and statistics,
+    that's a good intuition. These distributions are very similar to
+    distributions used in statistics where, again, the ability to
+    integrate is the most important property).
+  </p>
+  <p>
+    The distribution I want to share in this section is the
+    <m>\delta</m>-function. (The name is terrible, since it is most
+    certainly <em>not</em> a function.) Here is the definition. Since
+    the most important thing to know about a distribution is how to
+    integrate it, I'll define the <m>\delta</m>-function by its
+    integration property. 
+  </p>
+  <definition>
+    <statement>
+      <p>
+        The <m>\delta</m>-function centred at <m>a \in \RR</m> is the
+        unique distribution that satisfies the following two
+        integration properties. Let <m>f(t)</m> be any integrable
+        function with domain <m>\RR</m>.
+        <md>
+          <mrow>
+            \int_{-\infty}^\infty \delta_a(t) dt \amp = 1
+          </mrow>
+          <mrow>
+            \int_{-\infty}^\infty \delta_a (t) f(t) dt \amp = f(a)
+          </mrow>
+        </md>
+      </p>
+    </statement>
+  </definition>
+  <p>
+    This is a good definition, but not a very clear one. What is this
+    distribution <mdash /> how is it like a function and what function
+    is it like? The best way to define the <m>\delta</m>-function is
+    as a limit of other function, which I'll try to do now.
+  </p>
+  <p>
+    Let <m>b \in \NN</m> and consider the bell curve functions
+    <m>\frac{\sqrt{b}}{\sqrt{\pi}} e^{-b(t-a)^2}</m>. All of these
+    functions have integral <m>1</m>, by design of the choice of the
+    constnat involved. 
+    <me>
+      \int_{-\infty}^\infty \frac{\sqrt{b}}{\sqrt{\pi}} e^{-b(t-a)^2}
+      dt = \frac{\sqrt{b}}{\sqrt{\pi}} \int_{-\infty}^\infty
+      e^{-b(t-a)^2} dt = \frac{\sqrt{b}}{\sqrt{\pi}} \frac{
+      \sqrt{\pi}}{\sqrt{b}} = 1
+    </me>
+    These functions are all bell curves, but they become taller and
+    narrower as <m>b</m> increases. <xref ref="figure-bell-curves" />
+    shows the progression of these bell curves.
+  </p>
+  <figure xml:id="figure-bell-curves">
+    <caption>Narrower and Narrower Bell Curves</caption>
+    <image xml:id="figure23" width="90%">
+      <asymptote>
+        size(8cm,6cm,IgnoreAspect); 
+        import graph;
+        
+        xaxis(Ticks());
+        yaxis(Ticks());
+
+        real f1(real x) {return sqrt(1)*exp(-1*(x^2));}
+        draw(graph(f1,-1,1));
+
+        real f2(real x) {return sqrt(2)*exp(-2*(x^2));}
+        draw(graph(f2,-1,1));
+
+        real f3(real x) {return sqrt(3)*exp(-3*(x^2));}
+        draw(graph(f3,-1,1));
+
+        real f4(real x) {return sqrt(4)*exp(-4*(x^2));}
+        draw(graph(f4,-1,1));
+
+        real f5(real x) {return sqrt(5)*exp(-5*(x^2));}
+        draw(graph(f5,-1,1));
+
+        real f6(real x) {return sqrt(6)*exp(-6*(x^2));}
+        draw(graph(f6,-1,1));
+
+        real f7(real x) {return sqrt(7)*exp(-7*(x^2));}
+        draw(graph(f7,-1,1));
+
+        real f8(real x) {return sqrt(8)*exp(-8*(x^2));}
+        draw(graph(f8,-1,1));
+
+        real f9(real x) {return sqrt(9)*exp(-9*(x^2));}
+        draw(graph(f9,-1,1));
+
+        real f10(real x) {return sqrt(10)*exp(-10*(x^2));}
+        draw(graph(f10,-1,1));
+      </asymptote>
+    </image>
+  </figure>
+  <p>
+    Then I could define <m>\delta_0(t)</m> as the limit of the
+    sequences of bell curves as <m>b \rightarrow \infty</m>.
+    <me>
+      \delta_0(t) = \lim_{b \rightarrow \infty}
+      \frac{\sqrt{b}}{\sqrt{\pi}} e^{b(t-a)^2}
+    </me>
+    The limit of a sequence of function is a strange idea and I'm not
+    going to go into the technical details of limits of functions and
+    the resulting distribution. (There is a theory for this, as part
+    of real analysis.) But I can talk about the intuition. In the
+    sequences of functions, the bell curves are becoming taller and
+    narrower with each step. In the limit, I produce something that
+    becomes infinitely narrow and infinitely tall. However, the area
+    under the curve for any function in the limit is 1, so the value
+    of the integral should be unchanged.
+    <me>
+      \int_{-\infty}^\infty \delta_0(t) dt = 1
+    </me>
+    Since the result of the limit is essentially just an infinitely
+    tall, infinitely narrow spike, sometimes the
+    <m>\delta</m>-function is defined as follows.  
+    <me>
+      \delta_a(t) = \left\{ \begin{matrix} \infty \amp t = a \\ 0
+      \amp t \neq a \end{matrix} \right.
+    </me>
+    This is very strange, since <m>\infty</m> is not a number and
+    shouldn't be the output of a function. Indeed, this is not a
+    function (even though it is named, poorly,  as <sq>the
+    <m>\delta</m>-function</sq>). But this does get at the idea of
+    the <m>\delta</m>-function. In many introductory situations, this
+    piecewise definition is, indeed, given as the definition; I prefer
+    to give the integration definition, since it is better practice.
+  </p>
+  <p>
+    The previous limit defined the <m>\delta</m>-function centred at
+    <m>a=0</m>. In many books, this is simiply written
+    <m>\delta(t)</m>, without the subscript. The other
+    <m>\delta</m>-function are simply shifts of this distribution.
+    <me>
+      \delta_a(t) = \delta_0(t-a)
+    </me>
+  </p>
+  <p>
+    Finally, I could integrate the product of the bell curve sequence
+    and some other function <m>f(t)</m> with domain <m>\RR</m>. 
+    If I integrate <m>f(t) \frac{\sqrt{a}}{\sqrt{\pi}} e^{-at^2}</m>,
+    I get a weighted average of <m>f(t)</m> values near <m>a</m>. In
+    the limit, though, only the value at <m>f(a)</m> matters, since
+    the <m>\delta</m>-function multiplies by zero everywhere else.
+    The weighted average of just one value is simply that value, so I
+    can argue (informally) for the second property of the 
+    <m>\delta</m>-function.
+    <me>
+      \int_{-\infty}^\infty \delta_a (t) f(t) dt = f(a)
+    </me>
+  </p>
+  <p>
+    Since the <m>\delta</m>-function, and distributions in general,
+    can be integrated, I can take their Laplace transforms.
+    The Laplace transform for the <m>\delta</m>-function is very easy
+    to calculate. (Indeed, the <m>\delta</m>-function is the nicest
+    and easiest function to integrate in basically any circumstance
+    due to its second property.) 
+    <me>
+      \calL \{ \delta_a(t) \} (s) = \int_0^\infty \delta_a (t) e^{-st}
+      dt = \left\{ \begin{matrix} 0 \amp a \lt  0 \\ 1 \amp a = 0 \\
+      e^{-as} \amp a \geq 0 \end{matrix} \right.
+    </me>
+    This is quite an odd result. I started with a distribution which
+    wasn't even a proper function, but it's Laplace transform is a
+    proper, well-behaved differentiable function.  Laplace transforms
+    don't even exclusively send functions to functions, but allow for
+    distributions as well. 
+  </p>
+  <p>
+    Before I end this section, I can ask why I would define such a
+    strange function. Think about harmonic systems and forcing
+    terms again. The <m>\delta</m>-function can act as a forcing
+    term; if it does, it represents an instantaneous jolt to the
+    system. The standard image of a harmonic system is a mass on a
+    spring. In this image, a <m>\delta</m>-function represents
+    hitting the mass with a hammer at one moment in time. The force
+    only acts for an instant, but it transfers some finite energy and
+    causes a change in the system. Like step functions modelling
+    switches, the <m>\delta</m> functions models sudden impact, which
+    is very reasonable and useful for applications.
+  </p>
+</section>

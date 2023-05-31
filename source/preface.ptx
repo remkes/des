@@ -1,0 +1,73 @@
+<preface xml:id="preface">
+  <paragraphs>
+    <title>Organization</title>
+    <p>
+      This document containt content and activities for a first course
+      in differential equations. It is organized into seven sections. 
+    </p>
+    <p><ol>
+      <li>
+        <xref ref="chapter-prelim" /> is an introductory section to
+        remind you of some definition and standardize some notation.
+        This section is not covered by the activities and will not be
+        part of the work during class. It's just there fore your
+        reference and review.
+      </li>
+      <li>
+        <xref ref="chapter-first-order-odes" /> is the study of first
+        order ordinary differential equations. These are the most
+        accessiable kind of DE, making them a natural starting place.
+        Even though they are the starting point, they include
+        important equations for application, such as the population
+        equation (which also describes radioactive decay, heat
+        dissipation, and a number of other common natural processes.)
+        This section sets the ground work for the rest of the course
+        and includes many of the core definitions.
+      </li>
+      <li>
+        <xref ref="chapter-second-order-odes" /> is the study of
+        second order ordinary differential equations. Going to second
+        order equations means that I can address acceleration (which
+        is a second derivative). The motivating example is harmonic
+        oscillation: from simple springs and pendulums to more
+        complicated applictions inlcuding friction and damping. Second
+        order ODEs are important and central enough that the the next
+        two chapers are mostly specific techniques for sovling this
+        type of equations.
+      </li>
+      <li>
+        <xref ref="chapter-series-solutions" /> is the first of two
+        specialized techniques for solving second order ODEs. It uses
+        the taylor series to express a function as an infinite series.
+        In this form, there are special techniques to understand and
+        calculation which infinite series is the solution to the
+        equation. 
+      </li>
+      <li>
+        <xref ref="chapter-laplace-transforms" /> is the second of two
+        specialized techniques for solving second order ODEs. This is
+        a much strange technique than series solutions. I introduce
+        the Laplace transform, which is a way of changing functions
+        into other functions. This transform allows differential
+        equations to be re-interpreted as algebraic equations. This is
+        obviously very powerful, since solving algebraic equations is
+        much more approachable. 
+      </li>
+      <li>
+        <xref ref="chapter-systems" /> introduces solving a system of
+        more than one differential equations. This chapter mostly
+        relies on a qualitative analysis of systems of two equations,
+        but already that leads into useful and interesting
+        applications.
+      </li>
+      <li>
+        <xref ref="chapter-pdes" /> is a brief introduction to partial
+        differential equations. I'll really just focus on two
+        equations, but they are two very important equations: the heat
+        equation and the wave equations. The point of this chapter is
+        to give a flavour and idea for the wide world of solving
+        partial differential equations. 
+      </li>
+    </ol></p>
+  </paragraphs>
+</preface>

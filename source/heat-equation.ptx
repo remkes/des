@@ -1,0 +1,310 @@
+<section xml:id="section-heat-equation">
+  <title>The Heat Equation</title>
+  <introduction>
+    <p>
+      In this very short investigation of PDEs, I will present at two
+      equations.  The first is the heat equation.  It concerns a
+      function <m>u(x,t)</m> which depends on position and time.
+      <m>u(x,t)</m> measures the heat in a one-dimensional object
+      (usually a rod, rail, wire, stick or something similar).
+      The heat varies in position along the object as well, as well as
+      in time. I let <m>x \in [0,l]</m> where <m>l</m> is the length
+      of the rod.  For convenience (by choosing appropriate units), we
+      will set <m>l = \pi</m>. (The reasons for chosing <m>\pi</m> will
+      present themselves in the solution.) 
+    </p>
+    <p>
+      The question I want to ask is this: how does the heat
+      distribution along the rod develop over time?  What happens to
+      the heat at various positions and times?  Where does the heat
+      flow, increase, decrease and diffuse?  The heat equation tries
+      to answer these questions.
+    </p>
+    <p>
+      Thermodynamics says that heat wants to diffuse.  Diffusion is
+      the equalizing of differences, so the greater the difference in
+      heat, the greater the inclination for difussions.  How do I
+      measure this?  The measurement must be local, since heat cannot
+      jump discontinuously.  The local description that measures this
+      heat difference is the concavity of the heat distribution
+      function.  Moreover, concave down regions want to equalize
+      downward and concave up regions want to equalize upwards, as in
+      <xref ref="figure-heat-equation" />.  Therefore, the heat
+      diffusion should be proportional to the concavity with a
+      positive proportionality constant.
+    </p>
+    <figure xml:id="figure-heat-equation">
+      <caption>Concavity and Heat Diffusion</caption>
+      <image xml:id="figure40" width="80%">
+        <asymptote>
+          size(10cm,6cm,IgnoreAspect);
+          import graph;
+          xaxis("$x$");
+          yaxis("$u$");
+
+          draw((0,3){E}..{E}(2,5){E}..{E}(4,3){E}..{E}(6,1){E}..{E}(8,3));
+
+          draw((0,3)--(8,3),dashed);
+
+          draw((2,5)--(2,3),Arrow);
+          draw((6,1)--(6,3),Arrow);
+
+          label("Concave down diffuses downard.",(3,5),N);
+          label("Concave up diffuses upward.",(6,1),S);
+          label("$u(x)$",(4,3),NE);
+          label("Equilibrium",(2,3),S);
+        </asymptote>
+      </image>
+    </figure>
+    <p>
+      I translate these thermodynamic realities into a partial
+      differential equation.  The second derivative in position
+      measure concavity and the first derivative in time measures the
+      change in heat resulting from the diffusion.  The above set-up
+      shows that these should be proportional to each other.  Let
+      <m>k</m> be a positive constant that measure this
+      proportionality.
+      <me>
+        \frac{\del u}{\del t} = k \frac{\del^2 u}{\del x^2}
+      </me>
+    </p>
+    <p>
+      This is called the heat equation. Though I've defined it by
+      talking about heat, it is a very general equation and applies to
+      any system that involves diffusion. It is sometimes also called
+      the diffusion equation.
+    </p>
+  </introduction>
+  <subsection xml:id="initial-boundary-conditions">
+    <title>Initial and Boundary Conditions</title>
+    <p>
+      With ordinary differential equations, initial conditions are
+      needed to get a particular solution.  The same it true with
+      PDEs, but the initial assumptions are more complicated.  At a
+      specific time, say <m>t=0</m>, the function <m>u(x,0)</m> is
+      still a function of <m>x</m>.  The initial condition, then, is
+      an entire function: <m>u(x,0) = f(x)</m>.
+    </p>
+    <p>
+      The initial condition determines the situation at the starting
+      time.  However, I also need to control the behaviour of
+      position.  For position, instead of initial conditions, there
+      are boundary conditions.  These describe the behaviour of the
+      system at its boundaries.  For the heat equation on a rod, the
+      domain is <m>x\in [0,\pi]</m>, so the boundary contitions are
+      determination of <m>u(0,t)</m> and <m>u(\pi,t)</m>.  These
+      themselves can be functions of <m>t</m>.  However, for present
+      purposes, I'll set the boundary contitions to be constant.  If I
+      set the units of temperature reasonably, I can scale so that the
+      boundary conditions are  <m>u(0,t) = u(\pi,t) = 0</m>.  These
+      boundary conditions mean that there is a constant temperature at
+      both ends of the rod at all moments in time. (In physical terms,
+      there are perfect instantaneous heat-sinks at each end of the
+      rod which equalize it to the ambient temperature of zero). 
+    </p>
+  </subsection>
+  <subsection xml:id="sovling-heat-equation">
+    <title>Solving the Heat Equation</title>
+    <p>
+      The method of approach we use to solve the equation is a common
+      one for PDE and is called <em>separation of variables</em>.  I
+      make the assumption (eventually justified!) that I can pull
+      apart the two variables, <m>x</m> and <m>t</m>, and deal with
+      the separately.  I assume that <m>u</m> is a product of two
+      single variables functions. 
+      <me>
+        u(x,t) = T(t) X(x)
+      </me>.
+      Like most the assumptions about DEs, I use my assumping by
+      simply puting it back into the equation and seeing what happens. 
+      <md>
+        <mrow>
+          \frac{\del^2 u}{\del x^2} \amp = X^{\prime \prime}(x) T(t)
+        </mrow>
+        <mrow>
+          \frac{\del u}{\del t} \amp = T^{\prime}(t) X(x)
+        </mrow>
+        <mrow>
+          k X^{\prime \prime} T(t) \amp = X(t) T^\prime(t)
+        </mrow>
+        <mrow>
+          \frac{X^{\prime \prime}(x)}{X(x)} \amp = \frac{1}{k}
+          \frac{T^\prime(t)}{T(t)}
+        </mrow>
+      </md>
+      I've brought all the terms involving <m>x</m> to one side and
+      all those involving <m>t</m> to the other.  Since the left is
+      equal to the right and they involve different variables,
+      both sides must be constant.  I'll call this constant
+      <m>\alpha</m>.  This completes the separation of variables,
+      giving me two ordinary differential equations.
+      <md>
+        <mrow>
+          \frac{X^{\prime \prime}(x)}{X(x)} \amp = \alpha
+        </mrow>
+        <mrow>
+          \frac{1}{k} \frac{T^\prime(t)}{T(t)} \amp = \alpha
+        </mrow>
+      </md>
+      Now, to solve the heat equation with separation of variables,
+      I solve these two ODEs separately. The <m>T</m> solutions are easy.
+      <me>
+        T^\prime(t) = \alpha k T(t) \implies T(t) = T(0) e^{\alpha kt}
+      </me>
+      I have written the initial constant as <m>T(0)</m>.
+      The time function is just exponential growth/decay, but <m>X</m>
+      solutions depend more carefully on the boundary conditions.
+    </p>
+    <figure xml:id="figure-separable-solution1">
+      <caption>
+        Seperated Solution with <m>n=5</m> at Various Points in
+        Time.
+      </caption>
+      <image xml:id="figure41" width="80%">
+        <asymptote>
+          size(10cm,6cm,IgnoreAspect);
+          import graph;
+          xaxis("$x$");
+          yaxis("$u$");
+
+          real f1(real x) {return sin(5*x);}
+          real f2(real x) {return (1/2)*sin(5*x);}
+          real f3(real x) {return (1/4)*sin(5*x);}
+          real f4(real x) {return (1/8)*sin(5*x);}
+          real f5(real x) {return (1/(16))*sin(5*x);}
+          real f6(real x) {return (1/(32))*sin(5*x);}
+
+          draw(graph(f1,0,pi));
+          draw(graph(f2,0,pi));
+          draw(graph(f3,0,pi));
+          draw(graph(f4,0,pi));
+          draw(graph(f5,0,pi));
+          draw(graph(f6,0,pi));
+        </asymptote>
+      </image>
+    </figure>
+    <p>
+      The <m>X</m> equation is a second order linear equation:
+      <m>X^{\prime \prime}(x) - \alpha X(x) = 0</m>.  If <m>\alpha >
+      0</m> then I expect exponential solutions <m>X(x) = c_1
+      e^{\alpha x} + c_2e^{\alpha x}</m>.  However, the boundary
+      conditions apply.  <m>X(0) = X(\pi) = 0</m> implies that <m>c_1
+      = c_2 = 0</m>; the only solution here is the trivial solution
+      <m>X(x) = 0</m>.  Therefore, to get solutions that actually mean
+      somthing, <m>\alpha</m> cannot be positive.  If <m>\alpha =
+      0</m> then the result must be<m>X = Ax + B</m>.  Again, the
+      boundary conditions give <m>A=B=0</m>, so I only get the zero
+      solution.  Therefore, only <m>\alpha \lt 0</m> gives interesting
+      solutions.
+    </p>
+    <p>
+      (This <m>\alpha \lt 0</m> also effects the <m>T</m> solutions,
+      which relied on the same <m>\alpha</m>.  The fact that <m>\alpha
+      \lt 0</m> means that the <m>T</m> solutions must be decaying
+      exponentials instead of growing exponentials.  This is
+      physically expected, since over time the heat should diffuse.)
+    </p>
+    <p>
+      Let <m>\alpha = -n^2</m> for <m>n > 0</m> a real number.
+      From the study of second order linear equations, the solutions are
+      <me>
+        X(x) = A \cos nx + B \sin nx
+      </me>.
+      Again, I go back to the boundary conditions.  <m>X(0) = 0</m>
+      implies <m>A=0</m>, so I am left with <m>X(x) = B \sin nx</m>.
+      Then <m>X(\pi) = 0</m> implies <m>B \sin n\pi = 0</m> which is
+      only satisfied if <m>n \in \NN</m>.  In conclusion, matching the
+      boundary conditions means that the only possible <m>X</m>
+      solutions are <m>X(x) = B \sin nx</m> for <m>n \in \NN</m> (and
+      the zero solution).
+    </p>
+    <p>
+      Then I put the solutions together.
+      <me>
+        u(x,t) = T(0) e^{-n^2kt} \sin (nx)
+      </me>
+    </p>
+    <p>
+      In these solutions, I see sine waves decaying over time.  The
+      integer <m>n</m> gives the number of osscilations of the wave in
+      on the rod, and the exponential terms give a decay in amplitude
+      over time.  <xref ref="figure-separable-solution1" /> shows the
+      decay of a simple sine wave with <m>n=5</m>.
+    </p>
+    <p>
+      Now I consider the initial conditions <m>u(x,0) = f(x)</m>.
+      For each <m>n</m>,
+      the separable solution is a sine wave <m>\sin (nx)</m>.
+      This is great if <m>f(x)</m> happened to be such a sine wave,
+      but I would like the theory to work with more general initial
+      conditions.
+      The key observation here is that the heat equation is linear:
+      if there two solutions to the heat equation,
+      their sum is also a solution.
+      Therefore, I could add up these separable solutions.
+      For example, a possible solution could be this function.
+      <me>
+        u(x,t) = 4e^{-9kt} \sin 3t + 6e^{-25kt} \sin 5t
+      </me>
+    </p>
+    <p>
+      This isn't strictly separable anymore, but it is the sum of
+      separable pieces.  (This justifies the original assumption!  I
+      don't get all possibility as separable solutions, but I will get
+      all reasonable solutions as the <em>sum</em> of various
+      separable pieces.) The initial value <m>u(x,0)</m> also isn't a
+      simple sine wave anymore, since it is the function <m>f(x) =
+      4\sin 3t + .6 \sin 5t</m>.  <xref
+      ref="figure-separable-solution2" /> shows the decay of this
+      initial condition.
+    </p>
+    <figure xml:id="figure-separable-solution2">
+      <caption>
+        Decay of the Solution with Initial Condition <m>f(x) = 4 \sin
+        3t + 6 \sin 5t</m>
+      </caption>
+      <image xml:id="figure42" width="80%">
+        <asymptote>
+          size(10cm,6cm,IgnoreAspect);
+          import graph;
+          xaxis("$x$");
+          yaxis("$u$");
+
+          real f1(real x) {return (4*sin(3*x) + 6*sin(5*x));}
+          real f2(real x) {return (1/2)*(4*sin(3*x) + 6*sin(5*x));}
+          real f3(real x) {return (1/4)*(4*sin(3*x) + 6*sin(5*x));}
+          real f4(real x) {return (1/8)*(4*sin(3*x) + 6*sin(5*x));}
+          real f5(real x) {return (1/(16))*(4*sin(3*x) + 6*sin(5*x));}
+          real f6(real x) {return (1/(32))*(4*sin(3*x) + 6*sin(5*x));}
+
+          draw(graph(f1,0,pi));
+          draw(graph(f2,0,pi));
+          draw(graph(f3,0,pi));
+          draw(graph(f4,0,pi));
+          draw(graph(f5,0,pi));
+          draw(graph(f6,0,pi));
+        </asymptote>
+      </image>
+    </figure>
+    <p>
+      In theory, I could add any number of the separable solutions
+      together.  Therefore, in full generality, a solution could look
+      like an arbitrary sum.
+      <me>
+        u(x,t) = \sum_{n=1}^\infty T_n(0) e^{-n^2kt} \sin (nx)
+      </me>
+      This is a series solution, but the series has <m>\sin nx</m>
+      instead of <m>x^n</m> as the series terms.  I try to match the
+      initial condition <m>u(x,0) = f(x)</m> with this series.
+      <me>
+        u(x,0) = \sum_{n=1}^\infty T_n(0) \sin (nx) = f(x)
+      </me>
+      As long as I can find coefficients <m>T_n(0)</m> that make this
+      series work, I can solve the heat equation.  That leads to this
+      question: which functions <m>f(x)</m> can be expressed as a
+      series in <m>\sin (nx)</m> in this way?  Once I know that, I can
+      have a full, general solution to the heat equation (with
+      constant zero boundary conditions).
+    </p>
+  </subsection>
+</section>

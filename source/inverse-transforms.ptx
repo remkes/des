@@ -1,0 +1,104 @@
+<section xml:id="section-inverse-transforms">
+  <title>Inverse Laplace Transforms</title>
+  <p>
+    I would like to define an operation <m>\calL^{-1}</m> which undoes
+    the Laplace transform.
+    <me>
+      \calL^{-1} \left\{ \calL \{ f(t) \} \right\} = f(t)
+    </me>
+    This is very difficult to calculate directly, and the construction
+    of the inverse transform is beyond the scope of this course. (It
+    relies on complex ananlysis.) I'll state the result for your
+    interest, but it's not a result I'm going to work with at all.
+  </p>
+  <theorem>
+    <statement>
+      <p>
+        Let <m>\alpha</m> be a real number which is larger than all
+        real singularities of <m>F(s)</m>. Let <m>\gamma</m> be a
+        path in <m>\CC</m> which goes in a straight line from
+        <m>\alpha - \imath T</m> to <m>\alpha + \imath T</m>. Then the
+        inverse Laplace transform is defined by the following limit
+        and integral. 
+        <me>
+          \calL^{-1} (F(s)\} = \frac{1}{2\pi \imath} \lim_{T
+          \rightarrow \infty} \int_{\gamma} e^{st} F(s) ds
+        </me>
+      </p>
+    </statement>
+  </theorem>
+  <p>
+    This is a contour integral in <m>\CC</m>, a common object in
+    the study of complex variables. The use of the distance to
+    singularities makes sense in that discipline, since contour
+    integrals depend on the location of singularities. For those with
+    a background in complex variables, this is not a closed
+    curve and the homotopy implications depend a great deal on the
+    function <m>F</m>.
+  </p>
+  <p>
+    For our purposes, I'll just use tables to find inverse Laplace
+    transforms, using the functions we already know. I'll try to
+    turn the <m>s</m> domain answers into familiar forms and invert
+    known functions. This is a bit tricky, but can often be done.
+    The use of shifts will be particularly inportant. I should note
+    that <m>\calL^{-1}</m> is also linear.
+  </p>
+  <p>
+    Here is a table of the most important inverse transforms.
+    <md>
+      <mrow>
+        \calL^{-1} \left\{ \frac{n!}{s^{n+1}} \right\} \amp = t^n
+      </mrow>
+      <mrow>
+        \calL^{-1} \left\{ \frac{1}{s-a} \right\} \amp = e^{at}
+      </mrow>
+      <mrow>
+        \calL^{-1} \left\{ \frac{k}{s^2 + k^2} \right\} \amp = \sin
+        kt
+      </mrow>
+      <mrow>
+        \calL^{-1} \left\{ \frac{s}{s^2 + k^2} \right\} \amp = \cos
+        kt
+      </mrow>
+      <mrow>
+        \calL^{-1} \left\{ \frac{k}{s^2 - k^2} \right\} \amp = \sinh
+        kt
+      </mrow>
+      <mrow>
+        \calL^{-1} \left\{ \frac{s}{s^2 -k^2} \right\} \amp = \cosh
+        kt
+      </mrow>
+      <mrow>
+        \calL^{-1} \left\{ e^{-sa} \right\} \amp = \delta_a(t)
+      </mrow>
+    </md>
+    The shift in an inverse transform is captured by the rule
+    <me>
+      \calL^{-1} \left\{ e^{-sa} F(s) \right\} = u_a(t) f(t-a)
+    </me>.
+    This shifts of trigonometric functions are common enough that it
+    is useful to mention them here.
+    <md>
+      <mrow>
+        \calL^{-1} \left\{ \frac{\beta}{(s+ \alpha)^2 + \beta^2}
+        \right\} \amp = e^{-\alpha t} \sin \beta t
+      </mrow>
+      <mrow>
+        \calL^{-1} \left\{ \frac{s + \alpha}{(s+ \alpha)^2 + \beta^2}
+        \right\} \amp = e^{-\alpha t} \cos \beta t
+      </mrow>
+    </md>
+    Finally, the last rule from <xref
+    ref="section-laplace-derivatives" /> is useful for dealing with
+    <m>s</m>-domain functions which I can identity as derivatives of
+    functions previous listed in the tables. Inverting that rule
+    gives the following rule for inverse transforms.
+    <me>
+      \calL^{-1} \left\{ \frac{d^n}{ds^n} F(s) \right\} = (-1)^n t^n
+      f(t) 
+    </me>
+  </p>
+</section>
+
+

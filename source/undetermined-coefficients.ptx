@@ -1,0 +1,384 @@
+<section xml:id="section-undetermined-coefficients">
+  <title>The Method of Undetermined Coefficients</title>
+  <p>
+    In <xref ref="section-constant-coefficients" />, I presented the
+    method for solving homogeneous SOCCLDEs. Now I want to move on to
+    the non-homogeneous case. Recall, in the interpretation as
+    harmonic systems, that the non-homogeneous term <m>f(t)</m> is an
+    external force on the system. I understand how a harmonic system
+    wants to act when left on its own, but now I want to understand
+    how it acts when subjet to some external force.
+  </p>
+  <p>
+    There are two main techniques for solving the non-homogeneous
+    case. This section introduces the first of those techniques:
+    undetermined coefficients. The second method, variation of
+    parameters, is more general, but undetermined coefficients is
+    easier and faster for particular types of non-homogemeous terms.
+    In the spirit of applications to harmonic motion, I will often
+    refer to the non-homogenous part of the SOCCLDE as a forcing term.
+  </p>
+  <p>
+    Recall, before I start, that if <m>Ly = f(t)</m> is a
+    non-homogeneous SOCCLDE, I know the structure of the general
+    family of solutions from superposition. I expect two linearly
+    independent solutions, <m>y_1</m> and <m>y_2</m>, for the
+    homogenous equaiton <m>Ly = 0</m>. I only need to look for one
+    particular solution <m>y_p</m> of <m>Ly = f(t)</m>. The general
+    solution is the superposition of the particular solution and a
+    linear combination fo the homogeneous solutions. 
+    <me>
+      y = y_p + A y_1 + B y_2
+    </me>
+    Undetermined coefficents and variation of parameters try to find
+    this particular solution <m>y_p</m>. Ihen I use the homogenous
+    solutions to write the complete family..
+  </p>
+  <p>
+    The idea of undetermined coefficients is based on the assumption
+    that the forcing term is likely to dominate the system, so
+    eventually the behaviour of the system should mimic the forcing
+    term. Therefore, the particular solution should be the same type
+    of function as the forcing term. If the forcing is polynomial, I
+    look for a polynomial solution; if the forcing is exponential, I
+    look for an exponential solution; and if the foring is sinusoidal,
+    I look for a sinusoidal solution. Undertermined coefficients is
+    going to work well for these three types of forcing terms or
+    forcing terms given by products of functions of these types.
+    However, it doesn't apply to other types of functions, where I
+    can't reasonably expect the solution to look like the forcing
+    term.
+  </p>
+  <p>
+    There is one possible pitfall to the process: sometimes the
+    forcing terms is similar to the homogeneous solutions. In this
+    case, the same type of function will only solve the homogeneous
+    equation, not the non-homogeneous case. The solution here is
+    reminiscent of the case of repeated roots: I multiply by the
+    independent variable <m>t</m> until we get something new. I'll
+    show how this works out in examples.
+  </p>
+  <p>
+    Before I get into examples, here is a useful chart. As I said,
+    I want to guess a similar type of functions to the forcing. What
+    is similar? This chart gives the guesses that are used in the
+    process. The constants <m>C_i</m> and <m>D_j</m> need to be
+    determined: these constants are the undetermined coefficients
+    which give the process its name.
+  </p>
+  <tabular>
+    <row>
+      <cell><m>f(t)</m></cell>
+      <cell><m>y_p</m></cell>
+    </row>
+    <row bottom="minor">
+      <cell></cell>
+      <cell></cell>
+    </row>
+    <row>
+      <cell><m>ke^{at}</m></cell>
+      <cell><m>Ce^{at}</m></cell>
+    </row>
+    <row>
+      <cell><m>kt^n</m></cell>
+      <cell><m>C_n t^n + C_{n-1}t^{n-1} + \dots + C_1 t + C_0</m></cell>
+    </row>
+    <row>
+      <cell><m>k \cos(at)</m> or <m>k \sin(at)</m></cell>
+      <cell><m>C \cos(at) + D\sin(at)</m></cell>
+    </row>
+    <row>
+      <cell><m>kt^n e^{at}</m></cell>
+      <cell><m>e^{at}\left(C_n t^n + C_{n-1}t^{n-1} + \dots +
+        C_1 t + C_0\right)</m></cell>
+    </row>
+    <row>
+      <cell><m>k t^n \cos(at)</m> or <m>k t^n \sin(at)</m></cell>
+      <cell><m>\left(C_nt^n + \dots +C_0 \right)\cos(at)</m></cell>
+    </row>
+    <row>
+      <cell></cell>
+      <cell><m>+ \left(D_nt^n + \dots + D_0 \right)\sin(at)</m></cell>
+    </row>
+    <row>
+      <cell><m>ke^{at} \cos(bt)</m> or <m>ke^{at} \sin(bt)</m></cell>
+      <cell><m>e^{at}\left(C \cos(at) + D\sin(at)\right)</m></cell>
+    </row>
+    <row>
+      <cell><m>k t^n e^{at }\cos(bt)</m> or <m>k t^n e^{at}
+        \sin(bt)</m></cell>
+      <cell><m>\left(C_nt^n + \dots +C_0
+        \right)e^{at}\cos(bt)</m></cell>
+    </row>
+    <row>
+      <cell></cell>
+      <cell><m>+ \left(D_nt^n + \dots + D_0
+        \right)e^{bt}\sin(bt)</m></cell>
+    </row>
+  </tabular>
+  <p>
+    With this chart, the algorithm is straightforward (if often
+    lengthy in calculation). I take the appropriate guess from the
+    chart put it into the DE, and try to work out the unknown
+    coefficients.
+  </p>
+  <example>
+    <statement>
+      <p>
+        <me>
+          y^{\prime \prime} - 3y^\prime + 2y = t 
+        </me>
+        The initial values are <m>y(0) = \frac{3}{4}</m> and
+        <m>y^\prime(0) = \frac{3}{2}</m>. The linear differential
+        operator is
+        <me>
+          L = \frac{d^2}{dt^2} + 3 \frac{d}{dt} + 2 
+        </me>.
+        I first solve the homogeneous case using the characteristic
+        equation, finding the roots and writing the general solution.
+        <md>
+          <mrow>
+            Ly \amp = 0 \implies r^2 - 3r + 2 = 0 
+          </mrow>
+          <mrow>
+            (r-2)(r-1) \amp = 0 \implies r = 1,2 
+          </mrow>
+          <mrow>
+            y_h \amp = A e^{2t} + B e^t 
+          </mrow>
+        </md>
+        The force term is <m>t</m>, which is a polynomial of degree
+        one. The guess for undetermined coefficients is a polynomial
+        of the same degree. 
+        <me>
+          y_p = Ct + D 
+        </me>
+        I'll need the derivatives of the guess to put it into the
+        differential equation.
+        <md>
+          <mrow>
+            y_p^\prime \amp = C 
+          </mrow>
+          <mrow>
+            y_p^{\prime \prime} \amp = 0 
+          </mrow>
+        </md>
+        I put all the pieces into the non-homogeneous DE. 
+        <me>
+          0 - 3C + 2(Ct + D) = t \implies (2C-1)t + (D-3C) = 0 
+        </me>
+        This is an equation of polynomials. It is true only if botht
+        the coefficients on the left are zero. The first coefficient
+        lets me calculate <m>C</m>.
+        <me>
+          2C = 1 \implies C = \frac{1}{2} 
+        </me>
+        Knowing <m>C</m>, I can use the second coefficient to
+        calculate <m>D</m>.
+        <me>
+          -3C + 2D = 0 \implies -3 \frac{1}{2} + 2 D = 0 \implies D
+          = \frac{3}{4}
+        </me>
+        Now that I have the coefficients, I know the particular
+        solution. 
+        <me>
+          y_p = \frac{t}{2} + \frac{3}{4} 
+        </me>
+        Finally, the general solution is the particular solution plus
+        the homogeneous solution. 
+        <me>
+          y = \frac{t}{2} + \frac{3}{4} + A e^{2t} + B e^t 
+        </me>
+        Now I put in the initial values. First I use the initial value
+        of the function. 
+        <me>
+          y(0) = A + B + \frac{3}{4} = \frac{3}{4} \implies A =
+          -B 
+        </me>
+        Then I use the initial value for the derivative. First I need
+        to calculate the derivative of the full solution.
+        <me>
+          y^\prime = 2Ae^{2t} + Be^t + \frac{1}{2} 
+        </me>
+        Then I input the initial condition. 
+        <me>
+          y^\prime(0) = \frac{3}{2} 
+          \implies 
+          2A + B + \frac{1}{2} = \frac{3}{2} \implies 2A + B - 1 = 0
+        </me>
+        Now I have a system of two equations from the two initial
+        conditions. The solution to the system is <m>A=1</m> and
+        <m>B = -1</m>. Finally, I can write the specific solution to
+        the non-homogeneous initial value problem. 
+        <me>
+          y = \frac{t}{2} + \frac{3}{4} + e^{2t} - e^t
+        </me>
+      </p>
+    </statement>
+  </example>
+  <example>
+    <statement>
+      <p>
+        This example lacks initial values. I've skipped over some of
+        the algebra for the sake of brevity.
+        <me>
+          y^{\prime \prime} + 8 y^\prime + 3y = e^{-2t} \cos 2t
+        </me>
+        The linear differential operator is
+        <me>
+          L = \frac{d^2}{dt^2} + 8 \frac{d}{dt} + 3
+        </me>.
+        I first solve the homogeneous case using the characteristic
+        equation, finding the roots and writing the general solution.
+        <md>
+          <mrow>
+            Ly \amp = 0 \implies r^2 + 8r + 3 = 0
+          </mrow>
+          <mrow>
+            r \amp = -4 \pm \sqrt{13}
+          </mrow>
+          <mrow>
+            y_h \amp = Ae^{(-4+\sqrt{13})t} + B e^{(-4-\sqrt{13})t}
+          </mrow>
+        </md>
+        The force term is <m>e^{-2t} \cos (2t)</m>, which is a product
+        of an exponential and a sinuosoidal term one. The guess for
+        undetermined coefficients has the same pattern. 
+        <me>
+          y_p = e^{-2t} (C \cos 2t + D \sin 2t)
+        </me>
+        I'll need the derivatives of the guess to put it into the
+        differential equation.
+        <md>
+          <mrow>
+            y^\prime \amp = e^{-2t} ( (-2C + 2D) \cos 2t + (-2D
+            -2C)\sin 2t)
+          </mrow>
+          <mrow>
+            y^{\prime\prime} \amp = e^{-2t} ( (-8D) \cos 2t + (8C)\sin
+            2t)
+          </mrow>
+        </md>
+        I put all the pieces into the non-homogeneous DE. 
+        <me>
+          L y_p = e^{-2t} ((8D-13C) \cos 2t + (-8C -13D) \sin
+          2t) = e^{-2t} \cos 2t
+        </me>
+        I need to compare coefficients. There is a cosine term on the
+        right with coefficient <m>1</m>. There is no sine term on the
+        right, so that coefficient has to be <m>0</m>. This gives a
+        system of two equations.
+        <md>
+          <mrow>
+            8D - 13 C \amp = 1
+          </mrow>
+          <mrow>
+            -8C - 13 D \amp = 0
+          </mrow>
+        </md>
+        First I use the second equation to isolate <m>D</m>.
+        <me>
+          D = \frac{-8C}{13}
+        </me>
+        Then I substitute the value of <m>D</m> in the first equation
+        and solve for <m>C</m>. Once I know <m>C</m>, I can use the
+        previous equation to find <m>D</m> as well. 
+        <me>
+          C = \frac{-13}{233} \implies D = \frac{8}{233}
+        </me>
+        Now that I have the coefficients, I know the particular
+        solution. 
+        <me>
+          y_p = e^{-2t} \left( \frac{-13}{233} \cos 2t +
+          \frac{8}{233} \sin 2t \right)
+        </me>
+        Finally, the general solution is the particular solution plus
+        the homogeneous solution. 
+        <me>
+          y = Ae^{(-4+\sqrt{13})t} + B e^{(-4-\sqrt{13})t} +
+          e^{-2t} \left( \frac{-13}{233} \cos 2t + \frac{8}{233}
+          \sin 2t \right)
+        </me>
+        It is useful to go back to the harmonic system interpretation
+        to understand these solutions. There are no oscillations in
+        the homogeneous case here: sufficient friction gives
+        exponential decay. However, there is oscillating forcing,
+        though the forcing is also undering going exponential decay.
+        This forcing is enough to add sinusoidal behaviour to the full
+        solutions, but the decaying forcing terms means that the
+        sinusoidal term will also decay over time. The amplitude of
+        this combination of waves is given by the pythagorean
+        combination: <m>\frac{\sqrt{13^2 + 8^2}}{233} =
+        \frac{1}{\sqrt{233}}</m>.
+      </p>
+    </statement>
+  </example>
+  <example>
+    <statement>
+      <p>
+        In this example, the forcing term is similar to one of the
+        homogeneous solutions. I multiplied by <m>t</m> in the guess
+        for the particular solution to account for this. Again, I've
+        skipped some of the algebra in this example, particularly
+        omitting the long derivatives and calculation of <m>Ly_p</m>.
+        <me>
+          y^{\prime \prime} + 2y^\prime + 2y = f(t) = 4e^{-t}
+          \sin t
+        </me>
+        First I solve the homogeneous case via the characteristic
+        equation.
+        <me>
+          r^2 + 2r + 2 = 0 \implies r = -1 \pm \imath
+        </me>
+        The complex roots of the characteristic equation lead to
+        exponentially damped sinusoidal solutions. This is the full
+        homogeneous solution.
+        <me>
+          y_h = e^{-t} (A \sin t + B \cos t)
+        </me>
+        Here is my guess for the particular solution. 
+        <me>
+          y_p = te^{-t} (C \sin t + D \cos t )
+        </me>
+        I need its derivatives to put into the differential equation.
+        <me>
+          y_p^{\prime} = e^{-t} (C \sin t + D \cos t) +
+          te^{-t}((-C-D)\sin t + (-D+C)\cos t)
+        </me>
+        <me>
+          y_p^{\prime\prime} = e^{-t} ((-2C-2D) \sin t + (-2D+2C)
+          \cos t) + te^{-t}((2D)\sin t + (-2C)\cos t)
+        </me>
+        I put the guess and its derivative into the DE. 
+        <me>
+          L y_p = e^{-t} ((-2D) \sin t + (2C) \cos t) = 4e^{-t}
+          \sin t
+        </me>
+        Comparing the coefficients of sine and cosine on the left and
+        the right produces a system of two equation. The first
+        equation gives the value of <m>D</m>. 
+        <me>
+          -2D = 4 \implies D = -2
+        </me>
+        The second equation gives the value of <m>C</m>.
+        <me>
+          2C = 0 \implies C = 0
+        </me>
+        I use the coefficients to write the particular solution.
+        <me>
+          y_p = -2te^{-t} \cos t
+        </me>
+        The general solution is the particular solution added to the
+        homogeneous solution. 
+        <me>
+          y = -2te^{-t} \cos t + e^{-t} (A \sin t + B \cos t)
+        </me>
+        In this result, the full solution still has exponential decay,
+        since the exponential is asymptotically dominant in the
+        <m>te^{-t}</m> term. However, the trajectory and behaviour of
+        the decay differs, particular for small <m>t</m>, from the
+        behavour of the homogeneous solution by itself.
+      </p>
+    </statement>
+  </example>
+</section>

@@ -1,0 +1,8 @@
+<chapter xmlns:xi="http://www.w3.org/2001/XInclude"  
+  xml:id="chapter-systems">
+  <title>Systems of Differential Equations</title>
+  <xi:include  href="systems-introduction.ptx" />
+  <xi:include  href="systems-qualitative-methods.ptx" />
+  <xi:include  href="linear-systems.ptx" />
+  <xi:include  href="systems-activity.ptx" />
+</chapter>

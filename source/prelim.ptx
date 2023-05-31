@@ -1,0 +1,10 @@
+<chapter xmlns:xi="http://www.w3.org/2001/XInclude"
+  xml:id="chapter-prelim">
+  <title>Preliminaries</title>
+  <xi:include  href="functions.ptx" />
+  <xi:include  href="linear-algebra.ptx" />
+  <xi:include  href="taylor-series.ptx" />
+  <xi:include  href="recurrence-relations.ptx" />
+  <xi:include  href="complex-numbers.ptx" />
+  <xi:include  href="note-variables.ptx" />
+</chapter>

@@ -1,0 +1,11 @@
+<chapter xmlns:xi="http://www.w3.org/2001/XInclude"
+  xml:id="chapter-series-solutions">
+  <title>Series Solutions</title>
+  <xi:include  href="series-solutions-general.ptx" />
+  <xi:include  href="ordinary-points.ptx" />
+  <xi:include  href="legendre.ptx" />
+  <xi:include  href="issues.ptx" />
+  <xi:include  href="regular-singular-points.ptx" />
+  <xi:include  href="bessel-functions.ptx" />
+  <xi:include  href="series-solutions-activity.ptx" />
+</chapter>

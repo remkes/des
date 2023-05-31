@@ -1,0 +1,614 @@
+<section xml:id="ordinary-points">
+  <title>Ordinary Points</title>
+  <subsection xml:id="subsection-ordinary-points-existence">
+    <title>Existence of Solutions</title>
+    <p>
+      Consider a homogeneous linear second order differential
+      equation.
+      <me>
+        y^{\prime \prime} + P(t) y^\prime + Q(t) y= 0
+      </me>
+      In a departure from the <xref ref="chapter-second-order-odes"
+      />, I will now allow <m>P</m> and <m>Q</m> to be functions
+      instead of just constants. Before I jump into the method of
+      series solutions, I need some theory about the existence of
+      solutions.
+    </p>
+    <definition>
+      <statement>
+        <p>
+          A point <m>\alpha</m> is called an <term>ordinary
+          point</term> for the differential equation if <m>P</m> and
+          <m>Q</m> are both analytic at <m>\alpha</m>. Otherwise it
+          is called a <term>singular point</term>. 
+        </p>
+      </statement>
+    </definition>
+    <theorem xml:id="thm-series-solutions-existence">
+      <statement>
+        <p>
+          If <m>\alpha</m> is an ordinary point of a linear
+          homogeneous second order differential equation, then there
+          exists two linearly independent analytic solutions centered
+          at <m>\alpha</m>. These analytic solutions will have radii
+          of convergence at least as large as the distance from
+          <m>\alpha</m> to the nearest singular point of the DE.
+        </p>
+      </statement>
+    </theorem>
+    <p>
+      This is a lovley theorem, but these is one catch. The
+      <sq>distance</sq> mentioned to the nearest singular point is
+      actually distance in <m>\CC</m> to a possibly-complex singular
+      point. In practice, this isn't too much of a worry, but I should
+      be careful with my assumptions about the radii of convergence.
+    </p>
+  </subsection>
+  <subsection xml:id="subsection-method-ordinary-points">
+    <title>The Method for Solutions at Ordinary Points</title>
+    <p>
+      I could describe a general method, but it would be a lengthy and
+      abstract description. Keeping everything very general, it would
+      be easy to lose track of the pieces. Instead, I'll use examples
+      to demonstrate the method. 
+    </p>
+    <example>
+      <statement>
+        <p>
+          I'll start with a simple and known DE, to see how the
+          method works.
+          <me>
+            y^{\prime \prime} + y = 0
+          </me>
+          Both <m>P</m> and <m>Q</m> are constant, so they analytic
+          everywhere, even in <m>\CC</m>. Since there are no singular
+          points, I expect solutions which have Taylor series defined
+          for all of <m>\RR</m>. I can centre them at <m>0</m> for
+          convenience. I assume the solution has a Taylor series.
+          <me>
+            y = \sum_{n=0}^\infty c_n t^n
+          </me>
+          I put this into the DE and calcluate, keeping in mind the
+          tools to manipulate the inidices of series.
+          <md>
+            <mrow>
+              y \amp = \sum_{n=0}^\infty c_n t^n
+            </mrow>
+            <mrow>
+              y^\prime \amp = \sum_{n=1}^\infty c_n nt^{n-1}
+            </mrow>
+            <mrow>
+              y^{\prime\prime} \amp = \sum_{n=2}^\infty c_n
+              n(n-1)t^{n-2}
+            </mrow>
+            <mrow>
+              y^{\prime \prime} + y \amp = \sum_{n=2}^\infty c_n
+              n(n-1)t^{n-2} + \sum_{n=0}^\infty c_n t^n  = 0
+            </mrow>
+          </md>
+          Now the DE has become an equation of infinite series. To
+          solve this equation, I would like to express is as a single
+          series. To do that, I usually will need to manipulate the
+          indices. In this case, I shift the first series by 2 and
+          then combine. 
+          <md>
+            <mrow>
+              y^{\prime \prime} + y \amp = \sum_{n=0}^\infty
+              c_{n+2}(n+2)(n+1)t^n + \sum_{n=0}^\infty c_n t^n = 0
+            </mrow>
+            <mrow>
+              \amp = \sum_{n=0}^\infty \left[ c_{n+2}(n+2)(n+1) + c_n
+              \right] t^n = 0
+            </mrow>
+          </md>
+          Now I rewrite this last equation in a slightly different
+          form.
+          <me>
+            \sum_{n=0}^\infty \left[ c_{n+2}(n+2)(n+1) + c_n \right]
+            t^n = \sum_{n=0}^\infty 0 t^n
+          </me>
+          I've  just written the constant function <m>0</m> as a
+          series. Now, two series are only equal is every coefficient
+          is the same. Therefore, I can take this equation and turn
+          it into equations of coefficients. There are infinitely many
+          such equations (one for each natural number), but that's
+          alright, since they have a pattern. For every <m>n \in
+          \NN</m>, there is a recurrence relation.
+          <me>
+            (n+1)(n+2)c_{n+2} + c_n = 0 \implies c_{n+2} =
+            \frac{-c_n}{(n+1)(n+2)}
+          </me>
+          To find the coefficients of the series that solves this DE,
+          I have to solve this recurrence relation. I've essentially
+          translated the problem: what was a differential equation
+          problem is now a recurrence relation problem. I hope that
+          solving the recurrence relation is easier than the original
+          DE. There are various techniques in other parts of
+          mathematics for solving recurrence relations. However, I am
+          not assuming familiar with those techniques and, in this
+          course, I will take a naive approach and try to solve them
+          by inspection. 
+        </p>
+        <p>
+          Before solving the recurrence relation, I need two starting
+          terms, <m>c_0</m> and <m>c_1</m>. This works out very well,
+          since <m>c_0 = y(0)</m> and <m>c_1 = y^\prime(0)</m>. The
+          initial seed terms for the recurrence relation are exactly
+          initial conditions for the DE. I can either leave them as
+          variables <m>a</m> and <m>b</m>, or set them to specific
+          values.
+        </p>
+        <p>
+          Now I set <m>c_0 = 1</m> and <m>c_1 = 0</m>, which are the
+          initial conditions given in the problem. (If I am not given
+          initial conditions, I can leave these two as unknowns and
+          carry them all they way through the process). Then I use
+          the recurrence relation to calculate some terms. The general
+          process of solving by inspection involves calcaulting the
+          first few terms and trying to simply intuit a pattern in the
+          term. 
+          <md>
+            <mrow>
+              c_0 \amp = 1
+            </mrow>
+            <mrow>
+              c_1 \amp = 0
+            </mrow>
+            <mrow>
+              c_2 \amp = \frac{-c_0}{(1)(2)} = \frac{-1}{2}
+            </mrow>
+            <mrow>
+              c_3 \amp = \frac{-c_1}{(2)(3)} = 0
+            </mrow>
+            <mrow>
+              c_4 \amp = \frac{-c_2}{(3)(4)} = \frac{1}{2\cdot 3 \cdot
+              4}
+            </mrow>
+            <mrow>
+              c_5 \amp = \frac{-c_3}{(4)(5)} = 0
+            </mrow>
+            <mrow>
+              c_6 \amp = \frac{-c_4}{(5)(6)} = \frac{-1}{2\cdot 3
+              \cdot 4 \cdot 5 \cdot 6 }
+            </mrow>
+            <mrow>
+              c_7 \amp = \frac{-c_5}{(6)(7)} = 0
+            </mrow>
+            <mrow>
+              c_8 \amp = \frac{-c_6}{(7)(8)} = \frac{1}{8!}
+            </mrow>
+            <mrow>
+              c_9 \amp = \frac{-c_7}{(8)(9)} = 0
+            </mrow>
+          </md>
+          Having calculated a number of terms, a pattern is becoming
+          clear. 
+          <md>
+            <mrow>
+              c_{2n} \amp = \frac{(-1)^n}{(2n)!}
+            </mrow>
+            <mrow>
+              c_{2n+1} \amp = 0
+            </mrow>
+          </md>
+          Only the even terms are non zero. If a series has different
+          behaviour between its even and its odd terms, I use this
+          trick of writing <m>(2n)</m> to express the even terms and
+          <m>(2n+1)</m> to express the odd terms. Since the odd terms
+          vanish, I can write the resulting series only involving even
+          term.
+          <me>
+            y = \sum_{n=0}^\infty \frac{(-1)^n}{(2n)!} t^{2n}
+          </me>
+          This is exactly the Taylor series for cosine, which makes
+          perfect sense, since cosine solves the original DE and
+          matches the initial conditions I imposed.
+        </p>
+      </statement>
+    </example>
+    <example>
+      <statement>
+        <p>
+          This is the first example which has non-constant
+          coefficients, since <m>Q = t</m>.
+          <me>
+            y^{\prime \prime} + ty = 0
+          </me>
+          <m>P=0</m> and <m>Q=t</m>, both of which are analytic
+          everywhere, so I expect a series solution with infinite
+          radius of convergence. I repeat the calculation from the
+          previous example.
+          <md>
+            <mrow>
+              y \amp = \sum_{n=0}^\infty c_n t^n
+            </mrow>
+            <mrow>
+              y^\prime \amp = \sum_{n=1}^\infty c_n nt^{n-1}
+            </mrow>
+            <mrow>
+              y^{\prime\prime} \amp = \sum_{n=2}^\infty c_n
+              n(n-1)t^{n-2}
+            </mrow>
+            <mrow>
+              y^{\prime \prime} + ty \amp = \sum_{n=2}^\infty c_n
+              n(n-1)t^{n-2} + t\sum_{n=0}^\infty c_n t^n
+            </mrow>
+            <mrow>
+              y^{\prime \prime} + ty \amp = \sum_{n=2}^\infty c_n
+              n(n-1)t^{n-2} + \sum_{n=0}^\infty c_n t^{n+1}
+            </mrow>
+          </md>
+          I've brought the <m>t</m> into the second series, which I
+          have to do before I have any hope of combining them. Here, I
+          could try to shift indices, but that wouldn't help yet since
+          the exponent are different. I have to make the exponents
+          match first. I'll shift both series so that the exponents
+          are both <m>t^n</m>. This is shifting the index of the first
+          series down by two and the index of the second series up by
+          one.
+          <md>
+            <mrow>
+              \amp = \sum_{n=0}^\infty c_{n+2} (n+2)(n+1) t^n +
+              \sum_{n=1}^\infty c_{n-1} t^n
+            </mrow>
+          </md>
+          Now the exponents are the same, but the starting indices are
+          not. Shifting would mess up the exponents. So, instead, I
+          take out terms. I'll take out the <m>0</m>th term from the
+          first series so that they both start at 1. After that, I can
+          finally combine the series. 
+          <md>
+            <mrow>
+              \amp = 2c_2 + \sum_{n=1}^\infty c_{n+2} (n+2)(n+1) t^n +
+              \sum_{n=1}^\infty c_{n-1} t^n
+            </mrow>
+          </md>
+          <md>
+            <mrow>
+              \amp = 2c_2 + \sum_{n=1}^\infty \left[ c_{n+2}
+              (n+2)(n+1) + c_{n-1} \right] t^n = 0
+            </mrow>
+          </md>
+          Since the right side is zero, all these coefficients to be
+          zero. The constnat coefficient on the left is just
+          <m>2c_2=0</m>, which implies <m>c_2 = 0</m>. For the rest,
+          <m>c_0</m> and <m>c_1</m> are unknown and I can use the
+          series to generate a recurrence relation.
+          <md>
+            <mrow>
+              (n+2)(n+1)c_{n+2} + c_{n-1} \amp = 0
+            </mrow>
+            <mrow>
+              c_{n+2} \amp = \frac{-c_{n-1}}{(n+2)(n+1)}
+            </mrow>
+            <mrow>
+              c_{n+3} \amp = \frac{-c_n}{(n+3)(n+2)}
+            </mrow>
+          </md>
+          I shifted the recurrent relation in the last step, to make
+          it a bit easier to read.  This is a third order recurrence
+          relation, which might imply that three starting values are
+          needed. However, there are still only two parameters. This
+          isn't a problem, since I already calculated that
+          <m>c_2=0</m>, which is essentially the third starting value.
+          To try to see a pattern in the recurrence relation, I
+          calculate some  coefficients.
+          <md>
+            <mrow>
+              c_0 \amp = c_0
+            </mrow>
+            <mrow>
+              c_1 \amp = c_1
+            </mrow>
+            <mrow>
+              c_2 \amp = 0
+            </mrow>
+            <mrow>
+              c_3 \amp = \frac{-c_0}{(3)(2)}
+            </mrow>
+            <mrow>
+              c_4 \amp = \frac{-c_1}{(4)(3)}
+            </mrow>
+            <mrow>
+              c_5 \amp = \frac{-c_2}{(5)(4)} = 0
+            </mrow>
+            <mrow>
+              c_6 \amp = \frac{-c_3}{(6)(5)} =
+              \frac{c_0}{(6)(5)(3)(2)}
+            </mrow>
+            <mrow>
+              c_7 \amp = \frac{-c_4}{(7)(6)} =
+              \frac{c_1}{(7)(6)(4)(3)}
+            </mrow>
+            <mrow>
+              c_8 \amp = \frac{-c_5}{(8)(7)} = 0
+            </mrow>
+            <mrow>
+              c_9 \amp = \frac{-c_6}{(9)(8)} =
+              \frac{-c_0}{(9)(8)(6)(5)(3)(2)}
+            </mrow>
+            <mrow>
+              c_{10} \amp = \frac{-c_7}{(10)(9)} =
+              \frac{-c_1}{(10)(9)(7)(6)(4)(3)}
+            </mrow>
+            <mrow>
+              c_{11} \amp = \frac{-c_8}{(11)(10)} = 0
+            </mrow>
+          </md>
+          I see that there are three groups of terms. Like before,
+          where I used an indexing trick to refer to even and odd
+          terms, I can use a similar indexing trick to refer to these
+          three groups of terms. 
+        </p>
+        <p><ul>
+          <li>
+            Terms of the form <m>c_{3n+2}</m> are all zero, since they
+            all relate back to <m>c_2</m>.
+          </li>
+          <li>
+            Terms of the form <m>c_{3n}</m> all involve <m>c_0</m>.
+          </li>
+          <li>
+            Terms of the form <m>c_{3n+1}</m> all involve <m>c_1</m>.
+          </li>
+        </ul></p>
+        <p>
+          Expressing the coefficients in closed form is more difficult
+          than before, but I still can intuite the general form. I
+          use some factorial tricks to express the coefficients: the
+          denominators are missing every third term, so if I mulitply
+          numerator and denominator by those terms, I can write the
+          denominator as a factorial. 
+          <md>
+            <mrow>
+              c_{3n} \amp = \frac{(-1)^n (1)(4)(7)\ldots(3n-2)}{(3n)!}
+              c_0
+            </mrow>
+            <mrow>
+              c_{3n+1} \amp = \frac{(-1)^n
+              (2)(5)(8)\ldots(3n-1)}{(3n+1)!} c_1
+            </mrow>
+            <mrow>
+              c_{3n+2} \amp = 0
+            </mrow>
+          </md>
+          Then I group the <m>c_1</m> terms into a series and the
+          <m>c_2</m> terms into a series, to get a general solution.
+          <md>
+            <mrow>
+              y = \amp c_0 \left[  1 + \sum_{n=n}^\infty \frac{(-1)^n
+              (1)(4)(7)\ldots(3n-2)}{(3n)!} t^{3n} \right] 
+            </mrow>
+            <mrow>
+              \amp + c_1 \left[ t \sum_{n=0}^\infty \frac{(-1)^n
+              (2)(5)(8)\ldots(n+2)}{(3n-1)!} t^{3n+1} \right]
+            </mrow>
+          </md>
+          If I need to, I can easily check that each of these series
+          has infinite radius of convergence.
+        </p>
+        <p>
+          I might wonder: what are these functions? These are two
+          new, strange and unfamiliar functions. Unless I have the
+          good fortune (as in the previous example) to recognize the
+          resulting Taylor series, I simply treat the solutions as
+          new functions. However, I still consider the DE solved,
+          since Taylor series can be used to define new functions. I
+          can know a great  deal about a function based on its Taylor
+          series, so this is a sufficient threshold of information to
+          consider the DE solved.
+        </p>
+      </statement>
+    </example>
+    <example>
+      <statement>
+        <p>
+          <md>
+            <mrow>
+              (t^2+1)y^{\prime \prime} + ty^\prime - y \amp = 0
+            </mrow>
+          </md>
+          Before determining <m>P(t)</m> and <m>Q(t)</m>, I need to
+          clear the coefficient of <m>y^{\prime \prime}</m>. This is
+          important, since the definition of <m>P(t)</m> and
+          <m>Q()t</m> (and hence the location of ordinary points)
+          depends on the form where the coefficient of the second
+          derivative is constant. 
+          <md>
+            <mrow>
+              y^{\prime \prime} + \left( \frac{t}{t^2+1} \right)
+              y^{\prime} - \left( \frac{1}{t^2+1} \right) y \amp = 0
+            </mrow>
+            <mrow>
+              P(t) \amp = \frac{t}{t^2+1}
+            </mrow>
+            <mrow>
+              Q(t) \amp = \frac{1}{t^2+1}
+            </mrow>
+          </md>
+          <m>0</m> is an ordinary point, but what is the distance to
+          the nearest singular point? Here, I need to remember to
+          look for singularities in <m>\CC</m>. The denominators are
+          undefined at <m>\pm \imath</m>, which is 1 unit away from
+          the origin. Therefore, centered at <m>0</m>, I expect a
+          radius of <m>R=1</m>.
+        </p>
+        <p>
+          (As an aside, note that I can centre the series wherever we
+          wish; I default to <m>0</m> simply because it is convenient
+          and familiar. Each choice of a center point gives a
+          different series solution, with a different radius of
+          convergence. At <m>t=1</m>, I would have <m>R=
+          \sqrt{2}</m> (the distance to <m>\imath</m> in <m>\CC</m>).
+          At <m>t=4</m>, I would have <m>R = \sqrt{17}</m>.)
+        </p>
+        <p>
+          This series solutions starts with a lengthly calculation.
+          <md>
+            <mrow>
+              y \amp = \sum_{n=0}^\infty c_n t^n
+            </mrow>
+            <mrow>
+              y^\prime \amp = \sum_{n=1}^\infty c_n nt^{n-1}
+            </mrow>
+            <mrow>
+              y^{\prime\prime} \amp = \sum_{n=2}^\infty c_n
+              n(n-1)t^{n-2}
+            </mrow>
+            <mrow>
+              (t^2+1)y^{\prime \prime} + ty^\prime - y \amp = (t^2+1)
+              \sum_{n=2}^\infty c_n n(n-1)t^{n-2} + t
+              \sum_{n=1}^\infty c_n nt^{n-1} - \sum_{n=0}^\infty c_n
+              t^n = 0 
+            </mrow>
+          </md>
+          First, I need to distribute the <m>(t^2+1)</m>, which
+          creates two series. At the same time, I take the powers of
+          <m>t</m> into the series where they exists. 
+          <md>
+            <mrow>
+              0 \amp = \sum_{n=2}^\infty n (n-1) c_n t^n +
+              \sum_{n=2}^\infty n (n-1) c_n t^{n-2}
+            </mrow>
+            <mrow>
+              \amp + \sum_{n=1}^\infty n c_n t^n -
+              \sum_{n=0}^\infty c_n t^n
+            </mrow>
+          </md>
+          Then I need to shift to make all the exponent <m>t^n</m>
+          <md>
+            <mrow>
+              \amp = \sum_{n=2}^\infty n (n-1) c_n t^n +
+              \sum_{n=0}^\infty (n+2) (n+1) c_{n+2} t^n
+            </mrow>
+            <mrow>
+              \amp + \sum_{n=1}^\infty n c_n t^n -
+              \sum_{n=0}^\infty c_n t^n
+            </mrow>
+          </md>
+          The highest starting index is 2. Therefore, I'll pull out
+          starting terms from any series that starts with an index
+          below 2. 
+          <md>
+            <mrow>
+              \amp = \sum_{n=2}^\infty n (n-1) c_n t^n + 2c_2 + 6c_3t
+              + \sum_{n=2}^\infty (n+2) (n+1) c_{n+2} t^n
+            </mrow>
+            <mrow>
+              \amp + c_1 t + \sum_{n=2}^\infty n c_n t^n
+              - c_0 - c_1 t - \sum_{n=2}^\infty c_n t^n
+            </mrow>
+          </md>
+          Finally, I can combine the four sums into one. I'll group
+          all the other terms together as a constant and as a
+          coefficient of <m>t</m>.
+          <md>
+            <mrow>
+              \amp = (2c_2 - c_0) + (6c_3 + c_1 - c_1) t
+            </mrow>
+            <mrow>
+              \amp + \sum_{n=2}^\infty \left[ n (n-1) c_n
+              + (n+2) (n+1) c_{n+2} + n c_n - c_n \right] t^n = 0
+            </mrow>
+          </md>
+          I proceed to find the recurrence relation by setting all
+          the coefficients to <m>0</m>. I leave <m>c_0</m> and
+          <m>c_1</m> as unknowns. I'll use some factoring and
+          cancelling to make the recurrence relation more reasonable. 
+          <md>
+            <mrow>
+              0 \amp = n (n-1) c_n + (n+2) (n+1) c_{n+2} + n c_n - c_n 
+            </mrow>
+            <mrow>
+              (n+1) (n+2) c_{n+2} \amp = (1 - n - n(n-1)) c_n
+            </mrow>
+            <mrow>
+              c_{n+2} \amp = \frac{-c_n (n^2-1)}{(n+2)(n+1)} =
+              \frac{-c_n (n+1)(n-1)}{(n+2)(n+1)}
+            </mrow>
+            <mrow>
+              \amp = \frac{ -c_n (n-1)}{n+2}
+            </mrow>
+          </md>
+          This is a second order recurrence relation. Here are the
+          first few terms. (I must be careful to use the isolated
+          expressions to find <m>c_2</m> and <m>c_3</m>, and then the
+          standard recurrence relation for <m>c_n</m> where <m>n \geq
+          4</m>).
+          <md>
+            <mrow>
+              c_0 \amp = c_0
+            </mrow>
+            <mrow>
+              c_1 \amp = c_1
+            </mrow>
+            <mrow>
+              c_2 \amp = \frac{c_0}{2}
+            </mrow>
+            <mrow>
+              c_3 \amp = 0
+            </mrow>
+            <mrow>
+              c_4 \amp = \frac{-c_2(1)}{4} = \frac{c_0}{(2)(4)}
+            </mrow>
+            <mrow>
+              c_5 \amp = 0
+            </mrow>
+            <mrow>
+              c_6 \amp = \frac{-c_4(3)}{6} =
+              \frac{-c_0(3)}{(6)(4)(2)}
+            </mrow>
+            <mrow>
+              c_7 \amp = 0
+            </mrow>
+            <mrow>
+              c_8 \amp = \frac{-c_6(5)}{8} =
+              \frac{c_0(5)(3)}{(8)(6)(4)(2)}
+            </mrow>
+            <mrow>
+              c_9 \amp = 0
+            </mrow>
+            <mrow>
+              c_{10} \amp = \frac{-c_8(7)}{10} =
+              \frac{-c_0(7)(5)(3)}{(10)(8)(6)(4)(2)}
+            </mrow>
+            <mrow>
+              c_{2n+1} \amp = 0
+            </mrow>
+            <mrow>
+              c_{2n} \amp = \frac{(-1)^n (3)(5)(7)\ldots
+              (2n-3)}{(2)(4)(6)(8) \ldots (2n)} c_0 = \frac{(-1)^n
+              (2n-3)!}{(2)(4)(6) \ldots (2n-4) 2^n n!} c_0
+            </mrow>
+            <mrow>
+              \amp = \frac{((-1)^n (2n-3)!}{2^{n-2} (n-2)! 2^n n!} c_0
+              = \frac{((-1)^n (2n-3)!}{2^{2n-2} n! (n-2)!} c_0
+            </mrow>
+          </md>
+          I have two cases. The odd terms all vanish, so the only
+          place where I see <m>c_1</m> is the isolated term <m>c_1
+          t</m>. That implies that the linear polynomial <m>c_1 t</m>
+          is a solution for any <m>c_1</m>. For the <m>c_0</m> terms,
+          there is still a whole series. Putting this together gives
+          the general solution. Note that I have to start the series
+          at <m>n=2</m>, since the pattern doesn't hold before that
+          point.
+          <me>
+            y = c_0 \left[1 + \frac{t^2}{2} + \sum_{n=2}^\infty
+            \frac{((-1)^n (2n-3)!}{2^{2n-2} n! (n-2)!} \right] + c_1
+            t
+          </me>
+          If I look at the radius of convergence (due to the
+          factorials in numerator and denominators) I can calculate
+          the expected value of <m>R=1</m>. Note that the second
+          term, the polynomial <m>c_1 t</m> doesn't have a domain
+          restriction. It's possible to find solutions that exceed
+          the limitation of the radius of convergence; <xref
+          ref="thm-series-solutions-existence" /> guaranteed a
+          solution with a minimum radius of convergence but did not
+          stipulate a maximum.
+        </p>
+      </statement>
+    </example>
+  </subsection>
+</section>

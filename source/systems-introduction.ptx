@@ -1,0 +1,185 @@
+<section xml:id="section-systems-key-examples">
+  <title>Systems of Differential Equations</title>
+  <subsection xml:id="subsection-systems-defintions">
+    <title>Definitions</title>
+    <p>
+      With algebraic equation, a <term>system of equations</term> is a
+      set of equation (usually more than one, but technically one
+      equation can still be a sort-of boring system). To solve a
+      system of algebraic equations is to try to find values of the
+      variable(s) that satisfy all the equation. 
+    </p>
+    <definition>
+      <statement>
+        A <term>system of differential equations</term> is defined in
+        exactly the same way: it is a set of differential equations
+        about the same function or functions. A solution is a set of
+        functions which satisfy all of the differential equations
+        simultaneously. 
+      </statement>
+    </definition>
+    <p>
+      Many of the definition from <xref ref="section-what-is-a-de" />
+      can be directly extended to systems. 
+    </p>
+    <definition>
+      <statement>
+        <p><ul>
+          <li>
+            The <term>order</term> of a system of differential
+            equation is the highest derivative involved in any of the
+            equation.
+          </li>
+          <li>
+            A system of differential equation is an <term>autonomous
+            system</term> if all of the equations in the system are
+            autonomous.
+          </li>
+          <li>
+            A system of differential equations is a <term>linear
+            system</term> if all of the equations in the system are
+            linear. Otherwise, it is a non-linear system. 
+          </li>
+          <li>
+            A linear system of differential equation is
+            <term>homogeneous</term> if all of the linear equations in
+            the system are homogeneous (all of the <sq>forcing
+            terms</sq> are zero). 
+          </li>
+        </ul></p>
+      </statement>
+    </definition>
+    <p>
+      Solutions to systems of differential equation typically come in
+      familiar, due to constants of integration. To determine a
+      specific solution requires initial conditions. If there are
+      multiple functions involved, I may need to specify initial
+      conditions for each of the functions. 
+    </p>
+    <p>
+      The difference between linear systems and non-linear systems is
+      immensely important. I'll demonstrate some exactly solutions for
+      linear system (with constant coefficients) in <xref
+      ref="section-linear-systems" />. However, the key examples to
+      follow will be entirely non-linear. One might wonder why it is
+      still useful to study linear systems after the motivating
+      examples show such linearity. There are, in fact, strong reasons
+      to still understand linear systems. Often, the linear
+      approximation to a non-linear system can demonstrate many of the
+      dynamics of the system. This approximation also is an important
+      first step to understanding the non-linear, introducing the
+      complication as an adjustment to the linear approximation.
+    </p>
+  </subsection>
+  <subsection xml:id="subsection-systems-key-examples">
+    <title>Key Examples</title>
+    <p>
+      There are a number of important motiavting examples. I first
+      look to biology, where the interaction of species produces
+      systems of linear equations. The Lokta-Volterra equations model
+      predator-prey relationships. Let <m>p(t)</m> be the population
+      of prey and <m>q(t)</m> be the population of predators. These
+      equations describe the interactions between the two
+      derivatives.
+      <md>
+        <mrow>
+          \frac{dp}{dt} \amp = ap - bpq
+        </mrow>
+        <mrow>
+          \frac{dq}{dt} \amp = cpq - dq
+        </mrow>
+      </md>
+      The coefficients <m>a,b,c</m> and <m>d</m> are all positive
+      coefficients. <m>a</m> is a natural birth rate for the prey,
+      <m>b</m> is the death of prey due to predation, <m>c</m> is the
+      growth rate of predators due to predation, and <m>d</m> is the
+      natural death rate of predators. The product <m>pq</m>
+      represents the number of interactions between predators and
+      prey. The Lokta-Volterra system is a classic system in
+      mathematical biology; however, its non-linearity makes it
+      difficult to solve and the solutions are not expressible by
+      elementary functions. To help understanding the system without
+      having to actually calculate difficult solutions, I will
+      introduce qualitative methods of analysis in <xref
+      ref="section-systems-qualitative-methods" />.
+    </p>
+    <p>
+      Mathematical biology has many systems similar to Lokta-Volterra.
+      If <m>p</m> and <m>q</m> are two species competing for the same
+      resources, there is a very similar two-equation DE model.
+      <md>
+        <mrow>
+          \frac{dp}{dt} \amp = a_pp\left(1- \frac{p + b_p q}{c_p} \right)
+        </mrow>
+        <mrow>
+          \frac{dq}{dt} \amp = a_qp\left(1- \frac{q + b_q p}{c_q} \right)
+        </mrow>
+      </md>
+      The coefficients <m>a_p</m> and <m>a_q</m> are the natural
+      growth rates of each species, <m>c_p</m> and <m>c_q</m> are the
+      carrying capacities of the environment for each species, and
+      <m>b_p</m> and <m>b_q</m> measure the effects of competition.
+      Like the Lokta-Voltera equations, this is a difficult non-linear
+      system where I should not expect elementary function solutions. 
+    </p>
+    <p>
+      Infection disease models are also systems of differential
+      equations. The SIR model is a good example. In a population
+      exposed to an infection disease, let <m>S</m> be the susceptible
+      population, <m>I</m> the infected population, and <m>R</m> the
+      recovered population. The model is this system of three
+      differential equations.
+      <md>
+        <mrow>
+          \frac{dS}{dt} \amp = -a I S
+        </mrow>
+        <mrow>
+          \frac{dI}{dt} \amp = a I S - b I
+        </mrow>
+        <mrow>
+          \frac{dR}{dt} \amp = b I
+        </mrow>
+      </md>
+      Here <m>a</m> measures the increase in infection due to
+      interactions between the infected and susceptible population and
+      <m>b</m> measures the natural recovery of the infected
+      population. Many similar models exist to model infection
+      disease.
+    </p>
+    <p>
+      Mathematical biology only gets more complex and involved from
+      here. The following link shows the system of DEs in the 2004
+      Molecular Biology of the Cell Paper 
+      <url
+      href="http://www.ncbi.nlm.nih.gov/pmc/articles/PMC491841/table/tbl1/">
+      <q>Integrative Analysis of
+      Cell Cycle Control in Budding Yeast</q> by K.C. Chen et.
+      al.</url> This table is already pretty complicated, with many
+      linear differential equation. In systems biology, this is only
+      the start. A more complete model of cellular reactions can
+      involve hundreds or thousands of coupled differential equations.
+      These models are almost exclusively linear, simply because
+      systems of this size aren't at all approachable if they are not
+      linear. The actualy cellular interactions are most likely
+      non-linear, and these models, as complex as they are, remain at
+      best linear approximations of even more complicated situations. 
+    </p>
+    <p>
+      Examples exist in other disciplines as well. Back in the world
+      of physics, I can look at the physics of the coupled spring. In
+      this sytem, there is a mass <m>m_1</m> on a spring with spring
+      constant <m>k_1</m> attached to a fixed object. Then there is a 
+      second mass <m>m_2</m> attached to the first by a spring wih
+      spring constant <m>k_2</m>. Analyzing the forces and using
+      Newton's law of motion results in a system of DEs.
+      <md>
+        <mrow>
+          m_1x_1^{\prime \prime} \amp = - k_1x_1 + k_2(x_2 - x_1)
+        </mrow>
+        <mrow>
+          m_2x_2^{\prime \prime} \amp = -k_2(x_2-x_1)
+        </mrow>
+      </md>
+    </p>
+  </subsection>
+</section>

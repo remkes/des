@@ -1,0 +1,11 @@
+<chapter xmlns:xi="http://www.w3.org/2001/XInclude"
+  xml:id="chapter-second-order-odes">
+  <title>Second Order DEs</title>
+  <xi:include  href="constant-coefficients.ptx" />
+  <xi:include  href="undetermined-coefficients.ptx" />
+  <xi:include  href="resonance.ptx" />
+  <xi:include  href="variation-parameters.ptx" />
+  <xi:include  href="second-order-activity.ptx" />
+</chapter>
+
+

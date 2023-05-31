@@ -1,0 +1,37 @@
+<section xml:id="section-series-solutions-general">
+  <title>Series Solutions to Linear Differential Equations</title>
+  <introduction>
+    <p>
+      There is a common approach to solving that has already been
+      helpful for second order equations: I assume the solution has a
+      certain form (exponential for constant coefficient linear
+      equations), put that form into the differential equation, and
+      solve for the parameters of the chosen form. This chapter takes
+      the same approach, using Taylor series as the certain form.
+      See <xref ref="section-taylor-series" /> for a review of Taylor
+      series.
+    </p>
+    <p>
+      I will assume that the solution to a differential equation, a
+      function <m>f</m>, can be written as a series centered at some
+      <m>\alpha</m> (usually <m>\alpha = 0)</m>.
+      <me>
+        f = \sum_{n=0}^\infty c_n (t-\alpha)^n
+      </me>
+      The series is entirely determined by the coefficients
+      <m>c_n</m>. Therefore, I use the differential equation to find
+      information about the coefficients <m>c_n</m>.  In that way, I
+      can build a Taylor series, and hence a function, which solves
+      the differential equation.
+    </p>
+    <p>
+      There is one major caution for this approach. While many
+      functions are analytic, is it a relativley restrictive
+      condition. The method of this chapter only finds analytic
+      solutions; it may miss many non-ananlytic functions which also
+      solve the differential equation. This is the risk in any method
+      which imposes a form, since the solution may not have the
+      desired form.
+    </p>
+  </introduction>
+</section>

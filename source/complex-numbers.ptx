@@ -1,0 +1,134 @@
+<section xml:id="section-complex-numbers">
+  <title>Complex Numbers</title>
+  <p>
+    I do not expect complex numbers to be familiar to you. I'm going
+    to give a very brief description of them in this preliminary
+    section. I will not use complex numbers often in this course, but
+    they are key for a major result in <xref
+    ref="chapter-second-order-odes" />. 
+  </p>
+  <definition>
+    <statement>
+      <p>
+        The number <m>\imath</m> is defined by the property
+        <m>\imath^2 = -1</m>. A <term>complex number</term> is any
+        expression <m>a + b \imath</m> where <m>a</m> and <m>b</m> are
+        real numbers. <m>a</m> is called the <term>real part</term>
+        and <m>b</m> is called the <term>imaginary part</term>. The
+        set of all complex number is written <m>\CC</m>.
+      </p>
+    </statement>
+  </definition>
+  <p>
+    Addition and multiplication of complex numbers are extended from
+    <m>\RR</m> by linearity and the distribution of multiplication.
+    Note in the multiplication I use the defining property that
+    <m>\imath^2 = -1</m>.
+    <md>
+      <mrow>
+        (a + b \imath) + (c + d \imath) \amp = (a+b) + (c+d) \imath
+      </mrow>
+      <mrow>
+        (a + b \imath)(c + d \imath) \amp = ac + bc \imath + ad
+        \imath + bd \imath^2
+      </mrow>
+      <mrow>
+        \amp ac + (bc + ad) \imath + bd(-1) = (ac-bd) + (bc+ad)
+        \imath
+      </mrow>
+    </md>
+  </p>
+  <p>
+    All non-zero complex numbers are invertible (have a reciprocal).
+    The reciprocal of a non-zero complex number is 
+    <me>
+      \frac{1}{a+ b \imath} = \frac{a-b\imath}{a^2+b^2}
+    </me>.
+  </p>
+  <definition>
+    <statement>
+      <p>
+        The <term>conjugation</term> of a complex number
+        <m>a+b\imath</m> is <m>a-b\imath</m>. It is indicated with a
+        vertical bar <m>\overline{a+b\imath} = a-b\imath</m>.
+      </p>
+    </statement>
+  </definition>
+  <p>
+    Complex numbers have many intriguing properties.
+    The most important for this course is the guaranteed existence of
+    roots of any polynomial.
+  </p>
+  <theorem>
+    <title>Fundamental Theorem of Algebra</title>
+    <statement>
+      <p>
+        Let <m>p(x)</m> be a polynomial of degree <m>d</m> with real
+        or complex coefficients. Then <m>p(x)</m> has exactly
+        <m>d</m> roots in the complex numbers (though some may be
+        repeated). Equivalently, <m>p(x)</m> factors completely over
+        the complex numbers: there are complex numbers <m>\alpha_1,
+        \ldots, \alpha_d</m>, not necessariliy distinct from each
+        other, such that
+        <me>
+          p(x) = (x-\alpha_i)(x-\alpha_2)\ldots(x-\alpha_d)
+        </me>.
+      </p>
+    </statement>
+  </theorem>
+  <p>
+    Complex exponentials are understood by Euler's formula. This is
+    particularly important for us, since the complex numbers in this
+    course will naturally appear in exponents. 
+  </p>
+  <proposition xml:id="prop-eulers-formula">
+    <title>Euler's Formula</title>
+    <statement>
+      <me>
+        e^{\imath \theta} = \cos \theta + i \sin \theta
+      </me>.
+    </statement>
+  </proposition>
+  <proof>
+    <p>
+      There are a variety of way to justify Euler's formlua. One of
+      the justifications only needs the known taylor series for
+      <m>e^x</m> and the trig functions, which were developed in
+      Calculus II. In the following argument via talyor series, the
+      number <m>\imath</m> can just be treated like any other
+      constant. First I'll write the known taylor series for the three
+      functions I need. Then I calculate <m>e^{\imath t}</m> via its
+      taylor series. Various manipulations of the series, using
+      linearity and splitting up the series into even and odd terms,
+      leads to the final expression in the taylor series for sine and
+      cosine, proving Euler's formula. 
+      <md>
+        <mrow>
+          e^t \amp = \sum_{n=0}^\infty \frac{t^n}{n!}
+        </mrow>
+        <mrow>
+          \sin t \amp = \sum_{n=0}^\infty \frac{(-1)^n
+          t^{2n+1}}{(2n+1)!}
+        </mrow>
+        <mrow>
+          \cos t \amp = \sum_{n=0}^\infty \frac{(-1)^n t^{2n}}{(2n)!}
+        </mrow>
+        <mrow>
+          e^{\imath t} \amp = \sum_{n=0}^\infty \frac{(\imath
+          t)^n}{n!} = \sum_{n=0}^\infty \frac{\imath^n t^n}{n!}
+        </mrow>
+        <mrow>
+          \amp = \sum_{n=0}^\infty \frac{\imath^{2n} t^{2n}}{{2n}!} +
+          \sum_{n=0}^\infty \frac{\imath^{2n+1} t^{2n+1}}{(2n+1)!}
+        </mrow>
+        <mrow>
+          \amp = \sum_{n=0}^\infty \frac{(-1)^n t^{2n}}{{2n}!} +
+          \imath \sum_{n=0}^\infty \frac{(-1)^n t^{2n+1}}{(2n+1)!}
+        </mrow>
+        <mrow>
+          \amp = \cos t + \imath \sin t
+        </mrow>
+      </md>
+    </p>
+  </proof>
+</section>

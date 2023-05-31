@@ -1,0 +1,27 @@
+<section xml:id="section-approximation-methods">
+  <title>
+    Approximation Methods and Applications 
+  </title>
+  <p>
+    At this point, many DE courses might include a section on
+    approximation methods or a section on applications, or both. 
+    The applications are useful for motivation.  The approximation
+    methods are interesting due to the fact, observed previously, that
+    many DEs are terribly difficult to solve.  The techniques I
+    included above for first order equations cover only a small
+    portion of all the possible equations and even then, I have to
+    rely on integrals for seperable and linear equations.  Integrals
+    themselves are difficult and often only possible up to
+    approximation.  Therefore, a huge part of the mathematics of
+    differential equations is the study of approximation techniques.
+    Getting a sense of how these approximations are set up is an
+    important insight into the field.
+  </p>
+  <p>
+    As useful and important as approximations methods and applications
+    are, I have chosen not to include such a section. Basically, this
+    is for reasons of time; I want to cover second order equations,
+    systems and a brief intro to PDEs. Therefore, approximation and
+    applications were omitted. 
+  </p>
+</section>

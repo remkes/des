@@ -1,0 +1,62 @@
+<section xml:id="section-pdes-intro">
+  <title>Partial Differential Equations</title>
+  <introduction>
+    <p>
+      So far, this has been a course in ordinary differential
+      equations, where the functions depended on one variable. The
+      theory of differential equations gets much more involved and
+      interesting when it moves to functions of several variables. The
+      equations also get more difficult to solve; solving a single
+      partial differential equation (PDE) can be the work of a whole
+      book, a whole thesis or a whole career. For some examples, the
+      solutions to a particular PDE are a whole branch of
+      mathematics.
+    </p>
+    <p>
+      Many examples involve functions which depend on both position
+      and time. The root of modern physics is found in differential
+      equations that relate time derivatives to position derivatives.
+      Here are two particularly celebrated examples.
+    </p>
+    <example>
+      <statement>
+        <p>
+          The Navier-Stokes equation is the fundamental equation of
+          fluid dynamics. There are several forms, but I'll state
+          the form for incompressible flows (thing of water, which is
+          basically incompressible, as opposed to air, which is very
+          compressible).  In this equation, <m>u</m> is the field
+          describing the fluid flow as a function on <m>x,y,z,t</m>
+          (position and time), <m>\nabla</m> is a differential
+          operator, <m>P</m> is the pressure of the fluid, <m>\rho</m>
+          is the density of the fluid, and <m>\nu</m> is the viscosity
+          of the fluid.  
+          <me>
+            \frac{\del u}{\del t} + u \cdot \nabla u = - \frac{\nabla
+            P}{\rho} + \nu \nabla^2 u
+          </me>
+        </p>
+      </statement>
+    </example>
+    <example>
+      <statement>
+        <p>
+          The Schrodinger equation is the fundamental PDE in quantum
+          mechanics (at least in its early versions). In the
+          Schrodinger equation, <m>\Psi</m> is the wave function which
+          describes the probabilities of measurements in a physical
+          system, <m>\imath</m> is the familiar complex number,
+          <m>\hbar</m> is a constant, <m>m</m> is mass and <m>V</m> is
+          a potential energy function (which typically only depends on
+          spatial variables). This is the one-dimensional version, so
+          <m>\Psi</m> depends on <m>x</m> and <m>t</m>.
+          <me>
+            \imath \hbar \frac{\del \Psi}{\del t} =
+            \frac{-\hbar^2}{2m} \frac{\del^2 \Psi}{\del x^2} + V(x)
+            \Psi
+          </me>
+        </p>
+      </statement>
+    </example>
+  </introduction>
+</section>

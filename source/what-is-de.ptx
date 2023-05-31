@@ -1,0 +1,396 @@
+<section xml:id="section-what-is-a-de">
+  <title>What is a Differential Equation?</title>
+  <subsection xml:id="subsection-first-definitions">
+    <title>First Definitions</title>
+    <definition>
+      <statement>
+        <p>
+          A <term>differential equation</term> is any equation
+          involving a function <m>f(t)</m> and its derivatives
+          <m>f^\prime(t)</m>, <m>f^{\prime \prime}(t)</m>, etc. The
+          highest derivative in the equation is called the
+          <term>order</term> of the equation. A DE which involves
+          partial derivatives is called a <term>partial differential
+          equation</term>; otherwise, it is called an <term>ordinary
+          differtial equation</term>.
+        </p>
+      </statement>
+    </definition>
+    <p>
+      More holistically, a differential equation asks the question:
+      what function satisfies a given relationship?  In algebra, this
+      is a familiar question for numbers. <m>t + 5 = 7</m> implicitly
+      asks which number, when replacing <m>t</m>, satisfies the
+      equation. The answer, of course, is <m>t=2</m>; the solution to
+      the equation gives the correct replacement. For differential
+      equations, I ask <sq>what function</sq> instead of <sq>what
+      number</sq>.
+    </p>
+    <p>
+      There are many ways to write a differential equation. The most
+      general way is to think of any algebraic combination of a
+      function <m>y</m>, its derivatives and the independent variable
+      <m>t</m>. In this generality, I could write the equation using
+      a multivariable function <m>F</m>.
+      <me>
+        F(t,y, y^\prime, \ldots, y^{(n)}) = 0
+      </me>
+      Often, if I can, I isolate the highest derivative.
+      <me>
+        y^{(n)} = F(t,y,y^\prime, \ldots, y^{(n-1)})
+      </me>
+    </p>
+    <definition>
+      <statement>
+        <p>
+          A differential equation is called <term>autonomous</term> is
+          the independent variable doesn't appear. For a first order
+          equation, this looks like
+          <me>
+            \frac{dy}{dt} = f(y)
+          </me> for some expression <m>f(y)</m> in the dependent
+          variable. 
+        </p>
+      </statement>
+    </definition>
+    <definition>
+      <statement>
+        <p>
+          An equation is called <term>linear</term> if it has the form
+          <me>
+            a_n(t)y^{(n)} + a_{n-1}(t)y^{(n-1)} + \ldots + a_1(t)
+            y^\prime + a_0(t) y = f(t)
+          </me>.
+          In addition, a linear equation is called
+          <term>homogenous</term> if the <m>f(t)</m> term is simply
+          <m>f(t) = 0</m>.
+        </p>
+      </statement>
+    </definition>
+    <p>
+      A very useful notational tool for linear DEs is the idea of a
+      linear differential operator.
+    </p>
+    <definition xml:id="definition-linear-differential-operator">
+      <statement>
+        <p>
+          A <term>differentiable operator</term> is an operator which
+          acts on functions either by multplication by fixed functions
+          or by differentiation. The operator is <term>linear</term>
+          if the various pieces of the operation are added together.
+          For example, a second order linear equation has this form
+          <me>
+            L = a(t) \frac{d^2}{dt^2} + b(t) \frac{d}{dt} + c
+          </me>
+          (it is second order since the highest derivative is a second
+          derivative). 
+        </p>
+        <p>
+          I can use differentiable operators to simplify notations for
+          DE. Using the operator <m>L</m> I just defined, a second
+          order linear DE become simply <m>Ly = f(t)</m>.
+        </p>
+      </statement>
+    </definition>
+  </subsection>
+  <subsection xml:id="subsection-important-example">
+    <title>The Most Important Example</title>
+    <figure xml:id="figure-family-of-solutions">
+      <caption>
+        The family <m>f(t) = ce^{\alpha t}</m> where <m>c \in \RR</m>.
+      </caption>
+      <image xml:id="figure01" width="80%">
+        <asymptote>
+          size(10cm,0);
+          import contour;
+          import stats;
+          import graph;
+
+          xlimits( -1, 5);  
+          ylimits( -2, 2);  
+          yaxis("$y$");
+          xaxis("$x$");
+
+          real f(real x, real y) {return y*exp(-1*x);}
+
+          real[] value=uniform(-0.5,0.5,20);
+
+          draw(contour(f,(-1,-2),(5,2),value));
+        </asymptote>
+      </image>
+    </figure>
+    <p>
+      The simplest differential equation is
+      <me>
+        \frac{df}{dt} = \alpha f(t)
+      </me>.
+      For many differential equations, I seek a translation of
+      their meaning. The translation of this simple equation is
+      that the rate of change is propotional to the current value.
+      This is a statement of percentage growth; the
+      proportionality constant is the percentage.
+    </p>
+    <p>
+      The solutions to this equation are are <m>f(t) = ce^{\alpha
+      t}</m>. Notice that there is a constant, <m>c</m>, such that
+      there will be a whole infinite family of solutions. A specific
+      solution is specified by a choice of <m>c</m>.
+    </p>
+    <p>
+      Percentage growth applies to population models. If a population
+      is described by the solution <m>f(t) = ce^{\alpha t}</m> then
+      <m>f(0) = ce^0 = c</m> and I must interpret the constant
+      <m>c</m> as the population when <m>t=0</m>. This is the
+      starting popluation, so I call <m>c</m> the <em>initial
+      value</em> of the solution. A full solution of a differential
+      equation will usually consist of a function and choice(s) for
+      the initial value(s). 
+    </p>
+    <definition>
+      <statement>
+        <p>
+          A differential equation along with a specified initial value
+          is called an <term>initial value problem</term> or IVP.
+        </p>
+      </statement>
+    </definition>
+    <p>
+      If I don't make a choice, as I said, I get an infinite family of
+      solutions. I can visualize this family as a series of graphs in
+      <m>\RR^2</m>. <xref ref="figure-family-of-solutions" /> shows
+      the graphs for <m>f(t) = ce^{\alpha t}</m>.
+    </p>
+  </subsection>
+  <subsection xml:id="subsection-pure-and-applied">
+    <title>Pure and Applied Perspectives</title>
+    <p>
+      I will be looking at differential equations from both pure
+      mathematics and applied mathematics points of view. The pure
+      mathematician is interested in the following kinds of
+      questions.
+    </p>
+    <p><ul>
+      <li>
+        When does a solution exists?
+      </li>
+      <li>
+        Can I prove that a solution exists?
+      </li>
+      <li>
+        Is the solution unique?
+      </li>
+      <li>
+        Is there a complete family? How many parameters exist, and
+        what are their domains?
+      </li>
+      <li>
+        Can I write and prove theorems to answer these questions?
+      </li>
+    </ul></p>
+    <p>
+      In contrast, the applied mathematician is interested in the
+      following kinds of questions.
+    </p>
+    <p><ul>
+      <li>
+        How many solutions fit the data or initial values?
+      </li>
+      <li>
+        How do the solutions grow? What is their behaviour?
+      </li>
+      <li>
+        Are the solutiosn stable?
+      </li>
+      <li>
+        How difficult are the solutions to calculate?  Can I calculate
+        them exacly, or only approximately?
+      </li>
+      <li>
+        Can I answer questions about the model even without a solution?
+      </li>
+    </ul></p>
+    <p>
+      Thinking as an applied mathematician, a DE is an mathematical
+      version of a scientific method. Often an observation about a
+      phenomenon can be expressed as a relationship between a function
+      and its derivative, such as the observation of percentage
+      growth. The DE, then, is the hypothesis born of observation. If
+      I can find the solution, it gives me a predictive model of the
+      phenomenon, which I can test. If the solution matches the
+      observed behaviour, I conclude the DE model is relatively
+      reliable; if the solution diverges from the observed behaviour,
+      I discard or amend the DE.
+    </p>
+    <p>
+      In this way, DEs allow the modelling many phenomena:
+      popluations, radioactive decay, cooling, disease, metabolish,
+      newtonian motion with friction, chemical reactions, gravity,
+      predaor-prey models, hamiltonian mechanics, quantum mechanics,
+      interest, bacterial growth, neuron firing, ecology, mixtures,
+      draining, series circuits, suspended cables, and many, many
+      more.
+    </p>
+    <p>
+      A robust study of differential equations involves both the pure
+      and applied perspectives. The pure perspective gives background,
+      context and rigour. The theorems it produces are necessary for
+      the efficient use of DEs in applied mathematics.  The applied
+      perspective, most often, gives the motivation and selects the
+      important problems. It also stresses the value of qualitative
+      methods and their interpretation.
+    </p>
+  </subsection>
+  <subsection xml:id="subsection-interesting-examples">
+    <title>Interesting Examples</title>
+    <p>
+      I want to understand the behaviour of solutions of DEs. The
+      examples in this section give some typical behaviours and
+      archetypes, ideas that will be repeated over and over again in
+      the course. For these examples, I'm simply going to give you the
+      DE and its solution <mdash /> no solution methods here. The
+      point is to show the kinds of behaviours that often occur. 
+    </p>
+    <example>
+      <statement>
+        <p>
+          <me>
+            \frac{d^2f}{dt^2} + 9 f = 0
+          </me>
+          This is solved by <m>\sin 3t</m> and also by <m>\cos 3t</m>.
+          Moreover, any linear combination <m>a\sin 3t + b \cos 3t</m>
+          is also solution. In a second order equation, I expect two
+          linearly independent solutions and the general solution is a
+          linear combination of the two linearly independent
+          solutions. (This kind of description of solution is where
+          the linear algebra notions of linear combinations and linear
+          indenpendence are most useful.)
+        </p>
+      </statement>
+    </example>
+    <example>
+      <statement>
+        <p>
+          <me>
+            \frac{dy}{dt} = t \sqrt{y}
+          </me>
+          This is solved by <m>y = (\frac{t^2}{4} + c)^2</m>, which is
+          a nice family with one real parameter. However, this is
+          also solved by <m>y=0</m>, even though it isn't in the
+          family (there is no value of <m>c</m> that will lead to the
+          solution <m>y=0</m>). It's important to be aware that this
+          situation can occur. There is even a name for such a solution.
+        </p>
+      </statement>
+    </example>
+    <definition>
+      <statement>
+        <p>
+          An extraneous solutions to a DE, one which falls outside
+          families with parameters, is called <term>singular
+          solution</term>.
+        </p>
+      </statement>
+    </definition>
+    <example>
+      <statement>
+        <p>
+          <me>
+            t \frac{dy}{dt} = 4y
+          </me>
+          This is solved by <m>y = ct^4</m>, which is another
+          reasonable family. However, there is a strange, singular
+          solution.
+          <me>
+            y(t) = \left\{ \begin{matrix} 
+              -t^4 \amp t \leq 0 \\ 
+              t^4 \amp t>0 
+            \end{matrix} \right.
+          </me>
+          The derivatives of this function line up at the origin, so
+          the function is of class <m>C^1</m> (actually <m>C^3</m>, if
+          you work it out).
+        </p>
+      </statement>
+    </example>
+    <example>
+      <statement>
+        <p>
+          <me>
+            \frac{dy}{dx} = \frac{-x}{y}
+          </me>
+          The curve <m>x^2 + y^2 = c</m> solves this equation
+          implicitly. I could break this up into two functions, but
+          its much more natural to leave it as an implicit locus, in
+          this case, a circle. This is very typical: often solutions
+          are left in an implicit form as loci, even though in theory
+          I always look for solutions which are functions <m>y =
+          f(x)</m>. Also notice in this example that only
+          non-negative <m>c</m> values are allowed in this family of
+          solutions. There is no guarantee that all values of a
+          parameter will lead to reasonable solutions.
+        </p>
+      </statement>
+    </example>
+  </subsection>
+  <subsection xml:id="subsection-pessimism">
+    <title>The Scarcity of Solutions</title>
+    <p>
+      Even going briefly into the study of DEs leads to one immediate
+      conclusion: DEs are terribly difficult to solve. The sad truth
+      is that mathematicians can produce exact solutions to DEs only a
+      very small portion of them. Due to this limitation, many
+      techniques are developed to understand approximate solutions or
+      infer information about solutions indirectly.
+    </p>
+    <p>
+      Alternatively, if mathematicians are unable to solve a
+      differential equation directly because there isn't a function in
+      our arsenal that solves it, there is another radical option:
+      invent a new function. In this way, DEs can be the source of
+      many new types of functions. It's not uncommonly that even a
+      very reasonable DEs which itslef only involves elementary
+      functions can have a solution which is a completely new, unknown
+      kind of function. 
+    </p>
+    <example>
+      <statement>
+        <p>
+          <me>
+            \frac{dy}{dt} = e^{-t^2} \implies y = \int e^{-t^2}dt + C
+          </me>
+          This integrand is a <m>C^\infty</m> function, so the
+          anti-derivative exists, but there is no name for it in the
+          elementary functions. Therefore, the solution is some new
+          function which, if I wanted, I could name and then try to
+          investigate. 
+        </p>
+      </statement>
+    </example>
+    <p>
+      This example leads me to an important question: what do I
+      actually mean by <sq>solving a differential equation</sq>? The
+      naivë understanding of solving answers something like this: find
+      a function among the functions I know that fits the equation.
+      Indeed, this is how I talked about solving in <xref
+      ref="subsection-first-definitions" />. In this sense, most
+      differential equations are <sq>unsolvable</sq>. However, after
+      the discussion of this section, I can give a new understanding
+      of <sq>solving</sq>. To solve a differential equation is to
+      describe the function that fits the equation. In this sense, the
+      situation is much more optimistic: almost any differential
+      equation I can write down will have a solution, in this sense.
+      However, the difficulty is now in describing the function. There
+      is no guarantee that the function is one that I already know. It
+      might be something completely new. How do I investigate its
+      properties, graph it, understand its behaviour? 
+    </p>
+    <p>
+      Finally, this is an important example of the kinds of linguistic
+      subtleties that run thought mathematics. Even the very basic term
+      <sq>solve</sq> can mean different things depending on our
+      assumptions. To deeply understand mathematics is to be aware of
+      all of the underlying assumption that we bring to the
+      discipline. 
+    </p>
+  </subsection>
+</section>

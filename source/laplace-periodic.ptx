@@ -1,0 +1,155 @@
+<section xml:id="laplace-periodic">
+  <title>Laplace Transforms of Periodic Functions</title>
+  <p>
+    Laplace transforms cooperate with periodic functions.  I've
+    already discussed the sine and cosine transforms, but it is also
+    true for arbitrary, even discontinuous periodic functions. Here
+    are a couple examples of useful discontinuous periodic functions.
+    (Like the unit step function and the <m>\delta</m>-function, these
+    are both reasonable functions for applied mathematics even though
+    they are discontinuous.) 
+  </p>
+  <example>
+    <statement>
+      <p>
+        This is the square wave.
+        <me>
+          f(t) = \left\{ \begin{matrix} 
+            0 \amp  t \in [2n+1, 2n+2] \\
+            1 \amp  1 \in (2n, 2n+1) 
+          \end{matrix} \right.
+        </me>
+      </p>
+    </statement>
+  </example>
+  <example>
+    <statement>
+      <p>
+        This is the sawtooth wave.
+        <md>
+          <mrow>
+            f(t) \amp = \{ t-n \amp \amp t \in [n, n+1) \amp \amp
+            \forall n \in \NN
+          </mrow>
+        </md>
+      </p>
+    </statement>
+  </example>
+  <p>
+    For each of these functions, doing an integration over
+    <m>(0,\infty)</m> is problematric.  Instead, there is a convenient
+    theorem for Laplace transforms of such waves which only involves
+    the integral over one period.
+  </p>
+  <proposition>
+    <statement>
+      <p>
+        If <m>f(t)</m> is bounded periodic with period <m>T</m>, then 
+        <me>
+          \calL\{ f(t) \} = \frac{1}{1-e^{-sT}} \int_0^T e^{-st} f(t) dt
+        </me>
+      </p>
+    </statement>
+  </proposition>
+  <example xml:id="example-square-wave">
+    <statement>
+      <p>
+        Let <m>f(t)</m> be the square wave, which has period 2.  Then
+        I can use <m>f</m> as a forcing term and solve the following
+        DE with a Laplace transform (I factor <m>1-e^{-2s}</m> as a
+        difference of squares in this calculation). Assume the initial
+        conditions are <m>y(0) = y^\prime(0) = 0</m>.
+        <md>
+          <mrow>
+            y^\prime + by \amp  = f(t)
+          </mrow>
+          <mrow>
+            sY + bY \amp  = \frac{1}{1-e^{-2s}} \int_0^2 f(t) e^{-st}
+            dt
+          </mrow>
+          <mrow>
+            \amp  = \frac{1}{1-e^{-2s}} \int_0^1 e^{-st} dt
+          </mrow>
+          <mrow>
+            \amp  = \frac{1}{1-e^{-2s}} \left. \frac{e^{-st}}{-s}
+            \right|_0^1 = \frac{-(e^{-s}-1)}{s(1-e^{-2s})} 
+          </mrow>
+          <mrow>
+            \amp  = \frac{1}{s(1+e^{-s})}
+          </mrow>
+          <mrow>
+            Y \amp  = \frac{1}{s(s+b)(1-(-e^{-s}))}
+          </mrow>
+        </md>
+      </p>
+      <p>
+        This expression is problematic for an inverse transform.
+        Specficially, the <m>\frac{1}{1-e^{-s}}</m> term is the problem.
+        I solve the problem by expressing it as a geometric series,
+        which is a very common approach to dealing with period forcing
+        terms. 
+        <md>
+          <mrow>
+            Y \amp  = \frac{1}{s(s+b)(1-(-e^{-s})}
+          </mrow>
+          <mrow>
+            \amp  = \frac{1}{s(s+b)} \left( 1 - e^{-s} + e^{-2s} -
+            e^{-3s} + \ldots \right) 
+          </mrow>
+        </md>
+        I use partial fractions to split up the rational function in
+        front of the series. After doing so, I distribute the result
+        to product two series. 
+        <md>
+          <mrow>
+            \amp  = \frac{1}{b} \left( \frac{1}{s} - \frac{1}{s +
+            b}\right) \left( 1 - e^{-s} + e^{-2s} - e^{-3s} + \ldots
+            \right) 
+          </mrow>
+          <mrow>
+            \amp  = \frac{1}{b} \left( \frac{1}{s} - \frac{e^{-s}}{s} +
+            \frac{e^{-2s}}{s} - \frac{e^{-3s}}{s} + \ldots \right)
+          </mrow>
+          <mrow>
+            \amp  \hspace{1cm} - \frac{1}{b} \left( \frac{1}{s + b} -
+            \frac{e^{-s}}{s + b} + \frac{e^{-2}}{s + b} -
+            \frac{e^{-3}}{s + b} + \ldots \right)
+          </mrow>
+        </md>
+        Then I apply the inverse transform. I can work with the
+        series, since each term in the series is a shift of the base
+        term. After transforming both series, I can group them
+        together again and write them in sigma notation.
+        <md>
+          <mrow>
+            y \amp  = \frac{1}{b} \left( 1 - u_1(t) + u_2(t) - u_3(t)
+            + \ldots) \right)
+          </mrow>
+          <mrow>
+            \amp  \hspace{1cm} - \frac{1}{b} \left( e^{-bt} - u_1(t)
+            e^{-b(t-1)} + u_2(t) e^{-b(t-2)} - u_3(t) e^{-b(t-3)} +
+            \ldots \right)
+          </mrow>
+          <mrow>
+            y \amp  = \frac{1}{b} \left( 1-e^{-bt} \right) +
+            \frac{1}{b} \sum_{n=1}^\infty (-1)^n u_n(t)
+            (1-e^{-b(t-n)})
+          </mrow>
+        </md>
+      </p>
+      <p>
+        Is this a good solution? It's not the easiest to work with,
+        since it is expressed as an infinite series (and not even a
+        Taylor series). But it does measure the behaviour. The square
+        wave introduces a new force every two units of time. The
+        infinite series is simply capturing the collective effect of
+        all those forces on the system. All the terms are exponential
+        decay, so the system is still trying to decay to equilibrium,
+        but it keeps getting pulled up again. I could analyze the
+        series more carefully to determine the net effect: whether
+        this function is actually growing and at what rate due to the
+        forces. 
+      </p>
+    </statement>
+  </example>
+</section>

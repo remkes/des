@@ -1,0 +1,354 @@
+<section xml:id="section-laplace-activity">
+  <title>Activities for Laplace Transforms</title>
+  <subsection xml:id="subsection-activity-laplace-something">
+    <title>Using Laplace Transforms to Solve DEs</title>
+    <activity>
+      <statement>
+        <p>
+          Solve this DE using Laplace transforms.
+          <md>
+            <mrow>
+              y^{\prime \prime} + 4y^\prime + 4y \amp = \sin (3t)
+            </mrow>
+            <mrow>
+              y(0) \amp = 0
+            </mrow>
+            <mrow>
+              y^\prime (0) \amp = 0
+            </mrow>
+          </md>
+        </p>
+      </statement>
+      <solution>
+        <p>
+          First I apply the Laplace transform, produce an algebraic
+          equation for <m>Y</m> and solve for <m>Y</m>.
+          <md>
+            <mrow>
+              \calL \left\{  y^{\prime \prime} + 4y^\prime + 4y \right\}
+              \amp = \calL \left\{ \sin(3t) \right\} 
+            </mrow>
+            <mrow>
+              (s^2Y - sy(0) - y^\prime(0)) + 4(sY - y(0)) + 4Y \amp =
+              \frac{3}{s^2 + 9} 
+            </mrow>
+            <mrow>
+              (s^2 + 4s + 4)Y \amp = \frac{3}{s^2 + 9} 
+            </mrow>
+            <mrow>
+              Y \amp = \frac{3}{(s^2+9)(s+2)^2} 
+            </mrow>
+          </md>
+          I use partial fractions to split up the rational function. 
+          <md>
+            <mrow>
+              Y \amp = \frac{-3}{169} \frac{4s+5}{s^2+9} +
+              \frac{12}{169} \frac{1}{s+2} + \frac{3}{13}
+              \frac{1}{(s+2)^2} 
+            </mrow>
+          </md>
+          I need to split up the first fractions into two forms that
+          fit the inverse Laplace transform.
+          <md>
+            <mrow>
+              Y \amp = \frac{-12}{169} \frac{s}{s^2+9} +
+              \frac{-5}{169} \frac{3}{s^2+9} + \frac{12}{169}
+              \frac{1}{s+2} + \frac{3}{13} \frac{1}{(s+2)^2} 
+            </mrow>
+          </md>
+          I apply the inverse Laplace transform. 
+          <md>
+            <mrow>
+              \calL^{-1} \{Y\} \amp = \calL^{-1} \left\{
+              \frac{-12}{169} \frac{s}{s^2+9} + \frac{-5}{169}
+              \frac{3}{s^2+9} + \frac{12}{169} \frac{1}{s+2} +
+              \frac{3}{13} \frac{1}{(s+2)^2} \right\}
+            </mrow>
+            <mrow>
+              y \amp = \frac{-12}{169} \cos 3t - \frac{5}{169} \sin
+              (3t) + \frac{12}{169} e^{-2t} + \frac{3}{13} te^{-2t}
+            </mrow>
+          </md>
+        </p>
+      </solution>
+    </activity>
+    <activity>
+      <statement>
+        <p>
+          Solve this DE using Laplace transforms.
+          <md>
+            <mrow>
+              y^{\prime \prime} + 2y^\prime + 12y \amp = 7 u_5(t)
+            </mrow>
+            <mrow>
+              y(0) \amp = 0
+            </mrow>
+            <mrow>
+              y^\prime (0) \amp = -6
+            </mrow>
+          </md>
+        </p>
+      </statement>
+      <solution>
+        <p>
+          First I apply the Laplace transform, produce an algebraic
+          equation for <m>Y</m> and solve for <m>Y</m>.
+          <md>
+            <mrow>
+              \calL \left\{  y^{\prime \prime} + 2y^\prime + 12y
+              \right\} \amp = \calL \left\{ 7u_5(t) \right\} 
+            </mrow>
+            <mrow>
+              (s^2Y - sy(0) - y^\prime(0)) \amp +2 (sY - y(0)) + 12Y =
+              7\frac{e^{-5s}}{s} 
+            </mrow>
+            <mrow>
+              (s^2 + 2s + 12)Y + 6 \amp = 7\frac{e^{-5s}}{s} 
+            </mrow>
+            <mrow>
+              (s^2 + 2s + 12)Y \amp = 7\frac{e^{-5s}}{s} - 6 
+            </mrow>
+            <mrow>
+              Y \amp = 7\frac{e^{-5s}}{s((s+1)^2+11)} - 6
+            \frac{1}{(s+1)^2+11} 
+            </mrow>
+          </md>
+          I use partial fractions to split up the first rational
+          function.
+          <md>
+            <mrow>
+              Y \amp = -\frac{7}{12}\frac{e^{-5s}(s+2)}{(s+1)^2+11} +
+              \frac{7}{12}\frac{e^{-5s}}{s} - 6 \frac{1}{(s+1)^2+11}
+            </mrow>
+          </md>
+          I need to make some adjustments so that the numerators and
+          constants fit the pattern of inverse Laplace transforms.
+          <md>
+            <mrow>
+              Y \amp = -\frac{7}{12}\frac{e^{-5s}(s+1)}{(s+1)^2+11} -
+              \frac{7}{12}\frac{e^{-5s}}{(s+1)^2+11} +
+              \frac{7}{12}\frac{e^{-5s}}{s} - 6
+              \frac{1}{\sqrt{11}}\frac{\sqrt{11}}{(s+1)^2+11}
+            </mrow>
+            <mrow>
+              Y \amp = -\frac{7}{12}\frac{e^{-5s}(s+1)}{(s+1)^2+11} -
+              \frac{7}{12\sqrt{11}}\frac{e^{-5s}\sqrt{11}}{(s+1)^2+11}
+              + \frac{7}{12}\frac{e^{-5s}}{s} - 6
+              \frac{1}{\sqrt{11}}\frac{\sqrt{11}}{(s+1)^2+11} 
+            </mrow>
+          </md>
+          I apply the inverse Laplace transform. 
+          <md>
+            <mrow>
+              y \amp = \frac{-7}{12} u_5(t)  e^{-(t-5)} \cos
+              (\sqrt{11}(t-5)) - \frac{7}{12\sqrt{11}} u_5(t)
+              e^{-(t-5)} \sin (\sqrt{11}(t-5)) 
+            </mrow>
+            <mrow>
+              \amp  + \frac{7}{12} u_5(t) - \frac{6}{\sqrt{11}} e^{-t}
+              \sin (\sqrt{11}t)
+            </mrow>
+          </md>
+        </p>
+      </solution>
+    </activity>
+    <activity>
+      <statement>
+        <p>
+          Solve this DE using Laplace transforms.
+          <md>
+            <mrow>
+              y^{\prime \prime} + 2y^\prime + 9y \amp = u_3(t) \sin
+              (2(t-3)) + u_6(t) \cos (2(t-6)) 
+            </mrow>
+            <mrow>
+              y(0) \amp = 0
+            </mrow>
+            <mrow>
+              y^\prime (0) \amp = 0
+            </mrow>
+          </md>
+        </p>
+      </statement>
+      <solution>
+        <p>
+          First I apply the Laplace transform, produce an algebraic
+          equation for <m>Y</m> and solve for <m>Y</m>.
+          <md>
+            <mrow>
+              \calL \left\{  y^{\prime \prime} + 2y^\prime + 9y
+              \right\} \amp = \calL \left\{ u_3(t) \sin (2(t-3)) +
+              u_6(t) \cos(2(t-6)) \right\} 
+            </mrow>
+            <mrow>
+              (s^2Y - sy(0) - y^\prime(0)) \amp + 2 (sY - y(0)) + 9Y =
+              e^{-3s} \frac{2}{s^2 + 4} + e^{-6s} \frac{s}{s^2+4}
+            </mrow>
+            <mrow>
+              (s^2 + 2s + 9)Y  \amp = e^{-3s} \frac{2}{s^2 + 4} +
+              e^{-6s} \frac{s}{s^2+4}
+            </mrow>
+            <mrow>
+              Y \amp = e^{-3s} \frac{2}{(s^2 + 4)((s+1)^2+8)} +
+              e^{-6s} \frac{s}{(s^2+4)((s+1)^2+8)}
+            </mrow>
+          </md>
+          I use partial fractions to split up the rational function. 
+          <md>
+            <mrow>
+              Y \amp = e^{-3s} \frac{2}{41} \frac{2s-1}{(s+1)^2+8} -
+              e^{-3s} \frac{2}{41} \frac{2s-5}{s^2 + 4} - e^{-6s}
+              \frac{1}{41} \frac{5s+18}{(s+1)^2+8} + e^{-6s}
+              \frac{1}{41} \frac{5s+8}{s^2+4} 
+            </mrow>
+          </md>
+          I need to make some adjustments so that the numerators and
+          constants fit the pattern of inverse Laplace transforms.
+          This leads to an annoying proliferation of terms, but it is
+          necessary. 
+          <md>
+            <mrow>
+              Y \amp = e^{-3s} \frac{2}{41} \frac{2s+2}{(s+1)^2+8} -
+              e^{-3s} \frac{2}{41} \frac{3}{(s+1)^2+8} - e^{-3s}
+              \frac{2}{41} \frac{2s}{s^2 + 4} 
+            </mrow>
+            <mrow>
+              \amp + e^{-3s} \frac{2}{41} \frac{5}{s^2 + 4} - e^{-6s}
+              \frac{1}{41} \frac{5s+5}{(s+1)^2+8} - e^{-6s}
+              \frac{1}{41} \frac{13}{(s+1)^2+8}
+            </mrow>
+            <mrow>
+              \amp + e^{-6s} \frac{1}{41} \frac{5s}{s^2+4} + e^{-6s}
+              \frac{1}{41} \frac{8}{s^2+4}
+            </mrow>
+            <mrow>
+              Y \amp = e^{-3s} \frac{4}{41} \frac{s+1}{(s+1)^2+8} -
+              e^{-3s} \frac{6}{41\sqrt{8}} \frac{\sqrt{8}}{(s+1)^2+8}
+              - e^{-3s} \frac{4}{41} \frac{s}{s^2 + 4} 
+            </mrow>
+            <mrow>
+              \amp + e^{-3s} \frac{5}{41} \frac{2}{s^2 + 4} - e^{-6s}
+              \frac{5}{41} \frac{s+1}{(s+1)^2+8} - e^{-6s}
+              \frac{13}{41\sqrt{8}} \frac{\sqrt{8}}{(s+1)^2+8}
+            </mrow>
+            <mrow>
+              \amp + e^{-6s} \frac{5}{41} \frac{s}{s^2+4} + e^{-6s}
+              \frac{4}{41} \frac{2}{s^2+4} 
+            </mrow>
+          </md>
+          I apply the inverse Laplace transform. 
+          <md>
+            <mrow>
+              y \amp = \frac{4}{41} u_3(t) e^{-(t-3)}
+              \cos(\sqrt{8}(t-3)) - \frac{6}{41\sqrt{8}} u_3(t)
+              e^{-(t-3)} \sin(\sqrt{8}(t-3))
+            </mrow>
+            <mrow>
+              \amp  - \frac{4}{41} u_3(t) \cos(2(t-3)) + \frac{5}{41}
+              u_3(t) \sin(2(t-3))
+            </mrow>
+            <mrow>
+              \amp \frac{5}{41} u_6(t) e^{-(t-6)} \cos (\sqrt{8}(t-6))
+              - \frac{13}{41\sqrt{8}} u_6(t) e^{-(t-6)} \sin
+              (\sqrt{8}(t-6))
+            </mrow>
+            <mrow>
+              \amp  + \frac{5}{41} u_6(t) \cos(2(t-6)) + \frac{4}{41}
+              u_6(t) \sin(2(t-6)) 
+            </mrow>
+          </md>
+        </p>
+      </solution>
+    </activity>
+    <activity>
+      <statement>
+        <p>
+          Solve this DE using Laplace transforms.
+          <md>
+            <mrow>
+              y^{\prime \prime} + 6y^\prime + 5y \amp = t^2 + 1 +
+              \delta_4(t) 
+            </mrow>
+            <mrow>
+              y(0) \amp = 2
+            </mrow>
+            <mrow>
+              y^\prime (0) \amp = 0
+            </mrow>
+          </md>
+        </p>
+      </statement>
+      <solution>
+        <p>
+          First I apply the Laplace transform, produce an algebraic
+          equation for <m>Y</m> and solve for <m>Y</m>.
+          <md>
+            <mrow>
+              \calL \left\{  y^{\prime \prime} + 6y^\prime + 5y
+              \right\} \amp = \calL \left\{ t^2 + 1 + \delta_4(t)
+              \right\} 
+            </mrow>
+            <mrow>
+              (s^2Y - sy(0) - y^\prime(0)) \amp + 6(sY - y(0)) + 5Y =
+              \frac{2}{s^3} + \frac{1}{s} + e^{-4s} 
+            </mrow>
+            <mrow>
+              (s^2 + 6s + 5)Y - 2s - 12 \amp = \frac{2}{s^3} +
+              \frac{1}{s} + e^{-4s}
+            </mrow>
+            <mrow>
+              (s+5)(s+1)Y \amp = \frac{2}{s^3} + \frac{1}{s} + e^{-4s}
+              + 2s + 12
+            </mrow>
+            <mrow>
+              Y \amp = \frac{1}{(s+5)(s+1)} \left(  \frac{2}{s^3} +
+              \frac{1}{s} + e^{-4s} + 2s + 12 \right) 
+            </mrow>
+            <mrow>
+              Y \amp = \frac{2}{s^3(s+5)(s+1)} + \frac{1}{s(s+5)(s+1)}
+              + \frac{e^{-4s}}{(s+5)(s+1)}
+            </mrow>
+            <mrow>
+              \amp  + \frac{2s}{(s+5)(s+1)} + \frac{10}{(s+5)(s+1)} 
+            </mrow>
+          </md>
+          I use partial fractions to split up the rational function. 
+          <md>
+            <mrow>
+              Y \amp = \frac{2}{5} \frac{1}{s^3} - \frac{12}{25}
+              \frac{1}{s^2} - \frac{1}{2} \frac{1}{s+1} +
+              \frac{1}{250} \frac{1}{s+5} - \frac{62}{125} \frac{1}{s}
+              - \frac{1}{4} \frac{1}{s+1} + \frac{1}{20} \frac{1}{s+5}
+              + \frac{1}{5} \frac{1}{s}
+            </mrow>
+            <mrow>
+              \amp  + \frac{1}{4} \frac{e^{-4s}}{s+1} - \frac{1}{4}
+              \frac{e^{-4s}}{s+5} + \frac{5}{2} \frac{1}{s+5} -
+              \frac{1}{2} \frac{1}{s+1} + 3 \frac{1}{s+1} -
+              3 \frac{1}{s+5} 
+            </mrow>
+          </md>
+          I group like terms before going the inverse transform.
+          <md>
+            <mrow>
+              Y \amp =  \frac{1}{4} \frac{e^{-4s}}{s+1} - \frac{1}{4}
+              \frac{e^{-4s}}{s+5} + \frac{2}{5} \frac{1}{s^3} -
+              \frac{12}{25} \frac{1}{s^2} - \frac{62}{125} \frac{1}{s}
+              + \frac{7}{4} \frac{1}{s+1} - \frac{223}{500}
+              \frac{1}{s+5} 
+            </mrow>
+          </md>
+          I apply the inverse Laplace transform. 
+          <md>
+            <mrow>
+              y \amp = \frac{1}{4} u_4(t) e^{-(t-4)} - \frac{1}{4}
+              u_4(t) e^{-5(t-4)} - \frac{1}{5} t^2 - \frac{12}{25} t -
+              \frac{62}{125} + \frac{7}{4} e^{-t} - \frac{223}{500}
+              e^{-5t} 
+            </mrow>
+          </md>
+        </p>
+      </solution>
+    </activity>
+  </subsection>
+</section>

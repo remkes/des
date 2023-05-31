@@ -1,0 +1,223 @@
+<section xml:id="section-laplace-definitions">
+  <title>Definitions</title>
+  <p>
+    In functional analysis, there are a group of operations on
+    functions called transforms. These operations act on sets of
+    functions and transform them into new functions: through the
+    transforms, behaviour that was previously hidden can be made
+    clear.
+  </p>
+  <p>
+    The changes due to transforms are often radical: the resulting
+    functions do not look anything like the originals. I can think
+    of transforms as radically altering the environment of the
+    function, so that everything changes into a surprisingly different
+    form.
+  </p>
+  <p>
+    For those who like to think in linear algebra terms, think
+    of the space of functions defined on some interval in <m>\RR</m>
+    as a vector space. (The specific vector space depends on the
+    interval and the class of function: continuous,
+    piecewise-continuous, differentiable, etc). In this language,
+    transforms are nothing but interesting linear transformations
+    between vector spaces of functions.
+  </p>
+  <p>
+    In this section, I introduce the Laplace transform. It applies to a
+    functions with certain controls on their asymptotic growth. I need
+    a technical definition.
+  </p>
+  <definition>
+    <statement>
+      <p>
+        A function <m>f(t)</m> defined on <m>[0, \infty)</m> is of
+        <term>exponential order c</term> if <m>\exists M > 0 \ \
+        \exists T > 0</m> such that <m>\forall t > T \ \ \ |f(t)| \lt
+        Me^{ct}</m>. Asymptotically, this is equivalent to <m>f \in
+        \calO(e^{ct})</m> for some real positive <m>c</m>.
+      </p>
+    </statement>
+  </definition>
+  <definition>
+    <statement>
+      <p>
+        If <m>f(t)</m> is a piecewise-continuous function on <m>[0,
+        \infty)</m> of exponential order <m>c</m>, then its
+        <term>Laplace transform</term> is the new function in the
+        variable <m>s</m> defined by the following integral.
+        <me>
+          \calL \{ f(t) \} (s) = \int_0^\infty e^{-st} f(t) dt
+        </me>.
+        The Laplace transform is defined on the domain <m>(c,
+        \infty)</m>. (You could check that this improper integral
+        converges for all <m>s \in (c, \infty)</m>.)
+      </p>
+    </statement>
+  </definition>
+  <p>
+    The restriction of exponential order is a fairly reasonable one:
+    differential equations in applied mathematics are rarely
+    concerned with functions which grow faster than the exponential.
+  </p>
+  <p>
+    The choice of variables is standard for Lapalce transforms. I
+    will often refer to the original functions as functions in the
+    <m>t</m>-domain, and to their transforms as functions in the
+    <m>s</m>-domain. In addition, if <m>f(t)</m> and <m>g(t)</m> are
+    function in the <m>t</m>-domain, I will also often write
+    <m>F(s)</m> and <m>G(s)</m> for their Laplace transforms. By
+    convention, I use lower case for the <m>t</m>-domain and
+    uppercase for the matching function in the <m>s</m>-domain. 
+  </p>
+  <p>
+    Most of the following examples are sub-exponential, so I expect a
+    transform on <m>(0, \infty)</m>. Note that I am never guaranteed
+    convergence at <m>0</m>.
+  </p>
+  <example>
+    <statement>
+      <p>
+        <md>
+          <mrow>
+            \calL \{ 1 \} \amp = \int_0^\infty e^{-st} dt = \left.
+            \frac{-e^{-st}}{s} \right|_0^\infty = \lim_{a \rightarrow
+            \infty} \frac{-e^{-sa} + 1}{s} = \frac{1}{s} \amp \amp
+          </mrow>
+          <mrow>
+            \calL \{ t \} \amp = \int_0^\infty te^{-st} dt = \lim_{a
+            \rightarrow \infty} \left[ \left. \frac{-te^{-st}}{s}
+            \right|_0^a + \int_0^a \frac{e^{-st}}{s} dt \right] \amp
+            \amp
+          </mrow>
+          <mrow>
+            \amp = \lim_{a \rightarrow \infty} \left[ \frac{0 -
+            ae^{-sa}}{s} + \left. \frac{-e^{-st}}{s^2} \right|_0^a
+            \right] = \frac{1}{s^2} \amp \amp
+          </mrow>
+          <mrow>
+            \calL \{ t^n \} \amp = \int_0^\infty t^ne^{-st} dt =
+            \frac{n!}{s^{n+1}} \amp \amp
+          </mrow>
+          <mrow>
+            \calL \{ e^{at} \} \amp = \int_0^\infty e^{-st}e^{at} dt =
+            \int_0^\infty e^{at-st} dt = \left. \frac{e^{at-st}}{a-s}
+            \right|_0^\infty = \frac{-1}{a-s} = \frac{1}{s-a}
+            \amp \amp s \in (a, \infty)
+          </mrow>
+        </md>
+        My first observation about Laplace transforms is simply their
+        strangeness. Powers of <m>t</m> turn into inverse powers of
+        <m>s</m>, but exponentials (which are very different in the
+        <m>t</m> domain) turn into very similar reciprocals.
+      </p>
+    </statement>
+  </example>
+  <example>
+    <statement>
+      <p>
+        Lapalce transforms exist for piecewise-continuous functions
+        with a certain exponential order. Here is a piecewise
+        continuous function and its transform.
+        <md>
+          <mrow>
+            f(t) \amp = \left\{ \begin{matrix} 0 \amp t \in [0,1]
+          </mrow>
+          <mrow>
+            t \amp t \in [1, \infty) \end{matrix} \right.
+          </mrow>
+          <mrow>
+            \calL \{ f(t) \} \amp = \int_0^\infty f(t) e^{-st} dt
+          </mrow>
+          <mrow>
+            \amp = \int_1^\infty te{-st} dt = \left.
+            \frac{-te^{-st}}{s} \right|_1^\infty + \int_1^\infty
+            \frac{e^{-st}}{s} dt
+          </mrow>
+          <mrow>
+            \amp = \frac{-e^{-s}}{s} + 0 + \left. \frac{-e^{-st}}{s^2}
+            \right|_1^\infty = \frac{-e^{-s}}{s} - \frac{e^{-s}}{s^2}
+            = \frac{-(s+1)e^{-s}}{s^2}
+          </mrow>
+        </md>
+        The Laplace transform is not a piecewise function,
+        even thought the original was.
+      </p>
+    </statement>
+  </example>
+  <example>
+    <statement>
+      <p>
+        The Laplace transform of <m>t^n</m> for <m>n \in \ZZ</m>
+        involved factorials, so it is not surprising that
+        <m>t^\alpha</m> for non-integer <m>\alpha</m> involves the
+        extension of the factorial: the <m>\Gamma</m> function.
+        <md>
+          <mrow>
+            \calL \{ t^\alpha \} \amp = \int_0^\infty e^{-st}
+            t^{\alpha} dt
+          </mrow>
+          <mrow>
+            \amp = \int_0^\infty t^{(\alpha + a) - 1} e^{-st}
+          </mrow>
+          <mrow>
+            u \amp = st
+          </mrow>
+          <mrow>
+            \amp = \int_0^\infty \left( \frac{u}{s}
+            \right)^{(\alpha+1)-1} e^{-u} \frac{du}{s}
+          </mrow>
+          <mrow>
+            \amp = \frac{1}{s^{\alpha +1}} \int_0^\infty u^{(\alpha+
+            1)-1} e^{-u} du = \frac{\Gamma(\alpha +1)}{s^{\alpha +1}}
+          </mrow>
+        </md>
+      </p>
+    </statement>
+  </example>
+  <example>
+    <statement>
+      <p>
+        Finally, Laplace transforms are defined for some important
+        oscillating functions, such as the trigonometric functions and
+        the Bessel functions.
+        <md>
+          <mrow>
+            \calL \{ \sin t \} \amp = \int_0^\infty e^{-st} \sin t dt
+            = \frac{1}{s^2+1}
+          </mrow>
+          <mrow>
+            \calL \{ \cos t \} \amp = \frac{s}{s^2+1}
+          </mrow>
+          <mrow>
+            \calL \{ J_0(kt) \} \amp = \frac{1}{\sqrt{s^2 + k^2}}
+          </mrow>
+        </md>
+        Again, note the strangeness: even starting with transcendental
+        and non-elementary functions like these, the Lapalce
+        transforms are rational and algebraic functions.
+      </p>
+    </statement>
+  </example>
+  <p>
+    As an aside, the Laplace transform is not the only transform in
+    mathematics. The most well-known and well-used transform is the
+    Fourier transform.  It uses the same conventions about the
+    <m>s</m> and the <m>t</m> domains, but it uses complex valued
+    functions and integrals. In place of the <m>e^{-st}</m> term in
+    the Laplace transform, the Fourier transform uses the complex
+    <m>e^{-2\pi \imath st}</m>.
+  </p>
+  <definition>
+    <statement>
+      <p>
+        The <term>Fourier transform</term> of a function <m>f(s)</m>
+        is given by this integral.
+        <me>
+          \hat{f}(s) = \int_{-\infty}^\infty f(t) e^{-2\pi \imath t s}
+          dt
+        </me>
+      </p>
+    </statement>
+  </definition>
+</section>

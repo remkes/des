@@ -1,0 +1,164 @@
+<section xml:id="section-heat-equation-boundary">
+  <title>Boundary Conditions for the Heat Equation</title>
+  <p>
+    I want to show how the solutions to the heat equation can vary
+    when the boundary conditions are altered. 
+  </p>
+  <figure xml:id="figure-diffusion1">
+    <caption>Diffusion to a Linear Steady State</caption>
+    <image xml:id="figure43" width="80%">
+      <asymptote>
+        size(14cm,6cm,IgnoreAspect);
+        import graph;
+        xaxis("$x$");
+        yaxis("$u$");
+
+        draw((0,1){NE}..{E}(2,4){E}..{NE}(4,3){NE}..{E}(6,2){E}..{NE}(8,5));
+
+        draw((0,1)--(8,5),dashed);
+
+        draw((2,4)--(2,2),Arrow);
+        draw((6,2)--(6,4),Arrow);
+
+        label("Concave down diffuses downard.",(3,4),N);
+        label("Concave up diffuses upward.",(6,2),S);
+        label("$u(x)$",(7.5,4),SE);
+        label("Steady State",(0.7,1.3),SE);
+
+        label("$u(0,t)=A$",(0,1),W);
+        label("$u(l,t)=B$",(8,5),E);
+      </asymptote>
+    </image>
+  </figure>
+  <p>
+    A small increase in complexity of the solution to the heat
+    equation comes from constant but non-equal boundary conditions:
+    <m>u(0,t) = A</m> and <m>u(\pi,t) = B</m> for some constants
+    <m>A</m> and <m>B</m>.  This is a situation where I will keep the
+    ends of the rod at constant temperature, but those temperatures
+    need not be the same.
+  </p>
+  <p>
+    In this case, seperation of variables when <m>\alpha = 0</m>
+    implies that <m>X(x)</m> must be a linear function. Matching the
+    boundary contions (with a rod of length <m>\pi</m>) means that
+    <m>X(x) = \frac{B-A}{\pi}x + A</m>. This is called the
+    steady-state solution and it is the base case of the situation.
+    (For the previous case with zero boundary conditions, the steady
+    state solution was just <m>X(x) = 0</m>.) The steady-state
+    solution is the solution to which we want the situaiton to
+    diffuse; it is the resting case. With non-equal boundary
+    conditions, the steady state involves a heat flow along the rod,
+    from the warmer end to the cooler. A complicated initial
+    heat-situation will diffuse and reduce to a straight-line
+    distribution between the tempeartures at each end as show in <xref
+    ref="figure-diffusion1" />.
+  </p>
+  <p>
+    Now I need to understand how to combine this linear steady
+    state with the previous solutions. The linearity of the system
+    means that the solution with both boundary conditions set to
+    <m>0</m> can simply be added to this steady state to give the
+    general solution.
+    <me>
+      u(x,t) = \frac{2}{\pi} \sum_{n=1}^\infty T_n e^{-kn^2t} \sin
+      (nx)
+    </me>
+    The calculation of the Fourier coefficients <m>T_n</m>, however,
+    needs an adjustment. I need to shift the function back to a
+    0-equilibrium situation to repeat the result of the previous
+    section. With that shift, the integral that calculates the
+    coefficient changes to the following definition.
+    <me>
+      T_n = \frac{2}{\pi} \int_0^\pi \left( f(x) - \frac{B-A}{\pi} x -
+      A \right) \sin nx dx
+    </me>
+  </p>
+  <figure xml:id="figure-diffusion2">
+    <caption>Heat Equation Examples with Initial Conditions <m>f(x)
+    = x^2 + (1-\pi)x + 1</m></caption>
+    <image xml:id="figure44" width="80%">
+      <asymptote>
+          size(14cm,6cm,IgnoreAspect);
+          import graph;
+          xaxis("$x$");
+          yaxis("$u$");
+
+          draw((0,1)--(pi,1+pi),dashed);
+
+          label("$u(0,t)=1$",(0,1),W);
+          label("$u(l,t)=1+\pi$",(pi,pi+1),E);
+
+          real f1(real x) {return x^2 + (1-pi)*x + 1;}
+          real f2(real x) {return (1/2)*(x^2 - pi* x) + x + 1;}
+          real f3(real x) {return (1/4)*(x^2 - pi* x) + x + 1;}
+          real f4(real x) {return (1/8)*(x^2 - pi* x) + x + 1;}
+          real f5(real x) {return (1/(16))*(x^2 - pi* x) + x + 1;}
+
+          draw(graph(f1,0,pi));
+          draw(graph(f2,0,pi));
+          draw(graph(f3,0,pi));
+          draw(graph(f4,0,pi));
+          draw(graph(f5,0,pi));
+
+          label("$x^2 + (1-\pi)x + 1$",(2.5,1.6),SE);
+          label("$1 + x$",(2,3),NW);
+
+          draw((1.5,0)--(1.5,2.5),Arrow);
+      </asymptote>
+    </image>
+  </figure>
+  <example>
+    <statement>
+      <p>
+        I can use an example to see what this looks like with explicit
+        numbers. Set the boundary contidions to be <m>u(0,t) = 1</m>
+        and <m>u(\pi, t) = 1 + \pi</m> and the initial condition
+        <m>u(x,0) = x^2 + (1-\pi)x + 1</m>. The steady state solution
+        is the line <m>u = x+1</m>. I calculate the Fourier
+        coefficients.
+        <md>
+          <mrow>
+            T_n \amp = \frac{2}{\pi} \int_0^\pi (x^2 - \pi x) \sin nx
+            = \frac{2}{\pi} \int_0^\pi x^2 \sin nx - 2 \int_0^\pi
+            x\sin nx
+          </mrow>
+          <mrow>
+            \amp = \frac{2}{\pi} \left( \left. \frac{-x^2 \cos nx}{n}
+            \right|_0^\pi + \frac{2}{n} \int_0^\pi x \cos nx \right) -
+            2 \left( \left. \frac{-x \cos nx}{n} \right|_0^{\pi} +
+            \int_0^{\pi} \cos nx dx \right)
+          </mrow>
+          <mrow>
+            \amp = \frac{2}{\pi} \left( \frac{-\pi^2 \cos n\pi}{n} +
+            \left. \frac{2}{n} \frac{x \sin nx}{n} \right|_0^\pi -
+            \frac{2}{n^2} \int_0^\pi \sin nx \right) - 2 \left(
+            \frac{2\pi}{n} + \left. \frac{\sin nx}{n} \right|_0^{\pi}
+            \right)
+          </mrow>
+          <mrow>
+            \amp = \frac{2}{\pi} \left( \frac{\pi^2 (-1)^{n+1}}{n} + 0
+            + \left. \frac{2\cos nx}{n^3} \right|_0^\pi \right) -
+            \frac{4\pi}{n} - 0
+          </mrow>
+          <mrow>
+            \amp = \frac{2}{\pi} \left( \frac{\pi^2 (-1)^{n+1}}{n} +
+            \frac{2(-1)^n}{n^3} - \frac{2}{n^3} -
+            \frac{2\pi^2}{n}\right)
+          </mrow>
+          <mrow>
+            \amp = \frac{2n^2 \pi^2 (-1)^{n+1} + 2\pi (-1)^n - 2\pi -
+            4\pi n^2 }{\pi n^3}
+          </mrow>
+        </md>
+        The general solution uses the Fourier coefficients. 
+        <me>
+          u(x,t) = 1 + x + \sum_{n=1}^\infty \left[ \frac{2n^2 \pi^2
+          (-1)^{n+1} + 2\pi (-1)^n - 2\pi - 4\pi n^2}{\pi n^3} \right]
+          e^{-kn^2t} \sin (nx)
+        </me>
+        <xref ref="figure-diffusion2" /> shows this situation.
+      </p>
+    </statement>
+  </example>
+</section>

@@ -1,0 +1,10 @@
+<chapter xmlns:xi="http://www.w3.org/2001/XInclude" 
+  xml:id="chapter-assignments">
+  <title>Assignments</title>
+  <xi:include href="assignment1.ptx" />
+  <xi:include href="assignment2.ptx" />
+  <xi:include href="assignment3.ptx" />
+  <xi:include href="assignment4.ptx" />
+  <xi:include href="assignment5.ptx" />
+  <xi:include href="assignment6.ptx" />
+</chapter>

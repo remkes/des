@@ -1,0 +1,10 @@
+size(12cm,0,IgnoreAspect);
+dot("$0$",(0,0),N);
+dot("$2$",(2,0),N);
+dot("$4$",(4,0),N);
+dot("$6$",(6,0),N);
+dot("$\infty$",(8,0),N);
+draw((0,0)--(2,0),MidArrow);
+draw((2,0)--(4,0),MidArrow);
+draw((6,0)--(4,0),MidArrow);
+draw((6,0)--(8,0),MidArrow);

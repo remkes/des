@@ -1,0 +1,837 @@
+<section xml:id="section-second-order-activity">
+  <title>Activities for Second Order ODEs</title>
+  <subsection xml:id="subsection-activity-socclde-1">
+    <title>Homogeneous Equations</title>
+    <activity>
+      <statement>
+        <p>
+          Consider this SOCCLDE.
+          <md>
+            <mrow>
+              \amp y^{\prime \prime} + 8 y^\prime + 4y = 0 \amp \amp
+              y(0) = 10 \amp \amp y^\prime(0) = -4 
+            </mrow>
+          </md>
+        </p>
+        <p><ol>
+          <li>
+            Solve the equation.
+          </li>
+          <li>
+            You should have found real roots to the quadratic equation
+            above, giving exponential soltuions. Now take the
+            coefficient of <m>y^\prime</m> term and make it
+            smaller. See what happens to the solutions.
+          </li>
+          <li>
+            What coefficient of <m>y^\prime</m> leads to critically
+            damped solutions?
+          </li>
+          <li>
+            How small must the coefficient of <m>y^\prime</m> be to
+            lead to oscillations?
+          </li>
+          <li>
+            If this is a harmonic system, what are you changing? If it
+            is a circuit?
+          </li>
+        </ol></p>
+      </statement>
+      <solution>
+        <p><ol>
+          <li>
+            First I write and solve the characteristic equation.
+            <me>
+              r^2 + 8r + 4 = 0  \implies r = -4 \pm \sqrt{12} 
+            </me>
+            The root are real and distinct. Therefore, the
+            homogeneous solutions are exponential.
+            <me>
+              y = A e^{(-4+\sqrt{12})t} + Be^{(-4-\sqrt{12})t} 
+            </me>
+            I also need the derivatives of the homogeneous solution.
+            <me>
+              y^\prime = (-4+\sqrt{12}) A e^{(-4+\sqrt{12})t} +
+              (-4-\sqrt{12}) B e^{(-4-\sqrt{12})t} 
+            </me>
+            Then I use the initial conditions. 
+            <md>
+              <mrow>
+                y(0) = A + B = 10 
+              </mrow>
+                <mrow>
+                y^\prime(0) = (-4\sqrt{12}) A + (-4-\sqrt{12}) B = -4
+              </mrow>
+            </md>
+            I can do the algebra to solve the system. I use the first
+            equation to replace <m>A</m> with <m>10-B</m>. Then I
+            manipulate to solve for <m>B</m> and finally use the first
+            equation again to calculate <m>A</m>.
+            <md>
+              <mrow>
+                -4 \amp = (-4+\sqrt{12}) (10-B) + (-4-\sqrt{12}) B 
+              </mrow>
+              <mrow>
+                -4 \amp = (-40+10\sqrt{12}) + (4-\sqrt{12})B  +
+                (-4-\sqrt{12}) B 
+              </mrow>
+              <mrow>
+                36 - 10 \sqrt{12} \amp = -2\sqrt{12})B  
+              </mrow>
+              <mrow>
+                \frac{36 - 10 \sqrt{12}}{-2\sqrt{12}} \amp = B 
+              </mrow>
+              <mrow>
+                \frac{5 \sqrt{12}-18}{\sqrt{12}} \amp = B 
+              </mrow>
+              <mrow>
+                A \amp = 10 - B = \frac{18 + 5 \sqrt{12}}{\sqrt{12}} 
+              </mrow>
+            </md>
+            Therefore, the specific solution is 
+            <me>
+              y = \frac{18 + 5\sqrt{12}}{\sqrt{12}}
+              e^{(-4+\sqrt{12})t} + \frac{5 \sqrt{12} - 18}{\sqrt{12}}
+              e^{(-4-\sqrt{12})t} 
+            </me>
+          </li>
+          <li>
+            When I make the coefficient of <m>y^\prime</m> smaller,
+            it decreases the magnitude of the positive term <m>\sqrt{b^2 -
+            4ac}</m> in the quadratic equation. Therefore, the roots
+            become closer and closer together. For small changes in
+            this coefficient, the roots remain real and the solutions
+            remain exponentia. 
+          </li>
+          <li>
+            Critically damped happens when the solution to the
+            characteristic equation is a repeated root. This happens
+            exactly when <m>b^2-4ac = 0</m>. In this equation, <m>4ac
+            = 16</m>, so the coefficient of <m>y^\prime</m> must shink
+            to <m>4</m> to get this behaviour. 
+          </li>
+          <li>
+            To get oscillations, you need to keep decreasing the
+            coefficient bast the critically damped point. With the
+            logical of the previous point, oscillations will start
+            when the coefficient is decreased below <m>4</m>.
+          </li>
+          <li>
+            In a harmonic system, you are changing the friction term.
+            By lowering the friction, you allow for more movement and
+            eventually for oscillations. in a circuit, you are
+            lowering the resistance, which is similar to friction in
+            that it removes energy from the system. 
+          </li>
+        </ol></p>
+      </solution>
+    </activity>
+    <activity>
+      <statement>
+        <p>
+          Consider this SOCCLDE.
+          <md>
+            <mrow>
+              \amp y^{\prime \prime} + 4 y^\prime + 20y = 0 \amp \amp
+              y(0) = 2 \amp \amp y^\prime(0) = 6
+            </mrow>
+          </md>
+        </p>
+        <p><ol>
+          <li>
+            Solve the equation.
+          </li>
+          <li>
+            You should have found complex roots to the quadratic equation
+            above, giving sinusoidal soltuions. Now take the
+            coefficient of <m>y</m> term and make it
+            smaller. See what happens to the solutions.
+          </li>
+          <li>
+            What coefficient of <m>y</m> leads to critically
+            damped solutions?
+          </li>
+          <li>
+            How small must the coefficient of <m>y^\prime</m> be to
+            lead to exponential decay?
+          </li>
+          <li>
+            If this is a harmonic system, what are you changing? If it
+            is a circuit?
+          </li>
+        </ol></p>
+      </statement>
+      <solution>
+        <p><ol>
+          <li>
+            First I write and solve the characteristic equation.
+            <me>
+              r^2 + 4r + 20 = 0 \implies r = -2 \pm \sqrt{-4}
+            </me>
+            The root are complex with a negative real part. <m>\alpha
+            = -2</m> and <m>\beta = 4</m>.  Therefore, the homogeneous
+            solutions are sinusoidal with exponentially decay in
+            amplitude.
+            <me>
+              y = A e^{-2t} \cos 4t + B e^{-2t} \sin 4t 
+            </me>
+            I also need the derivatives of the homogeneous solution.
+            (I've grouped like terms after taking the derivative).
+            <me>
+              y^\prime = (-2A + 4B) e^{-2t} \cos 4t + (-4A -2B)
+              e^{-2t} \sin 4t
+            </me>
+            Then I use the initial conditions. 
+            <md>
+              <mrow>
+                y(0) \amp = A = 2 
+              </mrow>
+              <mrow>
+                y^\prime(0) \amp = (-2A + 4B) = 6 -4 + 4B = 6 \implies B =
+                \frac{10}{4} = \frac{5}{2} 
+              </mrow>
+            </md>
+            The solutions to the resulting system doesn't require much
+            work, sinc ethe first initial condition gives <m>A</m>
+            directly and I used the second to calculate <m>B</m>.
+            The specific solution is 
+            <me>
+              y = 2 e^{-2t} \cos 4t + \frac{5}{2} e^{-2t} \sin 4t 
+            </me>
+          </li>
+            As you decrease the coefficient, <m>\alpha</m> remains
+            unchanged since it only depends on the other two
+            coefficients. Therefore, the rate of decay is unchanged.
+            However, <m>\beta = \frac{\sqrt{4ac - b^2}}{2a}</m> does
+            depend on the coefficient of <m>y</m>, which is <m>c</m>
+            in the quadratic formula. As that coefficient becomes
+            smaller and smaller, <m>\beta</m> also decreases. Since
+            <m>\beta</m> measures frequency, decreasing <m>beta</m>
+            means slower oscillations. 
+          <li>
+            Critically damped oscillations happen when <m>\beta =
+            0</m>, or equivalently when <m>b^2 - 4ac=0</m>. In this
+            system, since <m>b=4</m> and <m>a = 1</m>, the coefficient
+            of <m>y</m> has to be <m>c=4</m>.
+          </li>
+          <li>
+            Exponential decay will happen below the <m>c=4</m>
+            threshold, when <m>b^2 -4ac</m> is positive again and the
+            solutions will be real exponentials. 
+          </li>
+          <li>
+            In a harmonic system, you are changing the stiffness of
+            the system.  Decreasing the stiffness makes the system
+            less responsive and less likely to have oscilations. For
+            circuits, you are effect the.  capacitance, which is (in
+            some ways) analogous to stiffness in the circuit system. 
+          </li>
+        </ol></p>
+      </solution>
+    </activity>
+  </subsection>
+  <subsection xml:id="subsection-activity-undetermined-coefficients">
+    <title>Undertermined Coefficients</title>
+    <activity>
+      <statement>
+        <p>
+          Solve this non-homogeneous SOCCLDE using undetermined
+          coefficients. 
+          <md>
+            <mrow>
+              \amp y^{\prime \prime} + 3 y^\prime + 2y = e^{-7t} \amp
+              \amp y(0) = 3 \amp \amp y^\prime(0) = 0 
+            </mrow> 
+          </md>
+        </p>
+      </statement>
+      <solution>
+        <p>
+          First I need the homogeneous solution. I start by solving the
+          characteristic equation.
+          <me>
+            r^2 + 3r + 2 = 0 \implies r = -2, -1 
+          </me>
+          The roots are real
+          Therefore, the homogeneous solutions are exponential. 
+          <me>
+            y_h = Ae^{-t} + Be^{-2t} 
+          </me>
+          My guess for the particular solution using undetermined
+          coefficients some from the forcing term.
+          <me>
+            y_p = Ce^{-7t}
+          </me>
+          I need the derivaitves of this particular solution.
+          <md>
+            <mrow>
+              y_p^{\prime} = -7Ce^{-7t} 
+            </mrow>
+            <mrow>
+              y^{\prime \prime} = 49 Ce^{-7t} 
+            </mrow>
+          </md>
+          Then I put this into the differential equation and isolate
+          like terms.
+          <md>
+            <mrow>
+              49Ce^{-7t} - 21Ce^{-7t} + 2Ce^{-7t} \amp = e^{-7t} 
+            </mrow>
+            <mrow>
+              [49C - 21C + 2C] e^{-7t} = e^{-7t} 
+            </mrow>
+          </md>
+          This produces a system of linear equations. 
+          (In this case, only one equation.)
+          <me>
+            30C = 1 \implies C = \frac{1}{30} 
+          </me>
+          Now that I now the coefficients, I can write the particular
+          solution and thus the general solutions by adding the
+          homogeneous solution.
+          <md>
+            <mrow>
+              y_p \amp = \frac{1}{30} e^{-7t} 
+            </mrow>
+            <mrow>
+              y \amp = \frac{1}{30} e^{-7t} + Ae^{-t} + Be^{-2t} 
+            </mrow>
+          </md>
+          I need the derivative of the general solution.
+          <me>
+            y^\prime = \frac{-7}{30} e^{-7t} - Ae^{-t} - 2B e^{-2t} 
+          </me>
+          Then I use the initial conditions. I get two equations, which
+          I can turn into a linear system. I'll solve that linear system
+          by solving for <m>A</m> in the second equation and
+          substiting that <m>A</m> in the first equation. That lets me
+          solve for <m>B</m> and then use the second equation to
+          finally find <m>A</m>. 
+          <md>
+            <mrow>
+              y(0) \amp = \frac{1}{30} + A + B = 3 
+            </mrow>
+            <mrow>
+              y^\prime (0) \amp = \frac{-7}{30} - A - 2B = 0 \implies A
+              = \frac{-7}{30} - 2B
+            </mrow>
+            <mrow>
+              \frac{1}{30} - \frac{7}{30} - 2B + B \amp = 3 \implies B
+              = \frac{-16}{5} 
+            </mrow>
+            <mrow>
+              A \amp = \frac{-7}{30} - 2B = \frac{-7}{30} +
+              \frac{32}{5} = \frac{37}{6} 
+            </mrow>
+          </md>
+          Now I can write the specific solution to this IVP.
+          <me>
+            y_p = \frac{1}{30} e^{-7t} + \frac{37}{6} e^{-t} -
+            \frac{16}{5} e^{-2t} 
+          </me>
+        </p>
+      </solution>
+    </activity>
+    <activity>
+      <statement>
+        <p>
+          Solve this non-homogeneous SOCCLDE using undetermined
+          coefficients. 
+          <md>
+            <mrow>
+              \amp y^{\prime \prime} + 2y^\prime + 10 t =
+              \frac{t^2}{4} - t + 1 \amp \amp y(0) = 0 \amp \amp
+              y^\prime(0) = 4 
+            </mrow> 
+          </md>
+        </p>
+      </statement>
+      <solution>
+        <p>
+          First I need the homogeneous solution. I start by solving the
+          characteristic equation.
+          <me>
+            r^2 + 2r + 10 = 0 \implies r = -1 \pm \sqrt{-9} 
+          </me>
+          The roots are complex, with <m>\alpha = -1</m> and <m>\beta
+          = 3</m>.  Therefore, the homogeneous solutions are 
+          <me>
+            y_h = Ae^{-t} \cos (3t) + Be^{-t} \sin (3t) 
+          </me>
+          My guess for the particular solution using undetermined
+          coefficients some from the forcing term.
+          <me>
+            y_p = C_2 t^2 + C_1 t + C_0
+          </me>
+          I need the derivaitves of this particular solution.
+          <md>
+            <mrow>
+              y_p^\prime \amp = 2C_2 t + C_1 
+            </mrow>
+            <mrow>
+              y_p^{\prime \prime} \amp = 2C_2 
+            </mrow>
+          </md>
+          Then I put this into the differential equation and isolate
+          like terms.
+          <me>
+            [10C_2] t^2  + [4c_2 + 10C_1] t + [2C_2 + 2C_1 + 10C_0]t =
+            \frac{1}{4} t^2 - t + 1 
+          </me>
+          This produces a system of linear equations. I've simply
+          asked a computer for the solutions to this system instead of
+          doing the algebra myself.
+          <md>
+            <mrow>
+              \amp 10C_2 = \frac{1}{4} \amp \amp 4C_2 + 10C_1 = -1
+              \amp \amp 2C_2 + 2C_1 + 10C_0 = 1 
+            </mrow>
+            <mrow>
+              \amp _2 = \frac{1}{40} \amp \amp C_1 = \frac{-11}{100}
+              \amp \amp C_0 = \frac{117}{1000} 
+            </mrow>
+          </md>
+          Now that I now the coefficients, I can write the particular
+          solution and thus the general solutions by adding the
+          homogeneous solution.
+          <md>
+            <mrow>
+              y_p = \frac{1}{40} t^2 - \frac{11}{100} t +
+              \frac{117}{1000} 
+            </mrow>
+            <mrow>
+              y = \frac{1}{40} t^2 - \frac{11}{100} t +
+              \frac{117}{1000} + Ae^{-t} \cos(3t) + Be^{-t} \sin (3t) 
+            </mrow>
+          </md>
+          I need the derivative of the general solution. (The algebra
+          is a bit lengthy, but I've done the derivatives and then
+          groups like terms to make the derivative as easy to work
+          with as I can) 
+          <me>
+            y^\prime = \frac{1}{20}t - \frac{11}{100} + e^{-t} \left[
+            (-A + 3B) \cos (3t) + (-3A - B) \sin (3t) \right] 
+          </me>
+          Then I use the initial conditions. I get two equations, which
+          I can turn into a linear system. The first equation,
+          conveniently, only has <m>A</m>, so I can solve for <m>A</m>
+          immediately. Then I can use that value to solve for <m>B</m>
+          in the section equation. 
+          <md>
+            <mrow>
+              y(0) \amp = A + \frac{117}{1000} = 0 \implies A =
+              \frac{-117}{1000}
+            </mrow>
+            <mrow>
+              y^\prime(0) \amp = (-A + 3B) - \frac{11}{100} = 4 
+            </mrow>
+            <mrow>
+              \frac{117}{1000} + 3B - \frac{11}{100} \amp = 4 \implies
+              B = \frac{1331}{1000} 
+            </mrow>
+          </md>
+          Now I can write the specific solution to this IVP.
+          <me>
+            y = \frac{1}{40} t^2 - \frac{11}{100}t + \frac{117}{1000}
+            - \frac{117}{1000} e^{-t} \cos (3t) + \frac{1331}{1000}
+              e^{-t} \sin(3t) 
+          </me>
+        </p>
+      </solution>
+    </activity>
+    <activity>
+      <statement>
+        <p>
+          Solve this non-homogeneous SOCCLDE using undetermined
+          coefficients. 
+          <md>
+            <mrow>
+              \amp y^{\prime \prime} + 4y^\prime + 8 y = 4 \sin (2t)
+              \amp \amp y(0) = 0 \amp \amp y^\prime(0) = 0 
+            </mrow> 
+          </md>
+        </p>
+      </statement>
+      <solution>
+        <p>
+          First I need the homogeneous solution. I start by solving the
+          characteristic equation.
+          <me>
+            r^2 + 4r + 8 = 0 \implies r = -2 \pm \sqrt{-4} 
+          </me>
+          The roots are complex with <m>\alpha = -2</m> and <m>\beta =
+          2</m>.  Therefore, the homogeneous solutions are sinusoidal
+          with exponential decay in amplitude. 
+          <me>
+            y_h = Ae^{-2t} \cos (2t) + Be^{-2t} \sin (2t) 
+          </me>
+          My guess for the particular solution using undetermined
+          coefficients some from the forcing term. Note that even
+          those the forcing term and the homogeneous solution both
+          involve the same sine funciton, I don't have to multiply by
+          <m>t</m> in my guess because the forcing term lacks the
+          exponential decay of the homogeneous solution. 
+          <me>
+            y_p = C \cos (2t) + D \sin (2t) 
+          </me>
+          I need the derivaitves of this particular solution.
+          <md>
+            <mrow>
+              y_p^\prime \amp = -2C \sin (2t) + 2D cos (2t) 
+            </mrow>
+            <mrow>
+              y_p^{\prime \prime} \amp = -4C \cos (2t) - 4D \sin (2t)
+            </mrow>
+          </md>
+          Then I put this into the differential equation and isolate
+          like terms.
+          <me>
+            [4C + 8D] \cos (2t) + [4D - 8C] \sin (2t) = 4\sin (2t) 
+          </me>
+          This produces a system of linear equations. I haven't shown
+          the work for solving the system, though this is a pretty
+          short isolate and replace system. 
+          <md>
+            <mrow>
+              \amp 4C + 8D = 0 \amp \amp 4D - 8C = 4 
+            </mrow>
+            <mrow>
+              \amp C = \frac{-2}{5} \amp \amp D = \frac{1}{5}
+            </mrow>
+          </md>
+          Now that I now the coefficients, I can write the particular
+          solution and thus the general solutions by adding the
+          homogeneous solution.
+          <md>
+            <mrow>
+              y_p = \frac{-=2}{5} \cos (2t) + \frac{1}{5} \sin (2t) 
+            </mrow>
+            <mrow>
+              y_p = \frac{-=2}{5} \cos (2t) + \frac{1}{5} \sin (2t) +
+              Ae^{-2t} \cos (2t) + Be^{-2t} \sin (2t) 
+            </mrow>
+          </md>
+          I need the derivative of the general solution. (I've skipped
+          over some algebra steps and gathered together like to to
+          make the derivative reasonable to work with.)
+          <me>
+            y^\prime = \frac{4}{5} \sin (2t) + \frac{2}{5} \cos (2t) +
+            e^{-2t} \left[ (-2A + 2B) \cos (2t) + (-2A - 2B) \sin (2t)
+            \right] 
+          </me>
+          Then I use the initial conditions. I get two equations, which
+          I can turn into a linear system. The first equation of the
+          linear system only involves <m>A</m>, so I can use it to
+          solve for <m>A</m> directly. Then I can use that value of
+          <m>A</m> to solve for <m>B</m> in the second system. 
+          <md>
+            <mrow>
+              y(0) \amp = A - \frac{2}{5} = 0 \implies A = \frac{2}{5} 
+            </mrow>
+            <mrow>
+              y^\prime(0) \amp = (-2A + 2B) + \frac{2}{5} = 0 \implies
+              B = \frac{-1}{5} 
+            </mrow>
+          </md>
+          Now I can write the specific solution to this IVP.
+          <me>
+            y = \frac{-2}{5} \cos (2t) + \frac{1}{5} \sin (2t) +
+            \frac{2}{5} e^{-2t} \cos (2t) - \frac{1}{5} e^{-2t} \sin
+            (2t) 
+          </me>
+        </p>
+      </solution>
+    </activity>
+    <activity>
+      <statement>
+        <p>
+          Solve this non-homogeneous SOCCLDE using undetermined
+          coefficients. 
+          <md>
+            <mrow>
+              \amp y^{\prime \prime} + 6y^\prime + 18 y = 2e^{-3t}
+              \cos (3t) \amp \amp y(0) = 1 \amp \amp y^\prime(0) = 0
+            </mrow> 
+          </md>
+        </p>
+      </statement>
+      <solution>
+        <p>
+          First I need the homogeneous solution. I start by solving the
+          characteristic equation.
+          <me>
+            r^2 + 6r + 18 = 0 \implies r = -3 \pm \sqrt{-9} 
+          </me>
+          The roots are complex with <m>\alpha = -3</m> and <m>\beta =
+          3</m>.  Therefore, the homogeneous solutions are sinusoidal
+          with exponentially decaying amplitude. 
+          <me>
+            y_h = Ae^{-3t} \cos (3t) + Be^{-3t} \sin (3t) 
+          </me>
+          My guess for the particular solution using undetermined
+          coefficients some from the forcing term. Here, the
+          homogeneous solutions and the forcing term are the same, so
+          I have to mulitply by <m>t</m> for the guess. 
+          <me>
+            y_p = Cte^{-3t} \cos (3t) + Dte^{-3t} \sin (3t) 
+          </me>
+          I need the derivaitves of this particular solution. These
+          derivatives are a little lengthy, but I did them by computer
+          and wrote them as succinctly as I could.
+          <md>
+            <mrow>
+              y_p^\prime \amp = [-3Ct + 3DT + C]e^{-3t} \cos (3t) +
+              [-3Ct - 3Dt + D] e^{-3t} \sin (3t) 
+            </mrow>
+            <mrow>
+              y^{\prime \prime}_p \amp = [-18Dt - 6C + 6D] e^{-3t}
+              \cos (3t) + [18Ct - 6C + 6D] e^{-3t} \sin(3t) 
+            </mrow>
+          </md>
+          Then I put this into the differential equation and isolate
+          like terms. (Quite a bit of simplifying algebra is skipped
+          over here.) 
+          <me>
+            [6D]e^{-3t} \cos(3t) + [-6C + 12D] e^{-3t} \sin(3t) =
+            2e^{-3t} \cos (3t) 
+          </me>
+          This produces a system of linear equations. Even though the
+          equations are quite complicated, the system is actually
+          pretty reasonable: I solve for <m>D</m> in the first
+          equation and use that to find <m>C</m> in the second. 
+          <md>
+            <mrow>
+              \amp 6D = 2 \amp \amp -6C + 12D = 0 
+            </mrow>
+            <mrow>
+              \amp C = \frac{2}{3} \amp \amp D = \frac{1}{3} 
+            </mrow>
+          </md>
+          Now that I now the coefficients, I can write the particular
+          solution and thus the general solutions by adding the
+          homogeneous solution.
+          <md>
+            <mrow>
+              y_p \amp = \frac{2}{3} te^{-3t} \cos (3t) + \frac{1}{3}
+              te^{-3t} \sin (3t) 
+            </mrow>
+            <mrow>
+              y \amp = \frac{2}{3} te^{-3t} \cos (3t) + \frac{1}{3}
+              te^{-3t} \sin (3t) + Ae^{-3t} \cos (3t) + Be^{-3t} \sin
+              (3t) 
+            </mrow>
+          </md>
+          I need the derivative of the general solution. (Again, I've
+          differentiated the complicated functions and grouped like
+          terms to make this reasonable to work with.)
+          <md>
+            <mrow>
+              y^\prime \amp = \left[ -3A + 3B + \frac{2}{3} \right]
+              e^{-3t} \cos (3t) + \left[ -3A - 3B + \frac{1}{3}
+              \right] e^{-3t} \sin (3t) 
+            </mrow>
+            <mrow>
+              \amp - e^{-3t} t \cos (3t) - 3e^{-3t} t \sin (3t) 
+            </mrow>
+          </md>
+          Then I use the initial conditions. I get two equations, which
+          I can turn into a linear system. I'll solve that linear system
+          by solving for <m>A</m> in the first equation and using that
+          to solve for <m>b</m> in the second. 
+          <md>
+            <mrow>
+              y(0) \amp = A + \frac{2}{3} = 1 \implies A = \frac{1}{3} 
+            </mrow>
+            <mrow>
+              y^\prime(0) = -3A + 3B + \frac{2}{3} = 0 \implies B = 1
+            </mrow>
+          </md>
+          Now I can write the specific solution to this IVP.
+          <me>
+            y = \frac{2}{3} te^{-3t} \cos (3t) + \frac{1}{3} te^{-3t}
+            \sin (3t) + \frac{1}{3} e^{-3t} \cos (3t) + e^{-3t} \sin
+            (3t) 
+          </me>
+        </p>
+      </solution>
+    </activity>
+  </subsection>
+  <subsection xml:id="subsection-second-variation-of-parameters">
+    <title>Variation of Parameters</title>
+    <activity>
+      <statement>
+        <p>
+          Solve this SOCCLDE using variation of parameters. (You can
+          leave the resulting integrals if they are unsolvable.)
+          <me>
+            y^{\prime \prime} + 9y^\prime + 12y = \ln (t+3)
+          </me>
+        </p>
+      </statement>
+      <solution>
+        <p>
+          First I need to solve the homogeneous equation. I write and
+          solve the characteristic equation.
+          <me>
+            r^2 + 9r + 12 = 0 \implies r = \frac{-9 \pm \sqrt{33}}{2}
+          </me>
+          The roots are real.  Therefore, the homogeneous solutions
+          are exponential functions. 
+          <me>
+            y_h = A e^{ \left( \frac{-9 + \sqrt{33}}{2} \right) t} + 
+            B e^{ \left( \frac{-9 - \sqrt{33}}{2} \right) t} 
+          </me>
+          Then I need to calculate the Wronskian. For this I need the
+          derivatives of the two linearly independent homogeneous
+          solutions.
+          <md>
+            <mrow>
+              y_1 \amp = e^{ \left( \frac{-9 + \sqrt{33}}{2} \right) t} 
+            </mrow>
+            <mrow>
+              y_2 \amp = e^{ \left( \frac{-9 - \sqrt{33}}{2} \right) t} 
+            </mrow>
+            <mrow>
+              y_1^\prime \amp = \left( \frac{-9 + \sqrt{33}}{2}
+              \right) e^{ \left( \frac{-9 + \sqrt{33}}{2} \right) t} 
+            </mrow>
+            <mrow>
+              y_2^\prime \amp = \left( \frac{-9 - \sqrt{33}}{2}
+              \right) e^{ \left( \frac{-9 - \sqrt{33}}{2} \right) t} 
+            </mrow>
+            <mrow>
+              W \amp = e^{ \left( \frac{-9 + \sqrt{33}}{2} \right) t}
+              \left( \frac{-9 - \sqrt{33}}{2} \right) e^{ \left(
+              \frac{-9 - \sqrt{33}}{2} \right) t} 
+            </mrow>
+            <mrow>
+              \amp - e^{ \left( \frac{-9 - \sqrt{33}}{2} \right) t}
+              \left( \frac{-9 + \sqrt{33}}{2} \right) e^{ \left(
+              \frac{-9 + \sqrt{33}}{2} \right) t} = -\sqrt{33} e^{
+              24t} 
+            </mrow>
+          </md>
+          Then I can calculate the two <sq>varied parameter</sq>
+          function using the homogeneous solutions and the Wronskian.
+          <md>
+            <mrow>
+              u_1 \amp = -\int \frac{y_2 f}{W} dt = - \int \frac{ e^{
+              \left( \frac{-9 - \sqrt{33}}{2} \right) t} \ln (t+3}{
+              -\sqrt{33} e^{24t}} dt 
+            </mrow>
+            <mrow>
+              \amp = \frac{1}{\sqrt{33}} \int e^{ \left( \frac{-57 -
+              \sqrt{33}}{2} \right) t} \ln (t+3) dt
+            </mrow>
+            <mrow>
+              u_2 \amp = \int \frac{y_1 f}{W} dt = \int \frac{ e^{ \left(
+              \frac{-9 + \sqrt{33}}{2} \right) t} \ln (t+3)}{
+              -\sqrt{33} e^{24t}} dt = \frac{-1}{\sqrt{33}} \int e^{
+              \left( \frac{-57 + \sqrt{33}}{2} \right) t} \ln (t+3) dt
+            </mrow>
+          </md>
+          These integrals are not solvable, so I just write the
+          general solutoin in terms of these integrals. 
+          <md>
+            <mrow>
+              y \amp = A e^{ \left( \frac{-9 + \sqrt{33}}{2} \right)
+              t} + B e^{ \left( \frac{-9 - \sqrt{33}}{2} \right) t}
+              + \frac{1}{\sqrt{33}} e^{ \left( \frac{-9 +
+              \sqrt{33}}{2} \right) t} \int e^{ \left( \frac{-57 -
+              \sqrt{33}}{2} \right) t} \ln (t+3) dt 
+            </mrow>
+            <mrow>
+              \amp - \frac{1}{\sqrt{33}} e^{ \left( \frac{-9 -
+              \sqrt{33}}{2} \right) t} \int e^{ \left( \frac{-57 +
+              \sqrt{33}}{2} \right) t} \ln (t+3) dt
+            </mrow>
+          </md>
+        </p>
+      </solution>
+    </activity>
+    <activity>
+      <statement>
+        <p>
+          Solve this SOCCLDE using variation of parameters. (You can
+          leave the resulting integrals if they are unsolvable.)
+          <me>
+            y^{\prime \prime} + 10y^\prime + 5y = \arctan t 
+          </me>
+        </p>
+      </statement>
+      <solution>
+        <p>
+          First I need to solve the homogeneous equation. I write and
+          solve the characteristic equation.
+          <me>
+            r^2 + 10r + 5 = 0 \implies r = -5 \pm \sqrt{20}
+          </me>
+          The roots are complex with <m>\alpha = -5</m> and <m>\beta =
+          \sqrt{20}</m> Therefore, the homogeneous solutions are
+          sinusoidal with exponential decay. 
+          <me>
+            y_h = A e^{-5t} \cos (\sqrt{20} t) + B e^{-5t} \sin
+            (\sqrt{20} t ) 
+          </me>
+          Then I need to calculate the Wronskian. For this I need the
+          derivatives of the two linearly independent homogeneous
+          solutions.
+          <md>
+            <mrow>
+              y_1 \amp = e^{-5t} \cos ( \sqrt{20} t) 
+            </mrow>
+            <mrow>
+              y_2 \amp = e^{-5t} \sin ( \sqrt{20} t) 
+            </mrow>
+            <mrow>
+              y_1^\prime \amp = -5e^{-5t} \cos (\sqrt{20} t) - e^{-5t}
+              \sin (\sqrt{20} t) 
+            </mrow>
+            <mrow>
+              y_2^\prime \amp = -5e^{-5t} \sin (\sqrt{20} t) + e^{-5t}
+              \cos (\sqrt{20} t) 
+            </mrow>
+            <mrow>
+              W \amp = e^{-10 t} \left[ \cos^2 (\sqrt{20}t) -5 \cos
+              (\sqrt{20} t) \sin ( \sqrt{20} t) \right] 
+            </mrow>
+            <mrow>
+              \amp - e^{-10t} \left[ -5 \sin (\sqrt{20} t) \cos
+              (\sqrt{20} t) - \sin^2 ( \sqrt{20} t) \right] = e^{-10t}
+            </mrow>
+          </md>
+          Then I can calculate the two <sq>varied parameter</sq>
+          function using the homogeneous solutions and the Wronskian.
+          <md>
+            <mrow>
+              u_1 = -\int \frac{y_2 f}{W} dt = -\int \frac{ e^{-5t}
+              \sin (\sqrt{20} t) \arctan t}{e^{-10t}} dt = - \int
+              e^{5t} \sin (\sqrt{20}t) \arctan t dt 
+            </mrow>
+            <mrow>
+              u_2 = \int \frac{y_1 f}{W} dt = \int \frac{ e^{-5t} \cos
+              (\sqrt{20} t) \arctan t}{e^{-10 t}} dt = \int e^{5t}
+              \cos (\sqrt{20} t) \arctan t dt 
+            </mrow>
+          </md>
+          These integrals are not solvable, so I just write the
+          general solutoin in terms of these integrals. 
+          <md>
+            <mrow>
+              y \amp = A e^{-5t} \cos (\sqrt{20} t) + B e^{-5t} \sin
+              (\sqrt{20} t )
+            </mrow>
+            <mrow>
+              \amp - e^{-5t} \cos ( \sqrt{20} t) \int e^{5t} \sin
+              (\sqrt{20}t) \arctan t dt 
+            </mrow>
+            <mrow>
+              \amp + e^{-5t} \sin ( \sqrt{20} t) \int e^{5t} \cos
+              (\sqrt{20} t) \arctan t dt 
+            </mrow>
+          </md>
+        </p>
+      </solution>
+    </activity>
+  </subsection>
+</section>

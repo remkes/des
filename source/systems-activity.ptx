@@ -1,0 +1,802 @@
+<section xml:id="section-systems-activity">
+  <title>Activities for Systems of ODEs</title>
+  <subsection xml:id="subsection-activity-phase-diagrams">
+    <title>Phase Plane Diagrams</title>
+    <activity>
+      <statement>
+        <p>
+          Draw the phase diagram for this system of differential
+          equation, limited to the first quadrant. Label the
+          trajectories of the regions and make predictions about the
+          behaviour of the solutions. (Only include steady states with
+          <m>x \gt 0</m> and <m>y \gt 0</m>.)
+          <md>
+            <mrow>
+              \frac{dp}{dt} \amp = p(q-4)
+            </mrow>
+            <mrow>
+              \frac{dq}{dt} \amp = q(p-3)
+            </mrow>
+          </md>
+        </p>
+      </statement>
+      <solution>
+        <p>
+          First I calcluate the nullclines. The nullclines here are
+          <m>p=0</m> (the q-axis), <m>q=0</m> (the p-axis), the
+          horizontal line <m>q=4</m> and the vertical line <m>p=3</m>.
+          Ignoring the axes, the only steady state is at
+          <m>(4,3)</m>. 
+        </p>
+        <p>
+          There are four regions and four sections of the
+          nullclines to label. I'll evaluate at points in these
+          regions and on these nullclines. This evaluation will
+          indicate the direction of the trajectory.
+          <md>  
+            <mrow>
+              \amp (1,1) \amp \amp \frac{dp}{dt} = -3 
+              \amp \amp \frac{dq}{dt} = -2
+              \amp \amp \text{down and left}
+            </mrow>
+            <mrow>
+              \amp (5,1) \amp \amp \frac{dp}{dt} = -15
+              \amp \amp \frac{dq}{dt} = 2
+              \amp \amp \text{up and left}
+            </mrow>
+            <mrow>
+              \amp (1,5) \amp \amp \frac{dp}{dt} = 1
+              \amp \amp \frac{dq}{dt} = -10
+              \amp \amp \text{down and right}
+            </mrow>
+            <mrow>
+              \amp (a,b) \amp \amp \frac{dp}{dt} = 5
+              \amp \amp \frac{dq}{dt} = 10
+              \amp \amp \text{up and right}
+            </mrow>
+            <mrow>
+              \amp (1,4) \amp \amp \frac{dp}{dt} = 0
+              \amp \amp \frac{dq}{dt} = -8
+              \amp \amp \text{down}
+            </mrow>
+            <mrow>
+              \amp (5,4) \amp \amp \frac{dp}{dt} = 0
+              \amp \amp \frac{dq}{dt} = 8
+              \amp \amp \text{up}
+            </mrow>
+            <mrow>
+              \amp (3,1) \amp \amp \frac{dp}{dt} = -9
+              \amp \amp \frac{dq}{dt} = 0
+              \amp \amp \text{left}
+            </mrow>
+            <mrow>
+              \amp (3,5) \amp \amp \frac{dp}{dt} = 3
+              \amp \amp \frac{dq}{dt} = 0
+              \amp \amp \text{right}
+            </mrow>
+          </md>
+          Then I draw these trajectories, which are shown in <xref
+          ref="figure-activity-phase-plane1" />. The steady state
+          looks like a saddle point. Trajectories approach the steady
+          state from up and left of it, and from down and right of it.
+          The trajectories will be deflected away from the steady
+          state and disperse either down to the left or up to the
+          right. 
+        </p>
+        <figure xml:id="figure-activity-phase-plane1">
+          <caption>First Phase Plane Activity</caption>
+          <image xml:id="figure62" width="80%">
+            <asymptote>
+              size(12cm,8cm,IgnoreAspect);
+              import graph;
+              xaxis(dashed);
+              yaxis(dashed);
+
+              draw((0,4)--(6,4));
+              draw((3,0)--(3,6));
+
+              label((3,4),"Steady State $(3,4)$",NE);
+              dot((3,4));
+
+              label((6,4),"$q=4$",S);
+              label((3,6),"$p=3$",E);
+
+              draw((1.5,2.5)--(1,2),Arrow);
+              draw((4.5,5)--(5,5.5),Arrow);
+              draw((1,5.5)--(1.5,5),Arrow);
+              draw((5,2)--(4.5,2.5),Arrow);
+
+              draw((1.5,4.25)--(1.5,3.75),Arrow);
+              draw((5,3.75)--(5,4.25),Arrow);
+              draw((3.25,2.5)--(2.75,2.5),Arrow);
+              draw((2.75,5)--(3.25,5),Arrow);
+            </asymptote>
+          </image>
+        </figure>
+      </solution>
+    </activity>
+    <activity>
+      <statement>
+        <p>
+          Draw the phase diagram for this system of differential
+          equation, limited to the first quadrant. Label the
+          trajectories of the regions and make predictions about the
+          behaviour of the solutions. (Only include steady states with
+          <m>x \gt 0</m> and <m>y \gt 0</m>.)
+          <md>
+            <mrow>
+              \frac{dp}{dt} \amp = p(9 - p^2 - q)
+            </mrow>
+            <mrow>
+              \frac{dq}{dt} \amp = q(q - 4p + 4)
+            </mrow>
+          </md>
+        </p>
+      </statement>
+      <solution>
+        <p>
+          First I calcluate the nullclines. In addition to teh two
+          axes, there is a quadratic nullcline <m>q = 9 - p^2</m> and
+          a linear nullcline <m>q = 4p - 4</m>. The intersection point
+          in the first quadrant is at <m>(-2 + \sqrt{17}, -12 + 4
+          \sqrt{17})</m>. 
+        </p>
+        <p>
+          There are four regions and four sections of the
+          nullclines to label. I'll evaluate at points in these
+          regions and on these nullclines. This evaluation will
+          indicate the direction of the trajectory. I haven't shown
+          the specific points and arithmetic, but the trajectories are
+          sown in <xref ref="figure-activity-phase-plane2" />. The
+          steady state looks like a saddle point, with trajectories
+          approaches from down and to the left, and from up and to the
+          right. The trajectories then diverge up and to the left, and
+          down and to the right. 
+        </p>
+        <figure xml:id="figure-activity-phase-plane2">
+          <caption>First Phase Plane Activity</caption>
+          <image xml:id="figure63" width="80%">
+            <asymptote>
+              size(12cm,8cm,IgnoreAspect);
+              import graph;
+              xaxis(dashed);
+              yaxis(dashed);
+
+              real f1(real x) {return 9-x^2;}
+              draw(graph(f1,0,3));
+
+              real f2(real x) {return 4*x-4;}
+              draw(graph(f2,0,3));
+
+              label((2.123,4.492),"Steady State 
+                $(-2+\sqrt{17},-12+4\sqrt{17})$",E);
+              dot((2.123,4.492));
+
+              label((0,9),"$q=9-p^2$",N);
+              label((-0.5,-2),"$q=4p-4$",SW);
+
+              draw((1,4)--(1.5,4.5),Arrow);
+              draw((2,1)--(2.5,0.5),Arrow);
+              draw((4,7)--(3.5,6.5),Arrow);
+              draw((2,7)--(1.5,7.5),Arrow);
+
+              draw((1.1,2)--(1.9,2),Arrow);
+              draw((2.9,6)--(2.1,6),Arrow);
+              draw((1,7.6)--(1,8.4),Arrow);
+              draw((2.5,3.2)--(2.5,2),Arrow);
+            </asymptote>
+          </image>
+        </figure>
+      </solution>
+    </activity>
+    <activity>
+      <statement>
+        <p>
+          Draw the phase diagram for this system of differential
+          equation, limited to the first quadrant. Label the
+          trajectories of the regions and make predictions about the
+          behaviour of the solutions. (Only include steady states with
+          <m>x \gt 0</m> and <m>y \gt 0</m>.)
+          <md>
+            <mrow>
+              \frac{dp}{dt} \amp = q(q - 3)(q - 6)
+            </mrow>
+            <mrow>
+              \frac{dq}{dt} \amp = (q - p^2 - 4)(p + 2 - q)
+            </mrow>
+          </md>
+        </p>
+      </statement>
+      <solution>
+        <p>
+          First I calcluate the nullclines. In addition to the p-axis,
+          there are four nullclines. There are two horizontal lines:
+          <m>q=3</m> and <m>q=6</m>. There is a quadratic <m>q = p^2 +
+          4</m> and a sloped line <m>q = p + 2</m>. There are three
+          intersections of these nullclines in the first quadrant (off
+          the axes). 
+        </p>
+        <p>
+          There are eight regions and ten sections of the
+          nullclines to label. I'll evaluate at points in these
+          regions and on these nullclines. This evaluation will
+          indicate the direction of the trajectory. I haven't shown
+          the specific points and arithmetic, but the trajectories are
+          sown in <xref ref="figure-activity-phase-plane3" />. The
+          steady state at <m>(4,6)</m> looks like a centre; the steady
+          state at <m>(\sqrt{2},6)</m> looks like a saddle point; and
+          the steady state at <m>(1,3)</m> also looks like a saddle
+          point. The trajectories diverge away from the saddle points.
+          If the trajectories start large enough to grow away from the
+          saddle points, it looks like they will eventuall get
+          trapped into circles around <m>(4,6)</m>. Otherwise, it
+          looks like the trajectories decay down to one of the axes. 
+        </p>
+        <figure xml:id="figure-activity-phase-plane3">
+          <caption>First Phase Plane Activity</caption>
+          <image xml:id="figure64" width="80%">
+            <asymptote>
+              size(12cm,8cm,IgnoreAspect);
+              import graph;
+              xaxis(dashed);
+              yaxis(dashed);
+
+              draw((0,3)--(6,3));
+              draw((0,6)--(6,6));
+
+              real f1(real x) {return x^2+4;}
+              draw(graph(f1,0,2));
+
+              real f2(real x) {return x+2;}
+              draw(graph(f2,0,6));
+
+              label("$q=3$",(6,3),S);
+              label("$q=6$",(6,6),N);
+              label("$q=p+2$",(6,8),NW);
+              label("$q=p^2+4$",(2,8),W);
+
+              dot((1,3));
+              label("Steady State $(1,3)$",(1,3),SE);
+
+              dot((4,6));
+              label("Steady State $(4,6)$",(4,5.7),SE);
+
+              dot((1.41,6));
+              label("Steady State $(\sqrt{2},6)$",(1.41,6.3),NW);
+
+              draw((2,1.5)--(2.5,1),Arrow);
+              draw((4.5,4.5)--(4,4),Arrow);
+              draw((6,7.5)--(6.5,7),Arrow);
+              draw((3,7)--(3.5,7.5),Arrow);
+              draw((2,4.5)--(1.5,5),Arrow);
+              draw((0,2.3)--(0.5,2.8),Arrow);
+              draw((1,5.5)--(0.5,5),Arrow);
+              draw((0,8)--(0.5,7.5),Arrow);
+
+              draw((0.2,2.7)--(0.2,3.3),Arrow);
+              draw((4.5,3.3)--(4.5,2.7),Arrow);
+              draw((0.5,6.3)--(0.5,5.7),Arrow);
+              draw((3,5.7)--(3,6.3),Arrow);
+              draw((5,6.3)--(5,5.7),Arrow);
+
+              draw((0,2.1)--(0.5,2.1),Arrow);
+              draw((2.7,4.5)--(2.3,4.5),Arrow);
+              draw((4.7,7)--(5.3,7),Arrow);
+              draw((1.1,4.3)--(0.5,4.3),Arrow);
+              draw((1.4,7)--(2,7),Arrow);
+            </asymptote>
+          </image>
+        </figure>
+      </solution>
+    </activity>
+    <activity>
+      <statement>
+        <p>
+          Draw the phase diagram for this system of differential
+          equation, limited to the first quadrant. Label the
+          trajectories of the regions and make predictions about the
+          behaviour of the solutions. (Only include steady states with
+          <m>x \gt 0</m> and <m>y \gt 0</m>.)
+          <md>
+            <mrow>
+              \frac{dp}{dt} \amp = q(pq - 5)(pq - 10)
+            </mrow>
+            <mrow>
+              \frac{dq}{dt} \amp = p(4p - q)(2p - q)
+            </mrow>
+          </md>
+        </p>
+      </statement>
+      <solution>
+        <p>
+          First I calcluate the nullclines. In addition to the axes,
+          there are four nullclines. There are two lines through the
+          origin: <m>q = 4p</m> and <m>q = 2p</m>. There are two
+          reciprocal graphs: <m>q = \frac{10}{p}</m> and <m>q =
+          \frac{5}{p}</m>. There are four intersections of these
+          nullclines in the first quadrant: <m>(\frac{\sqrt{5}}{2},
+          2\sqrt{5})</m> <m>(\sqrt{\frac{5}{2}}, \sqrt{10})</m>
+          <m>(\sqrt{\frac{5}{2}}, 2\sqrt{10})</m> and <m>(\sqrt{5},
+          2\sqrt{5})</m>.
+        </p>
+        <p>
+          There are nine regions and twelve sections of the
+          nullclines to label. I'll evaluate at points in these
+          regions and on these nullclines. This evaluation will
+          indicate the direction of the trajectory. I haven't shown
+          the specific points and arithmetic, but the trajectories are
+          sown in <xref ref="figure-activity-phase-plane4" />. It's
+          getting harder to make judgements about the steady states
+          from all these arrows, but it looks like <m>\left(
+          \sqrt{\frac{5}{2}}, \sqrt{10} \right)</m> could be a centre;
+          <m>\left( \frac{\sqrt{5}}{2}, 2\sqrt{5} \right)</m> could be
+          a saddle point; <m>\left( \sqrt{\frac{5}{2}}, 2\sqrt{10}
+          \right)</m> could be an unstable focus; and <m>\left(
+          \sqrt{5}, 2\sqrt{5} \right)</m> could be another saddle
+          point. The trajecoties in and around the saddle points get
+          pretty confusing. I can clearly say that there are growth
+          trajectories up and to the right of all the steady state and
+          divergenc away from the saddle points and the focus is
+          mostly growth to large values instead of decay. Even
+          starting with small values, the diagram shows growth, though
+          the exact path around the steady states is hard to
+          determine. 
+        </p>
+        <figure xml:id="figure-activity-phase-plane4">
+          <caption>First Phase Plane Activity</caption>
+          <image xml:id="figure65" width="80%">
+            <asymptote>
+              size(12cm,8cm,IgnoreAspect);
+              import graph;
+              xaxis(dashed);
+              yaxis(dashed);
+
+              real f1(real x) {return 5/x;}
+              draw(graph(f1,0.6,5));
+
+              real f2(real x) {return 10/x;}
+              draw(graph(f2,1.23,5));
+
+              real f3(real x) {return 4*x;}
+              draw(graph(f3,0,2));
+
+              real f4(real x) {return 2*x;}
+              draw(graph(f4,0,4));
+
+              label("$q=2p$",(4,8),E);
+              label("$q=4p$",(2,8),NE);
+              label("$q=\frac{5}{p}$",(5,1),S);
+              label("$q=\frac{10}{p}$",(5,2),NE);
+
+              dot((2.24,4.48));
+              label("$(\sqrt{5},2\sqrt{5})$",(2.24,4.48),E);
+
+              dot((1.58,3.16));
+              label("$(\sqrt{\frac{5}{2}},\sqrt{10})$",(1.58,3.16),E);
+
+              dot((1.58,6.32));
+              label("$(\sqrt{\frac{5}{2}},2\sqrt{10})$",(1.58,6.32),E);
+
+              dot((1.11,4.47));
+              label("$(\frac{\sqrt{5}}{2},2\sqrt{5})$",(1.11,4.47),W);
+
+              draw((1.4,1)--(1.7,1.3),Arrow);
+              draw((0.9,3.2)--(1.2,2.9),Arrow);
+              draw((0,5)--(0.3,5.3),Arrow);
+              draw((1.3,6.5)--(1,6.8),Arrow);
+              draw((1.7,5)--(1.4,4.7),Arrow);
+              draw((3,2.7)--(2.7,3),Arrow);
+              draw((3.5,4.2)--(3.8,4.5),Arrow);
+              draw((2.6,8)--(2.9,7.7),Arrow);
+              draw((1.5,7.5)--(1.8,7.8),Arrow);
+
+              draw((0.3,1)--(0.7,1),Arrow);
+              draw((0.3,2)--(0.7,2),Arrow);
+              draw((2.2,3.7)--(1.8,3.7),Arrow);
+              draw((1.5,5.4)--(1.1,5.4),Arrow);
+              draw((2.8,6)--(3.2,6),Arrow);
+              draw((1.6,7)--(2,7),Arrow);
+
+              draw((4,0.8)--(4,1.5),Arrow);
+              draw((4.3,2)--(4.3,2.7),Arrow);
+              draw((1.3,4.3)--(1.3,3.6),Arrow);
+              draw((1.8,5.9)--(1.8,5.2),Arrow);
+              draw((1.3,7.3)--(1.3,8),Arrow);
+              draw((0.68,7.3)--(0.68,8),Arrow);
+            </asymptote>
+          </image>
+        </figure>
+      </solution>
+    </activity>
+    <activity>
+      <statement>
+        <p>
+          Draw the phase diagram for this system of differential
+          equation, limited to the first quadrant. Label the
+          trajectories of the regions and make predictions about the
+          behaviour of the solutions. (Only include steady states with
+          <m>x \gt 0</m> and <m>y \gt 0</m>.)
+          <md>
+            <mrow>
+              \frac{dp}{dt} \amp = p((p-4)^2 + (q-4)^2 - 9) 
+            </mrow>
+            <mrow>
+              \frac{dq}{dt} \amp = q(p - 3)(p - 5)
+            </mrow>
+          </md>
+        </p>
+      </statement>
+      <solution>
+        <p>
+          First I calcluate the nullclines. In addition to the axes,
+          there are two vertical lines <m>p=3</m> and <m>p=5</m>.
+          There is also a circle of radius 3 centred at <m>(4,4)</m>
+          given by the equation <m>(p-4)^2 + (q-4)^2 = 9</m>. There
+          are four steady states where the vertical lines meet the
+          cirlce: <m>(3, 4 + 2\sqrt{2})</m>, <m>(5, 4 +
+          2\sqrt{2})</m>, <m>(3, 4 - 2\sqrt{2})</m>, and <m>(5, 4 -
+          2\sqrt{2})</m>.
+        </p>
+        <p>
+          There are eight regions and ten sections of the
+          nullclines to label. I'll evaluate at points in these
+          regions and on these nullclines. This evaluation will
+          indicate the direction of the trajectory. I haven't shown
+          the specific points and arithmetic, but the trajectories are
+          sown in <xref ref="figure-activity-phase-plane5" />. The
+          steady state at <m>(3, 4 - 2\sqrt{2})</m> looks like a
+          center and the steady state at <m>(3, 4 + 2\sqrt{2})</m>
+          looks like a steady state. The other two steady states don't
+          resemble any of the six types, at lest not to my eye. It's
+          possible that the non-linearity here is severe enough that
+          they patterns around these two steady states are something
+          more exotic. For trajectories, it looks like anything that
+          starts at small values will get caught in a circle around
+          <m>(3, 4 - 2\sqrt{2})</m>. For anything larger, after some
+          slightly strange pathing near the steady states, all the
+          trajectories seems to show unbounded growth. 
+        </p>
+        <figure xml:id="figure-activity-phase-plane5">
+          <caption>First Phase Plane Activity</caption>
+          <image xml:id="figure66" width="80%">
+            <asymptote>
+              size(12cm,8cm,IgnoreAspect);
+              import graph;
+              xaxis(dashed);
+              yaxis(dashed);
+
+              real f1(real x) {return 5/x;}
+              draw(graph(f1,0.6,5));
+
+              real f2(real x) {return 10/x;}
+              draw(graph(f2,1.23,5));
+
+              real f3(real x) {return 4*x;}
+              draw(graph(f3,0,2));
+
+              real f4(real x) {return 2*x;}
+              draw(graph(f4,0,4));
+
+              label("$q=2p$",(4,8),E);
+              label("$q=4p$",(2,8),NE);
+              label("$q=\frac{5}{p}$",(5,1),S);
+              label("$q=\frac{10}{p}$",(5,2),NE);
+
+              dot((2.24,4.48));
+              label("$(\sqrt{5},2\sqrt{5})$",(2.24,4.48),E);
+
+              dot((1.58,3.16));
+              label("$(\sqrt{\frac{5}{2}},\sqrt{10})$",(1.58,3.16),E);
+
+              dot((1.58,6.32));
+              label("$(\sqrt{\frac{5}{2}},2\sqrt{10})$",(1.58,6.32),E);
+
+              dot((1.11,4.47));
+              label("$(\frac{\sqrt{5}}{2},2\sqrt{5})$",(1.11,4.47),W);
+
+              draw((1.4,1)--(1.7,1.3),Arrow);
+              draw((0.9,3.2)--(1.2,2.9),Arrow);
+              draw((0,5)--(0.3,5.3),Arrow);
+              draw((1.3,6.5)--(1,6.8),Arrow);
+              draw((1.7,5)--(1.4,4.7),Arrow);
+              draw((3,2.7)--(2.7,3),Arrow);
+              draw((3.5,4.2)--(3.8,4.5),Arrow);
+              draw((2.6,8)--(2.9,7.7),Arrow);
+              draw((1.5,7.5)--(1.8,7.8),Arrow);
+
+              draw((0.3,1)--(0.7,1),Arrow);
+              draw((0.3,2)--(0.7,2),Arrow);
+              draw((2.2,3.7)--(1.8,3.7),Arrow);
+              draw((1.5,5.4)--(1.1,5.4),Arrow);
+              draw((2.8,6)--(3.2,6),Arrow);
+              draw((1.6,7)--(2,7),Arrow);
+
+              draw((4,0.8)--(4,1.5),Arrow);
+              draw((4.3,2)--(4.3,2.7),Arrow);
+              draw((1.3,4.3)--(1.3,3.6),Arrow);
+              draw((1.8,5.9)--(1.8,5.2),Arrow);
+              draw((1.3,7.3)--(1.3,8),Arrow);
+              draw((0.68,7.3)--(0.68,8),Arrow);
+            </asymptote>
+          </image>
+        </figure>
+      </solution>
+    </activity>
+  </subsection>
+  <subsection xml:id="subsection-activity-linear-systems">
+    <title>Linear Systems</title>
+    <activity>
+      <statement>
+        <p>
+          Solve this linear system using Laplace transforms and
+          classify the steady state. The initial conditions are <m>x(0)
+          = 1</m> and <m>y(0) = 1</m>. 
+          <md>
+            <mrow>
+              \frac{dx}{dt} \amp = 5x
+            </mrow>
+            <mrow>
+              \frac{dy}{dt} \amp = x + 4y 
+            </mrow>
+          </md>
+        </p>
+      </statement>
+      <solution>
+        <p>
+          I apply the Laplace transform to the system. 
+          <md>
+            <mrow>
+              sX - 1 \amp =  5X
+            </mrow>
+            <mrow>
+              sY - 1 \amp = X + 4Y 
+            </mrow>
+          </md>
+          The I solve for algebraic system for <m>X</m> and <m>Y</m>
+          (I haven't shown the algebra for this, but it is a
+          straightforward isolate and replace of one of the
+          variables.)
+          <md>
+            <mrow>
+              X \amp = \frac{1}{s-5} 
+            </mrow>
+            <mrow>
+              Y \amp = \frac{1}{s-5} 
+            </mrow>
+          </md>
+          Then I reverse the transform.
+          <md>
+            <mrow>
+              x(t) \amp = e^{5t}
+            </mrow>
+            <mrow>
+              y(t) \amp = e^{5t}
+            </mrow>
+          </md>
+          There is outward exponenial growth in both variables with no
+          rotation terms. The steady state at the origin is an
+          unstable focus or a saddle point. Since I've only chosen on
+          initial condition, I can't distinguish: the exponential
+          growth from this point might fit either steady state. Mostly
+          likely this is an unstable focus, since it would be quite
+          unlikely to have chosen initial conditions right along the
+          growth direction of a saddle point, but it is possible. 
+        </p>
+      </solution>
+    </activity>
+    <activity>
+      <statement>
+        <p>
+          Solve this linear system using Laplace transforms and
+          classify the steady state. The initial conditions are <m>x(0)
+          = 1</m> and <m>y(0) = 1</m>. 
+          <md>
+            <mrow>
+              \frac{dx}{dt} \amp = 3x - 6y
+            </mrow>
+            <mrow>
+              \frac{dy}{dt} \amp = x + y 
+            </mrow>
+          </md>
+        </p>
+      </statement>
+      <solution>
+        <p>
+          I apply the Laplace transform to the system. 
+          <md>
+            <mrow>
+              sX - 1 \amp = 3X - 6Y
+            </mrow>
+            <mrow>
+              sY - 1 \amp = X + Y 
+            </mrow>
+          </md>
+          The I solve for algebraic system for <m>X</m> and <m>Y</m>
+          (I haven't shown the algebra for this. In solving, there
+          may be linear terms <m>(s-1)</m> which cancel off, depending
+          on how you do the replacement.) 
+          <md>
+            <mrow>
+              X \amp = \frac{s-7}{s^2 - 4 + 9} 
+            </mrow>
+            <mrow>
+              Y \amp = \frac{s-2}{s^2 - 4s + 9} 
+            </mrow>
+          </md>
+          I'll adjust the terms to fit the patterns of inverse Laplace
+          transforms.
+          <md>
+            <mrow>
+              X \amp = \frac{s-2}{(s-2)^2 + 5} - \sqrt{5}
+              \frac{\sqrt{5}}{(s-2)^2 + 5} 
+            </mrow>
+            <mrow>
+              Y \amp = \frac{s-2}{(s-2)^2 + 5}
+            </mrow>
+          </md>
+          Then I reverse the transform.
+          <md>
+            <mrow>
+              x(t) \amp = e^{2t} \cos (\sqrt{5}t) - \sqrt{5} e^{2t}
+              \sin (\sqrt{5}t) 
+            </mrow>
+            <mrow>
+              y(t)  \amp = e^{2t} \cos (\sqrt{5}t) 
+            </mrow>
+          </md>
+          There is outward exponential growth, but there are also
+          rotation terms. The steady state is an unstable node. 
+        </p>
+      </solution>
+    </activity>
+    <activity>
+      <statement>
+        <p>
+          Solve this linear system using Laplace transforms and
+          classify the steady state. The initial conditions are <m>x(0)
+          = 1</m> and <m>y(0) = 1</m>. 
+          <md>
+            <mrow>
+              \frac{dx}{dt} \amp = -4x - 2y 
+            </mrow>
+            <mrow>
+              \frac{dy}{dt} \amp = 4x + 3y 
+            </mrow>
+          </md>
+        </p>
+      </statement>
+      <solution>
+        <p>
+          I apply the Laplace transform to the system. 
+          <md>
+            <mrow>
+              sX - 1 \amp = -4X - 2Y
+            </mrow>
+            <mrow>
+              sY - 1 \amp = 4X + 3Y
+            </mrow>
+          </md>
+          The I solve for algebraic system for <m>X</m> and <m>Y</m>
+          (I haven't shown the algebra for this. Depending on how you
+          do the isolation and replacement, there may be a
+          <m>(s-3)</m> linear term which will cancel off.) 
+          <md>
+            <mrow>
+              X \amp = \frac{s-5}{s^2 + s - 4}
+            </mrow>
+            <mrow>
+              Y \amp = \frac{s+8}{s^2 + s - 4}
+            </mrow>
+          </md>
+          I use partial fractions to separate the rational function
+          denominator. I'll adjust the terms to fit the patterns of
+          inverse Laplace transforms. 
+          <md>
+            <mrow>
+              X \amp = \frac{s + \frac{1}{2}}{ \left( s + \frac{1}{2}
+              \right)^2 + \frac{17}{4}} - \frac{11}{\sqrt{17}}
+              \frac{\frac{\sqrt{17}}{2}}{ \left( s + \frac{1}{2}
+              \right)^2 + \frac{17}{4}} 
+            </mrow>
+            <mrow>
+              Y \amp = \frac{s + \frac{1}{2}}{ \left( s + \frac{1}{2}
+              \right)^2 + \frac{17}{4}} - \frac{15}{\sqrt{17}}
+              \frac{\frac{\sqrt{17}}{2}}{ \left( s + \frac{1}{2}
+              \right)^2 + \frac{17}{4}} 
+            </mrow>
+          </md>
+          Then I reverse the transform.
+          <md>
+            <mrow>
+              x(t) \amp = e^{\frac{-1}{2}t} \cos \left(
+              \frac{\sqrt{17}}{2} t \right) - \frac{11}{\sqrt{17}}
+              e^{\frac{-1}{2}t} \sin \left( \frac{\sqrt{17}}{2} t
+              \right) 
+            </mrow>
+            <mrow>
+              y(t)  \amp = e^{\frac{-1}{2}t} \cos \left(
+              \frac{\sqrt{17}}{2} t \right) - \frac{15}{\sqrt{17}}
+              e^{\frac{-1}{2}t} \sin \left( \frac{\sqrt{17}}{2} t
+              \right) 
+            </mrow>
+          </md>
+          There is exponential decay and sinusoidal terms giving
+          rotation. The steady state must be a stable node. 
+        </p>
+      </solution>
+    </activity>
+    <activity>
+      <statement>
+        <p>
+          Solve this linear system using Laplace transforms and
+          classify the steady state. The initial conditions are <m>x(0)
+          = 1</m> and <m>y(0) = 1</m>. 
+          <md>
+            <mrow>
+              \frac{dx}{dt} \amp = -2x + 3y 
+            </mrow>
+            <mrow>
+              \frac{dy}{dt} \amp = x + 2y 
+            </mrow>
+          </md>
+        </p>
+      </statement>
+      <solution>
+        <p>
+          I apply the Laplace transform to the system. 
+          <md>
+            <mrow>
+              sX - 1 \amp = -2X + 3Y 
+            </mrow>
+            <mrow>
+              sY - 1 \amp = X + 2Y
+            </mrow>
+          </md>
+          The I solve for algebraic system for <m>X</m> and <m>Y</m>
+          (I haven't shown the algebra for this, but it is a
+          straightforward isolate and replace of one of the
+          variables.)
+          <md>
+            <mrow>
+              X \amp = \frac{s + 1}{s^2 - 7} 
+            </mrow>
+            <mrow>
+              Y \amp = \frac{s + 3}{s^2 - 7} 
+            </mrow>
+          </md>
+          I use partial fractions to separate the rational function
+          denominator. I'll adjust the terms to fit the patterns of
+          inverse Laplace transforms. 
+          <md>
+            <mrow>
+              X \amp = \left( \frac{\sqrt{7} - 1}{2 \sqrt{7}} \right)
+              \frac{1}{s + \sqrt{7}} + \left( \frac{ 1 +
+              \sqrt{7}}{2\sqrt{7}} \right) \frac{1}{s - \sqrt{7}} 
+            </mrow>
+            <mrow>
+              Y \amp = \left( \frac{\sqrt{7} - 3}{2 \sqrt{7}} \right)
+              \frac{1}{s + \sqrt{7}} + \left( \frac{ 3 +
+              \sqrt{7}}{2\sqrt{7}} \right) \frac{1}{s - \sqrt{7}} 
+            </mrow>
+          </md>
+          Then I reverse the transform.
+          <md>
+            <mrow>
+              x(t) \amp = \left( \frac{\sqrt{7} - 1}{2\sqrt{7}}
+              \right) e^{-\sqrt{7}t} + \left( \frac{1 +
+              \sqrt{7}}{2\sqrt{7}} \right) e^{\sqrt{7}t} 
+            </mrow>
+            <mrow>
+              y(t) \amp = \left( \frac{\sqrt{7} - 3}{2\sqrt{7}}
+              \right) e^{-\sqrt{7}t} + \left( \frac{3 +
+              \sqrt{7}}{2\sqrt{7}} \right) e^{\sqrt{7}t} 
+            </mrow>
+          </md>
+          There is a mixture of exponential growth and exponential
+          decay in this solution. I can conclude that the steady state
+          must be a saddle point. 
+        </p>
+      </solution>
+    </activity>
+  </subsection>
+</section>

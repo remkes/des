@@ -1,0 +1,90 @@
+<section xml:id="section-laplace-derivatives">
+  <title>Laplace Transforms and Derivatives</title>
+  <p>
+    This is a course on differential equations; if Laplace transforms
+    are useful, I will need them to relate to derivatives.  I will
+    calculate what happens to a derivative of a function (of
+    exponential order) in a Laplace transform.
+    <md>
+      <mrow>
+        \calL \left\{ \frac{df}{dt} \right\} \amp = \int_0^\infty
+        \frac{df}{dt} e^{-st} dt
+      </mrow>
+      <mrow>
+        \amp = \left. fe^{-st} \right|_0^\infty - \int_0^\infty (-s)
+        f(t) e^{-st} dt
+      </mrow>
+      <mrow>
+        \amp = \lim_{a \rightarrow \infty} f(a) e^{-sa} - f(0) + s
+        \calL \{ f(t) \} (s) = -f(0) + s F(s)
+      </mrow>
+    </md>
+  </p>
+  <p>
+    I can summarize the result in this rule.
+    <me>
+      \calL \{ f^\prime(t) \} (s) = -f(0) + sF(s)
+    </me>.
+    This is a lovely and convenient property. In the <m>s</m>-domain,
+    there is no more differentiation. Differentiation is replaced by
+    the much more approachable multiplication by the variable
+    <m>s</m>, along with evaluation of the original function at zero.
+  </p>
+  <p>
+    I can do a similar calculation for second derivatives. The
+    calculation will involve two uses of integration by parts, though
+    I can make use of the previous calculation to simplify the
+    work.
+    <md>
+      <mrow>
+        \calL \left\{ \frac{d^2f}{dt^2} \right\} \amp = \int_0^\infty
+        \frac{d^2f}{dt^2} e^{-st} dt
+      </mrow>
+      <mrow>
+        \amp = \left. \frac{df}{dt} e^{-st} \right|_0^\infty +
+        s\int_0^\infty \frac{df}{dt} e^{-st} dt
+      </mrow>
+      <mrow>
+        \amp = -f^\prime(0) - sf(0) + s^2 F(s)
+      </mrow>
+    </md>
+  </p>
+  <p>
+    Again, this is very convenient. The derivatives are completely
+    removed in the <m>s</m>-domain, replaced with simple algebraic
+    operations. The general result for any order of differentiation
+    is this rule.
+    <me>
+      \calL \left\{ \frac{d^n f}{dt^n} \right\} = s^n F(s) - s^{n-1}
+      f(0) - s^{n-2} f^\prime(0) - s^{n-3} f^{\prime \prime}(0) -
+      \ldots - f^{(n-1)}(0)
+    </me>
+    The understanding of Laplace transforms of derivative leads to
+    an amazing use of Laplace transforms in solving
+    DEs. A Laplace transform changes differentiation into simple
+    algebraic operations; therefore, it should change some DEs into
+    algebraic equations. Since algebraic equations are much easier to
+    solve than DEs, this is a huge advantage. However, I have one
+    problem. If we want to solve a DE, I want to solve it in the
+    <m>t</m>-domain. I can transform to the <m>s</m>-domain and
+    solve the algebraic equation, but I need to get back to the
+    <m>t</m>-domain to finish. For this, I need to invert the
+    transform, which is covered in <xref
+    ref="section-inverse-transforms" />. 
+  </p>
+  <p>
+    Before I move on, here are two other properties of the Laplace
+    transform which relate to derivatives. The first shows that
+    integrals are also changed into something algebraic.
+    <me>
+      \calL \left\{ \int_0^t f(u) du \right\} = \frac{1}{s} \calL \{
+      f(t) \}
+    </me>
+    The second is a parallel identity which shows how differentiation
+    in the <m>s</m>-domain also comes from an algebraic operation on
+    the <m>t</m>-domain.
+    <me>
+      \calL \{ t^n f(t) \} = (-1)^n \frac{d^n}{ds^n} \calL \{ f(t) \}
+    </me>
+  </p>
+</section>

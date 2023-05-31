@@ -1,0 +1,59 @@
+<?xml version='1.0' encoding='utf-8'?>
+
+<pretext xml:lang="en-US" xmlns:xi="http://www.w3.org/2001/XInclude">
+
+  <docinfo>
+    <macros>
+      <xi:include href="./macros.ptx" />  
+    </macros>
+    <latex-image-preamble>
+    </latex-image-preamble>
+  </docinfo>
+
+  <book xml:id="book-calculus1">
+    <title>Course Notes for Differential Equations</title>
+
+    <frontmatter xml:id="frontmatter">
+      <titlepage>
+        <author>
+          <personname>Remkes Kooistra</personname>
+          <department>Department of Mathematics</department>
+          <institution>The King's University, Edmonton</institution>
+        </author>
+        <date>
+          <today />
+        </date>
+      </titlepage>
+
+      <colophon>
+
+        <copyright>
+          <year>2012<ndash />2023</year>
+          <holder>Remkes Kooistra</holder>
+          <shortlicense> 
+            This work is licensed under the Creative Commons Attribution-ShareAlike 4.0 International License. To view a copy of this license, visit <url href="http://creativecommons.org/licenses/by-sa/4.0/" visual="creativecommons.org/licenses/by-sa/4.0"> CreativeCommons.org</url>
+          </shortlicense>
+        </copyright>
+      </colophon>
+    </frontmatter>
+    
+    <xi:include href="./prelim.ptx" />
+    <xi:include href="./first-order-odes.ptx" />
+    <xi:include href="./second-order-odes.ptx" />
+    <xi:include href="./series-solutions.ptx" />
+    <xi:include href="./laplace-transforms.ptx" />
+    <xi:include href="./systems.ptx" />
+    <xi:include href="./pdes.ptx" />
+    <xi:include href="./assignments.ptx" />
+
+    <backmatter xml:id="backmatter">
+      <title>Backmatter</title>
+
+      <colophon>
+        <p> This book was authored in <pretext />. </p>
+      </colophon>
+
+    </backmatter>
+
+  </book>
+</pretext>

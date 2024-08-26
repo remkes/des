@@ -1,69 +1,108 @@
 <section xml:id="section-what-is-a-de">
   <title>What is a Differential Equation?</title>
-  <subsection xml:id="subsection-first-definitions">
-    <title>First Definitions</title>
+  <subsection xml:id="subsection-equations-questions">
+    <title>Equations and Questions</title>
     <definition>
       <statement>
         <p>
-          A <term>differential equation</term> is any equation
-          involving a function <m>f(t)</m> and its derivatives
-          <m>f^\prime(t)</m>, <m>f^{\prime \prime}(t)</m>, etc. The
-          highest derivative in the equation is called the
-          <term>order</term> of the equation. A DE which involves
-          partial derivatives is called a <term>partial differential
-          equation</term>; otherwise, it is called an <term>ordinary
-          differtial equation</term>.
+          A <term>differential equation</term> (DE, for short) is any
+          equation involving a function <m>f(t)</m> and its
+          derivatives <m>f^\prime(t)</m>, <m>f^{\prime \prime}(t)</m>,
+          etc. The highest derivative in the equation is called the
+          <term>order</term> of the equation. The function <m>f</m>
+          can have one variable as written here; in this case the
+          equation will be called an <term>ordinary differential
+          equation</term> (ODE for short). If the function <m>f</m>
+          depends on more than one variable, then all the various
+          partial derivatives can also be part of the DE. In this
+          case, the equation is called a <term>partial differential
+          equation</term> (PDE for short). 
         </p>
       </statement>
     </definition>
     <p>
-      More holistically, a differential equation asks the question:
-      what function satisfies a given relationship?  In algebra, this
-      is a familiar question for numbers. <m>t + 5 = 7</m> implicitly
-      asks which number, when replacing <m>t</m>, satisfies the
-      equation. The answer, of course, is <m>t=2</m>; the solution to
-      the equation gives the correct replacement. For differential
-      equations, I ask <sq>what function</sq> instead of <sq>what
-      number</sq>.
+      More holistically, an equation is always implicitly a question: 
+      what thing satisfies a given relationship?  In algebra,
+      equations ask about numbers. <m>t + 5 = 7</m> implicitly
+      asks: which number, when replacing <m>t</m>, satisfies the
+      equation? The answer, of course, is <m>t=2</m>; the solution to
+      the equation gives the correct replacement. 
     </p>
     <p>
-      There are many ways to write a differential equation. The most
-      general way is to think of any algebraic combination of a
-      function <m>y</m>, its derivatives and the independent variable
-      <m>t</m>. In this generality, I could write the equation using
-      a multivariable function <m>F</m>.
+      For differential equations, I still have an equation, but the
+      question is different. Instead of asking for a number, I want to
+      know <emph>what function</emph> satisfies the equation. If the
+      equation is <m>f^\prime(t) = 3 f(t)</m>, then the equation is
+      asking this question; what function has a derivative which is
+      three times the original function? 
+    </p>
+  </subsection>
+  <subsection xml:id="subsection-notations-defintions">
+    <title>Notations and Definitions</title>
+    <p>
+      
+      There are many ways to write a differential equation. The theory
+      allows for any strange and complicated expression in a function
+      and its derivatives. 
       <me>
-        F(t,y, y^\prime, \ldots, y^{(n)}) = 0
+        \frac{f(t) f^\prime(t) + e^t \cos t}{f^{\prime \prime}(t)} -
+        \ln \left( \frac{1}{1 + (f(t))^6} \right) - \sqrt{f^\prime(t)}
+        = (1-f(t))(1+f(t))^5
       </me>
-      Often, if I can, I isolate the highest derivative.
-      <me>
-        y^{(n)} = F(t,y,y^\prime, \ldots, y^{(n-1)})
-      </me>
+      This expression is a differential equation, but it is basically
+      nonsense. I have no idea if it has a solution, but I am certain
+      that this equation doesn't relate to any concrete motivating
+      problem. Most of the DEs we deal with are those that arise in
+      applied mathematics, that deal with some problem that we are
+      actually interested in. These, for the most part, have
+      reasonable forms. Let me define some of these forms for you. 
     </p>
     <definition>
       <statement>
         <p>
-          A differential equation is called <term>autonomous</term> is
-          the independent variable doesn't appear. For a first order
-          equation, this looks like
+          Let <m>t</m> be an independent variable and <m>y(t)</m> a
+          function. A differential equation is called
+          <term>autonomous</term> is the independent variable doesn't
+          appear. For a first order equation, this looks like
           <me>
             \frac{dy}{dt} = f(y)
           </me> for some expression <m>f(y)</m> in the dependent
-          variable. 
+          variable. Note that <m>y(t)</m> is the function I am looking
+          for; <m>f(y)</m> is also a function, but I'm only using that
+          function to say that the right side of the equation is some
+          expression in the varialbe <m>y</m>. 
         </p>
       </statement>
     </definition>
     <definition>
       <statement>
         <p>
-          An equation is called <term>linear</term> if it has the form
+          An first order equation is called <term>linear</term> if it
+          has this form, where <m>y(t)</m> is the potential solution
+          but <m>a(t)</m>, <m>b(t)</m> and <m>c(t)</m> are any other
+          function in the same independent variable. 
+          <me>
+            a(t) \frac{dy}{dt} + b(t) y(t) = c(t) 
+          </me>.
+          Likewise, a second equation is called <term>linear</term> if
+          it has this form.
+          <me>
+            a(t) \frac{d^2y}{dt^2} + b(t) \frac{dy}{dt} + c(t) y(t) =
+            d(t) 
+          </me>
+          The order of a linear equation can be as high as you want.
+          This means the full general form of a linear equation looks
+          sort-of like a polynomial, with <sq>powers</sq> as order of
+          differentiation and coefficients as other functions. 
           <me>
             a_n(t)y^{(n)} + a_{n-1}(t)y^{(n-1)} + \ldots + a_1(t)
             y^\prime + a_0(t) y = f(t)
           </me>.
-          In addition, a linear equation is called
-          <term>homogenous</term> if the <m>f(t)</m> term is simply
-          <m>f(t) = 0</m>.
+          Finally, a linear equation is called
+          <term>homogenous</term> if the term which is not multiplied
+          by any derivative of the function (<m>c(t)</m> in the first
+          order equation, <m>d(t)</m> in the second order equation) 
+          <m>0</m>.
         </p>
       </statement>
     </definition>

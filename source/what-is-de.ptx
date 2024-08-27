@@ -47,7 +47,7 @@
       <me>
         \frac{f(t) f^\prime(t) + e^t \cos t}{f^{\prime \prime}(t)} -
         \ln \left( \frac{1}{1 + (f(t))^6} \right) - \sqrt{f^\prime(t)}
-        = (1-f(t))(1+f(t))^5
+        = 17
       </me>
       This expression is a differential equation, but it is basically
       nonsense. I have no idea if it has a solution, but I am certain
@@ -108,29 +108,44 @@
     </definition>
     <p>
       A very useful notational tool for linear DEs is the idea of a
-      linear differential operator.
+      linear differential operator. In calculus, I used this language
+      to talk about <m>\frac{d}{dt}</m> as the the thing---the
+      agent---that will take the derivative (in <m>t</m>) of any
+      function it comes across. This language of differential
+      operators is even more useful in this course. 
     </p>
     <definition xml:id="definition-linear-differential-operator">
       <statement>
         <p>
           A <term>differentiable operator</term> is an operator which
-          acts on functions either by multplication by fixed functions
+          acts on functions either by multplication by other functions
           or by differentiation. The operator is <term>linear</term>
-          if the various pieces of the operation are added together.
-          For example, a second order linear equation has this form
-          <me>
-            L = a(t) \frac{d^2}{dt^2} + b(t) \frac{d}{dt} + c
-          </me>
-          (it is second order since the highest derivative is a second
-          derivative). 
-        </p>
-        <p>
-          I can use differentiable operators to simplify notations for
-          DE. Using the operator <m>L</m> I just defined, a second
-          order linear DE become simply <m>Ly = f(t)</m>.
+          if the various pieces of the operator are added together;
+          equivalently, if the operator respects addition and scalar
+          multiplication. 
         </p>
       </statement>
     </definition>
+    <p>
+      Consider the second order linear
+      equation that was written in the previous definition. The
+      function <m>y(t)</m> and its derivatives only show up on the
+      left side of the equation.
+      <me>
+        a(t) \frac{d^2y}{dt^2} + b(t) \frac{dy}{dt} + c(t) y(t) =
+        d(t) 
+      </me>
+      This means I can think of the entire left side as something that
+      happens to the function <m>y(t)</m>. I can express this with a
+      linear differential operator. 
+     <me>
+       L = a(t) \frac{d^2}{dt^2} + b(t) \frac{d}{dt} + c(t)
+      </me>
+      Using this operator, I can write the differential equation very
+      succinctly. This second order equation now becomes <m>Ly =
+      d(t)</m>. I'll make frequent use of this kind of operator
+      notation throughout the course. 
+    </p>
   </subsection>
   <subsection xml:id="subsection-important-example">
     <title>The Most Important Example</title>
@@ -238,14 +253,15 @@
         How do the solutions grow? What is their behaviour?
       </li>
       <li>
-        Are the solutiosn stable?
+        Are the solutions stable?
       </li>
       <li>
         How difficult are the solutions to calculate?  Can I calculate
         them exacly, or only approximately?
       </li>
       <li>
-        Can I answer questions about the model even without a solution?
+        Can I answer questions about the model even without an
+        explicit solution?
       </li>
     </ul></p>
     <p>
@@ -280,7 +296,7 @@
     </p>
   </subsection>
   <subsection xml:id="subsection-interesting-examples">
-    <title>Interesting Examples</title>
+    <title>Archtypical Examples</title>
     <p>
       I want to understand the behaviour of solutions of DEs. The
       examples in this section give some typical behaviours and
@@ -395,7 +411,7 @@
       <statement>
         <p>
           <me>
-            \frac{dy}{dt} = e^{-t^2} \implies y = \int e^{-t^2}dt + C
+            \frac{dy}{dt} = e^{-t^2} \implies y = \int e^{-t^2}dt + c
           </me>
           This integrand is a <m>C^\infty</m> function, so the
           anti-derivative exists, but there is no name for it in the

@@ -127,6 +127,41 @@
     </example>
     <example>
       <statement>
+        <figure xml:id="figure-phase-line2">
+          <caption>
+            Phase Line Diagram for <m>\frac{dp}{dt} = p^3 - 7p^2 +
+            10p</m>
+          </caption>
+          <image xml:id="figure05" width="80%">
+            <asymptote>
+              size(16cm,0);
+              dot("$0$",(0,0),N);
+              dot("$2$",(2,0),N);
+              dot("$5$",(5,0),N);
+              dot("$\infty$",(10,0),N);
+              draw((0,0)--(2,0),MidArrow);
+              draw((5,0)--(2,0),MidArrow);
+              draw((5,0)--(10,0),MidArrow);
+            </asymptote>
+          </image>
+        </figure>
+        <p>
+          <me>
+            \frac{dp}{dt} = p^3 -7p^2 + 10p
+          </me>
+          The right side factors as <m>p(p-2)(p-5)</m>, so it is zero
+          then <m>p=0</m>, <m>p=2</m> or <m>p=5</m>. Those are the
+          steady states. When <m>p \in (0,4)</m> the derivative is
+          positive, so the trajectory is increasing. When <m>f \in
+          (2,5)</m>, the derivative is negative, so the trajectory is
+          decreasing. When <m>p \in (5,\infty)</m>, the derivative is
+          positive, so the trajectory is increasing. <xref
+          ref="figure-phase-line2" /> shows the phase line.
+        </p>
+      </statement>
+    </example>
+    <example>
+      <statement>
         <figure xml:id="figure-logistic-phase-line">
           <caption>The Logistic Phase-Line Diagram</caption>
           <image xml:id="figure03" width="80%">
@@ -180,7 +215,7 @@
       The previous example was a logistic equation. The general form
       of the logistic equation is 
       <me>
-        \frac{dp}{dt} = cp(p-K)
+        \frac{dp}{dt} = cp(K - p)
       </me> 
       for some constants <m>c</m> and <m>K</m> with <m>K \gt 0</m>.
       The logistic equation leads to logistic growth.  logistic
@@ -195,41 +230,6 @@
       and logistic growth (where the carrying capacity for the
       logistic model is at <m>p=6</m>.)
     </p>
-    <example>
-      <statement>
-        <figure xml:id="figure-phase-line2">
-          <caption>
-            Phase Line Diagram for <m>\frac{dp}{dt} = p^3 - 7p^2 +
-            10p</m>
-          </caption>
-          <image xml:id="figure05" width="80%">
-            <asymptote>
-              size(16cm,0);
-              dot("$0$",(0,0),N);
-              dot("$2$",(2,0),N);
-              dot("$5$",(5,0),N);
-              dot("$\infty$",(10,0),N);
-              draw((0,0)--(2,0),MidArrow);
-              draw((5,0)--(2,0),MidArrow);
-              draw((5,0)--(10,0),MidArrow);
-            </asymptote>
-          </image>
-        </figure>
-        <p>
-          <me>
-            \frac{dp}{dt} = p^3 -7p^2 + 10p
-          </me>
-          The right side factors as <m>p(p-2)(p-5)</m>, so it is zero
-          then <m>p=0</m>, <m>p=2</m> or <m>p=5</m>. Those are the
-          steady states. When <m>p \in (0,4)</m> the derivative is
-          positive, so the trajectory is increasing. When <m>f \in
-          (2,5)</m>, the derivative is negative, so the trajectory is
-          decreasing. When <m>p \in (5,\infty)</m>, the derivative is
-          positive, so the trajectory is increasing. <xref
-          ref="figure-phase-line2" /> shows the phase line.
-        </p>
-      </statement>
-    </example>
   </subsection>
   <subsection xml:id="subsection-direction-fields">
     <title>Direction Fields</title>

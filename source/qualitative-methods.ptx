@@ -556,7 +556,7 @@
       <statement>
         <figure xml:id="figure-direction-field5">
           <caption>
-            The Direction Field for <m>\frac{dy}{dx} = \frac{x}{y}</m>.
+            The Direction Field for <m>\frac{dy}{dx} = \frac{-x}{y}</m>.
           </caption>
           <image xml:id="figure14" width="80%">
             <asymptote>
@@ -581,7 +581,7 @@
         </figure>
         <figure xml:id="figure-direction-field5-curves">
           <caption>
-            The Integral Curves for <m>\frac{dy}{dx} = \frac{x}{y}</m>.
+            The Integral Curves for <m>\frac{dy}{dx} = \frac{-x}{y}</m>.
           </caption>
           <image xml:id="figure15" width="80%">
             <asymptote>

@@ -215,86 +215,6 @@
       the graphs for <m>f(t) = ce^{\alpha t}</m>.
     </p>
   </subsection>
-  <subsection xml:id="subsection-pure-and-applied">
-    <title>Pure and Applied Perspectives</title>
-    <p>
-      I will be looking at differential equations from both pure
-      mathematics and applied mathematics points of view. The pure
-      mathematician is interested in the following kinds of
-      questions.
-    </p>
-    <p><ul>
-      <li>
-        When does a solution exists?
-      </li>
-      <li>
-        Can I prove that a solution exists?
-      </li>
-      <li>
-        Is the solution unique?
-      </li>
-      <li>
-        Is there a complete family? How many parameters exist, and
-        what are their domains?
-      </li>
-      <li>
-        Can I write and prove theorems to answer these questions?
-      </li>
-    </ul></p>
-    <p>
-      In contrast, the applied mathematician is interested in the
-      following kinds of questions.
-    </p>
-    <p><ul>
-      <li>
-        How many solutions fit the data or initial values?
-      </li>
-      <li>
-        How do the solutions grow? What is their behaviour?
-      </li>
-      <li>
-        Are the solutions stable?
-      </li>
-      <li>
-        How difficult are the solutions to calculate?  Can I calculate
-        them exacly, or only approximately?
-      </li>
-      <li>
-        Can I answer questions about the model even without an
-        explicit solution?
-      </li>
-    </ul></p>
-    <p>
-      Thinking as an applied mathematician, a DE is an mathematical
-      version of a scientific method. Often an observation about a
-      phenomenon can be expressed as a relationship between a function
-      and its derivative, such as the observation of percentage
-      growth. The DE, then, is the hypothesis born of observation. If
-      I can find the solution, it gives me a predictive model of the
-      phenomenon, which I can test. If the solution matches the
-      observed behaviour, I conclude the DE model is relatively
-      reliable; if the solution diverges from the observed behaviour,
-      I discard or amend the DE.
-    </p>
-    <p>
-      In this way, DEs allow the modelling many phenomena:
-      popluations, radioactive decay, cooling, disease, metabolish,
-      newtonian motion with friction, chemical reactions, gravity,
-      predaor-prey models, hamiltonian mechanics, quantum mechanics,
-      interest, bacterial growth, neuron firing, ecology, mixtures,
-      draining, series circuits, suspended cables, and many, many
-      more.
-    </p>
-    <p>
-      A robust study of differential equations involves both the pure
-      and applied perspectives. The pure perspective gives background,
-      context and rigour. The theorems it produces are necessary for
-      the efficient use of DEs in applied mathematics.  The applied
-      perspective, most often, gives the motivation and selects the
-      important problems. It also stresses the value of qualitative
-      methods and their interpretation.
-    </p>
-  </subsection>
   <subsection xml:id="subsection-interesting-examples">
     <title>Archtypical Examples</title>
     <p>
@@ -386,6 +306,86 @@
         </p>
       </statement>
     </example>
+  </subsection>
+  <subsection xml:id="subsection-pure-and-applied">
+    <title>Pure and Applied Perspectives</title>
+    <p>
+      I will be looking at differential equations from both pure
+      mathematics and applied mathematics points of view. The pure
+      mathematician is interested in the following kinds of
+      questions.
+    </p>
+    <p><ul>
+      <li>
+        When does a solution exists?
+      </li>
+      <li>
+        Can I prove that a solution exists?
+      </li>
+      <li>
+        Is the solution unique?
+      </li>
+      <li>
+        Is there a complete family? How many parameters exist, and
+        what are their domains?
+      </li>
+      <li>
+        Can I write and prove theorems to answer these questions?
+      </li>
+    </ul></p>
+    <p>
+      In contrast, the applied mathematician is interested in the
+      following kinds of questions.
+    </p>
+    <p><ul>
+      <li>
+        How many solutions fit the data or initial values?
+      </li>
+      <li>
+        How do the solutions grow? What is their behaviour?
+      </li>
+      <li>
+        Are the solutions stable?
+      </li>
+      <li>
+        How difficult are the solutions to calculate?  Can I calculate
+        them exacly, or only approximately?
+      </li>
+      <li>
+        Can I answer questions about the model even without an
+        explicit solution?
+      </li>
+    </ul></p>
+    <p>
+      Thinking as an applied mathematician, a DE is an mathematical
+      version of a scientific method. Often an observation about a
+      phenomenon can be expressed as a relationship between a function
+      and its derivative, such as the observation of percentage
+      growth. The DE, then, is the hypothesis born of observation. If
+      I can find the solution, it gives me a predictive model of the
+      phenomenon, which I can test. If the solution matches the
+      observed behaviour, I conclude the DE model is relatively
+      reliable; if the solution diverges from the observed behaviour,
+      I discard or amend the DE.
+    </p>
+    <p>
+      In this way, DEs allow the modelling many phenomena:
+      popluations, radioactive decay, cooling, disease, metabolish,
+      newtonian motion with friction, chemical reactions, gravity,
+      predaor-prey models, hamiltonian mechanics, quantum mechanics,
+      interest, bacterial growth, neuron firing, ecology, mixtures,
+      draining, series circuits, suspended cables, and many, many
+      more.
+    </p>
+    <p>
+      A robust study of differential equations involves both the pure
+      and applied perspectives. The pure perspective gives background,
+      context and rigour. The theorems it produces are necessary for
+      the efficient use of DEs in applied mathematics.  The applied
+      perspective, most often, gives the motivation and selects the
+      important problems. It also stresses the value of qualitative
+      methods and their interpretation.
+    </p>
   </subsection>
   <subsection xml:id="subsection-pessimism">
     <title>The Scarcity of Solutions</title>

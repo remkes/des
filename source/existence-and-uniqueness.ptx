@@ -30,7 +30,7 @@
         <p>
           In a differential equation of this form
           <me>
-            \frac{dy}{dt} = F(y,t) 
+            \frac{dy}{dx} = F(y,x) 
           </me>, 
           if <m>F</m> is continuous in both variables in an open set
           <m>U \subset \RR^2</m> and if <m>(x_0,y_0) \in U</m>, then

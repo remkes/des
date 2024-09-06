@@ -1,0 +1,78 @@
+INFO    : PreTeXt-CLI version: 2.6.2
+
+INFO    : PreTeXt project found in `/Users/rkooistra/hub/des`.
+INFO    : Since no target was supplied, we will use "web".
+
+INFO    : converting Asymptote diagrams from /Users/rkooistra/hub/des/source/main.ptx to HTML graphics for placement in /Users/rkooistra/hub/des/generated-assets/asymptote with method "AsyMethod.SERVER"
+INFO    : extracting Asymptote diagrams from /Users/rkooistra/hub/des/source/main.ptx
+INFO    : string parameters passed to extraction stylesheet: {'publisher': '/Users/rkooistra/hub/des/publication/publication.ptx'}
+INFO    : XSL conversion of /Users/rkooistra/hub/des/source/main.ptx by /Users/rkooistra/.ptx/2.6.2/core/xsl/extract-asymptote.xsl
+INFO    : successful application of /Users/rkooistra/.ptx/2.6.2/core/xsl/extract-asymptote.xsl
+INFO    : converting /var/folders/2r/8zp7c2rs5717hjrm_rg_xqnr0000gn/T/ptx-9da8itpz/figure44.asy to /var/folders/2r/8zp7c2rs5717hjrm_rg_xqnr0000gn/T/ptx-9da8itpz/figure44.html
+INFO    : converting /var/folders/2r/8zp7c2rs5717hjrm_rg_xqnr0000gn/T/ptx-9da8itpz/figure50.asy to /var/folders/2r/8zp7c2rs5717hjrm_rg_xqnr0000gn/T/ptx-9da8itpz/figure50.html
+INFO    : converting /var/folders/2r/8zp7c2rs5717hjrm_rg_xqnr0000gn/T/ptx-9da8itpz/figure51.asy to /var/folders/2r/8zp7c2rs5717hjrm_rg_xqnr0000gn/T/ptx-9da8itpz/figure51.html
+INFO    : converting /var/folders/2r/8zp7c2rs5717hjrm_rg_xqnr0000gn/T/ptx-9da8itpz/figure53.asy to /var/folders/2r/8zp7c2rs5717hjrm_rg_xqnr0000gn/T/ptx-9da8itpz/figure53.html
+INFO    : converting /var/folders/2r/8zp7c2rs5717hjrm_rg_xqnr0000gn/T/ptx-9da8itpz/figure47.asy to /var/folders/2r/8zp7c2rs5717hjrm_rg_xqnr0000gn/T/ptx-9da8itpz/figure47.html
+INFO    : converting /var/folders/2r/8zp7c2rs5717hjrm_rg_xqnr0000gn/T/ptx-9da8itpz/figure46.asy to /var/folders/2r/8zp7c2rs5717hjrm_rg_xqnr0000gn/T/ptx-9da8itpz/figure46.html
+INFO    : converting /var/folders/2r/8zp7c2rs5717hjrm_rg_xqnr0000gn/T/ptx-9da8itpz/figure52.asy to /var/folders/2r/8zp7c2rs5717hjrm_rg_xqnr0000gn/T/ptx-9da8itpz/figure52.html
+INFO    : converting /var/folders/2r/8zp7c2rs5717hjrm_rg_xqnr0000gn/T/ptx-9da8itpz/figure56.asy to /var/folders/2r/8zp7c2rs5717hjrm_rg_xqnr0000gn/T/ptx-9da8itpz/figure56.html
+INFO    : converting /var/folders/2r/8zp7c2rs5717hjrm_rg_xqnr0000gn/T/ptx-9da8itpz/figure42.asy to /var/folders/2r/8zp7c2rs5717hjrm_rg_xqnr0000gn/T/ptx-9da8itpz/figure42.html
+INFO    : converting /var/folders/2r/8zp7c2rs5717hjrm_rg_xqnr0000gn/T/ptx-9da8itpz/figure43.asy to /var/folders/2r/8zp7c2rs5717hjrm_rg_xqnr0000gn/T/ptx-9da8itpz/figure43.html
+INFO    : converting /var/folders/2r/8zp7c2rs5717hjrm_rg_xqnr0000gn/T/ptx-9da8itpz/figure57.asy to /var/folders/2r/8zp7c2rs5717hjrm_rg_xqnr0000gn/T/ptx-9da8itpz/figure57.html
+INFO    : converting /var/folders/2r/8zp7c2rs5717hjrm_rg_xqnr0000gn/T/ptx-9da8itpz/figure41.asy to /var/folders/2r/8zp7c2rs5717hjrm_rg_xqnr0000gn/T/ptx-9da8itpz/figure41.html
+INFO    : converting /var/folders/2r/8zp7c2rs5717hjrm_rg_xqnr0000gn/T/ptx-9da8itpz/figure55.asy to /var/folders/2r/8zp7c2rs5717hjrm_rg_xqnr0000gn/T/ptx-9da8itpz/figure55.html
+INFO    : converting /var/folders/2r/8zp7c2rs5717hjrm_rg_xqnr0000gn/T/ptx-9da8itpz/figure54.asy to /var/folders/2r/8zp7c2rs5717hjrm_rg_xqnr0000gn/T/ptx-9da8itpz/figure54.html
+INFO    : converting /var/folders/2r/8zp7c2rs5717hjrm_rg_xqnr0000gn/T/ptx-9da8itpz/figure40.asy to /var/folders/2r/8zp7c2rs5717hjrm_rg_xqnr0000gn/T/ptx-9da8itpz/figure40.html
+INFO    : converting /var/folders/2r/8zp7c2rs5717hjrm_rg_xqnr0000gn/T/ptx-9da8itpz/figure27.asy to /var/folders/2r/8zp7c2rs5717hjrm_rg_xqnr0000gn/T/ptx-9da8itpz/figure27.html
+INFO    : converting /var/folders/2r/8zp7c2rs5717hjrm_rg_xqnr0000gn/T/ptx-9da8itpz/figure33.asy to /var/folders/2r/8zp7c2rs5717hjrm_rg_xqnr0000gn/T/ptx-9da8itpz/figure33.html
+INFO    : converting /var/folders/2r/8zp7c2rs5717hjrm_rg_xqnr0000gn/T/ptx-9da8itpz/figure32.asy to /var/folders/2r/8zp7c2rs5717hjrm_rg_xqnr0000gn/T/ptx-9da8itpz/figure32.html
+INFO    : converting /var/folders/2r/8zp7c2rs5717hjrm_rg_xqnr0000gn/T/ptx-9da8itpz/figure26.asy to /var/folders/2r/8zp7c2rs5717hjrm_rg_xqnr0000gn/T/ptx-9da8itpz/figure26.html
+INFO    : converting /var/folders/2r/8zp7c2rs5717hjrm_rg_xqnr0000gn/T/ptx-9da8itpz/figure18.asy to /var/folders/2r/8zp7c2rs5717hjrm_rg_xqnr0000gn/T/ptx-9da8itpz/figure18.html
+INFO    : converting /var/folders/2r/8zp7c2rs5717hjrm_rg_xqnr0000gn/T/ptx-9da8itpz/figure30.asy to /var/folders/2r/8zp7c2rs5717hjrm_rg_xqnr0000gn/T/ptx-9da8itpz/figure30.html
+INFO    : converting /var/folders/2r/8zp7c2rs5717hjrm_rg_xqnr0000gn/T/ptx-9da8itpz/figure24.asy to /var/folders/2r/8zp7c2rs5717hjrm_rg_xqnr0000gn/T/ptx-9da8itpz/figure24.html
+INFO    : converting /var/folders/2r/8zp7c2rs5717hjrm_rg_xqnr0000gn/T/ptx-9da8itpz/figure25.asy to /var/folders/2r/8zp7c2rs5717hjrm_rg_xqnr0000gn/T/ptx-9da8itpz/figure25.html
+INFO    : converting /var/folders/2r/8zp7c2rs5717hjrm_rg_xqnr0000gn/T/ptx-9da8itpz/figure31.asy to /var/folders/2r/8zp7c2rs5717hjrm_rg_xqnr0000gn/T/ptx-9da8itpz/figure31.html
+INFO    : converting /var/folders/2r/8zp7c2rs5717hjrm_rg_xqnr0000gn/T/ptx-9da8itpz/figure19.asy to /var/folders/2r/8zp7c2rs5717hjrm_rg_xqnr0000gn/T/ptx-9da8itpz/figure19.html
+INFO    : converting /var/folders/2r/8zp7c2rs5717hjrm_rg_xqnr0000gn/T/ptx-9da8itpz/figure35.asy to /var/folders/2r/8zp7c2rs5717hjrm_rg_xqnr0000gn/T/ptx-9da8itpz/figure35.html
+INFO    : converting /var/folders/2r/8zp7c2rs5717hjrm_rg_xqnr0000gn/T/ptx-9da8itpz/figure21.asy to /var/folders/2r/8zp7c2rs5717hjrm_rg_xqnr0000gn/T/ptx-9da8itpz/figure21.html
+INFO    : converting /var/folders/2r/8zp7c2rs5717hjrm_rg_xqnr0000gn/T/ptx-9da8itpz/figure09.asy to /var/folders/2r/8zp7c2rs5717hjrm_rg_xqnr0000gn/T/ptx-9da8itpz/figure09.html
+INFO    : converting /var/folders/2r/8zp7c2rs5717hjrm_rg_xqnr0000gn/T/ptx-9da8itpz/figure08.asy to /var/folders/2r/8zp7c2rs5717hjrm_rg_xqnr0000gn/T/ptx-9da8itpz/figure08.html
+INFO    : converting /var/folders/2r/8zp7c2rs5717hjrm_rg_xqnr0000gn/T/ptx-9da8itpz/figure20.asy to /var/folders/2r/8zp7c2rs5717hjrm_rg_xqnr0000gn/T/ptx-9da8itpz/figure20.html
+INFO    : converting /var/folders/2r/8zp7c2rs5717hjrm_rg_xqnr0000gn/T/ptx-9da8itpz/figure34.asy to /var/folders/2r/8zp7c2rs5717hjrm_rg_xqnr0000gn/T/ptx-9da8itpz/figure34.html
+INFO    : converting /var/folders/2r/8zp7c2rs5717hjrm_rg_xqnr0000gn/T/ptx-9da8itpz/figure22.asy to /var/folders/2r/8zp7c2rs5717hjrm_rg_xqnr0000gn/T/ptx-9da8itpz/figure22.html
+INFO    : converting /var/folders/2r/8zp7c2rs5717hjrm_rg_xqnr0000gn/T/ptx-9da8itpz/figure36.asy to /var/folders/2r/8zp7c2rs5717hjrm_rg_xqnr0000gn/T/ptx-9da8itpz/figure36.html
+INFO    : converting /var/folders/2r/8zp7c2rs5717hjrm_rg_xqnr0000gn/T/ptx-9da8itpz/figure37.asy to /var/folders/2r/8zp7c2rs5717hjrm_rg_xqnr0000gn/T/ptx-9da8itpz/figure37.html
+INFO    : converting /var/folders/2r/8zp7c2rs5717hjrm_rg_xqnr0000gn/T/ptx-9da8itpz/figure23.asy to /var/folders/2r/8zp7c2rs5717hjrm_rg_xqnr0000gn/T/ptx-9da8itpz/figure23.html
+INFO    : converting /var/folders/2r/8zp7c2rs5717hjrm_rg_xqnr0000gn/T/ptx-9da8itpz/figure06.asy to /var/folders/2r/8zp7c2rs5717hjrm_rg_xqnr0000gn/T/ptx-9da8itpz/figure06.html
+INFO    : converting /var/folders/2r/8zp7c2rs5717hjrm_rg_xqnr0000gn/T/ptx-9da8itpz/figure12.asy to /var/folders/2r/8zp7c2rs5717hjrm_rg_xqnr0000gn/T/ptx-9da8itpz/figure12.html
+INFO    : converting /var/folders/2r/8zp7c2rs5717hjrm_rg_xqnr0000gn/T/ptx-9da8itpz/figure13.asy to /var/folders/2r/8zp7c2rs5717hjrm_rg_xqnr0000gn/T/ptx-9da8itpz/figure13.html
+INFO    : converting /var/folders/2r/8zp7c2rs5717hjrm_rg_xqnr0000gn/T/ptx-9da8itpz/figure07.asy to /var/folders/2r/8zp7c2rs5717hjrm_rg_xqnr0000gn/T/ptx-9da8itpz/figure07.html
+INFO    : converting /var/folders/2r/8zp7c2rs5717hjrm_rg_xqnr0000gn/T/ptx-9da8itpz/figure39.asy to /var/folders/2r/8zp7c2rs5717hjrm_rg_xqnr0000gn/T/ptx-9da8itpz/figure39.html
+INFO    : converting /var/folders/2r/8zp7c2rs5717hjrm_rg_xqnr0000gn/T/ptx-9da8itpz/figure11.asy to /var/folders/2r/8zp7c2rs5717hjrm_rg_xqnr0000gn/T/ptx-9da8itpz/figure11.html
+INFO    : converting /var/folders/2r/8zp7c2rs5717hjrm_rg_xqnr0000gn/T/ptx-9da8itpz/figure05.asy to /var/folders/2r/8zp7c2rs5717hjrm_rg_xqnr0000gn/T/ptx-9da8itpz/figure05.html
+INFO    : converting /var/folders/2r/8zp7c2rs5717hjrm_rg_xqnr0000gn/T/ptx-9da8itpz/figure04.asy to /var/folders/2r/8zp7c2rs5717hjrm_rg_xqnr0000gn/T/ptx-9da8itpz/figure04.html
+INFO    : converting /var/folders/2r/8zp7c2rs5717hjrm_rg_xqnr0000gn/T/ptx-9da8itpz/figure10.asy to /var/folders/2r/8zp7c2rs5717hjrm_rg_xqnr0000gn/T/ptx-9da8itpz/figure10.html
+INFO    : converting /var/folders/2r/8zp7c2rs5717hjrm_rg_xqnr0000gn/T/ptx-9da8itpz/figure38.asy to /var/folders/2r/8zp7c2rs5717hjrm_rg_xqnr0000gn/T/ptx-9da8itpz/figure38.html
+INFO    : converting /var/folders/2r/8zp7c2rs5717hjrm_rg_xqnr0000gn/T/ptx-9da8itpz/figure14.asy to /var/folders/2r/8zp7c2rs5717hjrm_rg_xqnr0000gn/T/ptx-9da8itpz/figure14.html
+INFO    : converting /var/folders/2r/8zp7c2rs5717hjrm_rg_xqnr0000gn/T/ptx-9da8itpz/figure29.asy to /var/folders/2r/8zp7c2rs5717hjrm_rg_xqnr0000gn/T/ptx-9da8itpz/figure29.html
+INFO    : converting /var/folders/2r/8zp7c2rs5717hjrm_rg_xqnr0000gn/T/ptx-9da8itpz/figure01.asy to /var/folders/2r/8zp7c2rs5717hjrm_rg_xqnr0000gn/T/ptx-9da8itpz/figure01.html
+INFO    : converting /var/folders/2r/8zp7c2rs5717hjrm_rg_xqnr0000gn/T/ptx-9da8itpz/figure15.asy to /var/folders/2r/8zp7c2rs5717hjrm_rg_xqnr0000gn/T/ptx-9da8itpz/figure15.html
+INFO    : converting /var/folders/2r/8zp7c2rs5717hjrm_rg_xqnr0000gn/T/ptx-9da8itpz/figure03.asy to /var/folders/2r/8zp7c2rs5717hjrm_rg_xqnr0000gn/T/ptx-9da8itpz/figure03.html
+INFO    : converting /var/folders/2r/8zp7c2rs5717hjrm_rg_xqnr0000gn/T/ptx-9da8itpz/figure17.asy to /var/folders/2r/8zp7c2rs5717hjrm_rg_xqnr0000gn/T/ptx-9da8itpz/figure17.html
+INFO    : converting /var/folders/2r/8zp7c2rs5717hjrm_rg_xqnr0000gn/T/ptx-9da8itpz/figure16.asy to /var/folders/2r/8zp7c2rs5717hjrm_rg_xqnr0000gn/T/ptx-9da8itpz/figure16.html
+INFO    : converting /var/folders/2r/8zp7c2rs5717hjrm_rg_xqnr0000gn/T/ptx-9da8itpz/figure02.asy to /var/folders/2r/8zp7c2rs5717hjrm_rg_xqnr0000gn/T/ptx-9da8itpz/figure02.html
+INFO    : converting /var/folders/2r/8zp7c2rs5717hjrm_rg_xqnr0000gn/T/ptx-9da8itpz/figure59.asy to /var/folders/2r/8zp7c2rs5717hjrm_rg_xqnr0000gn/T/ptx-9da8itpz/figure59.html
+INFO    : converting /var/folders/2r/8zp7c2rs5717hjrm_rg_xqnr0000gn/T/ptx-9da8itpz/figure65.asy to /var/folders/2r/8zp7c2rs5717hjrm_rg_xqnr0000gn/T/ptx-9da8itpz/figure65.html
+INFO    : converting /var/folders/2r/8zp7c2rs5717hjrm_rg_xqnr0000gn/T/ptx-9da8itpz/figure64.asy to /var/folders/2r/8zp7c2rs5717hjrm_rg_xqnr0000gn/T/ptx-9da8itpz/figure64.html
+INFO    : converting /var/folders/2r/8zp7c2rs5717hjrm_rg_xqnr0000gn/T/ptx-9da8itpz/figure58.asy to /var/folders/2r/8zp7c2rs5717hjrm_rg_xqnr0000gn/T/ptx-9da8itpz/figure58.html
+INFO    : converting /var/folders/2r/8zp7c2rs5717hjrm_rg_xqnr0000gn/T/ptx-9da8itpz/figure66.asy to /var/folders/2r/8zp7c2rs5717hjrm_rg_xqnr0000gn/T/ptx-9da8itpz/figure66.html
+INFO    : converting /var/folders/2r/8zp7c2rs5717hjrm_rg_xqnr0000gn/T/ptx-9da8itpz/figure63.asy to /var/folders/2r/8zp7c2rs5717hjrm_rg_xqnr0000gn/T/ptx-9da8itpz/figure63.html
+INFO    : converting /var/folders/2r/8zp7c2rs5717hjrm_rg_xqnr0000gn/T/ptx-9da8itpz/figure62.asy to /var/folders/2r/8zp7c2rs5717hjrm_rg_xqnr0000gn/T/ptx-9da8itpz/figure62.html
+INFO    : converting /var/folders/2r/8zp7c2rs5717hjrm_rg_xqnr0000gn/T/ptx-9da8itpz/figure60.asy to /var/folders/2r/8zp7c2rs5717hjrm_rg_xqnr0000gn/T/ptx-9da8itpz/figure60.html
+INFO    : converting /var/folders/2r/8zp7c2rs5717hjrm_rg_xqnr0000gn/T/ptx-9da8itpz/figure48.asy to /var/folders/2r/8zp7c2rs5717hjrm_rg_xqnr0000gn/T/ptx-9da8itpz/figure48.html
+INFO    : converting /var/folders/2r/8zp7c2rs5717hjrm_rg_xqnr0000gn/T/ptx-9da8itpz/figure49.asy to /var/folders/2r/8zp7c2rs5717hjrm_rg_xqnr0000gn/T/ptx-9da8itpz/figure49.html
+INFO    : converting /var/folders/2r/8zp7c2rs5717hjrm_rg_xqnr0000gn/T/ptx-9da8itpz/figure61.asy to /var/folders/2r/8zp7c2rs5717hjrm_rg_xqnr0000gn/T/ptx-9da8itpz/figure61.html
+INFO    : Removing temporary directory /var/folders/2r/8zp7c2rs5717hjrm_rg_xqnr0000gn/T/ptx-9da8itpz
+INFO    : Finished generating assets.
+
+INFO    : 

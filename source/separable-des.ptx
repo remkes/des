@@ -182,10 +182,10 @@
             y \frac{dy}{dt} \amp = \sin t 
           </mrow>
           <mrow>
-            \int y \frac{dy}{dt} dt \amp = \sin t dt
+            \int y \frac{dy}{dt} dt \amp = \int \sin t dt
           </mrow>
           <mrow>
-            \int y dy \amp = \sin t dt
+            \int y dy \amp = \int \sin t dt
           </mrow>
           <mrow>
             \frac{y^2}{2} \amp = - \cos t + c

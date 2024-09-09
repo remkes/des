@@ -30,7 +30,7 @@
         <p>
           In a differential equation of this form
           <me>
-            \frac{dy}{dx} = F(y,x) 
+            \frac{dy}{dx} = F(x,y) 
           </me>, 
           if <m>F</m> is continuous in both variables in an open set
           <m>U \subset \RR^2</m> and if <m>(x_0,y_0) \in U</m>, then
@@ -56,7 +56,7 @@
       theorem relies on topological considerations: I need an
       <em>open</em> subset <m>U</m> where <m>F</m> is continuous. I'm
       not going to get into topology in this course; I'm not even
-      going to define an open set in <m>\RR^2</m>. I just thouhgt I
+      going to define an open set in <m>\RR^2</m>. I just thought I
       was worth pointing out the topological considerations for those
       who have seen these definitions elsewhere. 
     </p>
@@ -70,9 +70,9 @@
           </md>
           This DE satisfies the conditions of the theorem, so a
           solutions exists. However, there are two solutions:
-          <m>y=0</m> and <m>y=x^3/27</m>. Peano's theorem ensures that
-          a solution exists, but doesn't imply the uniqueness of a
-          solution.
+          <m>y=0</m> and <m>y=\frac{x^3}{27}</m>. Peano's theorem
+          ensures that a solution exists, but doesn't imply the
+          uniqueness of a solution.
         </p>
       </statement>
     </example>
@@ -86,7 +86,7 @@
           </md>
           This <m>F</m> is also continuous near <m>(0,0)</m>, so a
           solution exists by Peano's theorm. This IVP is solved by
-          <m>y=0</m> and <m>y = x^2/4</m>. It's obvious that
+          <m>y=0</m> and <m>y = \frac{x^2}{4}</m>. It's obvious that
           something else is needed to ensure uniqueness.
         </p>
       </statement>
@@ -290,7 +290,8 @@
       whenever their coefficient functions <m>P</m> and <m>Q</m> are
       continuous. I can go into the next section of the course with
       assurance that unique solutions will exist, as long as <m>P</m>
-      is continuous. 
+      is continuous. This is yet another way in which linear equations
+      are the easier, more accessible part of DEs. 
     </p>
   </subsection>
 </section>

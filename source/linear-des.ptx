@@ -19,7 +19,7 @@
       </me>
       This will be the standard form for the analysis that I will
       present. To solve equations in this standard form, I work by
-      steps. The first steps is to solve a related but easier equation
+      steps. The first step is to solve a related but easier equation
       called the homogeneous equation.
     </p>
   </introduction>
@@ -68,8 +68,8 @@
         simply write <m>c</m> instead of <m>e^c</m>. Also, when I
         drop the absolute value bars from <m>y</m>, we should have a
         <sq><m>\pm</m></sq>. Again, since <m>c</m> can be either positive
-        or negative, I don't worry about that <m>\pm</m> <mdash />
-        it's all captured in this constant which will be determined by
+        or negative, I don't worry about that <m>\pm</m>. This detail 
+        is captured in this constant which will be determined by
         the initial conditions.
       </li>
       <li>
@@ -91,7 +91,7 @@
     <p>
       Now I know how to approach homogeneous equations and I'm going
       to use this to approach the general linear DE. However, before
-      doing so, I want ton introduce some very useful tools and
+      doing so, I want to introduce some very useful tools and
       terminology.  Recall from <xref
       ref="definition-linear-differential-operator" /> the idea of
       differential operators.  If I write <m>L = \frac{d}{dt} +
@@ -151,7 +151,9 @@
       vector space (uncountably infinite, even), so it is a strange
       object compared with <m>\RR^n</m>. But the language of linear
       algebra still applies and gives very concise and convenient
-      description of things like sets of solutions. 
+      description of things like sets of solutions. If the languageo f
+      offset spans is not familiar, don't worry <mdash /> this won't
+      be required understanding for the rest of the course. 
     </p>
   </subsection>
   <subsection xml:id="subsection-integrating-factors">
@@ -165,7 +167,7 @@
     </p>
     <p>
       Let <m>L = \frac{d}{dt} + Q(t)</m> be as before, and let
-      <m>y_h</m> be a homogeneous solutions (a solution to <m>Ly =
+      <m>y_h</m> be a homogeneous solution (a solution to <m>Ly =
       0</m>). The technique I  will use is called <term>variation of
       parameters</term>. This technique says I should look for a
       particular solution of the type <m>y_p = g(t) y_h</m>. (This is
@@ -174,51 +176,52 @@
       solution should take then investigate that form.) Using this
       assuming, I have to try to find the new function <m>g(t)</m>.
       In order to do that, I put my assumed solution <m>g(t) y_h</m>
-      into the equation and do some manipulations. 
+      into the equation and do some manipulations. I'm going to drop
+      the <m>(t)</m> in most of these functions, to make it all a bit
+      more readabl. It's up to the read to remember that these symbols
+      stand for functions. 
       <me>  
-        Ly_p(t) = L g(t) y_h(t) = Q(t)
+        Ly_p= L gy_h= Q
       </me>
-      I need to use the product rule to differentiate <m>g(t) y_h</m>
+      I need to use the product rule to differentiate <m>gy_h</m>
       when I apply the differential operator to the left side
       <me>  
-        g^\prime(t) y_h(t) + g(t) y_h^\prime(t) + g(t) P(t) y_h(t) =
-        Q(t)
+        g^\prime y_h + g y_h^\prime + g P y_h = Q
       </me>
-      I can factor <m>g(t)</m> out of two terms.
+      I can factor <m>g</m> out of two terms.
       <me>  
-        g^\prime(t) y_h(t) + g(t) \Big( y_h^\prime(t) + P(t) y_h(t) \Big)
-        = Q(t)
+        g^\prime y_h + g \Big( y_h^\prime + P y_h \Big) = Q
       </me>
       The expression inside the brackets is precisely the differential
-      operator <m>L</m> applied to <m>y_h(t)</m>. 
+      operator <m>L</m> applied to <m>y_h</m>. 
       <me>  
-        g^\prime(t) y_h(t) + g(t) L y_h = Q(t)
+        g^\prime y_h + g L y_h = Q
       </me>
       Since <m>y_h</m> is the homogeneous solution, <m>L y_h = 0</m>. 
       <me>  
-        g^\prime(t) y_h(t) + g(t) 0 = Q(t)
+        g^\prime y_h + g 0 = Q
       </me>
-      Now I can solve for <m>g^\prime(t)</m>.
+      Now I can solve for <m>g^\prime</m>.
       <me>  
-        g^\prime(t) = \frac{Q(t)}{y_h(t)}
+        g^\prime = \frac{Q}{y_h}
       </me>
-      Then I can integrate to find <m>g(t)</m>. 
+      Then I can integrate to find <m>g</m>. 
       <me>  
-        g(t) = \int \frac{Q(t)}{y_h(t)}
+        g = \int \frac{Q}{y_h}
       </me>
-      Now I have an expression for <m>g(t)</m>. Let me write
-      <m>y_p</m> using this <m>g(t)</m>. 
+      Now I have an expression for <m>g</m>. Let me write
+      <m>y_p</m> using this <m>g</m>. 
       <me>  
-          y_p = g(t) y_h = \left( \int \frac{Q(t)}{e^{-\int P(t) dt}}
+          y_p = g y_h = \left( \int \frac{Q}{e^{-\int P dt}}
           dt \right) y_h
       </me>
       If I want, I can use the fact that the homogeneous solution is
-      <m>y = e^{-\int P(t)dt}</m> to write all of <m>y_p</m> in terms
-      of <m>Q(t)</m> and <m>P(t)</m>.
+      <m>y = e^{-\int Pdt}</m> to write all of <m>y_p</m> in terms
+      of <m>Q</m> and <m>P</m>.
       <me>  
-        y_p = \left( \int \frac{Q(t)}{e^{-\int P(t) dt}} dt \right)
-        e^{-\int P(t) dt } = e^{-\int P(t) dt} \int e^{\int P(t) dt}
-        Q(t) dt
+        y_p = \left( \int \frac{Q}{e^{-\int P dt}} dt \right)
+        e^{-\int P dt } = e^{-\int P dt} \int e^{\int P dt}
+        Q dt
       </me>
       This is a complete solution, and the presentation I've given is
       the most general presentation and introduces the useful idea of
@@ -231,7 +234,7 @@
       <statement>
         <p>
           In solving a linear equation of the form <m>\frac{dy}{dt} +
-          P(t) y = Q(t)</m>, the expression <m>e^{\int P(t) dt}</m> is
+          P y = Q</m>, the expression <m>e^{\int P dt}</m> is
           called an <term>integrating factor</term> and it is
           written <m>\mu(t)</m>.
         </p>
@@ -245,22 +248,22 @@
       the notation I just introduced. 
       <md>
         <mrow>  
-          e^{\int P(t) y} y_p \amp = \int e^{\int P(t) dt} Q(t) dt
+          e^{\int P y} y_p \amp = \int e^{\int P dt} Q dt
         </mrow>
         <mrow>  
-          \frac{d}{dt} \left( e^{\int P(t) dt} y_p \right) \amp =
-          e^{\int P(t) dt} Q(t)
+          \frac{d}{dt} \left( e^{\int P dt} y_p \right) \amp =
+          e^{\int P dt} Q
         </mrow>
         <mrow>  
-          \frac{d}{dt} (\mu (t) y_p(t)) \amp = \mu (t) Q(t)
+          \frac{d}{dt} (\mu  y_p) \amp = \mu  Q
         </mrow>
         <mrow>  
-          y_p \amp = \frac{\int \mu(t) Q(t) dt + c}{\mu (t)}
+          y_p \amp = \frac{\int \mu Q dt + c}{\mu }
         </mrow>
       </md>
       Let me emphasize what has happened here: multiplying by the
-      integrating factor turns the expression <m>y_p^\prime(t) + P(t)
-      y_p(t)</m> into something that looks like the result of a a
+      integrating factor turns the expression <m>y_p^\prime + P
+      y_p</m> into something that looks like the result of a a
       product rule derivative. Since it is the result of a derivative,
       it can be easily integrated. This explain the name: the
       integrating factor is something we multiply by to
@@ -287,12 +290,12 @@
           when I look at the final solutions. I first look for the
           homogeneous solution.
           <me>
-            y_h(t) = ce^{-\int \frac{1}{t}} dt = ce^{-\ln |t|} =
+            y_h = ce^{-\int \frac{1}{t}} dt = ce^{-\ln |t|} =
             \frac{c}{t}
           </me>
           Then I calculate the integrating factor. 
           <me>
-            \mu(t) = e^{\int \frac{1}{t} dt } = e^{\ln |t|} = t
+            \mu = e^{\int \frac{1}{t} dt } = e^{\ln |t|} = t
           </me>.
           I multiply the original non-homogeneous equation by the
           integrating factor. This, as always, will turn the left side
@@ -301,7 +304,7 @@
           integrate both sides to remove the derivative. 
           <md>
             <mrow>  
-              \mu(t) \frac{dy}{dt} + \mu(t) \frac{y}{t} \amp = \mu(t)
+              \mu \frac{dy}{dt} + \mu \frac{y}{t} \amp = \mu
               2e^t
             </mrow>
             <mrow>  
@@ -344,7 +347,7 @@
           by integration.
           <md>
             <mrow>
-              y \amp = e^{-\int P(t) dt} = e^{-\int \frac{t}{t^2-9}
+              y \amp = e^{-\int P dt} = e^{-\int \frac{t}{t^2-9}
               dt} = e^{ - \frac{1}{2} \ln |t^2-9| + c} 
             </mrow>
             <mrow>
@@ -379,13 +382,13 @@
       <statement>
         <p>
           <me>
-            \frac{dy}{dt} + y = Q(t)
+            \frac{dy}{dt} + y = Q
           </me>
           To add some complication to this particular example,
-          the non-homogeneous piece <m>Q(t)</m> here is a
+          the non-homogeneous piece <m>Q</m> here is a
           step function.
           <me>
-            Q(t) = \left\{ \begin{matrix} 1 \amp 0 \leq t \leq 1 \\ 0
+            Q = \left\{ \begin{matrix} 1 \amp 0 \leq t \leq 1 \\ 0
             \amp t > 1 \end{matrix} \right.
           </me>
           This is still allowed: often the coefficients and functions
@@ -394,7 +397,7 @@
           step function is discontinuous, but still integrable. One of
           the reasons piecewise-continuous function are allowed is
           because they are always integrable. The integrating factor
-          is <m>\mu(t) = e^{\int 1 dt} = e^t</m>. Since <m>Q(t)</m>
+          is <m>\mu = e^{\int 1 dt} = e^t</m>. Since <m>Q</m>
           is discontinuous, I have to work with two different
           intervals to cover the two different behaviours.  First,
           I'll look at look at <m>[0,1]</m> and apply the standard
@@ -428,12 +431,12 @@
           Here is the final solution, a piecewise function with only
           one parameter <m>c</m>.
           <me>
-            y = \left\{ \begin{matrix} 1 - ce^{-t} \amp t \in [0,1]
+            y = \left\{ \begin{matrix} 1 + ce^{-t} \amp t \in [0,1]
             \\ (e-c)e^{-t} \amp t \in (1,\infty) \end{matrix}
             \right.
           </me>
           Since there is only one parameter, initial value problems
-          are solvable. If I am given the initial value<m>y(0)
+          are solvable. If I am given the initial value <m>y(0)
           =0</m>, I find that <m>c=1</m> and I can produce a unique
           solution.
         </p>

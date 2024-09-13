@@ -150,7 +150,7 @@
           pieces. 
           <md>
             <mrow>
-              \int \frac{dv}{-v^2-2v} \amp = \int \frac{dt}{t} = \ln
+              \int \frac{1}{-v^2-2v} dv \amp = \int \frac{1}{t} dt = \ln
               |t| + c
             </mrow>
             <mrow>
@@ -163,8 +163,8 @@
           steps to try to isolate <m>v</m>.
           <md>
             <mrow>
-              \frac{1}{2} \int \frac{dv}{v+2} + \frac{-1}{2} \int
-              \frac{dv}{v} \amp = \ln |t| + c
+              \frac{1}{2} \int \frac{1}{v+2} dv + \frac{-1}{2} \int
+              \frac{1}{v} dv \amp = \ln |t| + c
             </mrow>
             <mrow>
               \frac{1}{2} \ln |v+2| + \frac{-1}{2} \ln |v| \amp = \ln
@@ -215,23 +215,25 @@
       y^{1-n}</m>. Be careful: this is <m>y^{1-n}</m>, not
       <m>y^{n-1}</m>. It's a very easy mistake to get this exponent
       wrong. I transform the DE by looking at the following
-      derivations.
+      derivations. The first line is a chain rule. After the chain
+      rule, I use the original DE to replace <m>\frac{dy}{dt}</m> with
+      <m>(Qy^n - P)</m>.
       <md>
         <mrow>
           \frac{dv}{dt} \amp = (1-n) y^{1-n-1} \frac{dy}{dt} =
           (1-n)y^{-n} \frac{dy}{dt}
         </mrow>
         <mrow>
-          \amp = (1-n)y^{-n} \left( Q(t) y^n - P(t) y \right) 
+          \amp = (1-n)y^{-n} \left( Q y^n - P y \right) 
         </mrow>
         <mrow>
-          \amp = (1-n) Q(t) - (1-n) P(t) y^{1-n}
+          \amp = (1-n) Q - (1-n) P y^{1-n}
         </mrow>
         <mrow>
-          \amp = (1-n) Q(t) - (1-n) P(t) v
+          \amp = (1-n) Q - (1-n) P v
         </mrow>
         <mrow>
-          \frac{dv}{dt} + (1-n)v P(t) \amp = (1-n) Q(t)
+          \frac{dv}{dt} + (1-n)v P \amp = (1-n) Q
         </mrow>
       </md>
       This is now a linear equation in <m>v</m>. I can solve it as a
@@ -300,14 +302,14 @@
               v = y^{1-4} = y^{-3} 
             </mrow>
             <mrow>
-              P(t) \amp = -3
+              P(t) \amp = 1
             </mrow>
             <mrow>
-              Q(t) \amp = -3t
+              Q(t) \amp = t
             </mrow>
           </md>
           These are the setup pieces. I can now write the associated
-          linear DEs. 
+          linear DE, following the form I derive in general. 
           <md>
             <mrow>
               \frac{dv}{dt} - 3v \amp = -3t
@@ -319,7 +321,7 @@
           equation as a product rule derivative. 
           <md>
             <mrow>
-              \mu(t) \amp = e^{\int P(t) dt} = e^{-3t}
+              \mu\amp = e^{\int Pdt} = e^{-3t}
             </mrow>
             <mrow>
               \frac{d}{dt} e^{-3t} v \amp = -3t e^{-3t}

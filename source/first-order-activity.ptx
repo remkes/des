@@ -670,12 +670,12 @@
           The left is an arcsin integral, and the right is a simple
           exponential integral. 
           <me>
-            \frac{1}{2} \arcsin \left( \frac{y}{2} \right) = e^x + c 
+            \arcsin \left( \frac{y}{2} \right) = e^x + c 
           </me>
           After integrating, I try to solve for <m>y</m>. 
           <me>
-            \arcsin \left( \frac{y}{2} \right) = 2e^x + c \implies
-            \frac{y}{2} = \sin (2e^x + c) \implies y = 2 \sin (2e^x +
+            \arcsin \left( \frac{y}{2} \right) = e^x + c \implies
+            \frac{y}{2} = \sin (e^x + c) \implies y = 2 \sin (e^x +
             c) 
           </me>
           I was successful solving for <m>y</m> and producing a
@@ -743,7 +743,7 @@
           the power rule. 
           <me>
             \frac{y^2}{2} = \frac{x^5}{5} + \frac{9x^4}{4} -
-            \frac{7x^3}{3} - \frac{3x^2}{2} + 2x + c 
+            \frac{7x^3}{3} - \frac{3x^2}{2} + x + c 
           </me>
           After integrating, I try to solve for <m>y</m>. 
           <me>
@@ -777,7 +777,7 @@
           <me>
             \int \cos y dy = \int e^{-x^2} dx 
           </me>
-          This is a simple trig integral on the left. The left is an
+          This is a simple trig integral on the left. The right is an
           integral without an elementary solution. Therefore, I'll
           just leave it as it is. 
           <me>

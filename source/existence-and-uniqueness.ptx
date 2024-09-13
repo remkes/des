@@ -56,7 +56,7 @@
       theorem relies on topological considerations: I need an
       <em>open</em> subset <m>U</m> where <m>F</m> is continuous. I'm
       not going to get into topology in this course; I'm not even
-      going to define an open set in <m>\RR^2</m>. I just thought I
+      going to define an open set in <m>\RR^2</m>. I just thought it
       was worth pointing out the topological considerations for those
       who have seen these definitions elsewhere. 
     </p>
@@ -112,8 +112,11 @@
         <p>
           A function from an open interval <m>U</m> in <m>\RR</m> to
           <m>\RR</m> is called <term>Lipschitz continuous</term> if
-          <m>\exists K > 0</m> such that <m>\forall x_1,x_2 \in U</m>,
-          it is true that <m>|f(x_1) - f(x_2)| \leq K|x_1-x_2|</m>.
+          <m>\exists K > 0</m> such that 
+          <me>
+            \forall x_1,x_2 \in U, \quad \quad |f(x_1) - f(x_2)| \leq
+            K|x_1-x_2|
+          </me>
         </p>
       </statement>
     </definition>
@@ -127,7 +130,7 @@
     </p>
     <p>
       As an interpretation, Lipschitz continuity is a control on the
-      global growth over the a specific interval. For a Lipschitz
+      global growth over a specific interval. For a Lipschitz
       continuous function, there is a linear function that bounds the
       function on the designated interval. Unsurprisingly, this means that
       the defintion usually only works on bounded sets. For a more
@@ -176,7 +179,7 @@
       how to check for differentiability. However, consider a strange
       example.
     </p>
-    <example>
+    <example xml:id="example-strange-continuity">>
       <statement>
         <p>
           <me>
@@ -207,7 +210,7 @@
       <m>\frac{\del f}{\del y}</m> must exist and be bounded.  This
       last criterion is the one I will use in practice: To check
       Lipschitz continuity, I can check if the derivatives exists and
-      if it is bounded.
+      if it is bounded. 
     </p>
     <p>
       Consider the <m>f(x) = x^2</m>. The derivaitve is <m>2x</m>,
@@ -215,13 +218,15 @@
       x^\frac{2}{3}</m> has derivative <m>\frac{2}{3}
       x^{\frac{-1}{3}}</m> which is unbounded near 0. The former
       function is Lipschitz continuous on finite intervals centred at
-      the origin and the later is not.
+      the origin and the later is not.  Likewise, the problem with
+      <xref ref="example-strange-continuity" /> is that the derivative
+      isn't bounded.
     </p>
   </subsection>
   <subsection xml:id="subsection-uniqueness">
     <title>Uniqueness</title>
     <p>
-      The theorem for uniqueness is called the Picard-Lindelhöf
+      The theorem for uniqueness is called the Picard-Lindelöf
       thereom. It is a small improvement and adjustment of the Peano
       existence theorem.
     </p>
@@ -269,7 +274,7 @@
           <m>\frac{\del F}{\del y} = \frac{x}{2\sqrt{y}}</m>, which is
           unbounded near <m>0</m>. Therefore, it is not Lipschitz
           continuous and doesn't satisfy the continious of the
-          Picard-Lidenlhöf theorem, meaning that I can't be assured of
+          Picard-Lindelöf theorem, meaning that I can't be assured of
           a unique solution. (Again, the failure of Lipschitz
           continuity does guarantee multiple solutions, just allows
           for the possibility.) 
@@ -285,7 +290,7 @@
       </me>
       In this case, <m>F(x,y) = Q(x) - P(x)y</m> and the <m>y</m>
       derivative is <m>-P(x)</m>, which is bounded assuming that
-      <m>P</m> is continuous. I can apply the Picard-Lindelhöf
+      <m>P</m> is continuous. I can apply the Picard-Lindelöf
       theorem to conclude that linear equations have unique solutions
       whenever their coefficient functions <m>P</m> and <m>Q</m> are
       continuous. I can go into the next section of the course with

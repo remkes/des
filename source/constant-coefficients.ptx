@@ -76,7 +76,8 @@
     <title>Harmonic Motion</title>
     <p>
       I want to consider a system with one dimension of movement
-      described by a function <m>x(t)</m>. In harmonic motion, the
+      described by a function <m>x(t)</m> (in the following, usually
+      just written <m>x</m>). In harmonic motion, the
       system has some rest state where there are no forces; by
       convention, the rest state will always be at <m>x=0</m> and will
       be a steady state of the system. If the system is disturbed from
@@ -88,16 +89,16 @@
       differential equation. 
       <md>
         <mrow>
-          F \amp = -k x(t)
+          F \amp = -k x
         </mrow>
         <mrow>
           F \amp = ma = m \frac{d^2 x}{dt^2} 
         </mrow>
         <mrow>
-          -kx(t) \amp = m \frac{d^2 x}{dt^2} 
+          -kx \amp = m \frac{d^2 x}{dt^2} 
         </mrow>
         <mrow>
-          m\frac{d^2 x}{dt^2} + k x(t) \amp = 0
+          m\frac{d^2 x}{dt^2} + k x \amp = 0
         </mrow>
       </md>
       This is homogeneous SOCCLDE with <m>a=m</m>, <m>b=0</m>
@@ -164,16 +165,16 @@
       motion, but now include a friction term. 
       <md>
         <mrow>
-          F \amp = -k x(t) - b \frac{dx}{dt}
+          F \amp = -k x - b \frac{dx}{dt}
         </mrow>
         <mrow>
           F \amp = m \frac{d^2 x}{dt^2} 
         </mrow>
         <mrow>
-          m \frac{d^2 x}{dt^2} \amp = -k x(t) - b \frac{dx}{dt}
+          m \frac{d^2 x}{dt^2} \amp = -k x - b \frac{dx}{dt}
         </mrow>
         <mrow>
-          m\frac{d^2 x}{dt^2} + b \frac{dx}{dt} + k x(t) \amp = 0
+          m\frac{d^2 x}{dt^2} + b \frac{dx}{dt} + k x \amp = 0
         </mrow>
       </md>
       Harmonic systems with friction are called <term>damped harmonic

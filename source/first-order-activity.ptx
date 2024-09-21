@@ -824,7 +824,7 @@
           Then I multiply the original equation by the integrating
           factor. 
           <me>
-            e^t \frac{dy}{dx} + e^t y = 4e^{-t} e^t = 4 
+            e^t \frac{dy}{dt} + e^t y = 4e^{-t} e^t = 4 
           </me>
           The left side becomes a product rule derivative.
           <me>
@@ -946,7 +946,7 @@
           Then I integrate. The right integral is a substitution
           integral with <m>u = t^3</m>; I haven't shown the steps. 
           <me>
-            e^{t^3} y = \frac{e^{t^3}}{3} = c 
+            e^{t^3} y = \frac{e^{t^3}}{3} + c 
           </me>
           Then I solve for <m>y</m>. If I want to, I can isolate the
           particular solution <m>y_p</m> and the homogeneous solution
@@ -1049,7 +1049,7 @@
           don't need a constant of integration for the integrating
           factor). 
           <me>
-            \mu(t) = e^{\int \frac{2}{1-t^2} dt} = e^{2 \arctanh t}
+            \mu(t) = e^{\int \frac{2}{1-t^2} dt} = e^{2 \arc+anh t}
           </me>
           I'm going to make use of a nice alternative definition of
           the hyperbolic arctangent. 
@@ -1096,7 +1096,7 @@
         <p>
           Solve this linear equation.
           <me>
-            \frac{dy}{dt} + (\tan t) y = e^t{t^2 -1}
+            \frac{dy}{dt} + (\tan t) y = e^t(t^2 -1)
           </me>
         </p>
       </statement>
@@ -1225,24 +1225,39 @@
           I use the appropriate substitution: <m>v = \frac{y}{t}</m>.
           The expression on the left becomes <m>f(v) = \frac{1}{1-v}</m>.
           Then I can write the new differential equation in <m>v</m>.
-          <me>
-            \frac{dv}{dt} = \frac{f(v) - v}{t} = \frac{\frac{1}{1-v} -
-            v}{t} = \frac{v - 1}{t(1-v)} = - t
-          </me>
-          As expected, this is a separable equation. However, this is
-          even better, since the dependent variable has entirely
-          disappeared. I can solve this just by integrating both sides
+          <md>
+            <mrow>
+              \frac{dv}{dt} \amp = \amp \frac{f(v) - v}{t} =
+              \frac{\frac{1}{1-v} - v}{t} = \frac{\frac{1 -
+              v(1-v)}{1-v}}{t} 
+            </mrow>
+            <mrow>
+              \amp = \amp \frac{1 - v + v^2}{t(1-v)} 
+            </mrow>
+          </md>
+          As expected, this is a separable equation. I solve it as a
+          separable equation, setting up the two integrals. 
           in <m>t</m>
           <me>
-            v = \frac{-t^2}{2} + c 
+            \int \frac{1 - v}{1 - v + v^2} dv = \int \frac{1}{t} dt 
           </me>
-          Then I can reverse the substitution. 
+          Then I did the integrals (asking a computer for the left
+          integral. 
           <me>
-            \frac{y}{t} = \frac{-t^2}{2} + c 
+            \frac{1}{\sqrt{3}} \arctan \left( \frac{2v-1}{\sqrt{3}}
+            \right) - \frac{1}{2} \ln |v^2 - v + 1| = \ln |t| + c
           </me>
-          Finally, I can isolate <m>y</m> to produce the solution.
+          In principle, I would like to solve this for v. However,
+          this turns out to be impossible: there is no way to extra v
+          from both the arctangent and the logarithm (as well as the
+          quadratic inside the logarithm). The best I can do is
+          replace <m>v</m> with <m>\frac{y}{t}</m> and leave the
+          solution in an implicit form. 
           <me>
-            y = \frac{-t^3}{2} + ct 
+            \frac{1}{\sqrt{3}} \arctan \left(
+            \frac{\frac{2y}{t}-1}{\sqrt{3}} \right) - \frac{1}{2} \ln
+            \left| \left( \frac{y}{t} \right)^2 - \frac{y}{v}  + 1
+            \right| = \ln |t| + c
           </me>
         </p>
       </solution>
@@ -1302,11 +1317,11 @@
           Then I can reverse the substitution.
           <me>
             \frac{1}{y^2} = \frac{2}{3t} + ct^2 = \frac{2 +
-            ct^3}{3t^2}
+            ct^3}{3t}
           </me>
           Finally, I can solve for <m>y</m>
           <me>
-            y = \sqrt{\frac{3t^2}{2 + ct^3}}
+            y = \sqrt{\frac{3t}{2 + ct^3}}
           </me>
         </p>
       </solution>

@@ -67,9 +67,11 @@
       term can be written <m>e^{-\lambda t}</m>. Therefore,
       <m>\lambda</m> is called the decay coefficient. With these new
       constants, the roots of the characteristic equation become <m>r
-      = -\lambda +\pm \imath \sqrt{\omega^2 - \lambda^2}</m> and I
-      can rewrite the homogeneous differential equation as <me>
-      y^{\prime \prime} + 2\lambda y^\prime + \omega^2 y = 0 </me>.
+      = -\lambda \pm \imath \sqrt{\omega^2 - \lambda^2}</m> and I
+      can rewrite the homogeneous differential equation as 
+      <me>
+        y^{\prime \prime} + 2\lambda y^\prime + \omega^2 y = 0 
+      </me>.
       Now return to the idea of a sinusoidal forcing term
       <m>f(t) = F\sin \gamma t</m> with some frequency <m>\gamma</m>.
       I want to look at four situations to understand the effect of
@@ -254,7 +256,7 @@
       With friction involved and no forcing, the system will display
       sinusoidally decaying oscillations where the frequency is this
       <m>\omega_d</m>. As an interesting aside, as <m>\zeta</m>
-      approaches <m>1</m> and the systemapproach the critical damped
+      approaches <m>1</m> and the system approaches the critical damped
       situation with simple exponential decay, this damped frequency
       approaches zero. This explains the transition from sinusoidal
       to exponential behaviour, which might have seemed like a strange

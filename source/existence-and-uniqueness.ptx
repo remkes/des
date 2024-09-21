@@ -130,7 +130,7 @@
     </p>
     <p>
       As an interpretation, Lipschitz continuity is a control on the
-      global growth over a specific interval. For a Lipschitz
+      growth over a specific interval. For a Lipschitz
       continuous function, there is a linear function that bounds the
       function on the designated interval. Unsurprisingly, this means that
       the defintion usually only works on bounded sets. For a more

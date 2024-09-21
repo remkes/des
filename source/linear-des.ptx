@@ -61,7 +61,7 @@
     </p>
     <p><ul>
       <li>
-        I use the previous mentioned informal carelessness to make the
+        I use the previously mentioned informal carelessness to make the
         constant easy to deal with. When I take exponents of each side
         of the equation, I should have multiplication by <m>e^c</m>.
         However, since this is still an undetermined constant, I
@@ -146,12 +146,12 @@
       an offset span. The non-homogenous solution is the offset and
       the basis of the span is any homogenous solution. Superposition
       constructs this offset span structure. The total space in which
-      this linear space lives is the <sq>vector space</sq> of
+      this linear space lives is the vector space of
       differentiable functions. This is an infinite dimensional
       vector space (uncountably infinite, even), so it is a strange
       object compared with <m>\RR^n</m>. But the language of linear
       algebra still applies and gives very concise and convenient
-      description of things like sets of solutions. If the languageo f
+      description of things like sets of solutions. If the language of
       offset spans is not familiar, don't worry <mdash /> this won't
       be required understanding for the rest of the course. 
     </p>
@@ -160,7 +160,7 @@
     <title>Integrating Factors</title>
     <p>
       Homogeneous linear differential equations are solvable since
-      there are separable. I did this above. With the understanding of
+      they are separable. I did this above. With the understanding of
       superposition, then, to solve a non-homogeneous linear
       differential equation, I just need to find one particular
       solution. To do this, I need a new technique.
@@ -178,7 +178,7 @@
       In order to do that, I put my assumed solution <m>g(t) y_h</m>
       into the equation and do some manipulations. I'm going to drop
       the <m>(t)</m> in most of these functions, to make it all a bit
-      more readabl. It's up to the read to remember that these symbols
+      more readable. It's up to the reader to remember that these symbols
       stand for functions. 
       <me>  
         Ly_p= L gy_h= Q
@@ -266,7 +266,7 @@
       y_p</m> into something that looks like the result of a a
       product rule derivative. Since it is the result of a derivative,
       it can be easily integrated. This explain the name: the
-      integrating factor is something we multiply by to
+      integrating factor is something I multiply by to
       allow the DE to be directly integrated. It is best to remember
       the process this way: the original DE becomes a product rule
       derivative problem by multiplying both sides of the original DE

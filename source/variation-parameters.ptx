@@ -505,13 +505,13 @@
           Then I can replace <m>u_1</m> and <m>u_2</m> in the
           expression for the particular solution.
           <me>
-            y_p \frac{e^t}{2} \int \frac{e^{-t}}{t} dt -
+            y_p = \frac{e^t}{2} \int \frac{e^{-t}}{t} dt -
             \frac{e^{-t}}{2} \int \frac{e^t}{t} dt
           </me>
           Finally, the full solution is the particular solution plus
           the homogeneous solution.
           <me>
-            y \frac{e^t}{2} \int \frac{e^{-t}}{t} dt -
+            y = \frac{e^t}{2} \int \frac{e^{-t}}{t} dt -
             \frac{e^{-t}}{2} \int \frac{e^t}{t} dt + Ae^t + Be^{-t}
           </me>
         </p>

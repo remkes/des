@@ -76,29 +76,29 @@
     <title>Harmonic Motion</title>
     <p>
       I want to consider a system with one dimension of movement
-      described by a function <m>x(t)</m> (in the following, usually
-      just written <m>x</m>). In harmonic motion, the
+      described by a function <m>y(t)</m> (in the following, usually
+      just written <m>y</m>). In harmonic motion, the
       system has some rest state where there are no forces; by
-      convention, the rest state will always be at <m>x=0</m> and will
+      convention, the rest state will always be at <m>y=0</m> and will
       be a steady state of the system. If the system is disturbed from
       its rest, there is an elastic force that wants to return the
       system to its rest state. Hooke's Law gives the elastic for: 
-      <m>F = -kx(t)</m>. Then, using Newton's first law, I can write
-      this force as <m>F = ma = m \frac{d^2 x}{dt^2}</m>. Equating
+      <m>F = -ky(t)</m>. Then, using Newton's first law, I can write
+      this force as <m>F = ma = m \frac{d^2 y}{dt^2}</m>. Equating
       these two expressions for the elastic force produces a
       differential equation. 
       <md>
         <mrow>
-          F \amp = -k x
+          F \amp = -k y
         </mrow>
         <mrow>
-          F \amp = ma = m \frac{d^2 x}{dt^2} 
+          F \amp = ma = m \frac{d^2 y}{dt^2} 
         </mrow>
         <mrow>
-          -kx \amp = m \frac{d^2 x}{dt^2} 
+          -ky \amp = m \frac{d^2 y}{dt^2} 
         </mrow>
         <mrow>
-          m\frac{d^2 x}{dt^2} + k x \amp = 0
+          m\frac{d^2 y}{dt^2} + k y \amp = 0
         </mrow>
       </md>
       This is homogeneous SOCCLDE with <m>a=m</m>, <m>b=0</m>
@@ -107,10 +107,10 @@
       are two solutions.
       <md>
         <mrow>
-          x_1(t) \amp = \sin \left( \sqrt{\frac{k}{m}} t \right) 
+          y_1(t) \amp = \sin \left( \sqrt{\frac{k}{m}} t \right) 
         </mrow>
         <mrow>
-          x_2(t) \amp = \cos \left( \sqrt{\frac{k}{m}} t \right)
+          y_2(t) \amp = \cos \left( \sqrt{\frac{k}{m}} t \right)
         </mrow>
       </md>
       Since I know these two homogeneous solution, I can use
@@ -118,7 +118,7 @@
       combination of these two solutions. For any two numbers <m>A,B
       \in \RR</m>, this is the general solution:
       <me>
-        x(t) = A \sin \left( \sqrt{\frac{k}{m}} t \right) + B \cos
+        y(t) = A \sin \left( \sqrt{\frac{k}{m}} t \right) + B \cos
         \left( \sqrt{\frac{k}{m}} t \right)
       </me>.
     </p>
@@ -137,9 +137,9 @@
         Explicitly:
         <md>
           <mrow>
-            \amp a \sin t + b \cos t = \sqrt{a^2+b^2} \sin (t + \phi)
-            \amp \amp \text{ where } \amp \amp \phi = \arcsin
-            \left( \frac{b}{\sqrt{a^2+b^2}} \right)
+            \amp a \sin \alpha t + b \cos \alpha t = \sqrt{a^2+b^2}
+            \sin (\alpha t + \phi) \amp \amp \text{ where } \amp \amp
+            \phi = \arcsin \left( \frac{b}{\sqrt{a^2+b^2}} \right)
           </mrow>
         </md>
       </statement>
@@ -165,16 +165,16 @@
       motion, but now include a friction term. 
       <md>
         <mrow>
-          F \amp = -k x - b \frac{dx}{dt}
+          F \amp = -k y - b \frac{dy}{dt}
         </mrow>
         <mrow>
-          F \amp = m \frac{d^2 x}{dt^2} 
+          F \amp = m \frac{d^2 y}{dt^2} 
         </mrow>
         <mrow>
-          m \frac{d^2 x}{dt^2} \amp = -k x - b \frac{dx}{dt}
+          m \frac{d^2 y}{dt^2} \amp = -k y - b \frac{dy}{dt}
         </mrow>
         <mrow>
-          m\frac{d^2 x}{dt^2} + b \frac{dx}{dt} + k x \amp = 0
+          m\frac{d^2 y}{dt^2} + b \frac{dy}{dt} + k y \amp = 0
         </mrow>
       </md>
       Harmonic systems with friction are called <term>damped harmonic
@@ -194,7 +194,7 @@
       intepretation so far, all these terms in the equation are terms
       of force. If the equation is to make any sense, <m>f(t)</m> must
       also be a force. However, <m>f(t)</m> doesn't directly relate to
-      the position at all: the dependent variable <m>x</m> doesn't
+      the position at all: the dependent variable <m>y</m> doesn't
       show up. Therefore, <m>f(t)</m> must be a force which is not
       dependent on the current position, velocity or acceleration of
       the system. The only option is an external form on the system.
@@ -211,7 +211,7 @@
       current circuits. The DE that will result is exactly the same as
       that for harmonic motion, but the interpretation of each of the
       coefficients is quite different. Instead of a position function
-      <m>x(t)</m>, the system describes a charge function <m>q(t)</m>;
+      <m>y(t)</m>, the system describes a charge function <m>q(t)</m>;
       the movement of that charge will be the alternating current. In
       this system, there are four components to a circuit: resistors,
       capacitors, inductors and an external electro-motive force. Let
@@ -240,7 +240,7 @@
         controlled the natural behaviour of the harmonic system
         (before friction and external forces). As the analogue of the
         spring constant, capacitance should show up as the coefficient
-        of <m>x(t)</m>. 
+        of <m>q(t)</m>. 
       </li>
       <li>
         Inductors are storage devices for electrical energy in a
@@ -248,10 +248,10 @@
         inductance, which has units of henrys. Inductors block
         alternating current; as such, they represent the difficulty of
         moving charge through the system. In the harmonic system, the
-        difficult of moving the object was its mass (indeed, a simple
+        difficulty of moving the object was its mass (indeed, a simple
         definition of mass is a measure of how difficult it is to move
         an object). As the analogue of the mass, inductance should
-        show up as the coefficient of <m>\frac{d^2 x}{dt^2}</m>
+        show up as the coefficient of <m>\frac{d^2 q}{dt^2}</m>
       </li>
       <li>
         Electromotive forces are external forces to the system, from
@@ -476,7 +476,7 @@
   <subsection xml:id="subsection-repeated-real-root">
     <title>Case 2: Repeated Real Roots</title>
     <p>
-      If the characteristic equation factors as <m>(x-r)^2</m>, then
+      If the characteristic equation factors as <m>(r-\alpha)^2</m>, then
       <m>r</m> is a repeated real root (with value
       <m>\frac{-b}{2a}</m>). The result is  only one exponential
       solution: <m>e^{rt}</m>. This is a problem, since I expect two

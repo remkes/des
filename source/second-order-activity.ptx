@@ -60,7 +60,7 @@
                 y(0) = A + B = 10 
               </mrow>
                 <mrow>
-                y^\prime(0) = (-4\sqrt{12}) A + (-4-\sqrt{12}) B = -4
+                y^\prime(0) = (-4+\sqrt{12}) A + (-4-\sqrt{12}) B = -4
               </mrow>
             </md>
             I can do the algebra to solve the system. I use the first
@@ -187,8 +187,10 @@
                 y(0) \amp = A = 2 
               </mrow>
               <mrow>
-                y^\prime(0) \amp = (-2A + 4B) = 6 -4 + 4B = 6 \implies B =
-                \frac{10}{4} = \frac{5}{2} 
+                y^\prime(0) \amp = (-2A + 4B) = 6 
+              </mrow>
+              <mrow>
+                -4 + 4B \amp = 6 \implies B = \frac{10}{4} = \frac{5}{2} 
               </mrow>
             </md>
             The solutions to the resulting system doesn't require much
@@ -199,6 +201,7 @@
               y = 2 e^{-2t} \cos 4t + \frac{5}{2} e^{-2t} \sin 4t 
             </me>
           </li>
+          <li>
             As you decrease the coefficient, <m>\alpha</m> remains
             unchanged since it only depends on the other two
             coefficients. Therefore, the rate of decay is unchanged.
@@ -208,6 +211,7 @@
             smaller and smaller, <m>\beta</m> also decreases. Since
             <m>\beta</m> measures frequency, decreasing <m>beta</m>
             means slower oscillations. 
+          </li>
           <li>
             Critically damped oscillations happen when <m>\beta =
             0</m>, or equivalently when <m>b^2 - 4ac=0</m>. In this
@@ -231,7 +235,7 @@
     </activity>
   </subsection>
   <subsection xml:id="subsection-activity-undetermined-coefficients">
-    <title>Undertermined Coefficients</title>
+    <title>Undetermined Coefficients</title>
     <activity>
       <statement>
         <p>

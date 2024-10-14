@@ -3,9 +3,11 @@
   <p>
     There is a nice example of series solutions which deserves its own
     section, since it leads to an important class of functions. Let
-    <m>k \in \NN</m> and consider the differential equation <me>
-    (1-t^2)y^{\prime \prime} - 2ty^\prime + k(k+1)y=0 </me>. I need
-    to divide by <m>1-t^2</m> to get this DE in standard form,
+    <m>k \in \NN</m> and consider the differential equation 
+    <me>
+      (1-t^2)y^{\prime \prime} - 2ty^\prime + k(k+1)y=0 
+    </me>. 
+    I need to divide by <m>1-t^2</m> to get this DE in standard form,
     implying that <m>t = \pm 1</m> are singular points. A solution
     centered at <m>0</m> should have radius of convergence at least
     <m>R=1</m>. 
@@ -15,8 +17,8 @@
         (1-t^2) \sum_{n=2}^\infty c_n n(n-1)t^{n-2}
       </mrow>
       <mrow>
-        0 \amp - 2t \sum_{n=1}^\infty c_n nt^{n-1} +k(k+1)
-        \sum_{n=0}^\infty c_n t^n
+        \amp - 2t \sum_{n=1}^\infty c_n nt^{n-1} +k(k+1)
+        \sum_{n=0}^\infty c_n t^n = 0 
       </mrow>
     </md>
     I've taken the derivatives of the series and inserted them. Then I
@@ -32,7 +34,7 @@
         \sum_{n=0}^\infty k(k+1) c_n t^n
       </mrow>
       <mrow>
-        \amp = \sum_{n=0}^\infty c_{n_2} (n+2) (n+1)t^n -
+        \amp = \sum_{n=0}^\infty c_{n+2} (n+2) (n+1)t^n -
         \sum_{n=2}^\infty c_n n(n-1) t^n
       </mrow>
       <mrow>
@@ -40,7 +42,7 @@
         \sum_{n=0}^\infty k(k+1) c_n t^n
       </mrow>
       <mrow>
-        \amp = 2c_2 + 6c_3 t + \sum_{n=2}^\infty c_{n_2} (n+2)
+        \amp = 2c_2 + 6c_3 t + \sum_{n=2}^\infty c_{n+2} (n+2)
         (n+1)t^n
       </mrow>
       <mrow>
@@ -86,17 +88,17 @@
     try to make the recurrence relation clear. 
     <md>
       <mrow>
-        c_{n_2} (n+2) (n+1) - c_n n(n-1) - 2c_n n + k(k+1) c_n \amp =
+        c_{n+2} (n+2) (n+1) - c_n n(n-1) - 2c_n n + k(k+1) c_n \amp =
         0
       </mrow>
       <mrow>
-        c_{n_2} (n+2) (n+1) + (-n^2 + n - 2n + k(k+1)) c_n \amp = 0
+        c_{n+2} (n+2) (n+1) + (-n^2 + n - 2n + k(k+1)) c_n \amp = 0
       </mrow>
       <mrow>
-        c_{n_2} (n+2) (n+1) + (-n^2 - n + k^2 +k ) c_n \amp = 0
+        c_{n+2} (n+2) (n+1) + (-n^2 - n + k^2 +k ) c_n \amp = 0
       </mrow>
       <mrow>
-        c_{n_2} (n+2) (n+1) + (k-n)(k+n+1) c_n \amp = 0</mrow>
+        c_{n+2} (n+2) (n+1) + (k-n)(k+n+1) c_n \amp = 0</mrow>
       <mrow>
         c_{n+2} \amp = \frac{-c_n (k-n)(k+n+1)}{(n+1)(n+2)}
       </mrow>
@@ -183,8 +185,12 @@
         P_2(t) \amp = \frac{1}{2} (3t^2 -1) \amp \amp 
       </mrow>
       <mrow>
-        k=3 \implies P_3(t) \amp = c_1 (t - \frac{5}{3}t^3)
-        \amp \amp  \text{ choose }  c_1 = \frac{-3}{2}
+        k=3 \implies P_3(t) \amp = c_1 \left( \frac{-5}{3}t^3 + t
+        \right) \amp \amp \text{ choose } c_1 = \frac{-3}{2}
+      </mrow>
+      <mrow>
+        P_3(t) \amp = \frac{-3}{2} \left( \frac{-5}{3}t^3 + t \right)
+        \amp \amp 
       </mrow>
     </md>
     I'll not repeat all the details, but here are the next eight

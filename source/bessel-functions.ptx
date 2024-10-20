@@ -262,8 +262,7 @@
           (n^2 + n\nu + n\nu + \nu^2 - n - \nu + n + \nu - \nu^2 ) c_n
           \amp = -c_{n-2}
         </mrow>
-        <mrow
-          >
+        <mrow>
           (n^2 + 2n\nu) c_n \amp = -c_{n-2}
         </mrow>
         <mrow>

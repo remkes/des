@@ -239,7 +239,7 @@
           \frac{q_{-2}}{t^2} c_0 t^r \amp = 0
         </mrow>
         <mrow>
-          (r(r-1) + p_{-1} r + q_{-2}) c_0 t^{r-2} \amp = 0
+          (r(r-1) + p_{-1} r + q_{-2} c_0 t^{r-2} \amp = 0
         </mrow>
         <mrow>
           r(r-1) + p_{-1}r + q_{-2} \amp = 0 
@@ -325,7 +325,7 @@
             </mrow>
             <mrow>
               \sum_{n=1}^\infty 3c_{n+1} (n+1) n t^n +
-              \sum_{n=1}^\infty c_{n+1} (n+1) t^n - \sum_{n=0}^\infty
+              \sum_{n=0}^\infty c_{n+1} (n+1) t^n - \sum_{n=0}^\infty
               c_n t^{n} \amp = 0
             </mrow>
             <mrow>
@@ -337,7 +337,7 @@
               +4n +1} \amp = \frac{c_n}{(3n+1)(n+1)}
             </mrow>
           </md>
-          I use the recurrence relationt o start calculating terms. I
+          I use the recurrence relation to start calculating terms. I
           use the constant term <m>(c_1 - c_0)</m> to determine
           <m>c_1</m> and apply the recurrence relation to all terms
           later. This is ony a degree 1 recurrence relation, so I only

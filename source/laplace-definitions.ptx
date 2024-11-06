@@ -82,28 +82,30 @@
           <mrow>
             \calL \{ 1 \} \amp = \int_0^\infty e^{-st} dt = \left.
             \frac{-e^{-st}}{s} \right|_0^\infty = \lim_{a \rightarrow
-            \infty} \frac{-e^{-sa} + 1}{s} = \frac{1}{s} \amp \amp
+            \infty} \frac{-e^{-sa} + 1}{s} = \frac{1}{s} 
           </mrow>
           <mrow>
             \calL \{ t \} \amp = \int_0^\infty te^{-st} dt = \lim_{a
             \rightarrow \infty} \left[ \left. \frac{-te^{-st}}{s}
-            \right|_0^a + \int_0^a \frac{e^{-st}}{s} dt \right] \amp
-            \amp
+            \right|_0^a + \int_0^a \frac{e^{-st}}{s} dt \right] 
           </mrow>
           <mrow>
             \amp = \lim_{a \rightarrow \infty} \left[ \frac{0 -
             ae^{-sa}}{s} + \left. \frac{-e^{-st}}{s^2} \right|_0^a
-            \right] = \frac{1}{s^2} \amp \amp
+            \right] = \frac{1}{s^2} 
           </mrow>
           <mrow>
             \calL \{ t^n \} \amp = \int_0^\infty t^ne^{-st} dt =
-            \frac{n!}{s^{n+1}} \amp \amp
+            \frac{n!}{s^{n+1}} 
           </mrow>
           <mrow>
             \calL \{ e^{at} \} \amp = \int_0^\infty e^{-st}e^{at} dt =
-            \int_0^\infty e^{at-st} dt = \left. \frac{e^{at-st}}{a-s}
-            \right|_0^\infty = \frac{-1}{a-s} = \frac{1}{s-a}
-            \amp \amp s \in (a, \infty)
+            \int_0^\infty e^{at-st} dt 
+          </mrow>
+          <mrow>
+            \amp = \left. \frac{e^{at-st}}{a-s} \right|_0^\infty =
+            \frac{-1}{a-s} = \frac{1}{s-a}, s \in (a,
+            \infty)
           </mrow>
         </md>
         My first observation about Laplace transforms is simply their

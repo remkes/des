@@ -3,8 +3,8 @@
   <title>Laplace Transforms</title>
   <xi:include  href="laplace-definitions.ptx" />
   <xi:include  href="laplace-properties.ptx" />
-  <xi:include  href="distributions.ptx" />
   <xi:include  href="laplace-derivatives.ptx" />
+  <xi:include  href="distributions.ptx" />
   <xi:include  href="inverse-transforms.ptx" />
   <xi:include  href="laplace-solving.ptx" />
   <xi:include  href="laplace-periodic.ptx" />

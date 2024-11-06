@@ -65,6 +65,188 @@
   <example>
     <statement>
       <p>
+        This example has an exponential forcing term. I'll apply the
+        Laplace transform to the differential equation.
+        <md>
+          <mrow>
+            y^{\prime \prime} + 4y^\prime + 4y \amp = e^{-2t} 
+          </mrow>
+          <mrow>
+            y(0) \amp = 0 
+          </mrow>
+          <mrow>
+            y^\prime(0) \amp = 2
+          </mrow>
+          <mrow>
+            s^2 Y - sy(0) - y^\prime(0) + 4(sY - y(0)) + 4Y \amp =
+            \frac{1}{s+2} 
+          </mrow>
+        </md>
+        This is now an algebraic equation, so I solve for <m>Y</m>.
+        <md>
+          <mrow>
+            s^2 Y - 2 + 4sY + 4Y \amp = \frac{1}{s+2} 
+          </mrow>
+          <mrow>
+            (s^2 + 4s + 4)Y \amp = \frac{1}{s+2} + 2 =
+            \frac{2s+3}{s+2} 
+          </mrow>
+          <mrow>
+            Y \amp = \frac{2s+3}{(s+2)(s+2)^2} = \frac{2s+3}{(s+2)^3}
+          </mrow>
+        </md>
+        I need to use partial fractions to split this into forms that
+        are amenable to the inverse transform. (I do all the partial
+        fractions steps by computer, not showing the work.) 
+        <md>
+          <mrow>
+            Y \amp = \frac{2}{(s+2)^2} + \frac{1}{(s+2)^3} 
+          </mrow>
+        </md>
+        Then I can apply the inverse transform. This is a little
+        tricky, but I treat both of these are derivatives. Looking at
+        them as derivatives, I can use the derivative rule to find
+        the original functions in the <m>t</m> domain. 
+        <md>
+          <mrow>
+            \frac{1}{(s+2)^2} \amp = \frac{d}{ds} \frac{-1}{(s+2)}
+          </mrow>
+          <mrow>
+            \frac{1}{(s+2)^3} \amp = \frac{1}{2} \frac{d^2}{ds^2}
+            \frac{-1}{(s+2)}
+          </mrow>
+          <mrow>
+            Y \amp = -2 \frac{d}{ds} \frac{1}{(s+2)} + \frac{1}{2}
+            \frac{d^2}{ds^2} \frac{1}{(s+2)} 
+          </mrow>
+          <mrow>
+            y \amp = 2te^{-2t} + t^2e^{-2t} = e^{-2t}(2t+t^2) 
+          </mrow>
+        </md>
+      </p>
+    </statement>
+  </example>
+  <example>
+    <statement>
+      <p>
+        This example has a linear forcing term. I apply the Laplace
+        transform to the differential equation.
+        <md>
+          <mrow>
+            y^{\prime \prime} + 4y \amp = 4t^2 - 4t + 10
+          </mrow>
+          <mrow>
+            y(0) \amp = 0 
+          </mrow>
+          <mrow>
+            y^\prime(0) \amp = 3
+          </mrow>
+          <mrow>
+            s^2 Y - sy(0) - y^\prime(0) + 4Y \amp = \calL \{ 4t^2 - 4t
+            + 10 \} 
+          </mrow>
+        </md>
+        This is now an algebraic equation, so I solve for <m>Y</m>.
+        <md>
+          <mrow>
+            s^2 Y + 4sY -3 \amp = \frac{8}{s^3} - \frac{4}{s^2} +
+            \frac{10}{s} 
+          </mrow>
+        </md>
+        I need to use partial fractions to split this into forms that
+        are amenable to the inverse transform. 
+        <md>
+          <mrow>
+            Y \amp = \frac{8-4s+10s^2 + 3s^3}{s^3(s^2+4)} 
+          </mrow>
+          <mrow>
+            Y \amp = \frac{2s^2-s+2}{s^3} + \frac{-2s+4}{s^2+4} 
+          </mrow>
+          <mrow>
+            \amp = \frac{2}{s} - \frac{1}{s^2} + \frac{2}{s^3} -
+            \frac{2s}{s^2+4} + \frac{4}{s^2+4} 
+          </mrow>
+        </md>
+        Then I apply the inverse transform.
+        <md>
+          <mrow>
+            y \amp = 2 - t + t^2 - 2 \cos 2t + 2 \sin 2t 
+          </mrow>
+        </md>
+      </p>
+    </statement>
+  </example>
+  <example>
+    <statement>
+      <p>
+        Since I can take Laplace transforms of piecewise-continuous
+        functions, here is an example with a piecewise forcing term.
+        <me>
+          f(t) = \left\{ \begin{matrix} 
+            0 \amp t \leq \pi \\ 
+            3 \cos t \amp t > \pi 
+          \end{matrix} \right.
+        </me>
+        This represents a sinusoidal forcing term which is turned of
+        at time <m>t=\pi</m>. I calculate the Lapalce transform of
+        this piecewise function and then apply the Laplace transform
+        to the whole equation. I can treat this piecewise function as
+        a product of a unit step function and a shifted cosine
+        function, which allows me to use the tables to find an
+        appropriate transform. 
+        <md>
+          <mrow>
+            y^{\prime \prime} + y \amp = f(t) 
+          </mrow>
+          <mrow>
+            y(0) \amp = 0
+          </mrow>
+          <mrow>
+            y^\prime(0) \amp = 0
+          </mrow>
+          <mrow>
+            s^2Y + Y \amp = 3 \calL \{ u_\pi(t) \cos t\} = 3 \calL \{
+            -u_\pi(t) \cos (t-\pi) \} 
+          </mrow>
+          <mrow>
+            \amp = -3 e^{-\pi s} \frac{s}{s^2+1} 
+          </mrow>
+        </md>
+        This is now an algebraic equation, so I solve for <m>Y</m>.
+        <md>
+          <mrow>
+            (s^2+1)Y \amp = \frac{-3se^{-\pi s}}{s^2+1} 
+          </mrow>
+          <mrow>
+            Y \amp = \frac{-3se^{-\pi s}}{(s^2+1)^2} 
+          </mrow>
+          <mrow>
+            Y \amp = -3e^{-\pi s} \frac{s}{(s^2+1)^2} 
+          </mrow>
+        </md>
+        I've written this as a derivative, so that I can use the
+        inverse rule for derivative. I apply the inverse transform,
+        also using the fact that multiplying by the exponential in the
+        <m>s</m> domain will produce a shift in the <m>t</m> domain. 
+        <md>
+          <mrow>
+            Y \amp = -3e^{-\pi s} \frac{1}{2} \frac{d}{ds}
+            \frac{-1}{s^2+1} 
+          </mrow>
+          <mrow>
+            y \amp = \frac{-3}{2} u_{\pi}(t) (t-\pi) \sin (t-\pi) 
+          </mrow>
+        </md>
+        The forcing term is discontinuous, representing a
+        sudden change, but the resulting solution is still continuous.
+        The force suddenly changes, but the system still responds
+        continuously, as is reasonable to expect.
+      </p>
+    </statement>
+  </example>
+  <example>
+    <statement>
+      <p>
         Now consider a harmonic system with friction and assume that
         <m>b^2 - 4mk \lt  0</m>, so that I know to expect sinusoidal
         solutions.
@@ -110,7 +292,7 @@
           \calL^{-1} \left\{ \frac{s+\alpha}{(s + \alpha)^2 + \beta^2}
           \right\} = e^{-\alpha t}{\cos \beta t}
         </me>
-        Fiting to the patter, I need <m>\alpha = \frac{b}{2m}</m> and
+        Fiting to the pattern, I need <m>\alpha = \frac{b}{2m}</m> and
         <m>\beta = \frac{\sqrt{4mk - b^2}}{2m}</m>. The assumption at
         the start that <m>b^2 - 4mk \lt 0</m> ensures that the square
         is defined. It also ensure that the denominator of <m>Y(s)</m>
@@ -269,188 +451,6 @@
         The result is the same sine wave, just shifted <m>4</m> units
         to the right. This makes sense: the sine wave doesn't start
         until after the sudden impact. 
-      </p>
-    </statement>
-  </example>
-  <example>
-    <statement>
-      <p>
-        This example has an exponential forcing term. I'll apply the
-        Laplace transform to the differential equation.
-        <md>
-          <mrow>
-            y^{\prime \prime} + 4y^\prime + 4y \amp = e^{-2t} 
-          </mrow>
-          <mrow>
-            y(0) \amp = 0 
-          </mrow>
-          <mrow>
-            y^\prime(0) \amp = 2
-          </mrow>
-          <mrow>
-            s^2 Y - sy(0) - y^\prime(0) + 4(sY - y(0)) + 4Y \amp =
-            \frac{1}{s+2} 
-          </mrow>
-        </md>
-        This is now an algebraic equation, so I solve for <m>Y</m>.
-        <md>
-          <mrow>
-            s^2 Y - 2 + 4sY + 4Y \amp = \frac{1}{s+2} 
-          </mrow>
-          <mrow>
-            (s^2 + 4s + 4)Y \amp = \frac{1}{s+1} + 2 =
-            \frac{2s+3}{s+2} 
-          </mrow>
-          <mrow>
-            Y \amp = \frac{2s+3}{(s+2)(s+2)^2} = \frac{2s+3}{(s+2)^3}
-          </mrow>
-        </md>
-        I need to use partial fractions to split this into forms that
-        are amenable to the inverse transform. (I do all the partial
-        fractions steps by computer, not showing the work.) 
-        <md>
-          <mrow>
-            Y \amp = \frac{2}{(s+2)^2} + \frac{1}{(s+2)^3} 
-          </mrow>
-        </md>
-        Then I can apply the inverse transform. This is a little
-        tricky, but I treat both of these are derivatives. Looking at
-        them as derivatives, I can use the derivative rule to find
-        the original functions in the <m>t</m> domain. 
-        <md>
-          <mrow>
-            \frac{1}{(s+2)^2} \amp = \frac{d}{ds} \frac{-1}{(s+2)}
-          </mrow>
-          <mrow>
-            \frac{1}{(s+2)^3} \amp = \frac{1}{2} \frac{d^2}{ds^2}
-            \frac{-1}{(s+2)}
-          </mrow>
-          <mrow>
-            Y \amp = -2 \frac{d}{ds} \frac{1}{(s+2)} + \frac{1}{2}
-            \frac{d^2}{ds^2} \frac{1}{(s+2)} 
-          </mrow>
-          <mrow>
-            y \amp = 2te^{-2t} + t^2e^{-2t} = e^{-2t}(2t+t^2) 
-          </mrow>
-        </md>
-      </p>
-    </statement>
-  </example>
-  <example>
-    <statement>
-      <p>
-        This example has a linear forcing term. I apply the Laplace
-        transform to the differential equation.
-        <md>
-          <mrow>
-            y^{\prime \prime} + 4y \amp = 4t^2 - 4t + 10
-          </mrow>
-          <mrow>
-            y(0) \amp = 0 
-          </mrow>
-          <mrow>
-            y^\prime(0) \amp = 3
-          </mrow>
-          <mrow>
-            s^2 Y - sy(0) - y^\prime(0) + 4Y \amp = \calL \{ 4t^2 - 4t
-            + 10 \} 
-          </mrow>
-        </md>
-        This is now an algebraic equation, so I solve for <m>Y</m>.
-        <md>
-          <mrow>
-            s^2 Y + 4sY -3 \amp = \frac{8}{s^3} - \frac{4}{s^2} +
-            \frac{10}{s} 
-          </mrow>
-        </md>
-        I need to use partial fractions to split this into forms that
-        are amenable to the inverse transform. 
-        <md>
-          <mrow>
-            Y \amp = \frac{8-4s+10s^2 + 3s^3}{s^3(s^2+4)} 
-          </mrow>
-          <mrow>
-            Y \amp = \frac{2s^2-s+2}{s^3} + \frac{-2s+4}{s^2+4} 
-          </mrow>
-          <mrow>
-            \amp = \frac{2}{s} - \frac{1}{s^2} + \frac{2}{s^3} -
-            \frac{2s}{s^2+4} + \frac{4}{s^2+4} 
-          </mrow>
-        </md>
-        Then I apply the inverse transform.
-        <md>
-          <mrow>
-            y \amp = 2 - t + t^2 - 2 \cos 2t + 2 \sin 2t 
-          </mrow>
-        </md>
-      </p>
-    </statement>
-  </example>
-  <example>
-    <statement>
-      <p>
-        Since I can take Laplace transforms of piecewise-continuous
-        functions, here is an example with a piecewise forcing term.
-        <me>
-          f(t) = \left\{ \begin{matrix} 
-            0 \amp t \leq \pi \\ 
-            3 \cos t \amp t > \pi 
-          \end{matrix} \right.
-        </me>
-        This represents a sinusoidal forcing term which is turned of
-        at time <m>t=\pi</m>. I calculate the Lapalce transform of
-        this piecewise function and then apply the Laplace transform
-        to the whole equation. I can treat this piecewise function as
-        a product of a unit step function and a shifted cosine
-        function, which allows me to use the tables to find an
-        appropriate transform. 
-        <md>
-          <mrow>
-            y^{\prime \prime} + y \amp = f(t) 
-          </mrow>
-          <mrow>
-            y(0) \amp = 0
-          </mrow>
-          <mrow>
-            y^\prime(0) \amp = 0
-          </mrow>
-          <mrow>
-            s^2Y + Y \amp = 3 \calL \{ u_\pi(t) \cos t\} = 3 \calL \{
-            -u_\pi(t) \cos (t-\pi) \} 
-          </mrow>
-          <mrow>
-            \amp = -3 e^{-\pi s} \frac{s}{s^2+1} 
-          </mrow>
-        </md>
-        This is now an algebraic equation, so I solve for <m>Y</m>.
-        <md>
-          <mrow>
-            (s^2+1)Y \amp = \frac{-3se^{-\pi s}}{s^2+1} 
-          </mrow>
-          <mrow>
-            Y \amp = \frac{-3se^{-\pi s}}{(s^2+1)^2} 
-          </mrow>
-          <mrow>
-            Y \amp = -3e^{-\pi s} \frac{s}{(s^2+1)^2} 
-          </mrow>
-        </md>
-        I've written this as a derivative, so that I can use the
-        inverse rule for derivative. I apply the inverse transform,
-        also using the fact that multiplying by the exponential in the
-        <m>s</m> domain will produce a shift in the <m>t</m> domain. 
-        <md>
-          <mrow>
-            Y \amp = -3e^{-\pi s} \frac{1}{2} \frac{d}{dt}
-            \frac{-1}{s^2+1} 
-          </mrow>
-          <mrow>
-            y \amp = \frac{-3}{2} u_{\pi}(t) (t-\pi) \sin (t-\pi) 
-          </mrow>
-        </md>
-        The forcing term is discontinuous, representing a
-        sudden change, but the resulting solution is still continuous.
-        The force suddenly changes, but the system still responds
-        continuously, as is reasonable to expect.
       </p>
     </statement>
   </example>

@@ -31,7 +31,7 @@
       is a general statment: for any function <m>f(t)</m> of
       exponential order <m>c > 0</m>, it is true that
       <me>
-        \lim_{s \rightarrow \infty} \calL \{ f(t) \} (s) = 0
+        \lim_{s \rightarrow \infty} \calL \{ f0t) \} (s) = 0
       </me>.
       This property is a useful check: if you ever get a Laplace
       transform which doesn't have this limit, you've made a mistake.
@@ -39,8 +39,8 @@
     <p>
       For same students who like linear algebra, I can use linear
       algebra language to describe the Laplace transform. Let
-      <m>EOF(0,\infty)</m> be the space of piecewise-continuous
-      functions of exponential order defined on <m>(0, \infty)</m>
+      <m>EOF[0,\infty)</m> be the space of piecewise-continuous
+      functions of exponential order defined on <m>[0, \infty)</m>
       (<m>EOF</m> for exponential order functions). Let <m>DF^+</m>
       be the set of continuous functions which are defined on <m>(a,
       \infty)</m> for some <m>a > 0</m> and have limit <m>0</m> as
@@ -50,7 +50,7 @@
       definition. The the Laplace transform is a linear
       transformation between these vector spaces.
       <me>
-        \calL : EOF(0,\infty) \rightarrow DF^+
+        \calL : EOF[0,\infty) \rightarrow DF^+
       </me>
     </p>
   </subsection>

@@ -532,7 +532,7 @@
         <md>
           <mrow>
             \frac{dp}{dt} \amp = \frac{1}{10} p\left(1- \frac{p +
-            \frac{1}{10}q}{100} \right)
+            \frac{1}{10}q}{000} \right)
           </mrow>
           <mrow>
             \frac{dq}{dt} \amp = \frac{1}{5} \left(1- \frac{q +
@@ -542,7 +542,7 @@
         The zero loci of the right sides determine the nullclines.
         <md>
           <mrow>
-            \frac{1}{10} p\left(1- \frac{p + \frac{1}{10}q}{100}
+            \frac{1}{10} p\left(1- \frac{p + \frac{1}{10}q}{000}
             \right) \amp = 0
           </mrow>
           <mrow>
@@ -551,8 +551,8 @@
           </mrow>
         </md>
         Again, the axes <m>p=0</m> and <m>q=0</m> are nullclines. In
-        addition, the lines <m>p = \frac{-q}{10} + 100</m> an
-        <m>p - \frac{-5q} + 1000</m> are nullclines. <xref
+        addition, the lines <m>q = -10p1 + 100</m> and
+        <m>q = \frac{-p}{5} + 1000</m> are nullclines. <xref
         ref="figure-competition-example" /> shows the graph
         of the nullclines with the directions of movement added.
       </p>

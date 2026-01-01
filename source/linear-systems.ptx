@@ -287,7 +287,7 @@
         <figure xml:id="figure-linear-system3">
           <caption>Third Linear System Example</caption>
           <image xml:id="figure36" width="80%">
-            <= asymptote>
+            <asymptote>
               size(10cm,10cm,IgnoreAspect);
               import graph;
               xaxis(dashed);

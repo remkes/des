@@ -49,12 +49,12 @@
     <m>\frac{\sqrt{b}}{\sqrt{\pi}} e^{-b(t-a)^2}</m>. All of these
     functions have integral <m>1</m>, by design of the choice of the
     constnat involved. 
-    <me>
+    <md>
       \int_{-\infty}^\infty \frac{\sqrt{b}}{\sqrt{\pi}} e^{-b(t-a)^2}
       dt = \frac{\sqrt{b}}{\sqrt{\pi}} \int_{-\infty}^\infty
       e^{-b(t-a)^2} dt = \frac{\sqrt{b}}{\sqrt{\pi}} \frac{
       \sqrt{\pi}}{\sqrt{b}} = 1
-    </me>
+    </md>
     These functions are all bell curves, but they become taller and
     narrower as <m>b</m> increases. <xref ref="figure-bell-curves" />
     shows the progression of these bell curves.
@@ -104,10 +104,10 @@
   <p>
     Then I could define <m>\delta_0(t)</m> as the limit of the
     sequences of bell curves as <m>b \rightarrow \infty</m>.
-    <me>
+    <md>
       \delta_0(t) = \lim_{b \rightarrow \infty}
       \frac{\sqrt{b}}{\sqrt{\pi}} e^{b(t-a)^2}
-    </me>
+    </md>
     The limit of a sequence of function is a strange idea and I'm not
     going to go into the technical details of limits of functions and
     the resulting distribution. (There is a theory for this, as part
@@ -117,16 +117,16 @@
     becomes infinitely narrow and infinitely tall. However, the area
     under the curve for any function in the limit is 1, so the value
     of the integral should be unchanged.
-    <me>
+    <md>
       \int_{-\infty}^\infty \delta_0(t) dt = 1
-    </me>
+    </md>
     Since the result of the limit is essentially just an infinitely
     tall, infinitely narrow spike, sometimes the
     <m>\delta</m>-function is defined as follows.  
-    <me>
+    <md>
       \delta_a(t) = \left\{ \begin{matrix} \infty \amp t = a \\ 0
       \amp t \neq a \end{matrix} \right.
-    </me>
+    </md>
     This is very strange, since <m>\infty</m> is not a number and
     shouldn't be the output of a function. Indeed, this is not a
     function (even though it is named, poorly,  as <sq>the
@@ -140,9 +140,9 @@
     <m>a=0</m>. In many books, this is simiply written
     <m>\delta(t)</m>, without the subscript. The other
     <m>\delta</m>-function are simply shifts of this distribution.
-    <me>
+    <md>
       \delta_a(t) = \delta_0(t-a)
-    </me>
+    </md>
   </p>
   <p>
     Finally, I could integrate the product of the bell curve sequence
@@ -154,9 +154,9 @@
     The weighted average of just one value is simply that value, so I
     can argue (informally) for the second property of the 
     <m>\delta</m>-function.
-    <me>
+    <md>
       \int_{-\infty}^\infty \delta_a (t) f(t) dt = f(a)
-    </me>
+    </md>
   </p>
   <p>
     Since the <m>\delta</m>-function, and distributions in general,
@@ -165,11 +165,11 @@
     to calculate. (Indeed, the <m>\delta</m>-function is the nicest
     and easiest function to integrate in basically any circumstance
     due to its second property.) 
-    <me>
+    <md>
       \calL \{ \delta_a(t) \} (s) = \int_0^\infty \delta_a (t) e^{-st}
       dt = \left\{ \begin{matrix} 0 \amp a \lt  0 \\ 1 \amp a = 0 \\
       e^{-as} \amp a \geq 0 \end{matrix} \right.
-    </me>
+    </md>
     This is quite an odd result. I started with a distribution which
     wasn't even a proper function, but it's Laplace transform is a
     proper, well-behaved differentiable function.  Laplace transforms

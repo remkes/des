@@ -7,9 +7,9 @@
         <p>
           Solve this second order linear equation using a Taylor
           series centred at zero.
-          <me>
+          <md>
             4y^{\prime \prime} + t^2y = 0 
-          </me>
+          </md>
         </p>
       </statement>
       <solution>
@@ -42,10 +42,10 @@
           </md>
           I shift the sums so that I have the same exponent for
           <m>t</m> in each sum. 
-          <me>
+          <md>
             4\sum_{n=0}^\infty c_{n+2} (n+2)(n+1) t^n +
             \sum_{n=2}^\infty c_{n-2} t^{n} = 0
-          </me>
+          </md>
           Then I pull out terms so that the starting indices are the
           same for each sum. This lets me combine the sums into one
           sum. 
@@ -63,10 +63,10 @@
           constant and linear terms can only be zero if <m>c_2 = 0</m>
           and <m>c_3 = 0</m>.  Then I look at the general terms and
           solve for the recurrence relation.
-          <me>
+          <md>
             c_{n+2} (n+2)(n+1) + c_{n-2} = 0 \implies c_{n+2} =
             -\frac{c_{n-2}}{(n+2)(n+1)}
-          </me>
+          </md>
           With the recurrence relation, I start calculating
           coefficients. This is a degree four recurrence relation.
           However, since <m>c_2 = 0 </m> and <m>c_3 = 0</m> all
@@ -87,10 +87,10 @@
             </mrow>
           </md>
           I can intuit a general form for this set of coefficients. 
-          <me>
+          <md>
             c_{4k} = \frac{(-1)^k
             c_0}{(4k)(4k-1)(4k-4)(4k-5)\ldots(8)(7)(4)(3)} 
-          </me>
+          </md>
           Now I'll repeat the process for coefficients of the form
           <m>n = 4k+1</m>. 
           <md>
@@ -106,21 +106,21 @@
           </md>
           From these calculations, I can intuit a general pattern for
           this set of coefficients. 
-          <me>
+          <md>
             c_{4k+1} = \frac{(-1)^k
             c_1}{(4k+1)(4k)(4k-3)(4k-4)\ldots(9)(8)(5)(4)} 
-          </me>
+          </md>
           I put the two general pattern into the Taylor series form,
           each with the matching unknown constant. With
           the two unknowns <m>c_0</m> and <m>c_1</m>, I get a linear
           combination of two linearly independent solutions. 
           <md>
             <mrow>
-              y \amp = c_0 \sum_{n=0}^{\infty} \frac{(-1)^k
+              y \amp = c_0 \sum_{k=0}^{\infty} \frac{(-1)^k
               t^{4k}}{(4k)(4k-1)(4k-4)(4k-5)\ldots(8)(7)(4)(3)}
             </mrow>
             <mrow>
-              \amp + c_1 \sum_{n=0}^{\infty} \frac{(-1)^k
+              \amp + c_1 \sum_{k=0}^{\infty} \frac{(-1)^k
               t^{4k+1}}{(4k+1)(4k)(4k-3)(4k-4)\ldots(9)(8)(5)(4)} 
             </mrow>
           </md>
@@ -135,9 +135,9 @@
         <p>
           Solve this second order linear equation using a Taylor
           series centred at zero.
-          <me>
+          <md>
             2y^{\prime \prime} + \frac{t}{2} y^{\prime} - y = 0 
-          </me>
+          </md>
         </p>
       </statement>
       <solution>
@@ -171,11 +171,11 @@
           </md>
           I shift the sums so that I have the same exponent for
           <m>t</m> in each sum. 
-          <me>
+          <md>
             2\sum_{n=0}^\infty c_{n+2} (n+2)(n+1) t^n + \frac{1}{2}
             \sum_{n=1}^\infty c_n nt^{n} - \sum_{n=0}^\infty c_n t^{n}
             = 0 
-          </me>
+          </md>
           Then I pull out terms so that the starting indices are the
           same for each sum. This lets me combine the sums into one
           sum. 
@@ -200,10 +200,10 @@
           implies that <m>c_2 = \frac{-c_0}{4}</m>, where <m>c_0</m> is
           unknown.  Then I look at the general terms and solve for the
           recurrence relation. 
-          <me>
+          <md>
             c_{n+2} = -\frac{\left( \frac{n}{2} - 1 \right)
             c_n}{2(n+2)(n+1)} = -\frac{(n-2) c_n}{4(n+2)(n+1)}
-          </me>
+          </md>
           This is a second order recurrence
           relation, so <m>c_0</m> and <m>c_1</m> being unknown is
           sufficient. I have already calculated <m>c_2</m>, so the
@@ -218,9 +218,9 @@
           <m>c_0</m> is arbitrary and <m>c_2 = \frac{-c_0}{4}</m>.
           Therefore, I already have one of the solutions, which is a
           quadratic polynomial. 
-          <me>
+          <md>
             y_1 = c_0 \left( 1 - \frac{t^2}{4} \right) 
-          </me>
+          </md>
           Now I can proceed with calculations. I have already dealt
           with all the even coefficients, so I'll only calculate the
           odd. 
@@ -236,21 +236,21 @@
             </mrow>
           </md>
           From these coefficients, I can intuit a general pattern.
-          <me>
+          <md>
             c_{2k+1} = \frac{(-1)^k 2c_1}{4^k (2k+1)!} 
-          </me>
+          </md>
           I put this general pattern into the Taylor series form to
           get the second solution.
-          <me>
-            y_2 = c_1 \sum_{n=0}^{\infty} \frac{(-1)^k
+          <md>
+            y_2 = c_1 \sum_{k=0}^{\infty} \frac{(-1)^k
             t^{2k+1}}{4^k (2k+1)!}
-          </me>
+          </md>
           The general solution is the linear combination of the two,
           using the two unknown coefficients from the process. 
-          <me>
+          <md>
             y = c_0 \left( 1 - \frac{t^2}{4} \right) + c_1
-            \sum_{n=0}^{\infty} \frac{(-1)^k t^{2k+1}}{4^k (2k+1)!}
-          </me>
+            \sum_{k=0}^{\infty} \frac{(-1)^k t^{2k+1}}{4^k (2k+1)!}
+          </md>
         </p>
         I expected solutions with infinite radius of convergence.
         Obviously, the polynomial satisfies. I could use the various
@@ -265,9 +265,9 @@
           solution up to the <m>t^6</m> term, since it is
           prohibitively difficult to establish a pattern with this
           recurrence relation.
-          <me>
+          <md>
             (t+1)y^{\prime \prime} + 4t^2y^{\prime} + 3y = 0 
-          </me>
+          </md>
         </p>
       </statement>
       <solution>
@@ -295,17 +295,25 @@
             </mrow>
             <mrow>
               \sum_{n=2}^\infty c_n n(n-1) t^{n-1} + \sum_{n=2}^\infty
-              c_n n(n-1) t^{n-2} + 4 \sum_{n=1}^\infty c_n nt^{n+1} +
+              c_n n(n-1) t^{n-2} 
+            </mrow>
+            <mrow>
+              + 4 \sum_{n=1}^\infty c_n nt^{n+1} +
               3\sum_{n=0}^\infty c_n t^{n} \amp = 0 
             </mrow>
           </md>
           I shift the sums so that I have the same exponent for
           <m>t</m> in each sum. 
-          <me>
-            \sum_{n=1}^\infty c_{n+1} (n+1)(n) t^n + \sum_{n=0}^\infty
-            c_{n+2} (n+2)(n+1) t^n + 4 \sum_{n=2}^\infty c_{n-1}
-            (n-1)t^n + 3\sum_{n=0}^\infty c_n t^{n} = 0 
-          </me>
+          <md>
+            <mrow>
+              \sum_{n=1}^\infty c_{n+1} (n+1)(n) t^n +
+              \sum_{n=0}^\infty c_{n+2} (n+2)(n+1) t^n 
+            </mrow>
+            <mrow>
+              + 4 \sum_{n=2}^\infty c_{n-1} (n-1)t^n +
+              3\sum_{n=0}^\infty c_n t^{n} = 0 
+            </mrow>
+          </md>
           Then I pull out terms so that the starting indices are the
           same for each sum. This lets me combine the sums into one
           sum. 
@@ -339,25 +347,25 @@
           First I look at the isolated terms. Letting <m>c_0</m> and
           <m>c_1</m> be arbitrary, the constant term determined
           <m>c_2</m>. 
-          <me>
+          <md>
             c_2 = \frac{-3c_0}{2} 
-          </me>
+          </md>
           Then the linear term similarly determines <m>c_3</m>.
-          <me>
+          <md>
             c_3 = \frac{-3c_1 - 2c_2}{6} = \frac{-1}{2} c_1 -
             \frac{1}{3} \frac{-3c_0}{2} = \frac{-c_1}{2} +
             \frac{c_0}{2} 
-          </me>
+          </md>
           Now the complexity begins to show. This involves both of the
           unknowns, so the series is unlikely to split nicely into two
           pieces, on associated with each of the original unknowns.
           This intermingling of the two unknowns will continue as I
           start calculating the coefficients. First, I need to
           determine the recurrence relation from the general term. 
-          <me>
+          <md>
             c_{n+2} = \frac{-1}{(n+2)(n+1)} \left( (n+1)(n) c_{n+1} +
             3c_n + 4(n-1)c_{n-1} \right) 
-          </me>
+          </md>
           Now I use this to calculate. As requested, I only calculate
           up to <m>c_6</m>. This is already complicated and miserable
           enough. 
@@ -451,9 +459,9 @@
         <p>
           Solve this second order linear equation using the Method of
           Frobenius at the regular singular point <m>t = 0</m>. 
-          <me>
+          <md>
             t^2y^{\prime \prime} + ty^\prime - y = 0 
-          </me>
+          </md>
         </p>
       </statement>
       <solution>
@@ -479,10 +487,10 @@
             </mrow>
           </md>
           Then I'll write the indicial equation.
-          <me>
+          <md>
             r(r-1) + p_{-1}r + q_{-2} = r(r-1) + r - 1 = r^2 - r
             + r - 1 = r^2 - 1 
-          </me>
+          </md>
           The roots of the inidial equation are <m>r = \pm 1</m>
           Since one root is a positive integer and one is not, I'll
           work separately from the start. I'll start with the positive
@@ -536,16 +544,16 @@
           and the equation puts no restriction on <m>c_0</m>. However, 
           for all the other terms, the <sq>recurrence relation</sq>
           simply translates into a simple equation. 
-          <me>
+          <md>
             c_n = 0 
-          </me>
+          </md>
           This is true for all <m> n \geq 1</m>, so only <m>c_0</m>
           remains. The first solution is the solution with that
           coefficient. (Since <m>r = 1</m>, this is no actually a
           constant.) 
-          <me>
+          <md>
             y_1 = t (c_0) = c_0 t
-          </me>
+          </md>
           Now I'll move on to the negative root. Again, I need to
           start with the derivatives of series.  I have to be quite
           careful with this derivative to make sure that constant
@@ -602,23 +610,23 @@
           arbitrary, <m>c_1</m> must be zero, and <m>c_n = 0</m> for
           all <m>n \geq 3</m>.  Again, this is a polynomial solution,
           but this time, multiplied by <m>\frac{1}{t}</m>.
-          <me>
+          <md>
             y_2 = \frac{1}{t} \left( c_0 + c_2 t^2 \right) =
             \frac{c_0}{t} + c_2 t 
-          </me>
+          </md>
           This solution has two free paramaters, which is strange.
           However, I can observe that the second piece,
           <m>c_2t</m>, is the same as <m>y_1</m>. The linearly
           independent part of <m>y_2</m> consists only of the first
           piece.
-          <me>
+          <md>
             y_2 = \frac{c_0}{t} 
-          </me>
+          </md>
           I found two linearly independent solution. The complete
           family of solutions comes from putting these two together.
-          <me>
+          <md>
             y = A \frac{1}{t} + B t 
-          </me>
+          </md>
           Of interest, in this example, both solutions had series
           which truncated instead of continuing with infinitly many
           terms. This can happen. It's also an examples where both
@@ -632,9 +640,9 @@
         <p>
           Solve this second order linear equation using the Method of
           Frobenius at the regular singular point <m>t = 0</m>. 
-          <me>
+          <md>
             t y^{\prime \prime} + 4y^\prime + ty = 0 
-          </me>
+          </md>
         </p>
       </statement>
       <solution>
@@ -658,10 +666,10 @@
             </mrow>
           </md>
           Then I'll write the indicial equation.
-          <me>
+          <md>
             r(r-1) + p_{-1}r + q_{-2} = r(r-1) + 4r  = r^2 - r +
-            4r = r^2 + 3r = r(r+3) 
-          </me>
+            4r = r(r+3) 
+          </md>
           The roots of the inidial equation are Since one root is a
           positive integer and one is not, I'll work separately from
           the start. I'll start with the positive root. First I need
@@ -683,7 +691,7 @@
           starting indices and grouping terms. 
           <md>
             <mrow>
-              t^2y^{\prime \prime} + ty^\prime - y \amp = 0 
+              ty^{\prime \prime} + 4y^\prime + ty \amp = 0 
             </mrow>
             <mrow>
                t \sum_{n=2}^\infty c_n (n-1)(n) t^{n-2} + 4
@@ -708,10 +716,10 @@
           At the start here, <m>c_0</m> is arbitrary, <m>c_1=0</m>
           from the constant term, and there is a second-order
           recurrence relation. 
-          <me>
+          <md>
             c_n = \frac{-c_{n-2}}{(n-1)(n) + 4n} = \frac{-c_{n-2}}{n^2
             + 3n} = \frac{-c_{n-2}}{n(n+3)}
-          </me>
+          </md>
           Since <m>c_1 = 0</m>, all the odd <m>c_n</m> will be zero
           from the recurrence relation. I calculate some of the even
           terms to find the pattern.
@@ -733,10 +741,10 @@
           </md>
           From this, I intuit a general form for the even
           coefficients.
-          <me>
+          <md>
             c_{2k} = \frac{(-1)^k c_0}{(2)(4)(6) \ldots (2k)(5)(7)(9)(11)
             \ldots (2k+3)} 
-          </me>
+          </md>
           I can do some factorial tricks to write this in terms of
           factorials. For the even numbers multiplied together, I can
           factor out <m>2</m> from each term (there are <m>k</m>
@@ -765,10 +773,10 @@
             </mrow>
           </md>
           Now I can write this first solution for <m>r=0</m>.
-          <me>
-            y_1 = c_0 \left[ 1 - \frac{t^2}{14} + \sum_{n=2}^{\infty}
+          <md>
+            y_1 = c_0 \left[ 1 - \frac{t^2}{10} + \sum_{k=2}^{\infty}
             \frac{(-1)^k (60)(k+1)t^{2k}}{(2k+3)!} \right]
-          </me>
+          </md>
           Now I'll move on to the negative root. Again, I need to
           start with the derivatives of series. 
           <md>
@@ -861,19 +869,19 @@
             </mrow>
           </md>
           I can use these calculations to intuit a pattern.
-          <me>
+          <md>
             c_{2k} = \frac{(-1)^{k+1} c_0}{(2k-2)!(2k)} 
-          </me>
+          </md>
           Now I can write the second solution.
           <md>
             <mrow>
               y_2 \amp = c_0 \left[ \frac{1}{t^3} \left[ 1 +
-              \frac{t^2}{2} - \frac{t^4}{8} + \sum_{n=3}^\infty
+              \frac{t^2}{2} - \frac{t^4}{8} + \sum_{k=3}^\infty
               \frac{(-1)^{k+1} t^{2k}}{(2k-2)!(2k)} \right] \right] 
             </mrow>
             <mrow>
               \amp = c_0 \left[ \frac{1}{t^3} + \frac{1}{2t} -
-              \frac{t}{8} + \sum_{n=3}^\infty \frac{(-1)^{k+1}
+              \frac{t}{8} + \sum_{k=3}^\infty \frac{(-1)^{k+1}
               t^{2k-3}}{(2k-2)!(2k)} \right]
             </mrow>
           </md>
@@ -881,13 +889,13 @@
           solutions.
           <md>
             <mrow>
-              y \amp = A \left[ 1 - \frac{t^2}{14} +
-              \sum_{n=2}^{\infty} \frac{(-1)^k
+              y \amp = A \left[ 1 - \frac{t^2}{10} +
+              \sum_{k=2}^{\infty} \frac{(-1)^k
               (60)(k+1)(k+2)t^{2k}}{(2k+5)!} \right]
             </mrow>
             <mrow>
               \amp + B \left[ \frac{1}{t^3} + \frac{1}{2t} -
-              \frac{t}{8} + \sum_{n=3}^\infty \frac{(-1)^{k+1}
+              \frac{t}{8} + \sum_{k=3}^\infty \frac{(-1)^{k+1}
               t^{2k-3}}{(2k-2)!(2k)} \right]
             </mrow>
           </md>

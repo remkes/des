@@ -7,9 +7,9 @@
           Let <m>a(t)</m>, <m>b(t)</m>, <m>c(t)</m> and <m>f(t)</m> be
           functions. A <term>second order linear differential
           equation</term> is an equation of the form
-          <me>
+          <md>
             a(t) \frac{d^2y}{dt^2} + b(t) \frac{dy}{dt} + c(t) y = f(t)
-          </me>.
+          </md>.
           As with the first order case, this is called
           <term>homogeneous</term> if <m>f(t) = 0</m>.
         </p>
@@ -20,9 +20,9 @@
         <p>
           A <term>second order linear differential operator</term>
           is an operator of the form.
-          <me>
+          <md>
             L = a(t) \frac{d^2}{dt^2} + b(t) \frac{d}{dt} + c(t)
-          </me>.
+          </md>.
           In operator notation, a second order linear differential
           equation is <m>Ly = f(t)</m>. The principles of linearity
           and superposition defined for first order equation in <xref
@@ -44,9 +44,9 @@
         <p>
           Let <m>a,b,c \in \RR</m>. A <term>second order constant
           coefficient linear operator</term> has the form
-          <me>
+          <md>
             L = a \frac{d^2}{dt^2} + b \frac{d}{dt} + c
-          </me>.
+          </md>.
           The corresponding homogeneous equation is <m>Ly=0</m> and
           the corresponding non-homogeneous equation is
           <m>Ly=f(t)</m>. o avoid writing a lengthy name over and
@@ -117,10 +117,10 @@
       superposition to produce a general solution by taking any linear
       combination of these two solutions. For any two numbers <m>A,B
       \in \RR</m>, this is the general solution:
-      <me>
+      <md>
         y(t) = A \sin \left( \sqrt{\frac{k}{m}} t \right) + B \cos
         \left( \sqrt{\frac{k}{m}} t \right)
-      </me>.
+      </md>.
     </p>
     <p>
       As an aside: if I want, If a sine and cosine function share the
@@ -267,9 +267,9 @@
         <m>q</m> and measured in coloumbs. The movement of charge is
         current, represented by the derivative <m>\frac{dq}{dt}</m>.
         The SOCCLDE that models an alternating current is 
-        <me>
+        <md>
           L \frac{d^2 q}{dt^2} + R \frac{dq}{dt} + \frac{1}{c} q = E(t)
-        </me>.
+        </md>.
         If there is no resistance and no electromotive force, the
         solution is sinusoidal oscillation as before (hence
         <em>alternating</em> current). Under resistance, where there is
@@ -297,13 +297,13 @@
       I'll make heavy use of the differential operator notation, so
       let me remind you of the general form of the second order
       constant coefficient operator. 
-      <me>
+      <md>
         L = a \frac{d^2}{dt^2} + b \frac{d}{dt} + c
-      </me>.
+      </md>.
       Then the DE that I am trying to solve is
-      <me>
+      <md>
         Ly = f(t) 
-      </me>
+      </md>
       for some (probably continuous) <m>f(t)</m>. How do I even start?
       One common strategy in DEs is to look at easier but similar
       equations and see if the type of solutions from the easier case
@@ -354,9 +354,9 @@
     <p>
       The characteristic equation has two roots (with a possible
       repeated root).
-      <me>
+      <md>
         r = \frac{-b \pm \sqrt{b^2-4ac}}{2a}
-      </me>
+      </md>
       Recall that the term <m>b^2 -4ac</m> in a quadratic is called
       the discriminant; the sign of the discriminat controls the roots
       of the quadratic. There are three cases. 
@@ -383,15 +383,15 @@
       distinct, these are linearly independent solutions (neither
       exponential function is a multiple of the other). I can simply
       check that they satisfy the DE.
-      <me>
+      <md>
         L e^{rt} = e^{rt} ( ar^2 + br+ c) = 0
-      </me>
+      </md>
       Since I expect two linearly indepedent solutions to a linear
       equation, the are no other solutions. The general solution is a
       superposition (linear combination) of the two solutions. 
-      <me>
+      <md>
         y= Ae^{r_1 t} + Be^{r_2t}
-      </me>
+      </md>
       The behaviour is exponential growth or decay, depending on
       whether <m>r_1</m> and <m>r_2</m> are positive or negative.
     </p>
@@ -403,14 +403,14 @@
       of the characteristic equation again, if <m>a</m>, <m>b</m> and
       <m>c</m> are positive, I can determine the sign of the roots. In
       the solution given by the quadratic forumla
-      <me>
+      <md>
       \frac{-b \pm \sqrt{b^2 - 4ac}}{2a}
-      </me>
+      </md>
       since the discriminant is positive, I can make the following
       calculation.
-      <me>
+      <md>
         \sqrt{b^2 - 4ac} \leq \sqrt{b^2} = b 
-      </me>
+      </md>
       The numerator of the fraction is obviously negative if I choose
       negative for the <m>\pm</m>. However, if I choose positive, then
       the term I am adding to <m>-b</m>, by the above inequatliy, is
@@ -435,9 +435,9 @@
       <statement>
         <p>
           I'll start with a simple example. 
-          <me>
+          <md>
             y^{\prime\prime} - y = 0
-          </me>
+          </md>
           The characteristic equation is is <m>r^2 -1=0</m> which has
           roots <m>r = \pm 1</m>. The solutions are <m>y=e^t</m> and
           <m>y=e^{-t}</m>. The general solution is <m>y=Ae^t +
@@ -538,9 +538,9 @@
     <example>
       <statement>
         <p>
-          <me>
+          <md>
             y^{\prime\prime} -2y^\prime + y = 0
-          </me>
+          </md>
           The characteristic equation is <m>r^2 = 2r + 1 =
           (r-1)^2</m>. The solutions are <m>y = e^t</m> and
           <m>y=te^t</m>, so the general solution is <m>y= Ae^t +
@@ -560,10 +560,10 @@
       to understand the solutions (as well as the use of Euler's
       formula). I can factor <m>\imath</m> out of the square root to
       get a real root. 
-      <me> 
+      <md> 
         r = \frac{-b \pm \sqrt{b^2-4ac}}{2a} = \frac{-b}{2a} \pm
         \imath \frac{\sqrt{4ac-b^2}}{2a} 
-      </me> 
+      </md> 
       The roots are a pair of complex numbers <m>x \pm y \imath</m>
       with the real part <m>x = \frac{-b}{2a}</m> and imaginary part
       <m>y = \frac{ \sqrt{4ac-b^2}}{2a}</m>. They are a conjugate
@@ -579,19 +579,19 @@
       </md>
       Then the complex roots are described via these constants:
       <m>\alpha \pm \imath \beta</m>. The solutions to the DE are
-      <me>
+      <md>
         e^{(\alpha \pm \imath \beta)t} = e^{\alpha t} e^{\pm \imath
         \beta t}
-      </me>.
+      </md>.
       What do these complex functions means? The <m>e^{\alpha t}</m>
       term is fine, it is just a real exponential. The complex
       exponential is understood through Euler's formula (<xref
       ref="prop-eulers-formula"  /> in <xref
       ref="section-complex-numbers" />).
-      <me>
+      <md>
         e^{\alpha t} e^{\pm \imath \beta t} = e^{\alpha t} ( \cos
         (\beta t) \pm \imath \sin (\beta t))
-      </me>
+      </md>
       These solutions are still problematic because they involve
       complex numbers. I am trying to solve a real system with real
       coefficient and I want real solutions. To find them, I need to
@@ -620,9 +620,9 @@
       </md>
       The general, real-valued solutions are linear combinations of
       the two linearly independent solutions.
-      <me>
+      <md>
         y = A e^{\alpha t} \sin \beta t + B e^{\alpha t} \cos \beta t
-      </me>
+      </md>
       The complex numbers, via Euler's formula, product sine and
       cosine instead of exponential growth or decay. In a harmonic
       system, this behaviour happens when
@@ -639,9 +639,9 @@
         <p>
           I'll go back to the very first example of simple,
           frictionless harmonic motion. 
-          <me>
+          <md>
             y^{\prime \prime} + y = 0
-          </me>
+          </md>
           The characteristic equation is <m>r^2 +1</m> which has roots
           <m>\pm \imath</m>. Therefore <m>\alpha = 0</m> and <m>\beta
           = 1</m>, so the solutions are <m>\cos t</m> and <m>\sin
@@ -655,18 +655,18 @@
     <example>
       <statement>
         <p>
-          <me>
+          <md>
             y^{\prime \prime} - 2y^\prime + 5y  = 0   
-          </me>
+          </md>
           I write the characteristic equation.
-          <me>
+          <md>
             r^2 + 2r + 5  = 0
-          </me>
+          </md>
           I find the roots. 
-          <me>
+          <md>
             r = \frac{2}{2} \pm \frac{\sqrt{4-20}}{2} = 1 \pm
             \frac{\sqrt{-16}}{2} = 1 \pm \imath 2 
-          </me>
+          </md>
           I can identify the two pieces of the complex roots.
           <md>
             <mrow>
@@ -674,54 +674,54 @@
             </mrow>
           </md>
           Then I can write the general solution. 
-          <me>
+          <md>
             y = A e^t \cos 2t + B e^t \sin 2t 
-          </me>
+          </md>
           Now I'll impose initial condition of <m>y(0) = 4</m> and
           <m>y^\prime(0) = 6</m>. If I put these into the general
           equation, I get a system of two linear equations. The
           solution of that system is <m>A = 4</m> and <m>B = 1</m>,
           which leads to a specific solution to the initial value
           problem. 
-          <me>
+          <md>
             y = 4e^t \cos 2t + e^t \sin 2t 
-          </me>
+          </md>
         </p>
       </statement>
     </example>
     <example>
       <statement>
         <p>
-          <me>
+          <md>
             y^{\prime \prime} + 3y^\prime + 4y = 0 
-          </me>
+          </md>
           I write the characteristic equation.
-          <me>
+          <md>
             r^2 + 3r + 4 = 0
-          </me>
+          </md>
           I solve the characteristic equation.
-          <me>
+          <md>
             r = \frac{-3}{2} \pm \frac{\sqrt{9-16}}{2} =
             \frac{-3}{2} \pm \frac{\sqrt{-7}}{2} = \frac{-3}{2} \pm
             \imath \sqrt{7} 
-          </me>
+          </md>
           The two parts of the complex number are <m>\alpha =
           \frac{-3}{2}</m> and <m>\beta = \sqrt{7}</m>. This lets me
           write the general solution. 
-          <me>
+          <md>
             y = A e^{-\frac{3t}{2}} \cos \sqrt{7}t + B
             e^{-\frac{3t}{2}} \sin \sqrt{7}t 
-          </me>
+          </md>
           If I am given initial conditions of <m>y(0) = 2</m> and
           <m>y^\prime(0) = 2</m>, then I can put those into the
           general form to get a system of two equations. The solution
           of the system is <m>A = 2</m> and <m>B =
           \frac{5}{\sqrt{7}}</m>. This gives a specific solution to
           the initial value problem.
-          <me>
+          <md>
             y = 2e^{-\frac{3t}{2}} \cos \sqrt{7} t +
             \frac{5}{\sqrt{7}} e^{-\frac{3t}{2}} \sin \sqrt{7} t 
-          </me>
+          </md>
         </p>
       </statement>
     </example>

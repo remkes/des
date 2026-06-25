@@ -14,9 +14,9 @@
     <title>Autonomous DEs and Phase-Line Analysis</title>
     <p>
       Consider a population model <m>p(t)</m> with its autonomous DE.
-      <me>
+      <md>
         \frac{dp}{dt} = f(p)
-      </me>
+      </md>
       There is a lovely piece of qualitative analysis for autonomous
       equations called the <em>phase line analysis</em>. This is
       hopefully familiar from Calculus I, but I'll review the whole
@@ -113,9 +113,9 @@
           </image>
         </figure>
         <p>
-          <me>
+          <md>
             \frac{dp}{dt} = p^2 - p
-          </me>
+          </md>
           The right side is zero when <m>p=0</m> or <m>p=1</m>, so
           those are the steady states. When <m>p \in (0,1)</m> the
           derivative is negative, so the trajectory is decreasing.
@@ -146,9 +146,9 @@
           </image>
         </figure>
         <p>
-          <me>
+          <md>
             \frac{dp}{dt} = p^3 -7p^2 + 10p
-          </me>
+          </md>
           The right side factors as <m>p(p-2)(p-5)</m>, so it is zero
           then <m>p=0</m>, <m>p=2</m> or <m>p=5</m>. Those are the
           steady states. When <m>p \in (0,4)</m> the derivative is
@@ -178,9 +178,9 @@
         <p>
           This example is a specific instance of a form known as the
           logistic equation.
-          <me>
+          <md>
             \frac{dp}{dt} = 4p-p^2
-          </me>
+          </md>
           The right side is zero when <m>p=0</m> or <m>p=4</m>, so
           those are the steady states. When <m>p \in (0,4)</m> the
           derivative is positive, so the trajectory is increasing.
@@ -214,9 +214,9 @@
     <p>
       The previous example was a logistic equation. The general form
       of the logistic equation is 
-      <me>
+      <md>
         \frac{dp}{dt} = cp(K - p)
-      </me> 
+      </md> 
       for some constants <m>c</m> and <m>K</m> with <m>K \gt 0</m>.
       The logistic equation leads to logistic growth.  logistic
       growth, <m>p = K</m> is always a steady state and the starting
@@ -239,9 +239,9 @@
       However, if I can solve for the derivative term in the DE, I can
       write a first order DE in this way, for some expression <m>F</m>
       in two variables.  
-      <me>
+      <md>
         \frac{dy}{dx} = F(x,y)
-      </me>
+      </md>
       This allows a very useful interpretation: the left side is the
       slope of a graph, the right side is a function on <m>\RR^2</m>,
       giving a value at every point in the plane. Together, these data
@@ -324,9 +324,9 @@
           </image>
         </figure>
         <p>
-          <me>
+          <md>
             \frac{dy}{dx} = y
-          </me>
+          </md>
           The slope at a point <m>(x,y)</m> is <m>y</m>, so the slope
           at <m>(3,4)</m> is <m>4</m>, the slope at <m>(-2,-3)</m> is
           <m>-3</m> and the slope at <m>(32,0)</m> is <m>0</m>. <xref
@@ -400,9 +400,9 @@
           </image>
         </figure>
         <p>
-          <me>
+          <md>
             \frac{dy}{dx} = x \sqrt{y}
-          </me>
+          </md>
           <xref ref="figure-direction-field2" /> shows the direction
           field and the infinite family of solutions. I can see the
           entire family <m>y = (\frac{x^2}{4} + c)^2</m>, but I also
@@ -470,9 +470,9 @@
           </image>
         </figure>
         <p>
-          <me>
+          <md>
             \frac{dy}{dx} = \frac{4y}{x}
-          </me>
+          </md>
           There is a family of solutions <m>y = cx^4</m> which fits
           the direction field. The singular solutions are put
           together from one positive and one negative piece. <xref
@@ -539,9 +539,9 @@
           </image>
         </figure>
         <p>
-          <me>
+          <md>
             \frac{dy}{dx} = xy
-          </me>
+          </md>
           This is solved by <m>y = ce^{x^2}</m>, including <m>c=0</m>
           for <m>y=0</m> as a trivial solution. The direction field
           also shows the stability behaviour of the function: in this
@@ -611,9 +611,9 @@
           </image>
         </figure>
         <p>
-          <me>
+          <md>
             \frac{dy}{dx} = -\frac{x}{y}
-          </me>
+          </md>
           This is solved by <m>y = \pm \sqrt{c-x^2}</m>, which gives a
           series of circles. The direction field shows the bounded,
           relatively stable behaviour which is confirmed by the

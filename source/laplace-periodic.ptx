@@ -13,12 +13,12 @@
     <statement>
       <p>
         This is the square wave.
-        <me>
+        <md>
           f(t) = \left\{ \begin{matrix} 
             0 \amp  t \in [2n+1, 2n+2] \\
             1 \amp  1 \in (2n, 2n+1) 
           \end{matrix} \right.
-        </me>
+        </md>
       </p>
     </statement>
   </example>
@@ -45,9 +45,9 @@
     <statement>
       <p>
         If <m>f(t)</m> is bounded periodic with period <m>T</m>, then 
-        <me>
+        <md>
           \calL\{ f(t) \} = \frac{1}{1-e^{-sT}} \int_0^T e^{-st} f(t) dt
-        </me>
+        </md>
       </p>
     </statement>
   </proposition>

@@ -44,11 +44,11 @@
       There are many ways to write a differential equation. The theory
       allows for any strange and complicated expression in a function
       and its derivatives. 
-      <me>
+      <md>
         \frac{f(t) f^\prime(t) + e^t \cos t}{f^{\prime \prime}(t)} -
         \ln \left( \frac{1}{1 + (f(t))^6} \right) - \sqrt{f^\prime(t)}
         = 17
-      </me>
+      </md>
       This expression is a differential equation, but it is basically
       nonsense. I have no idea if it has a solution, but I am certain
       that this equation doesn't relate to any concrete motivating
@@ -64,9 +64,9 @@
           function. A differential equation is called
           <term>autonomous</term> is the independent variable doesn't
           appear. For a first order equation, this looks like
-          <me>
+          <md>
             \frac{dy}{dt} = f(y)
-          </me> for some expression <m>f(y)</m> in the dependent
+          </md> for some expression <m>f(y)</m> in the dependent
           variable. Note that <m>y(t)</m> is the function I am looking
           for; <m>f(y)</m> is also a function, but I'm only using that
           function to say that the right side of the equation is some
@@ -81,23 +81,23 @@
           has this form, where <m>y(t)</m> is the potential solution
           but <m>a(t)</m>, <m>b(t)</m> and <m>c(t)</m> are any other
           function in the same independent variable. 
-          <me>
+          <md>
             a(t) \frac{dy}{dt} + b(t) y(t) = c(t) 
-          </me>.
+          </md>.
           Likewise, a second equation is called <term>linear</term> if
           it has this form.
-          <me>
+          <md>
             a(t) \frac{d^2y}{dt^2} + b(t) \frac{dy}{dt} + c(t) y(t) =
             d(t) 
-          </me>
+          </md>
           The order of a linear equation can be as high as you want.
           This means the full general form of a linear equation looks
           sort-of like a polynomial, with <sq>powers</sq> as order of
           differentiation and coefficients as other functions. 
-          <me>
+          <md>
             a_n(t)y^{(n)} + a_{n-1}(t)y^{(n-1)} + \ldots + a_1(t)
             y^\prime + a_0(t) y = f(t)
-          </me>.
+          </md>.
           Finally, a linear equation is called
           <term>homogenous</term> if the term which is not multiplied
           by any derivative of the function (<m>c(t)</m> in the first
@@ -131,16 +131,16 @@
       equation that was written in the previous definition. The
       function <m>y(t)</m> and its derivatives only show up on the
       left side of the equation.
-      <me>
+      <md>
         a(t) \frac{d^2y}{dt^2} + b(t) \frac{dy}{dt} + c(t) y(t) =
         d(t) 
-      </me>
+      </md>
       This means I can think of the entire left side as something that
       happens to the function <m>y(t)</m>. I can express this with a
       linear differential operator. 
-     <me>
+     <md>
        L = a(t) \frac{d^2}{dt^2} + b(t) \frac{d}{dt} + c(t)
-      </me>
+      </md>
       Using this operator, I can write the differential equation very
       succinctly. This second order equation now becomes <m>Ly =
       d(t)</m>. I'll make frequent use of this kind of operator
@@ -175,9 +175,9 @@
     </figure>
     <p>
       The simplest differential equation is
-      <me>
+      <md>
         \frac{df}{dt} = \alpha f(t)
-      </me>.
+      </md>.
       For many differential equations, I seek a translation of
       their meaning. The translation of this simple equation is
       that the rate of change is propotional to the current value.
@@ -228,9 +228,9 @@
     <example>
       <statement>
         <p>
-          <me>
+          <md>
             \frac{d^2f}{dt^2} + 9 f = 0
-          </me>
+          </md>
           This is solved by <m>\sin 3t</m> and also by <m>\cos 3t</m>.
           Moreover, any linear combination <m>a\sin 3t + b \cos 3t</m>
           is also solution. In a second order equation, I expect two
@@ -245,9 +245,9 @@
     <example>
       <statement>
         <p>
-          <me>
+          <md>
             \frac{dy}{dt} = t \sqrt{y}
-          </me>
+          </md>
           This is solved by <m>y = (\frac{t^2}{4} + c)^2</m>, which is
           a nice family with one real parameter. However, this is
           also solved by <m>y=0</m>, even though it isn't in the
@@ -269,18 +269,18 @@
     <example>
       <statement>
         <p>
-          <me>
+          <md>
             t \frac{dy}{dt} = 4y
-          </me>
+          </md>
           This is solved by <m>y = ct^4</m>, which is another
           reasonable family. However, there is a strange, singular
           solution.
-          <me>
+          <md>
             y(t) = \left\{ \begin{matrix} 
               -t^4 \amp t \leq 0 \\ 
               t^4 \amp t>0 
             \end{matrix} \right.
-          </me>
+          </md>
           The derivatives of this function line up at the origin, so
           the function is of class <m>C^1</m> (actually <m>C^3</m>, if
           you work it out).
@@ -290,9 +290,9 @@
     <example>
       <statement>
         <p>
-          <me>
+          <md>
             \frac{dy}{dx} = \frac{-x}{y}
-          </me>
+          </md>
           The curve <m>x^2 + y^2 = c</m> solves this equation
           implicitly. I could break this up into two functions, but
           its much more natural to leave it as an implicit locus, in
@@ -410,9 +410,9 @@
     <example>
       <statement>
         <p>
-          <me>
+          <md>
             \frac{dy}{dt} = e^{-t^2} \implies y = \int e^{-t^2}dt + c
-          </me>
+          </md>
           This integrand is a <m>C^\infty</m> function, so the
           anti-derivative exists, but there is no name for it in the
           elementary functions. Therefore, the solution is some new

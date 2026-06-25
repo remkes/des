@@ -13,9 +13,9 @@
       <statement>
         <p>
           The <m>\Gamma</m> function is defined by this integral.
-          <me>
+          <md>
             \Gamma(t) = \int_0^\infty x^{t-1}e^{-x} dx
-          </me>
+          </md>
           The <m>\Gamma</m> function is defined on all <m>\RR</m>
           except 0 and negative integers. It is continuous and
           differentiable on <m>(0, \infty)</m>.
@@ -75,10 +75,10 @@
     <p>
       Then, from the factorial-like nature of <m>\Gamma</m>, all other
       half-integer values are multiples of <m>\sqrt{\pi}</m>.
-      <me>
+      <md>
         \Gamma\left( \frac{2n+1}{2} \right) = \frac{ (3)(5)(7) \ldots
         (2n-1) \sqrt{\pi}}{2^n}
-      </me>
+      </md>
     </p>
   </subsection>
   <subsection xml:id="subsection-bessel-equation">
@@ -98,9 +98,9 @@
       Let <m>\nu \in \RR</m> (this <m>\nu</m> is the greek letter nu,
       not the roman letter <sq>v</sq>). Bessel's equation of order
       <m>\nu</m> is the equation
-      <me>
+      <md>
         t^2 y^{\prime \prime} + t y^\prime + (t^2 - \nu^2) y = 0
-      </me>.
+      </md>.
       Written in standard form, <m>0</m> is a regular singular point
       of Bessel's equation.
       <md>
@@ -304,16 +304,16 @@
     <p>
       The constant <m>c_0</m> is still undetermined. By convention,
       the choice for <m>c_0</m> is the following strange value.
-      <me>
+      <md>
         c_0 = \frac{1}{2^\nu \Gamma(1+\nu)}
-      </me>
+      </md>
       The properties of the <m>\Gamma</m> function allow me to
       simplify the denominator of the <m>c_n</m>.
-      <me>
+      <md>
         c_{2n} = \frac{(-1)^n}{2^\nu \Gamma(1+\nu)} \frac{1}{2^{2n}n!
         (\nu+1) \ldots (\nu+n)} = \frac{(-1)^n}{2^{2n+v} n!
         \Gamma(1+n+\nu)}
-      </me>
+      </md>
       With this simplification, I can write the final solution for
       positive <m>\nu</m>.
     </p>
@@ -323,10 +323,10 @@
           The solution constructed above is written <m>J_\nu</m> and
           called the <term>Bessel function of the first kind</term> of
           order <m>\nu</m>.
-          <me>
+          <md>
             J_{\nu} = \sum_{n=0}^\infty \frac{(-1)^n}{n!
             \Gamma(1+n+\nu)} \left( \frac{t}{2} \right)^{2n+\nu}
-          </me>
+          </md>
           It converges on <m>(0, \infty)</m>. It may not be defined at
           0 or negative numbers. In general, the applications are only
           interested in the Bessel function on the domain <m>(0,
@@ -394,10 +394,10 @@
       that <m>c_1 = 0</m>, hence all odd coefficients are <m>0</m>. In
       this way, I find the rest of the Bessel functions of the first
       kind.
-      <me>
+      <md>
         J_{-\nu} = \sum_{n=0}^\infty \frac{(-1)^n}{n! \Gamma(1+n-\nu)}
         \left( \frac{t}{2} \right)^{2n-\nu}
-      </me>
+      </md>
       One caution should be noted. If <m>n \in \NN</m>, this
       <m>J_{-n}</m> gives an undefined denominator, hence doesn't
       define a series. In these cases, the method of Frobenius gives
@@ -414,19 +414,19 @@
           Let <m>n \notin \ZZ</m>. The <term>Bessel functions of the
           second kind</term> of order <m>\nu</m> are written
           <m>Y_{\nu}</m> and defined by the following expression.
-          <me>
+          <md>
             Y_{\nu} = \frac{\cos (\nu \pi) J_{\nu}(t) -
             J_{-\nu}(t)}{\sin \nu \pi}
-          </me>
+          </md>
           This definition is a linear combination of Bessel functions
           of the first kind. For <m>\nu \in \ZZ</m>, this linear
           combination is just a multiple of the one solution (since
           the Method of Frobenius only produced one solution).  To get
           around this, for <m>\nu \in \ZZ</m>, the the Bessel function
           of the second kind are defined as a limit.
-          <me>
+          <md>
             Y_{\nu}(t) = \lim_{\alpha \rightarrow \nu} Y_{\alpha}(t)
-          </me>
+          </md>
           L'Hopital's rule shows that this limit exists. The Bessel
           functions of the second kind are shown in <xref
           ref="figure-bessel-second-kind" />.
@@ -437,26 +437,26 @@
       To summarize, for any <m>\nu \geq 0</m> we have <m>J_{\nu}</m>
       and <m>Y_{\nu}</m>, two linearly independent solutions to the
       differential equation. The general solution is
-      <me>
+      <md>
         y = A J_{\nu} + B Y_{\nu}
-      </me>.
+      </md>.
     </p>
   </subsection>
   <subsection xml:id="subsection-aging-spring">
     <title>The Aging Spring</title>
     <p>
       Consider the spring equation from before.
-      <me>
+      <md>
         my^{\prime \prime} + by^\prime + ky = 0
-      </me>
+      </md>
       Now, instead of all constants, lets assume this is an aging
       spring. That is, at time passes, the spring constant decreases.
       One model is exponential decay, so let <m>k(t) = ke^{-\alpha
       t}</m> for <m>\alpha > 0</m>. Let's see what happens without
       friction.
-      <me>
+      <md>
         m y^{\prime \prime} + ke^{-\alpha t} = 0
-      </me>
+      </md>
       Here's a strange change of variables.
       <md>
         <mrow>
@@ -483,9 +483,9 @@
       in terms of some new function <m>x(s)</m> instead of
       <m>y(t)</m>. The function I need is implicity defined as
       follows. 
-      <me>
+      <md>
         x(s(t)) = y(t)
-      </me>
+      </md>
       This is implicit; <m>x</m> is the function that, when compsed
       with the change of variables <m>s(t)</m>, give the original
       function <m>y</m>. Since the composition is invertible, this
@@ -612,9 +612,9 @@
       I mentioned a functional equation for the Legendre polynomials
       in <xref ref="section-legendre" />.  I have one here
       as well; this one is true for arbitrary <m>\nu</m>.
-      <me>
+      <md>
         tJ_{\nu}^\prime(t) = \nu J_{\nu}(t) - t J_{\nu+1}(t)
-      </me>
+      </md>
       There are some interesting properties of Bessel functions with
       half-integer orders. Look closely again at
       <m>J_{\frac{1}{2}}</m>.

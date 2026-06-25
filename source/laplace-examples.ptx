@@ -6,10 +6,10 @@
     <statement>
       <p>
         Consider a slightly different version of the square wave.
-        <me>
+        <md>
           f(t) = \left\{ \begin{matrix} 1 \amp t \in [2n, 2n+1) \\ -1
           \amp t \in [2n+1, 2n+2) \end{matrix} \right.
-        </me>
+        </md>
         Using initial conditions <m>y(0) = y^\prime(0)= 0</m> I solve
         the equation <m>y^{\prime \prime} + y = f(t)</m>.
         <md>

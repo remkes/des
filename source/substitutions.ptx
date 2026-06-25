@@ -29,9 +29,9 @@
       comes from a different use of the term in algebra. This is
       deeply confusing and unfortunate, but it is the situation. In
       any case, a homogenous DE has the following form.
-      <me>
+      <md>
         \frac{dy}{dt} = f \left( \frac{y}{t} \right)
-      </me>
+      </md>
       The substitution that simplifies these equations is <m>v =
       \frac{y}{t}</m>. The right side of the equation easily turns
       into <m>f(v)</m>, but the transformation of the left side is
@@ -49,14 +49,14 @@
       Now I have an expression that I can use to replace the left
       side. Changing both the left and the right sides gives a new
       differential equation in the new function <m>v(t)</m>.
-      <me>
+      <md>
         v + t \frac{dv}{dt} = f(v) 
-      </me>
+      </md>
       Now I solve for <m>\frac{dv}{dt}</m> to put this new DE in a
       conventional form. 
-      <me>
+      <md>
         \frac{dv}{dt} = \frac{f(v) - v}{t} 
-      </me>
+      </md>
       This is now a separable equation. The substitution has changed a
       potentially strange and difficult equation into one I know how
       to do from a previous techique. 
@@ -125,10 +125,10 @@
     <example>
       <statement>
         <p>
-          <me>
+          <md>
             \frac{dy}{dt} = \frac{-y^2 - yt }{t^2} = \frac{-y^2}{t^2}
             - \frac{y}{t}
-          </me>
+          </md>
           This is a homogeneous equation, so I set up the
           substitution. 
           <md>
@@ -208,9 +208,9 @@
       called Bernoulli equations. These equations are nearly linear,
       but they have an extra <m>y^n</m> term. They are written in a
       form very similar to the form for linear DEs. 
-      <me>
+      <md>
         \frac{dy}{dt} + P(t) y = Q(t) y^n
-      </me>.
+      </md>.
       The substitution that simplifies a Bernoulli equation is <m>v =
       y^{1-n}</m>. Be careful: this is <m>y^{1-n}</m>, not
       <m>y^{n-1}</m>. It's a very easy mistake to get this exponent

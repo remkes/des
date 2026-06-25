@@ -41,9 +41,9 @@
   <p>
     All non-zero complex numbers are invertible (have a reciprocal).
     The reciprocal of a non-zero complex number is 
-    <me>
+    <md>
       \frac{1}{a+ b \imath} = \frac{a-b\imath}{a^2+b^2}
-    </me>.
+    </md>.
   </p>
   <definition>
     <statement>
@@ -70,9 +70,9 @@
         the complex numbers: there are complex numbers <m>\alpha_1,
         \ldots, \alpha_d</m>, not necessariliy distinct from each
         other, such that
-        <me>
+        <md>
           p(x) = (x-\alpha_i)(x-\alpha_2)\ldots(x-\alpha_d)
-        </me>.
+        </md>.
       </p>
     </statement>
   </theorem>
@@ -84,9 +84,9 @@
   <proposition xml:id="prop-eulers-formula">
     <title>Euler's Formula</title>
     <statement>
-      <me>
+      <md>
         e^{\imath \theta} = \cos \theta + i \sin \theta
-      </me>.
+      </md>.
     </statement>
   </proposition>
   <proof>

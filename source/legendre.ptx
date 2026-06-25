@@ -4,9 +4,9 @@
     There is a nice example of series solutions which deserves its own
     section, since it leads to an important class of functions. Let
     <m>k \in \NN</m> and consider the differential equation 
-    <me>
+    <md>
       (1-t^2)y^{\prime \prime} - 2ty^\prime + k(k+1)y=0 
-    </me>. 
+    </md>. 
     I need to divide by <m>1-t^2</m> to get this DE in standard form,
     implying that <m>t = \pm 1</m> are singular points. A solution
     centered at <m>0</m> should have radius of convergence at least
@@ -353,9 +353,9 @@
     It turns out, if I briefly consider functions
     of two variables, that there are generating functions for Legendre
     polynomials. This relevant identity is
-    <me>
+    <md>
       \frac{1}{\sqrt{1- 2tx+x^2}} = \sum_{k=0}^\infty P_k(t) x^n
-    </me>.
+    </md>.
     Somehome, this strange two-variables square root functions
     <sq>knows</sq> all the Legendre polynomials. There are all there,
     encoded in the Taylor series coefficients.

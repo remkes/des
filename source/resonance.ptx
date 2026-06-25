@@ -23,19 +23,19 @@
       for harmonic systems, the coefficients can be identified as mass
       <m>m</m>, spring constant <m>k</m>, coefficient of friction
       <m>b</m> and forcing <m>f(t)</m>.
-      <me>
+      <md>
         m y^{\prime \prime} + b y^{\prime} + ky = f(t)
-      </me>
+      </md>
       Look at the characterstic equation <m>mr^2 + br + k=0</m>. It
       has solutions
-      <me>
+      <md>
         r = \frac{-b}{2m} \pm \frac{\sqrt{b^2-4km}}{2m}
-      </me>.
+      </md>.
       I can define a new constant, called the damping constant, to
       keep track of the behaviour.
-      <me>
+      <md>
         \zeta \defeq \frac{b}{2\sqrt{km}}
-      </me>
+      </md>
       The damping constant gives a nice measure of the friction. If
       <m>\zeta \lt  1</m> then the system is underdamped and there is 
       sinusoidal behaviour. If <m>\zeta = 1</m> the situation is
@@ -44,13 +44,13 @@
       oscillations. The frictionless case is <m>\zeta = 0</m>. Let me
       return to the frictionless case for a moment. The solutions when
       <m>\zeta = 0</m> are
-      <me>
+      <md>
         y = A \cos \sqrt{\frac{k}{m}} t + B \sin \sqrt{\frac{k}{m}} t
-      </me>.
+      </md>.
       Now I will define a second important constant. 
-      <me>
+      <md>
         \omega \defeq \sqrt{\frac{k}{m}}
-      </me>
+      </md>
       This constant is called the natural frequency. It represents
       the frequency of sinusoidal oscillation in a perfect system
       without friction. (Note that all of the frequencies in this
@@ -60,18 +60,18 @@
     </p>
     <p>
       Finally, I'll define a third important constant. 
-      <me>
+      <md>
         \lambda \defeq \frac{b}{2m}
-      </me>
+      </md>
       If I look back to the underdamped case, the exponential decay
       term can be written <m>e^{-\lambda t}</m>. Therefore,
       <m>\lambda</m> is called the decay coefficient. With these new
       constants, the roots of the characteristic equation become <m>r
       = -\lambda \pm \imath \sqrt{\omega^2 - \lambda^2}</m> and I
       can rewrite the homogeneous differential equation as 
-      <me>
+      <md>
         y^{\prime \prime} + 2\lambda y^\prime + \omega^2 y = 0 
-      </me>.
+      </md>.
       Now return to the idea of a sinusoidal forcing term
       <m>f(t) = F\sin \gamma t</m> with some frequency <m>\gamma</m>.
       I want to look at four situations to understand the effect of
@@ -92,9 +92,9 @@
     <title>Situation 2: No Friction, Forcing</title>
     <p>
       The differential equation in this case has the form
-      <me>
+      <md>
         y^{\prime \prime} + \omega^2 y = F \sin \gamma t
-      </me>.
+      </md>.
       This is something that I can solve with undetermined
       coefficients in two subcases. In the first sub-case, I assume
       that <m>\gamma \neq \omega</m>. Then
@@ -226,16 +226,16 @@
       In the third case, I finally include friction. Using the new
       constant, I can write the general homogeneous SOCCLDE as
       folllows 
-      <me>
+      <md>
         y^{\prime \prime} + 2\lambda y^\prime + \omega^2 y = 0
-      </me>.
+      </md>.
       The characteristic equation is <m>r^2 + 2\lambda r +
       \omega^2</m> with roots <m>-\lambda \pm \imath \sqrt{\omega^2 -
       \lambda^2}</m>. If I let <m>\omega_d = \sqrt{\omega^2 -
       \lambda^2}</m>, then the homogeneous solutions are
-      <me>
+      <md>
         y= e^{-\lambda t} (A \cos \omega_d t + B \sin \omega_d t)
-      </me>.
+      </md>.
       The new constant <m>\omega_d</m> is called the damped frequency.
       It is not the same as the natural frequency, since friction
       changes the <sq>natural</sq> frequency of oscillations of the
@@ -250,9 +250,9 @@
       </md>.
       Using this, I can write the relationship between the damped
       frequency and the natural frequency. 
-      <me>
+      <md>
         \omega_d = \omega \sqrt{1 - \zeta^2}
-      </me>.
+      </md>.
       With friction involved and no forcing, the system will display
       sinusoidally decaying oscillations where the frequency is this
       <m>\omega_d</m>. As an interesting aside, as <m>\zeta</m>
@@ -277,16 +277,16 @@
     <p>
       If I finally include both friction and a forcing term, I can use
       the new constant to rewrite the DE as
-      <me>
+      <md>
         y^{\prime\prime} + 2\lambda y^\prime + \omega^2 y = F \sin
         \gamma t
-      </me>
+      </md>
       where <m>\gamma</m> again is the forcing frequency. 
       The homogeneous solutions are known from the previous case and
       depend on the damped frequency. 
-      <me>
+      <md>
         y_h = e^{-\lambda t} (A \cos \omega_d t + B \sin \omega_d t)
-      </me>
+      </md>
       Since the forcing lacks the exponential term, it is not the same
       as the homogeneous solutions even if <m>\gamma = \omega_d</m>. I
       don't need any subcases here: I can use undetermined
@@ -405,12 +405,12 @@
       one sinusoidal wave. What I care about, for the purposes of
       resonance, is just the amplitude of that wave. Using the
       proposition, I calculate that amplitude. 
-      <me>
+      <md>
         a = F \frac{\sqrt{(\omega^2 - \gamma^2)^2 + 4 \gamma^2
         \lambda^2}}{(\omega^2 - \gamma^2)^2 + 4 \gamma^2 \lambda^2} =
         \frac{F}{\sqrt{(\omega^2 - \gamma^2)^2 + 4 \gamma^2
         \lambda^2}}
-      </me>
+      </md>
       The question of resonance is this: if the magnitude of the force
       <m>F</m> is fixed, what is the maximum amplitude can be achieved
       by altering the forcing frequency? Note this amplitude is always
@@ -450,20 +450,20 @@
       write this result is a slightly different way. Recall that
       <m>\lambda^2 = \omega^2 \zeta^2</m>. I can use that to factor
       <m>\omega</m> out of the expression for <m>\gamma</m>.
-      <me>
+      <md>
         \gamma = \sqrt{\omega^2 - 2 \zeta^2 \omega^2} = \omega \sqrt{1
         - 2 \zeta^2}
-      </me>.
+      </md>.
       This is the resonant frequency. However, how can I be 
       certain that it exists? I need <m>1-2\zeta^2</m> to be
       positive to define this square root. This implies, certainly,
       that <m>\zeta \lt  1</m>, which I assumed when I decided to
       work with the underdamped case (that assumption is now
       justified). However, the inequality is stricter.
-      <me>
+      <md>
         \zeta^2 \leq \frac{1}{2} \implies \zeta \leq
         \frac{1}{\sqrt{2}}
-      </me>
+      </md>
       The bound for the damping coefficient is smaller than simply for
       the underdamped case. I conclude that resonant frequency only
       exists is the friction is small enough, measured by this

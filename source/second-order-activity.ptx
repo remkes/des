@@ -41,19 +41,19 @@
         <p><ol>
           <li>
             First I write and solve the characteristic equation.
-            <me>
+            <md>
               r^2 + 8r + 4 = 0  \implies r = -4 \pm \sqrt{12} 
-            </me>
+            </md>
             The root are real and distinct. Therefore, the
             homogeneous solutions are exponential.
-            <me>
+            <md>
               y = A e^{(-4+\sqrt{12})t} + Be^{(-4-\sqrt{12})t} 
-            </me>
+            </md>
             I also need the derivatives of the homogeneous solution.
-            <me>
+            <md>
               y^\prime = (-4+\sqrt{12}) A e^{(-4+\sqrt{12})t} +
               (-4-\sqrt{12}) B e^{(-4-\sqrt{12})t} 
-            </me>
+            </md>
             Then I use the initial conditions. 
             <md>
               <mrow>
@@ -89,11 +89,11 @@
               </mrow>
             </md>
             Therefore, the specific solution is 
-            <me>
+            <md>
               y = \frac{18 + 5\sqrt{12}}{\sqrt{12}}
               e^{(-4+\sqrt{12})t} + \frac{5 \sqrt{12} - 18}{\sqrt{12}}
               e^{(-4-\sqrt{12})t} 
-            </me>
+            </md>
           </li>
           <li>
             When I make the coefficient of <m>y^\prime</m> smaller,
@@ -165,22 +165,22 @@
         <p><ol>
           <li>
             First I write and solve the characteristic equation.
-            <me>
-              r^2 + 4r + 20 = 0 \implies r = -2 \pm \sqrt{-4}
-            </me>
+            <md>
+              r^2 + 4r + 20 = 0 \implies r = -2 \pm \sqrt{-16}
+            </md>
             The root are complex with a negative real part. <m>\alpha
             = -2</m> and <m>\beta = 4</m>.  Therefore, the homogeneous
             solutions are sinusoidal with exponentially decay in
             amplitude.
-            <me>
+            <md>
               y = A e^{-2t} \cos 4t + B e^{-2t} \sin 4t 
-            </me>
+            </md>
             I also need the derivatives of the homogeneous solution.
             (I've grouped like terms after taking the derivative).
-            <me>
+            <md>
               y^\prime = (-2A + 4B) e^{-2t} \cos 4t + (-4A -2B)
               e^{-2t} \sin 4t
-            </me>
+            </md>
             Then I use the initial conditions. 
             <md>
               <mrow>
@@ -197,9 +197,9 @@
             work, sinc ethe first initial condition gives <m>A</m>
             directly and I used the second to calculate <m>B</m>.
             The specific solution is 
-            <me>
+            <md>
               y = 2 e^{-2t} \cos 4t + \frac{5}{2} e^{-2t} \sin 4t 
-            </me>
+            </md>
           </li>
           <li>
             As you decrease the coefficient, <m>\alpha</m> remains
@@ -253,19 +253,19 @@
         <p>
           First I need the homogeneous solution. I start by solving the
           characteristic equation.
-          <me>
+          <md>
             r^2 + 3r + 2 = 0 \implies r = -2, -1 
-          </me>
+          </md>
           The roots are real
           Therefore, the homogeneous solutions are exponential. 
-          <me>
+          <md>
             y_h = Ae^{-t} + Be^{-2t} 
-          </me>
+          </md>
           My guess for the particular solution using undetermined
           coefficients some from the forcing term.
-          <me>
+          <md>
             y_p = Ce^{-7t}
-          </me>
+          </md>
           I need the derivaitves of this particular solution.
           <md>
             <mrow>
@@ -287,9 +287,9 @@
           </md>
           This produces a system of linear equations. 
           (In this case, only one equation.)
-          <me>
+          <md>
             30C = 1 \implies C = \frac{1}{30} 
-          </me>
+          </md>
           Now that I now the coefficients, I can write the particular
           solution and thus the general solutions by adding the
           homogeneous solution.
@@ -302,9 +302,9 @@
             </mrow>
           </md>
           I need the derivative of the general solution.
-          <me>
+          <md>
             y^\prime = \frac{-7}{30} e^{-7t} - Ae^{-t} - 2B e^{-2t} 
-          </me>
+          </md>
           Then I use the initial conditions. I get two equations, which
           I can turn into a linear system. I'll solve that linear system
           by solving for <m>A</m> in the second equation and
@@ -329,10 +329,10 @@
             </mrow>
           </md>
           Now I can write the specific solution to this IVP.
-          <me>
+          <md>
             y_p = \frac{1}{30} e^{-7t} + \frac{37}{6} e^{-t} -
             \frac{16}{5} e^{-2t} 
-          </me>
+          </md>
         </p>
       </solution>
     </activity>
@@ -354,19 +354,19 @@
         <p>
           First I need the homogeneous solution. I start by solving the
           characteristic equation.
-          <me>
+          <md>
             r^2 + 2r + 10 = 0 \implies r = -1 \pm \sqrt{-9} 
-          </me>
+          </md>
           The roots are complex, with <m>\alpha = -1</m> and <m>\beta
           = 3</m>.  Therefore, the homogeneous solutions are 
-          <me>
+          <md>
             y_h = Ae^{-t} \cos (3t) + Be^{-t} \sin (3t) 
-          </me>
+          </md>
           My guess for the particular solution using undetermined
           coefficients some from the forcing term.
-          <me>
+          <md>
             y_p = C_2 t^2 + C_1 t + C_0
-          </me>
+          </md>
           I need the derivaitves of this particular solution.
           <md>
             <mrow>
@@ -378,10 +378,10 @@
           </md>
           Then I put this into the differential equation and isolate
           like terms.
-          <me>
+          <md>
             [10C_2] t^2  + [4c_2 + 10C_1] t + [2C_2 + 2C_1 + 10C_0]t =
             \frac{1}{4} t^2 - t + 1 
-          </me>
+          </md>
           This produces a system of linear equations. I've simply
           asked a computer for the solutions to this system instead of
           doing the algebra myself.
@@ -412,10 +412,10 @@
           is a bit lengthy, but I've done the derivatives and then
           groups like terms to make the derivative as easy to work
           with as I can) 
-          <me>
+          <md>
             y^\prime = \frac{1}{20}t - \frac{11}{100} + e^{-t} \left[
             (-A + 3B) \cos (3t) + (-3A - B) \sin (3t) \right] 
-          </me>
+          </md>
           Then I use the initial conditions. I get two equations, which
           I can turn into a linear system. The first equation,
           conveniently, only has <m>A</m>, so I can solve for <m>A</m>
@@ -435,11 +435,11 @@
             </mrow>
           </md>
           Now I can write the specific solution to this IVP.
-          <me>
+          <md>
             y = \frac{1}{40} t^2 - \frac{11}{100}t + \frac{117}{1000}
             - \frac{117}{1000} e^{-t} \cos (3t) + \frac{1331}{1000}
               e^{-t} \sin(3t) 
-          </me>
+          </md>
         </p>
       </solution>
     </activity>
@@ -460,24 +460,24 @@
         <p>
           First I need the homogeneous solution. I start by solving the
           characteristic equation.
-          <me>
+          <md>
             r^2 + 4r + 8 = 0 \implies r = -2 \pm \sqrt{-4} 
-          </me>
+          </md>
           The roots are complex with <m>\alpha = -2</m> and <m>\beta =
           2</m>.  Therefore, the homogeneous solutions are sinusoidal
           with exponential decay in amplitude. 
-          <me>
+          <md>
             y_h = Ae^{-2t} \cos (2t) + Be^{-2t} \sin (2t) 
-          </me>
+          </md>
           My guess for the particular solution using undetermined
           coefficients some from the forcing term. Note that even
           those the forcing term and the homogeneous solution both
           involve the same sine funciton, I don't have to multiply by
           <m>t</m> in my guess because the forcing term lacks the
           exponential decay of the homogeneous solution. 
-          <me>
+          <md>
             y_p = C \cos (2t) + D \sin (2t) 
-          </me>
+          </md>
           I need the derivaitves of this particular solution.
           <md>
             <mrow>
@@ -489,9 +489,9 @@
           </md>
           Then I put this into the differential equation and isolate
           like terms.
-          <me>
+          <md>
             [4C + 8D] \cos (2t) + [4D - 8C] \sin (2t) = 4\sin (2t) 
-          </me>
+          </md>
           This produces a system of linear equations. I haven't shown
           the work for solving the system, though this is a pretty
           short isolate and replace system. 
@@ -518,11 +518,11 @@
           I need the derivative of the general solution. (I've skipped
           over some algebra steps and gathered together like to to
           make the derivative reasonable to work with.)
-          <me>
+          <md>
             y^\prime = \frac{4}{5} \sin (2t) + \frac{2}{5} \cos (2t) +
             e^{-2t} \left[ (-2A + 2B) \cos (2t) + (-2A - 2B) \sin (2t)
             \right] 
-          </me>
+          </md>
           Then I use the initial conditions. I get two equations, which
           I can turn into a linear system. The first equation of the
           linear system only involves <m>A</m>, so I can use it to
@@ -538,11 +538,11 @@
             </mrow>
           </md>
           Now I can write the specific solution to this IVP.
-          <me>
+          <md>
             y = \frac{-2}{5} \cos (2t) + \frac{1}{5} \sin (2t) +
             \frac{2}{5} e^{-2t} \cos (2t) - \frac{1}{5} e^{-2t} \sin
             (2t) 
-          </me>
+          </md>
         </p>
       </solution>
     </activity>
@@ -563,22 +563,22 @@
         <p>
           First I need the homogeneous solution. I start by solving the
           characteristic equation.
-          <me>
+          <md>
             r^2 + 6r + 18 = 0 \implies r = -3 \pm \sqrt{-9} 
-          </me>
+          </md>
           The roots are complex with <m>\alpha = -3</m> and <m>\beta =
           3</m>.  Therefore, the homogeneous solutions are sinusoidal
           with exponentially decaying amplitude. 
-          <me>
+          <md>
             y_h = Ae^{-3t} \cos (3t) + Be^{-3t} \sin (3t) 
-          </me>
+          </md>
           My guess for the particular solution using undetermined
           coefficients some from the forcing term. Here, the
           homogeneous solutions and the forcing term are the same, so
           I have to mulitply by <m>t</m> for the guess. 
-          <me>
+          <md>
             y_p = Cte^{-3t} \cos (3t) + Dte^{-3t} \sin (3t) 
-          </me>
+          </md>
           I need the derivaitves of this particular solution. These
           derivatives are a little lengthy, but I did them by computer
           and wrote them as succinctly as I could.
@@ -595,10 +595,10 @@
           Then I put this into the differential equation and isolate
           like terms. (Quite a bit of simplifying algebra is skipped
           over here.) 
-          <me>
+          <md>
             [6D]e^{-3t} \cos(3t) + [-6C + 12D] e^{-3t} \sin(3t) =
             2e^{-3t} \cos (3t) 
-          </me>
+          </md>
           This produces a system of linear equations. Even though the
           equations are quite complicated, the system is actually
           pretty reasonable: I solve for <m>D</m> in the first
@@ -641,21 +641,22 @@
           Then I use the initial conditions. I get two equations, which
           I can turn into a linear system. I'll solve that linear system
           by solving for <m>A</m> in the first equation and using that
-          to solve for <m>b</m> in the second. 
+          to solve for <m>B</m> in the second. 
           <md>
             <mrow>
-              y(0) \amp = A + \frac{2}{3} = 1 \implies A = \frac{1}{3} 
+              y(0) \amp = A = 1 
             </mrow>
             <mrow>
-              y^\prime(0) = -3A + 3B + \frac{2}{3} = 0 \implies B = 1
+              y^\prime(0) \amp = -3A + 3B + \frac{2}{3} = 0 \implies B
+              = \frac{1}{9} 
             </mrow>
           </md>
           Now I can write the specific solution to this IVP.
-          <me>
+          <md>
             y = \frac{2}{3} te^{-3t} \cos (3t) + \frac{1}{3} te^{-3t}
-            \sin (3t) + \frac{1}{3} e^{-3t} \cos (3t) + e^{-3t} \sin
+            \sin (3t) + e^{-3t} \cos (3t) + \frac{1}{9} e^{-3t} \sin
             (3t) 
-          </me>
+          </md>
         </p>
       </solution>
     </activity>
@@ -667,24 +668,24 @@
         <p>
           Solve this SOCCLDE using variation of parameters. (You can
           leave the resulting integrals if they are unsolvable.)
-          <me>
+          <md>
             y^{\prime \prime} + 9y^\prime + 12y = \ln (t+3)
-          </me>
+          </md>
         </p>
       </statement>
       <solution>
         <p>
           First I need to solve the homogeneous equation. I write and
           solve the characteristic equation.
-          <me>
+          <md>
             r^2 + 9r + 12 = 0 \implies r = \frac{-9 \pm \sqrt{33}}{2}
-          </me>
+          </md>
           The roots are real.  Therefore, the homogeneous solutions
           are exponential functions. 
-          <me>
+          <md>
             y_h = A e^{ \left( \frac{-9 + \sqrt{33}}{2} \right) t} + 
             B e^{ \left( \frac{-9 - \sqrt{33}}{2} \right) t} 
-          </me>
+          </md>
           Then I need to calculate the Wronskian. For this I need the
           derivatives of the two linearly independent homogeneous
           solutions.
@@ -758,25 +759,25 @@
         <p>
           Solve this SOCCLDE using variation of parameters. (You can
           leave the resulting integrals if they are unsolvable.)
-          <me>
+          <md>
             y^{\prime \prime} + 10y^\prime + 5y = \arctan t 
-          </me>
+          </md>
         </p>
       </statement>
       <solution>
         <p>
           First I need to solve the homogeneous equation. I write and
           solve the characteristic equation.
-          <me>
+          <md>
             r^2 + 10r + 5 = 0 \implies r = -5 \pm \sqrt{20}
-          </me>
+          </md>
           The roots are complex with <m>\alpha = -5</m> and <m>\beta =
           \sqrt{20}</m> Therefore, the homogeneous solutions are
           sinusoidal with exponential decay. 
-          <me>
+          <md>
             y_h = A e^{-5t} \cos (\sqrt{20} t) + B e^{-5t} \sin
             (\sqrt{20} t ) 
-          </me>
+          </md>
           Then I need to calculate the Wronskian. For this I need the
           derivatives of the two linearly independent homogeneous
           solutions.
@@ -809,13 +810,17 @@
           <md>
             <mrow>
               u_1 = -\int \frac{y_2 f}{W} dt = -\int \frac{ e^{-5t}
-              \sin (\sqrt{20} t) \arctan t}{e^{-10t}} dt = - \int
-              e^{5t} \sin (\sqrt{20}t) \arctan t dt 
+              \sin (\sqrt{20} t) \arctan t}{e^{-10t}} dt 
+            </mrow>
+            <mrow> 
+              = - \int e^{5t} \sin (\sqrt{20}t) \arctan t dt 
             </mrow>
             <mrow>
               u_2 = \int \frac{y_1 f}{W} dt = \int \frac{ e^{-5t} \cos
-              (\sqrt{20} t) \arctan t}{e^{-10 t}} dt = \int e^{5t}
-              \cos (\sqrt{20} t) \arctan t dt 
+              (\sqrt{20} t) \arctan t}{e^{-10 t}} dt 
+            </mrow>
+            <mrow>
+              = \int e^{5t} \cos (\sqrt{20} t) \arctan t dt 
             </mrow>
           </md>
           These integrals are not solvable, so I just write the

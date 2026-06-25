@@ -181,12 +181,12 @@
       <p>
         Since I can take Laplace transforms of piecewise-continuous
         functions, here is an example with a piecewise forcing term.
-        <me>
+        <md>
           f(t) = \left\{ \begin{matrix} 
             0 \amp t \leq \pi \\ 
             3 \cos t \amp t > \pi 
           \end{matrix} \right.
-        </me>
+        </md>
         This represents a sinusoidal forcing term which is turned of
         at time <m>t=\pi</m>. I calculate the Lapalce transform of
         this piecewise function and then apply the Laplace transform
@@ -288,10 +288,10 @@
         </md>
         Now I need to do the inverse transform. This looks a bit
         complicated, but it does fit this rule from the tables.
-        <me>
+        <md>
           \calL^{-1} \left\{ \frac{s+\alpha}{(s + \alpha)^2 + \beta^2}
           \right\} = e^{-\alpha t}{\cos \beta t}
-        </me>
+        </md>
         Fiting to the pattern, I need <m>\alpha = \frac{b}{2m}</m> and
         <m>\beta = \frac{\sqrt{4mk - b^2}}{2m}</m>. The assumption at
         the start that <m>b^2 - 4mk \lt 0</m> ensures that the square

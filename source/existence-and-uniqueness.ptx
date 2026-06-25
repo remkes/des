@@ -11,9 +11,9 @@
       is unique is necessary for robust modelling with DEs. I'm going
       to deal only with first order equations where I can isolate the
       derivative term; that is, equations of the following form.
-      <me>
+      <md>
         \frac{dy}{dx} = F(x,y)
-      </me>
+      </md>
       The details of existence and uniqueness theorems rely on the
       properties of <m>F</m> as a function of two variables, which are
       very briefly summarized in <xref ref="section-functions" />. 
@@ -29,9 +29,9 @@
       <statement>
         <p>
           In a differential equation of this form
-          <me>
+          <md>
             \frac{dy}{dx} = F(x,y) 
-          </me>, 
+          </md>, 
           if <m>F</m> is continuous in both variables in an open set
           <m>U \subset \RR^2</m> and if <m>(x_0,y_0) \in U</m>, then
           there exists <m>\epsilon > 0</m> such that the initial value
@@ -113,10 +113,10 @@
           A function from an open interval <m>U</m> in <m>\RR</m> to
           <m>\RR</m> is called <term>Lipschitz continuous</term> if
           <m>\exists K > 0</m> such that 
-          <me>
+          <md>
             \forall x_1,x_2 \in U, \quad \quad |f(x_1) - f(x_2)| \leq
             K|x_1-x_2|
-          </me>
+          </md>
         </p>
       </statement>
     </definition>
@@ -182,13 +182,13 @@
     <example xml:id="example-strange-continuity">>
       <statement>
         <p>
-          <me>
+          <md>
             f(X) = \left\{ \begin{matrix} 
               x^{\frac{3}{2}} \sin \left( \frac{1}{x} \right) \amp x \in
               (0,1] \\ 
               0 \amp x = 0
             \end{matrix} \right.
-          </me>
+          </md>
           This isn't Lipschitz continuous, but it is differentiable
           near zero, showing that differentiability isn't sufficient.
           However, there is some good news: this example is a strange
@@ -265,9 +265,9 @@
     <example>
       <statement>
         <p>
-          <me>
+          <md>
             \frac{dy}{dx} = x \sqrt{y}
-          </me>
+          </md>
           Let me considered the same example as before. This DE had
           multiple solutions for initial value <m>y(0) = 0</m>. The
           function <m>F(x,y) = x\sqrt{y}</m> has <m>y</m> derivative
@@ -285,9 +285,9 @@
       Lastly, anticipating the equations in <xref
       ref="section-linear-des" />, consider the general first-order
       linear DE where <m>P</m> and <m>Q</m> are continuous functions.
-      <me>
+      <md>
         \frac{dy}{dx} = Q(x) - P(x) y
-      </me>
+      </md>
       In this case, <m>F(x,y) = Q(x) - P(x)y</m> and the <m>y</m>
       derivative is <m>-P(x)</m>, which is bounded assuming that
       <m>P</m> is continuous. I can apply the Picard-Lindelöf

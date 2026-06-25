@@ -27,9 +27,9 @@
     particular solution <m>y_p</m> of <m>Ly = f(t)</m>. The general
     solution is the superposition of the particular solution and a
     linear combination fo the homogeneous solutions. 
-    <me>
+    <md>
       y = y_p + A y_1 + B y_2
-    </me>
+    </md>
     Undetermined coefficents and variation of parameters try to find
     this particular solution <m>y_p</m>. Ihen I use the homogenous
     solutions to write the complete family..
@@ -125,15 +125,15 @@
   <example>
     <statement>
       <p>
-        <me>
+        <md>
           y^{\prime \prime} - 3y^\prime + 2y = t 
-        </me>
+        </md>
         The initial values are <m>y(0) = \frac{3}{4}</m> and
         <m>y^\prime(0) = \frac{3}{2}</m>. The linear differential
         operator is
-        <me>
+        <md>
           L = \frac{d^2}{dt^2} + 3 \frac{d}{dt} + 2 
-        </me>.
+        </md>.
         I first solve the homogeneous case using the characteristic
         equation, finding the roots and writing the general solution.
         <md>
@@ -150,9 +150,9 @@
         The force term is <m>t</m>, which is a polynomial of degree
         one. The guess for undetermined coefficients is a polynomial
         of the same degree. 
-        <me>
+        <md>
           y_p = Ct + D 
-        </me>
+        </md>
         I'll need the derivatives of the guess to put it into the
         differential equation.
         <md>
@@ -164,55 +164,55 @@
           </mrow>
         </md>
         I put all the pieces into the non-homogeneous DE. 
-        <me>
+        <md>
           0 - 3C + 2(Ct + D) = t \implies (2C-1)t + (D-3C) = 0 
-        </me>
+        </md>
         This is an equation of polynomials. It is true only if botht
         the coefficients on the left are zero. The first coefficient
         lets me calculate <m>C</m>.
-        <me>
+        <md>
           2C = 1 \implies C = \frac{1}{2} 
-        </me>
+        </md>
         Knowing <m>C</m>, I can use the second coefficient to
         calculate <m>D</m>.
-        <me>
+        <md>
           -3C + 2D = 0 \implies -3 \frac{1}{2} + 2 D = 0 \implies D
           = \frac{3}{4}
-        </me>
+        </md>
         Now that I have the coefficients, I know the particular
         solution. 
-        <me>
+        <md>
           y_p = \frac{t}{2} + \frac{3}{4} 
-        </me>
+        </md>
         Finally, the general solution is the particular solution plus
         the homogeneous solution. 
-        <me>
+        <md>
           y = \frac{t}{2} + \frac{3}{4} + A e^{2t} + B e^t 
-        </me>
+        </md>
         Now I put in the initial values. First I use the initial value
         of the function. 
-        <me>
+        <md>
           y(0) = A + B + \frac{3}{4} = \frac{3}{4} \implies A =
           -B 
-        </me>
+        </md>
         Then I use the initial value for the derivative. First I need
         to calculate the derivative of the full solution.
-        <me>
+        <md>
           y^\prime = 2Ae^{2t} + Be^t + \frac{1}{2} 
-        </me>
+        </md>
         Then I input the initial condition. 
-        <me>
+        <md>
           y^\prime(0) = \frac{3}{2} 
           \implies 
           2A + B + \frac{1}{2} = \frac{3}{2} \implies 2A + B - 1 = 0
-        </me>
+        </md>
         Now I have a system of two equations from the two initial
         conditions. The solution to the system is <m>A=1</m> and
         <m>B = -1</m>. Finally, I can write the specific solution to
         the non-homogeneous initial value problem. 
-        <me>
+        <md>
           y = \frac{t}{2} + \frac{3}{4} + e^{2t} - e^t
-        </me>
+        </md>
       </p>
     </statement>
   </example>
@@ -221,13 +221,13 @@
       <p>
         This example lacks initial values. I've skipped over some of
         the algebra for the sake of brevity.
-        <me>
+        <md>
           y^{\prime \prime} + 8 y^\prime + 3y = e^{-2t} \cos 2t
-        </me>
+        </md>
         The linear differential operator is
-        <me>
+        <md>
           L = \frac{d^2}{dt^2} + 8 \frac{d}{dt} + 3
-        </me>.
+        </md>.
         I first solve the homogeneous case using the characteristic
         equation, finding the roots and writing the general solution.
         <md>
@@ -244,9 +244,9 @@
         The force term is <m>e^{-2t} \cos (2t)</m>, which is a product
         of an exponential and a sinuosoidal term one. The guess for
         undetermined coefficients has the same pattern. 
-        <me>
+        <md>
           y_p = e^{-2t} (C \cos 2t + D \sin 2t)
-        </me>
+        </md>
         I'll need the derivatives of the guess to put it into the
         differential equation.
         <md>
@@ -260,10 +260,10 @@
           </mrow>
         </md>
         I put all the pieces into the non-homogeneous DE. 
-        <me>
+        <md>
           L y_p = e^{-2t} ((8D-13C) \cos 2t + (-8C -13D) \sin
           2t) = e^{-2t} \cos 2t
-        </me>
+        </md>
         I need to compare coefficients. There is a cosine term on the
         right with coefficient <m>1</m>. There is no sine term on the
         right, so that coefficient has to be <m>0</m>. This gives a
@@ -277,28 +277,28 @@
           </mrow>
         </md>
         First I use the second equation to isolate <m>D</m>.
-        <me>
+        <md>
           D = \frac{-8C}{13}
-        </me>
+        </md>
         Then I substitute the value of <m>D</m> in the first equation
         and solve for <m>C</m>. Once I know <m>C</m>, I can use the
         previous equation to find <m>D</m> as well. 
-        <me>
+        <md>
           C = \frac{-13}{233} \implies D = \frac{8}{233}
-        </me>
+        </md>
         Now that I have the coefficients, I know the particular
         solution. 
-        <me>
+        <md>
           y_p = e^{-2t} \left( \frac{-13}{233} \cos 2t +
           \frac{8}{233} \sin 2t \right)
-        </me>
+        </md>
         Finally, the general solution is the particular solution plus
         the homogeneous solution. 
-        <me>
+        <md>
           y = Ae^{(-4+\sqrt{13})t} + B e^{(-4-\sqrt{13})t} +
           e^{-2t} \left( \frac{-13}{233} \cos 2t + \frac{8}{233}
           \sin 2t \right)
-        </me>
+        </md>
         It is useful to go back to the harmonic system interpretation
         to understand these solutions. There are no oscillations in
         the homogeneous case here: sufficient friction gives
@@ -321,58 +321,58 @@
         for the particular solution to account for this. Again, I've
         skipped some of the algebra in this example, particularly
         omitting the long derivatives and calculation of <m>Ly_p</m>.
-        <me>
+        <md>
           y^{\prime \prime} + 2y^\prime + 2y = f(t) = 4e^{-t}
           \sin t
-        </me>
+        </md>
         First I solve the homogeneous case via the characteristic
         equation.
-        <me>
+        <md>
           r^2 + 2r + 2 = 0 \implies r = -1 \pm \imath
-        </me>
+        </md>
         The complex roots of the characteristic equation lead to
         exponentially damped sinusoidal solutions. This is the full
         homogeneous solution.
-        <me>
+        <md>
           y_h = e^{-t} (A \sin t + B \cos t)
-        </me>
+        </md>
         Here is my guess for the particular solution. 
-        <me>
+        <md>
           y_p = te^{-t} (C \sin t + D \cos t )
-        </me>
+        </md>
         I need its derivatives to put into the differential equation.
-        <me>
+        <md>
           y_p^{\prime} = e^{-t} (C \sin t + D \cos t) +
           te^{-t}((-C-D)\sin t + (-D+C)\cos t)
-        </me>
-        <me>
+        </md>
+        <md>
           y_p^{\prime\prime} = e^{-t} ((-2C-2D) \sin t + (-2D+2C)
           \cos t) + te^{-t}((2D)\sin t + (-2C)\cos t)
-        </me>
+        </md>
         I put the guess and its derivative into the DE. 
-        <me>
+        <md>
           L y_p = e^{-t} ((-2D) \sin t + (2C) \cos t) = 4e^{-t}
           \sin t
-        </me>
+        </md>
         Comparing the coefficients of sine and cosine on the left and
         the right produces a system of two equation. The first
         equation gives the value of <m>D</m>. 
-        <me>
+        <md>
           -2D = 4 \implies D = -2
-        </me>
+        </md>
         The second equation gives the value of <m>C</m>.
-        <me>
+        <md>
           2C = 0 \implies C = 0
-        </me>
+        </md>
         I use the coefficients to write the particular solution.
-        <me>
+        <md>
           y_p = -2te^{-t} \cos t
-        </me>
+        </md>
         The general solution is the particular solution added to the
         homogeneous solution. 
-        <me>
+        <md>
           y = -2te^{-t} \cos t + e^{-t} (A \sin t + B \cos t)
-        </me>
+        </md>
         In this result, the full solution still has exponential decay,
         since the exponential is asymptotically dominant in the
         <m>te^{-t}</m> term. However, the trajectory and behaviour of

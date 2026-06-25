@@ -22,9 +22,9 @@
   </p>
   <p>
     I can summarize the result in this rule.
-    <me>
+    <md>
       \calL \{ f^\prime(t) \} (s) = -f(0) + sF(s)
-    </me>.
+    </md>.
     This is a lovely and convenient property. In the <m>s</m>-domain,
     there is no more differentiation. Differentiation is replaced by
     the much more approachable multiplication by the variable
@@ -54,11 +54,11 @@
     removed in the <m>s</m>-domain, replaced with simple algebraic
     operations. The general result for any order of differentiation
     is this rule.
-    <me>
+    <md>
       \calL \left\{ \frac{d^n f}{dt^n} \right\} = s^n F(s) - s^{n-1}
       f(0) - s^{n-2} f^\prime(0) - s^{n-3} f^{\prime \prime}(0) -
       \ldots - f^{(n-1)}(0)
-    </me>
+    </md>
     The understanding of Laplace transforms of derivative leads to
     an amazing use of Laplace transforms in solving
     DEs. A Laplace transform changes differentiation into simple
@@ -76,15 +76,15 @@
     Before I move on, here are two other properties of the Laplace
     transform which relate to derivatives. The first shows that
     integrals are also changed into something algebraic.
-    <me>
+    <md>
       \calL \left\{ \int_0^t f(u) du \right\} = \frac{1}{s} \calL \{
       f(t) \}
-    </me>
+    </md>
     The second is a parallel identity which shows how differentiation
     in the <m>s</m>-domain also comes from an algebraic operation on
     the <m>t</m>-domain.
-    <me>
+    <md>
       \calL \{ t^n f(t) \} = (-1)^n \frac{d^n}{ds^n} \calL \{ f(t) \}
-    </me>
+    </md>
   </p>
 </section>

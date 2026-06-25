@@ -46,9 +46,9 @@
         \infty)</m> of exponential order <m>c</m>, then its
         <term>Laplace transform</term> is the new function in the
         variable <m>s</m> defined by the following integral.
-        <me>
+        <md>
           \calL \{ f(t) \} (s) = \int_0^\infty e^{-st} f(t) dt
-        </me>.
+        </md>.
         The Laplace transform is defined on the domain <m>(c,
         \infty)</m>. (You could check that this improper integral
         converges for all <m>s \in (c, \infty)</m>.)
@@ -215,10 +215,10 @@
       <p>
         The <term>Fourier transform</term> of a function <m>f(s)</m>
         is given by this integral.
-        <me>
+        <md>
           \hat{f}(s) = \int_{-\infty}^\infty f(t) e^{-2\pi \imath t s}
           dt
-        </me>
+        </md>
       </p>
     </statement>
   </definition>

@@ -31,10 +31,10 @@
           operator, <m>P</m> is the pressure of the fluid, <m>\rho</m>
           is the density of the fluid, and <m>\nu</m> is the viscosity
           of the fluid.  
-          <me>
+          <md>
             \frac{\del u}{\del t} + u \cdot \nabla u = - \frac{\nabla
             P}{\rho} + \nu \nabla^2 u
-          </me>
+          </md>
         </p>
       </statement>
     </example>
@@ -50,11 +50,11 @@
           a potential energy function (which typically only depends on
           spatial variables). This is the one-dimensional version, so
           <m>\Psi</m> depends on <m>x</m> and <m>t</m>.
-          <me>
+          <md>
             \imath \hbar \frac{\del \Psi}{\del t} =
             \frac{-\hbar^2}{2m} \frac{\del^2 \Psi}{\del x^2} + V(x)
             \Psi
-          </me>
+          </md>
         </p>
       </statement>
     </example>

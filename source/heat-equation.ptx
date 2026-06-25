@@ -64,9 +64,9 @@
       shows that these should be proportional to each other.  Let
       <m>k</m> be a positive constant that measure this
       proportionality.
-      <me>
+      <md>
         \frac{\del u}{\del t} = k \frac{\del^2 u}{\del x^2}
-      </me>
+      </md>
     </p>
     <p>
       This is called the heat equation. Though I've defined it by
@@ -112,9 +112,9 @@
       apart the two variables, <m>x</m> and <m>t</m>, and deal with
       the separately.  I assume that <m>u</m> is a product of two
       single variables functions. 
-      <me>
+      <md>
         u(x,t) = T(t) X(x)
-      </me>.
+      </md>.
       Like most the assumptions about DEs, I use my assumping by
       simply puting it back into the equation and seeing what happens. 
       <md>
@@ -148,9 +148,9 @@
       </md>
       Now, to solve the heat equation with separation of variables,
       I solve these two ODEs separately. The <m>T</m> solutions are easy.
-      <me>
+      <md>
         T^\prime(t) = \alpha k T(t) \implies T(t) = T(0) e^{\alpha kt}
-      </me>
+      </md>
       I have written the initial constant as <m>T(0)</m>.
       The time function is just exponential growth/decay, but <m>X</m>
       solutions depend more carefully on the boundary conditions.
@@ -207,9 +207,9 @@
     <p>
       Let <m>\alpha = -n^2</m> for <m>n > 0</m> a real number.
       From the study of second order linear equations, the solutions are
-      <me>
+      <md>
         X(x) = A \cos nx + B \sin nx
-      </me>.
+      </md>.
       Again, I go back to the boundary conditions.  <m>X(0) = 0</m>
       implies <m>A=0</m>, so I am left with <m>X(x) = B \sin nx</m>.
       Then <m>X(\pi) = 0</m> implies <m>B \sin n\pi = 0</m> which is
@@ -220,9 +220,9 @@
     </p>
     <p>
       Then I put the solutions together.
-      <me>
+      <md>
         u(x,t) = T(0) e^{-n^2kt} \sin (nx)
-      </me>
+      </md>
     </p>
     <p>
       In these solutions, I see sine waves decaying over time.  The
@@ -243,9 +243,9 @@
       their sum is also a solution.
       Therefore, I could add up these separable solutions.
       For example, a possible solution could be this function.
-      <me>
+      <md>
         u(x,t) = 4e^{-9kt} \sin 3t + 6e^{-25kt} \sin 5t
-      </me>
+      </md>
     </p>
     <p>
       This isn't strictly separable anymore, but it is the sum of
@@ -290,15 +290,15 @@
       In theory, I could add any number of the separable solutions
       together.  Therefore, in full generality, a solution could look
       like an arbitrary sum.
-      <me>
+      <md>
         u(x,t) = \sum_{n=1}^\infty T_n(0) e^{-n^2kt} \sin (nx)
-      </me>
+      </md>
       This is a series solution, but the series has <m>\sin nx</m>
       instead of <m>x^n</m> as the series terms.  I try to match the
       initial condition <m>u(x,0) = f(x)</m> with this series.
-      <me>
+      <md>
         u(x,0) = \sum_{n=1}^\infty T_n(0) \sin (nx) = f(x)
-      </me>
+      </md>
       As long as I can find coefficients <m>T_n(0)</m> that make this
       series work, I can solve the heat equation.  That leads to this
       question: which functions <m>f(x)</m> can be expressed as a

@@ -3,9 +3,9 @@
   <p>
     I would like to define an operation <m>\calL^{-1}</m> which undoes
     the Laplace transform.
-    <me>
+    <md>
       \calL^{-1} \left\{ \calL \{ f(t) \} \right\} = f(t)
-    </me>
+    </md>
     This is very difficult to calculate directly, and the construction
     of the inverse transform is beyond the scope of this course. (It
     relies on complex ananlysis.) I'll state the result for your
@@ -20,10 +20,10 @@
         <m>\alpha - \imath T</m> to <m>\alpha + \imath T</m>. Then the
         inverse Laplace transform is defined by the following limit
         and integral. 
-        <me>
+        <md>
           \calL^{-1} (F(s)\} = \frac{1}{2\pi \imath} \lim_{T
           \rightarrow \infty} \int_{\gamma} e^{st} F(s) ds
-        </me>
+        </md>
       </p>
     </statement>
   </theorem>
@@ -74,9 +74,9 @@
       </mrow>
     </md>
     The shift in an inverse transform is captured by the rule
-    <me>
+    <md>
       \calL^{-1} \left\{ e^{-sa} F(s) \right\} = u_a(t) f(t-a)
-    </me>.
+    </md>.
     This shifts of trigonometric functions are common enough that it
     is useful to mention them here.
     <md>
@@ -94,10 +94,10 @@
     <m>s</m>-domain functions which I can identity as derivatives of
     functions previous listed in the tables. Inverting that rule
     gives the following rule for inverse transforms.
-    <me>
+    <md>
       \calL^{-1} \left\{ \frac{d^n}{ds^n} F(s) \right\} = (-1)^n t^n
       f(t) 
-    </me>
+    </md>
   </p>
 </section>
 

@@ -60,19 +60,19 @@
     means that the solution with both boundary conditions set to
     <m>0</m> can simply be added to this steady state to give the
     general solution.
-    <me>
+    <md>
       u(x,t) = \frac{2}{\pi} \sum_{n=1}^\infty T_n e^{-kn^2t} \sin
       (nx)
-    </me>
+    </md>
     The calculation of the Fourier coefficients <m>T_n</m>, however,
     needs an adjustment. I need to shift the function back to a
     0-equilibrium situation to repeat the result of the previous
     section. With that shift, the integral that calculates the
     coefficient changes to the following definition.
-    <me>
+    <md>
       T_n = \frac{2}{\pi} \int_0^\pi \left( f(x) - \frac{B-A}{\pi} x -
       A \right) \sin nx dx
-    </me>
+    </md>
   </p>
   <figure xml:id="figure-diffusion2">
     <caption>Heat Equation Examples with Initial Conditions <m>f(x)
@@ -152,11 +152,11 @@
           </mrow>
         </md>
         The general solution uses the Fourier coefficients. 
-        <me>
+        <md>
           u(x,t) = 1 + x + \sum_{n=1}^\infty \left[ \frac{2n^2 \pi^2
           (-1)^{n+1} + 2\pi (-1)^n - 2\pi - 4\pi n^2}{\pi n^3} \right]
           e^{-kn^2t} \sin (nx)
-        </me>
+        </md>
         <xref ref="figure-diffusion2" /> shows this situation.
       </p>
     </statement>

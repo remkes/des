@@ -3,9 +3,9 @@
   <introduction>
     <p>
       First order linear equation have the following general form.
-      <me>
+      <md>
         a(t) \frac{dy}{dt} + b(t) y = f(t)
-      </me>
+      </md>
       Here <m>a(t)</m>, <m>b(t)</m> and <m>f(t)</m> are various
       (usually continuous) functions. If I avoid the values where
       <m>a(t) = 0</m>, I can divide by <m>a(t)</m> to isolate the
@@ -14,9 +14,9 @@
       <m>a(t)</m> throughout the solution, since they indicate values
       of <m>t</m> where the solutions might not exist or might not
       have the expected behaviour.)
-      <me>
+      <md>
         \frac{dy}{dt} + P(t) y = Q(t)
-      </me>
+      </md>
       This will be the standard form for the analysis that I will
       present. To solve equations in this standard form, I work by
       steps. The first step is to solve a related but easier equation
@@ -97,9 +97,9 @@
       differential operators.  If I write <m>L = \frac{d}{dt} +
       P(t)</m>, then I can use the differential operator to write a
       linear equation in a very simple form. 
-      <me>
+      <md>
         L y = Q(t)
-      </me>.
+      </md>.
       This <m>L</m> is a <em>linear</em> differential operator, so it
       behaves linearly, that is, it has the two linearity properties.
       (In linear algebra language, it is a linear transformation.
@@ -120,9 +120,9 @@
       <m>Lg = 0</m>. Now I can use linearity to calculate what
       happens when I apply the operator <m>L</m> to the sum <m>f +
       \alpha g</m>, for any real number <m>\alpha</m>. 
-      <me>
+      <md>
         L(f+\alpha g) = Lf + \alpha Lg = Q(t) + \alpha \cdot 0 = Q(t)
-      </me>
+      </md>
       Let me write this in general and use it for a definition.
     </p>
     <definition>
@@ -180,49 +180,49 @@
       the <m>(t)</m> in most of these functions, to make it all a bit
       more readable. It's up to the reader to remember that these symbols
       stand for functions. 
-      <me>  
+      <md>  
         Ly_p= L gy_h= Q
-      </me>
+      </md>
       I need to use the product rule to differentiate <m>gy_h</m>
       when I apply the differential operator to the left side
-      <me>  
+      <md>  
         g^\prime y_h + g y_h^\prime + g P y_h = Q
-      </me>
+      </md>
       I can factor <m>g</m> out of two terms.
-      <me>  
+      <md>  
         g^\prime y_h + g \Big( y_h^\prime + P y_h \Big) = Q
-      </me>
+      </md>
       The expression inside the brackets is precisely the differential
       operator <m>L</m> applied to <m>y_h</m>. 
-      <me>  
+      <md>  
         g^\prime y_h + g L y_h = Q
-      </me>
+      </md>
       Since <m>y_h</m> is the homogeneous solution, <m>L y_h = 0</m>. 
-      <me>  
+      <md>  
         g^\prime y_h + g 0 = Q
-      </me>
+      </md>
       Now I can solve for <m>g^\prime</m>.
-      <me>  
+      <md>  
         g^\prime = \frac{Q}{y_h}
-      </me>
+      </md>
       Then I can integrate to find <m>g</m>. 
-      <me>  
+      <md>  
         g = \int \frac{Q}{y_h}
-      </me>
+      </md>
       Now I have an expression for <m>g</m>. Let me write
       <m>y_p</m> using this <m>g</m>. 
-      <me>  
+      <md>  
           y_p = g y_h = \left( \int \frac{Q}{e^{-\int P dt}}
           dt \right) y_h
-      </me>
+      </md>
       If I want, I can use the fact that the homogeneous solution is
       <m>y = e^{-\int Pdt}</m> to write all of <m>y_p</m> in terms
       of <m>Q</m> and <m>P</m>.
-      <me>  
+      <md>  
         y_p = \left( \int \frac{Q}{e^{-\int P dt}} dt \right)
         e^{-\int P dt } = e^{-\int P dt} \int e^{\int P dt}
         Q dt
-      </me>
+      </md>
       This is a complete solution, and the presentation I've given is
       the most general presentation and introduces the useful idea of
       variation of parameters. However, there is a slightly different
@@ -281,22 +281,22 @@
     <example xml:id="example-linear1">
       <statement>
         <p>
-          <me>
+          <md>
             \frac{dy}{dt} + \frac{y}{t} = 2e^t
-          </me>
+          </md>
           Since there is a <m>t</m> in the denominator, I must avoid
           <m>t=0</m> in the domain of solutions. That doesn't
           necessarily affect the process, but it is good to remember
           when I look at the final solutions. I first look for the
           homogeneous solution.
-          <me>
+          <md>
             y_h = ce^{-\int \frac{1}{t}} dt = ce^{-\ln |t|} =
             \frac{c}{t}
-          </me>
+          </md>
           Then I calculate the integrating factor. 
-          <me>
+          <md>
             \mu = e^{\int \frac{1}{t} dt } = e^{\ln |t|} = t
-          </me>.
+          </md>.
           I multiply the original non-homogeneous equation by the
           integrating factor. This, as always, will turn the left side
           of the equation into the output of a product rule
@@ -337,9 +337,9 @@
     <example>
       <statement>
         <p>
-          <me>
+          <md>
             (t^2-9) \frac{dy}{dt} + ty = 0
-          </me>
+          </md>
           This is just a homogeneous DE. I can notice that <m>t \neq
           \pm 3</m> in the domain, since the term <m>t^2 - 9</m> will
           be in the denominator when I write this in the standard form.
@@ -366,9 +366,9 @@
           like this. To find the remaining solution, I write <m>|t^2 -
           9|</m> instead as <m>|9-t^2|</m>. Then the solution would
           have a differen form. 
-          <me>
+          <md>
             y = \frac{c}{\sqrt{|9 - t^2|}} = \frac{c}{\sqrt{9 - t^2}}
-          </me>.
+          </md>.
           The two solutions are both valid, for any positive value of
           <m>c</m>. How can both solutions exist? They exist because
           they have non-overlaping domains. The first solution is
@@ -381,16 +381,16 @@
     <example>
       <statement>
         <p>
-          <me>
+          <md>
             \frac{dy}{dt} + y = Q
-          </me>
+          </md>
           To add some complication to this particular example,
           the non-homogeneous piece <m>Q</m> here is a
           step function.
-          <me>
+          <md>
             Q = \left\{ \begin{matrix} 1 \amp 0 \leq t \leq 1 \\ 0
             \amp t > 1 \end{matrix} \right.
-          </me>
+          </md>
           This is still allowed: often the coefficients and functions
           involved in DEs are only piecewise continuous and/or
           piecewise differentiable. I can still work with them. This
@@ -403,16 +403,16 @@
           I'll look at look at <m>[0,1]</m> and apply the standard
           method of solution: multiplying by the integrating factor
           and integrating. 
-          <me>
+          <md>
             \frac{d}{dt} e^t y = e^t \implies e^ty = e^t + c_1
             \implies y = 1 + c_1e^{-t}
-          </me>
+          </md>
           Second, I'll look at the remainder of the domain, which is
           the interval <m>(1,\infty)</m>. I apply the same method.
-          <me>
+          <md>
             \frac{d}{dt} e^t y = 0 \implies e^ty = t + c_2 \implies y
             = c_2e^{-t}
-          </me>
+          </md>
           This process gives two pieces of the solution, each with
           their own constant of integration. However, I want the
           solution to be continuous. (This is also typical: even with
@@ -430,11 +430,11 @@
           expected behaviour for a first order differential equation.
           Here is the final solution, a piecewise function with only
           one parameter <m>c</m>.
-          <me>
+          <md>
             y = \left\{ \begin{matrix} 1 + ce^{-t} \amp t \in [0,1]
             \\ (e-c)e^{-t} \amp t \in (1,\infty) \end{matrix}
             \right.
-          </me>
+          </md>
           Since there is only one parameter, initial value problems
           are solvable. If I am given the initial value <m>y(0)
           =0</m>, I find that <m>c=1</m> and I can produce a unique

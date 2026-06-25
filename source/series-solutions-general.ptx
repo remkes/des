@@ -15,9 +15,9 @@
       I will assume that the solution to a differential equation, a
       function <m>f</m>, can be written as a series centered at some
       <m>\alpha</m> (usually <m>\alpha = 0)</m>.
-      <me>
+      <md>
         f = \sum_{n=0}^\infty c_n (t-\alpha)^n
-      </me>
+      </md>
       The series is entirely determined by the coefficients
       <m>c_n</m>. Therefore, I use the differential equation to find
       information about the coefficients <m>c_n</m>.  In that way, I

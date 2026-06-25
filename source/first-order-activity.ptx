@@ -9,9 +9,9 @@
           a popluation, so that you only use positive values of
           <m>p</m>. You can use a computer to find approximate roots
           if necessary). Determine the stability of the solutions. 
-          <me>
+          <md>
             \frac{dp}{dt} = (p-3)(p-6)(p-10) 
-          </me>
+          </md>
         </p>
       </statement>
       <solution>
@@ -57,9 +57,9 @@
           a popluation, so that you only use positive values of
           <m>p</m>. You can use a computer to find approximate roots
           if necessary). Determine the stability of the solutions. 
-          <me>
+          <md>
             \frac{dp}{dt} = (p-2)^4(p-4)^7(p-6)^9 
-          </me>
+          </md>
         </p>
       </statement>
       <solution>
@@ -105,9 +105,9 @@
           a popluation, so that you only use positive values of
           <m>p</m>. You can use a computer to find approximate roots
           if necessary). Determine the stability of the solutions. 
-          <me>
+          <md>
             \frac{dp}{dt} = \frac{1}{10} (p^4-15p^3+74p^2-138p+82)
-          </me>
+          </md>
         </p>
       </statement>
       <solution>
@@ -153,9 +153,9 @@
           a popluation, so that you only use positive values of
           <m>p</m>. You can use a computer to find approximate roots
           if necessary). Determine the stability of the solutions. 
-          <me>
+          <md>
             \frac{dp}{dt} = (p-7)^2 \sinh (p-3) 
-          </me>
+          </md>
         </p>
       </statement>
       <solution>
@@ -197,10 +197,10 @@
           a popluation, so that you only use positive values of
           <m>p</m>. You can use a computer to find approximate roots
           if necessary). Determine the stability of the solutions. 
-          <me>
+          <md>
             \frac{dp}{dt} = \left( \ln \left( \frac{p}{5} \right) \right)
             \left( \cosh (p-2) - 1 \right) 
-          </me>
+          </md>
         </p>
       </statement>
       <solution>
@@ -246,9 +246,9 @@
           Draw a direction field for this DE. Describe the general
           form domain, and range of the solutions based on the
           direction field.
-          <me>
+          <md>
             \frac{dy}{dx} = \frac{1}{x^2 + y^2 + 1}
-          </me>
+          </md>
         </p>
       </statement>
       <solution>
@@ -293,9 +293,9 @@
           Draw a direction field for this DE. Describe the general
           form domain, and range of the solutions based on the
           direction field.
-          <me>
+          <md>
             \frac{dy}{dx} = (x+4)(y-2)
-          </me>
+          </md>
         </p>
       </statement>
       <solution>
@@ -341,9 +341,9 @@
           Draw a direction field for this DE. Describe the general
           form domain, and range of the solutions based on the
           direction field.
-          <me>
+          <md>
             \frac{dy}{dx} = \frac{x}{y^3}
-          </me>
+          </md>
         </p>
       </statement>
       <solution>
@@ -402,9 +402,9 @@
           Draw a direction field for this DE. Describe the general
           form domain, and range of the solutions based on the
           direction field.
-          <me>
+          <md>
             \frac{dy}{dx} = y \ln x
-          </me>
+          </md>
         </p>
       </statement>
       <solution>
@@ -452,9 +452,9 @@
           Draw a direction field for this DE. Describe the general
           form domain, and range of the solutions based on the
           direction field.
-          <me>
+          <md>
             \frac{dy}{dx} = x^2 + y^2
-          </me>
+          </md>
         </p>
       </statement>
       <solution>
@@ -505,33 +505,33 @@
       <statement>
         <p>
           Solve this separable differential equation.
-          <me>
+          <md>
             \frac{dy}{dx} = x^2 y 
-          </me>
+          </md>
         </p>
       </statement>
       <solution>
         <p>
           First, I bring the <m>y</m> expression to the left side of
           the equation. 
-          <me>
+          <md>
             \frac{1}{y} \frac{dy}{dx}  = x^2 
-          </me>
+          </md>
           Then I integrate. Using the standard substitution for
           separable equations, the left integral can be treated as an
           integral in <m>y</m>.
-          <me>
+          <md>
             \int \frac{1}{y} dy = \int x^2 dx 
-          </me>
+          </md>
           These are both immediate integral: a logarithm integral and
           a power rule integral. 
-          <me>
+          <md>
             \ln |y| = \frac{x^3}{3} + c 
-          </me>
+          </md>
           After integrating, I try to solve for <m>y</m>. 
-          <me>
+          <md>
             y = ce^{\frac{x^3}{3}} 
-          </me>
+          </md>
           I was successful solving for <m>y</m> and producing a
           function which solves the DE.
         </p>
@@ -541,33 +541,33 @@
       <statement>
         <p>
           Solve this separable differential equation.
-          <me>
+          <md>
             \frac{dy}{dx} = \frac{\cos x}{e^y} 
-          </me>
+          </md>
         </p>
       </statement>
       <solution>
         <p>
           First, I bring the <m>y</m> expression to the left side of
           the equation. 
-          <me>
+          <md>
             e^y \frac{dy}{dx} = \cos x 
-          </me>
+          </md>
           Then I integrate. Using the standard substitution for
           separable equations, the left integral can be treated as an
           integral in <m>y</m>.
-          <me>
+          <md>
             \int e^y dy = \int \cos x dx 
-          </me>
+          </md>
           These are immediate integrals from the tables of
           antiderivatives. 
-          <me>
+          <md>
             e^y = \sin x + c 
-          </me>
+          </md>
           After integrating, I try to solve for <m>y</m>. 
-          <me>  
+          <md>  
             y = \ln (\sin x + c)
-          </me>
+          </md>
           I was successful solving for <m>y</m> and producing a
           function which solves the DE. Note that there are sone
           strict domain restriction for this function. 
@@ -578,32 +578,32 @@
       <statement>
         <p>
           Solve this separable differential equation.
-          <me>
+          <md>
             \frac{dy}{dx} = \frac{x^3}{y^3} 
-          </me>
+          </md>
         </p>
       </statement>
       <solution>
         <p>
           First, I bring the <m>y</m> expression to the left side of
           the equation. 
-          <me>
+          <md>
             y^3 \frac{dy}{dx} = x^3 
-          </me>
+          </md>
           Then I integrate. Using the standard substitution for
           separable equations, the left integral can be treated as an
           integral in <m>y</m>.
-          <me>  
+          <md>  
             \int y^3 dy = \int x^3 dx 
-          </me>
+          </md>
           These are both power rule integrals. 
-          <me>
+          <md>
             \frac{y^4}{4} = \frac{x^4}{4} + c 
-          </me>
+          </md>
           After integrating, I try to solve for <m>y</m>. 
-          <me>
+          <md>
             y^4 = x^4 + c \implies y = \sqrt[4]{x^4 + c} 
-          </me>
+          </md>
           I was successful solving for <m>y</m> and producing a
           function which solves the DE.
         </p>
@@ -613,33 +613,33 @@
       <statement>
         <p>
           Solve this separable differential equation.
-          <me>
+          <md>
             \frac{dy}{dx} = x^2 (y^2 +1) 
-          </me>
+          </md>
         </p>
       </statement>
       <solution>
         <p>
           First, I bring the <m>y</m> expression to the left side of
           the equation. 
-          <me>
+          <md>
             \frac{1}{y^2 + 1} \frac{dy}{dx} = x^2 
-          </me>
+          </md>
           Then I integrate. Using the standard substitution for
           separable equations, the left integral can be treated as an
           integral in <m>y</m>.
-          <me>
+          <md>
             \int \frac{1}{y^2 + 1} dy = \int x^2 dx 
-          </me>
+          </md>
           The left is an arctangent integral, and the right is a power
           rule integral. 
-          <me>
+          <md>
             \arctan y = \frac{x^3}{3} + c 
-          </me>
+          </md>
           After integrating, I try to solve for <m>y</m>. 
-          <me>
+          <md>
             y = \tan \left( \frac{x^3}{3} + c \right) 
-          </me>
+          </md>
           I was successful solving for <m>y</m> and producing a
           function which solves the DE.
         </p>
@@ -649,35 +649,35 @@
       <statement>
         <p>
           Solve this separable differential equation.
-          <me>
+          <md>
             \frac{dy}{dx} = e^x \sqrt{4-y^2} 
-          </me>
+          </md>
         </p>
       </statement>
       <solution>
         <p>
           First, I bring the <m>y</m> expression to the left side of
           the equation. 
-          <me>
+          <md>
             \frac{1}{\sqrt{4-y^2}} \frac{dy}{dx} = e^x 
-          </me>
+          </md>
           Then I integrate. Using the standard substitution for
           separable equations, the left integral can be treated as an
           integral in <m>y</m>.
-          <me>
+          <md>
             \int \frac{1}{\sqrt{4-y^2}} dy = \int e^x dx 
-          </me>
+          </md>
           The left is an arcsin integral, and the right is a simple
           exponential integral. 
-          <me>
+          <md>
             \arcsin \left( \frac{y}{2} \right) = e^x + c 
-          </me>
+          </md>
           After integrating, I try to solve for <m>y</m>. 
-          <me>
+          <md>
             \arcsin \left( \frac{y}{2} \right) = e^x + c \implies
             \frac{y}{2} = \sin (e^x + c) \implies y = 2 \sin (e^x +
             c) 
-          </me>
+          </md>
           I was successful solving for <m>y</m> and producing a
           function which solves the DE.
         </p>
@@ -687,29 +687,29 @@
       <statement>
         <p>
           Solve this separable differential equation.
-          <me>
+          <md>
             \frac{dy}{dx} = \frac{y^2 -2y - 15}{x} 
-          </me>
+          </md>
         </p>
       </statement>
       <solution>
         <p>
           First, I bring the <m>y</m> expression to the left side of
           the equation. 
-          <me>
+          <md>
             \frac{1}{y^2 - 2y - 15} \frac{dy}{dx} = x 
-          </me>
+          </md>
           Then I integrate. Using the standard substitution for
           separable equations, the left integral can be treated as an
           integral in <m>y</m>.
-          <me>
+          <md>
             \int \frac{1}{y^2 - 2y = 15} = \int x dx 
-          </me>
+          </md>
           The left is a partial fractions integral; I asked a computer
           for the solution. The right is a power rule integral. 
-          <me>
+          <md>
             \frac{1}{8} \ln |y-5| - \frac{1}{8} \ln |y-3| = x^2 + c 
-          </me>
+          </md>
           After integrating, I try to solve for <m>y</m>. However, I
           don't see any way to pull the <m>y</m> out of both the
           logarithm terms. Therefore, I'll leave the solution
@@ -721,35 +721,35 @@
       <statement>
         <p>
           Solve this separable differential equation.
-          <me>
+          <md>
             \frac{dy}{dx} = \frac{x^4 + 9x^3 - 7x^2 - 3x + 1}{y}
-          </me>
+          </md>
         </p>
       </statement>
       <solution>
         <p>
           First, I bring the <m>y</m> expression to the left side of
           the equation. 
-          <me>
+          <md>
             y \frac{dy}{dx} = x^4 + 9x^3 - 7x^2 + 3x + 1 
-          </me>
+          </md>
           Then I integrate. Using the standard substitution for
           separable equations, the left integral can be treated as an
           integral in <m>y</m>.
-          <me>
+          <md>
             \int y dy = \int x^4 + 9x^3 - 7x^2 - 3x + 1 dx
-          </me>
+          </md>
           These are power polynomial integrals, solve by linearity and
           the power rule. 
-          <me>
+          <md>
             \frac{y^2}{2} = \frac{x^5}{5} + \frac{9x^4}{4} -
             \frac{7x^3}{3} - \frac{3x^2}{2} + x + c 
-          </me>
+          </md>
           After integrating, I try to solve for <m>y</m>. 
-          <me>
+          <md>
             y = \sqrt{\frac{2x^5}{5} + \frac{9x^4}{2} -
             \frac{14x^3}{3} - 3x^2 + 2x + c} 
-          </me>
+          </md>
           I was successful solving for <m>y</m> and producing a
           function which solves the DE.
         </p>
@@ -759,34 +759,34 @@
       <statement>
         <p>
           Solve this separable differential equation.
-          <me>
+          <md>
             \frac{dy}{dx} = \frac{e^{-x^2}}{\cos y} 
-          </me>
+          </md>
         </p>
       </statement>
       <solution>
         <p>
           First, I bring the <m>y</m> expression to the left side of
           the equation. 
-          <me>
+          <md>
             \cos y \frac{dy}{dx} = e^{-x^2} 
-          </me>
+          </md>
           Then I integrate. Using the standard substitution for
           separable equations, the left integral can be treated as an
           integral in <m>y</m>.
-          <me>
+          <md>
             \int \cos y dy = \int e^{-x^2} dx 
-          </me>
+          </md>
           This is a simple trig integral on the left. The right is an
           integral without an elementary solution. Therefore, I'll
           just leave it as it is. 
-          <me>
+          <md>
             \sin y = \int e^{-x^2} ex 
-          </me>
+          </md>
           After integrating, I try to solve for <m>y</m>. 
-          <me>
+          <md>
             y = \arcsin \left( \int e^{-x^2} dx \right) 
-          </me>
+          </md>
           This is a solution, a function. It is defined by an
           integral, which makes it more difficult to work with and
           understand, but it is a solution. 
@@ -800,9 +800,9 @@
       <statement>
         <p>
           Solve this linear equation.
-          <me>
+          <md>
             \frac{dy}{dt} + y = 4e^{-t} 
-          </me>
+          </md>
         </p>
       </statement>
       <solution>
@@ -818,22 +818,22 @@
           Then I'll calculate the integrating factor. (Note that I
           don't need a constant of integration for the integrating
           factor). 
-          <me>
+          <md>
             \mu(t) = e^{\int 1 dt} = e^t
-          </me>
+          </md>
           Then I multiply the original equation by the integrating
           factor. 
-          <me>
+          <md>
             e^t \frac{dy}{dt} + e^t y = 4e^{-t} e^t = 4 
-          </me>
+          </md>
           The left side becomes a product rule derivative.
-          <me>
+          <md>
             \frac{d}{dt} \left( e^t y \right) = 4 
-          </me>
+          </md>
           Then I integrate. 
-          <me>
+          <md>
             e^t y = 4t + c 
-          </me>
+          </md>
           Then I solve for <m>y</m>. If I want to, I can isolate the
           particular solution <m>y_p</m> and the homogeneous solution
           <m>y_h</m>; the homogeneous solution has the paramater and
@@ -856,9 +856,9 @@
       <statement>
         <p>
           Solve this linear equation.
-          <me>
+          <md>
             \frac{dy}{dt} + \frac{4y}{t} = t^2 + 3t + 4 
-          </me>
+          </md>
         </p>
       </statement>
       <solution>
@@ -874,22 +874,22 @@
           Then I'll calculate the integrating factor. (Note that I
           don't need a constant of integration for the integrating
           factor). 
-          <me>
+          <md>
             \mu(t) = e^{\int \frac{4}{t} dt} = e^{4 \ln t} = t^4 
-          </me>
+          </md>
           Then I multiply the original equation by the integrating
           factor. 
-          <me>
+          <md>
             t^4 \frac{dy}{dt} + t^4 \frac{4y}{t} = t^4(t^2 + 3t + 4)
-          </me>
+          </md>
           The left side becomes a product rule derivative.
-          <me>
+          <md>
             \frac{d}{dt} (t^4 y) = t^6 + 3t^5 + 4t^4 
-          </me>
+          </md>
           Then I integrate. 
-          <me>
+          <md>
             t^4 y = \frac{t^7}{7} + \frac{t^6}{2} + \frac{4t^5}{5} + c
-          </me>
+          </md>
           Then I solve for <m>y</m>. If I want to, I can isolate the
           particular solution <m>y_p</m> and the homogeneous solution
           <m>y_h</m>; the homogeneous solution has the paramater and
@@ -913,9 +913,9 @@
       <statement>
         <p>
           Solve this linear equation.
-          <me>
+          <md>
             \frac{dy}{dt} + 3t^2y = t^2 
-          </me>
+          </md>
         </p>
       </statement>
       <solution>
@@ -931,23 +931,23 @@
           Then I'll calculate the integrating factor. (Note that I
           don't need a constant of integration for the integrating
           factor). 
-          <me>
+          <md>
             \mu(t) = e^{\int 3t^3 dt} = e^{t^3}
-          </me>
+          </md>
           Then I multiply the original equation by the integrating
           factor. 
-          <me>
+          <md>
             e^{t^3} \frac{dy}{dt} + e^{t^3} 3t^2 y = e^{t^3} t^2
-          </me>
+          </md>
           The left side becomes a product rule derivative.
-          <me>
+          <md>
             \frac{d}{dt} \left( e^{t^3} y \right) = e^{t^3}{t^2}
-          </me>
+          </md>
           Then I integrate. The right integral is a substitution
           integral with <m>u = t^3</m>; I haven't shown the steps. 
-          <me>
+          <md>
             e^{t^3} y = \frac{e^{t^3}}{3} + c 
-          </me>
+          </md>
           Then I solve for <m>y</m>. If I want to, I can isolate the
           particular solution <m>y_p</m> and the homogeneous solution
           <m>y_h</m>; the homogeneous solution has the paramater and
@@ -970,9 +970,9 @@
       <statement>
         <p>
           Solve this linear equation.
-          <me>
+          <md>
             \frac{dy}{dt} + (\cos t) y = 4 \cos t
-          </me>
+          </md>
         </p>
       </statement>
       <solution>
@@ -988,25 +988,25 @@
           Then I'll calculate the integrating factor. (Note that I
           don't need a constant of integration for the integrating
           factor). 
-          <me>
+          <md>
             \mu(t) = e^{\int \cos t dt } e^{\sin t}
-          </me>
+          </md>
           Then I multiply the original equation by the integrating
           factor. 
-          <me>
+          <md>
             e^{\sin t} \frac{dy}{dt} + e^{\sin t} \cos t y = e^{\sin
             t} 4 \cos t 
-          </me>
+          </md>
           The left side becomes a product rule derivative.
-          <me>
+          <md>
             \frac{d}{dt} \left( e^{\sin t} y \right) = e^{\sin t} 4
             \cos t 
-          </me>
+          </md>
           Then I integrate. The right side is a substitution with <m>u
           = \sin y</m>, but I haven't shown the steps. 
-          <me>
+          <md>
             e^{\sin t} y = 4e^{\sin t} + c 
-          </me>
+          </md>
           Then I solve for <m>y</m>. If I want to, I can isolate the
           particular solution <m>y_p</m> and the homogeneous solution
           <m>y_h</m>; the homogeneous solution has the paramater and
@@ -1030,9 +1030,9 @@
         <p>
           Solve this linear equation. (Hint: when you get a hyperbolic
           inverse tangent, look up how to write it as a logarithm.) 
-          <me>
+          <md>
             \frac{dy}{dt} + \frac{2y}{1-t^2} = (1-t)^2 
-          </me>
+          </md>
         </p>
       </statement>
       <solution>
@@ -1048,31 +1048,31 @@
           Then I'll calculate the integrating factor. (Note that I
           don't need a constant of integration for the integrating
           factor). 
-          <me>
+          <md>
             \mu(t) = e^{\int \frac{2}{1-t^2} dt} = e^{2 \arc+anh t}
-          </me>
+          </md>
           I'm going to make use of a nice alternative definition of
           the hyperbolic arctangent. 
-          <me>
+          <md>
             \arctanh x = \frac{1}{2} \ln \left( \frac{1 + x}{1 - x}
             \right) \implies \mu (t) = e^{2 \ln \left(
             \frac{1+t}{1-t} \right)} = \frac{1 + t}{1 - t} 
-          </me>
+          </md>
           Then I multiply the original equation by the integrating
           factor. 
-          <me>
+          <md>
             \frac{1+t}{1-t} \frac{dy}{dt} +  \frac{1+t}{1-t}
             \frac{y}{1-t^2} = \frac{1+t}{1-t} (1-t)^2 
-          </me>
+          </md>
           The left side becomes a product rule derivative.
-          <me>
+          <md>
             \frac{d}{dt} \left( \frac{1+t}{1-t} y \right) = (1+t)(1-t)
             = 1-t^2 
-          </me>
+          </md>
           Then I integrate. 
-          <me>
+          <md>
             \frac{1+t}{1-t} y = t - t^3 + c 
-          </me>
+          </md>
           Then I solve for <m>y</m>. If I want to, I can isolate the
           particular solution <m>y_p</m> and the homogeneous solution
           <m>y_h</m>; the homogeneous solution has the paramater and
@@ -1095,9 +1095,9 @@
       <statement>
         <p>
           Solve this linear equation.
-          <me>
+          <md>
             \frac{dy}{dt} + (\tan t) y = e^t(t^2 -1)
-          </me>
+          </md>
         </p>
       </statement>
       <solution>
@@ -1113,25 +1113,25 @@
           Then I'll calculate the integrating factor. (Note that I
           don't need a constant of integration for the integrating
           factor). 
-          <me>
+          <md>
             \mu(t) = e^{\int \tan t dt} = e^{-\ln (\cos t)} = (\cos
             t)^{-1} = \sec t 
-          </me>
+          </md>
           Then I multiply the original equation by the integrating
           factor. 
-          <me>
+          <md>
             \sec t \frac{dy}{dt} + (\sec t)(\tan t) y = \sec t e^t
             (t^2 - 1) 
-          </me>
+          </md>
           The left side becomes a product rule derivative.
-          <me>
+          <md>
             \frac{d}{dt} \left( y \sec t \right) = \sec t e^t (t^2 -
             1) 
-          </me>
+          </md>
           Then I integrate. 
-          <me>
+          <md>
             y \sec t = \int \sec t e^t (t^2 - 1) dt + c 
-          </me>
+          </md>
           Then I solve for <m>y</m>. If I want to, I can isolate the
           particular solution <m>y_p</m> and the homogeneous solution
           <m>y_h</m>; the homogeneous solution has the paramater and
@@ -1159,9 +1159,9 @@
       <statement>
         <p>
           Solve this homogeneous equation using substitution. 
-          <me>
+          <md>
             \frac{dy}{dt} = \frac{y^3}{t^3} - 1 
-          </me>
+          </md>
         </p>
       </statement>
       <solution>
@@ -1169,39 +1169,39 @@
           I use the appropriate substitution: <m>v = \frac{y}{t}</m>.
           The expression on the left becomes <m>f(v) = v^3 - 1</m>.
           Then I can write the new differential equation in <m>v</m>.
-          <me>
+          <md>
             \frac{dv}{dt} = \frac{f(v) - v}{t} = \frac{v^3 - 1 - v}{t} 
-          </me>
+          </md>
           As expected, this is a separable equation. I proceed with
           the steps to solve a separable equation.  
-          <me>
+          <md>
             \frac{1}{v^3 - v - 1} \frac{dv}{dt} = \frac{1}{t}
-          </me>
+          </md>
           Then I integrate with the standard setup that turns the left
           side into a integral in <m>v</m>. 
-          <me>
+          <md>
             \int \frac{1}{v^3 - v - 1} dv = \int \frac{1}{t} dt
-          </me>
+          </md>
           The right side is an easy power rule integral. On the left
           side, I need partial fractions. I've asked a computer for
           the partial fraction decomposition and the outcome of the
           resulting integrals. 
-          <me>
+          <md>
             \frac{1}{11} \ln |v-2| - \frac{1}{22} \ln |v^2 + 2v + 3| -
             \frac{3}{11\sqrt{2}} \arctan \left( \frac{v+1}{\sqrt{2}}
             \right) = \ln |t| + c 
-          </me>
+          </md>
           Solving on the left for <m>v</m> is clearly impossible, so
           I'll have to leave this as an implicit solution. I can still
           replace the original substitution, leaving an even more
           complicated implicit expression for the function
           <m>y(t)</m>. 
-          <me>
+          <md>
             \frac{1}{11} \ln \left| \frac{y}{t} - 2 \right| -
             \frac{1}{22} \ln \left | \frac{y^2}{t^2} + \frac{2y}{t} +
             3 \right| - \frac{3}{11\sqrt{2}} \arctan \left(
             \frac{\frac{y}{t}+1}{\sqrt{2}} \right) = \ln |t| + c 
-          </me>
+          </md>
         </p>
       </solution>
     </activity>
@@ -1209,9 +1209,9 @@
       <statement>
         <p>
           Solve this homogeneous equation using substitution. 
-          <me>
+          <md>
             \frac{dy}{dt} = \frac{t}{t - y}
-          </me>
+          </md>
         </p>
       </statement>
       <solution>
@@ -1219,9 +1219,9 @@
           This is a homogeneous equation, but it is a bit difficult to
           immediately see it. However, if I divide numerator and
           denominator by <m>t</m> on the right, the form will appear. 
-          <me>
+          <md>
             \frac{dy}{dt} = \frac{1}{1- \frac{y}{t}} 
-          </me>
+          </md>
           I use the appropriate substitution: <m>v = \frac{y}{t}</m>.
           The expression on the left becomes <m>f(v) = \frac{1}{1-v}</m>.
           Then I can write the new differential equation in <m>v</m>.
@@ -1238,27 +1238,27 @@
           As expected, this is a separable equation. I solve it as a
           separable equation, setting up the two integrals. 
           in <m>t</m>
-          <me>
+          <md>
             \int \frac{1 - v}{1 - v + v^2} dv = \int \frac{1}{t} dt 
-          </me>
+          </md>
           Then I did the integrals (asking a computer for the left
           integral. 
-          <me>
+          <md>
             \frac{1}{\sqrt{3}} \arctan \left( \frac{2v-1}{\sqrt{3}}
             \right) - \frac{1}{2} \ln |v^2 - v + 1| = \ln |t| + c
-          </me>
+          </md>
           In principle, I would like to solve this for v. However,
           this turns out to be impossible: there is no way to extra v
           from both the arctangent and the logarithm (as well as the
           quadratic inside the logarithm). The best I can do is
           replace <m>v</m> with <m>\frac{y}{t}</m> and leave the
           solution in an implicit form. 
-          <me>
+          <md>
             \frac{1}{\sqrt{3}} \arctan \left(
             \frac{\frac{2y}{t}-1}{\sqrt{3}} \right) - \frac{1}{2} \ln
             \left| \left( \frac{y}{t} \right)^2 - \frac{y}{v}  + 1
             \right| = \ln |t| + c
-          </me>
+          </md>
         </p>
       </solution>
     </activity>
@@ -1269,9 +1269,9 @@
       <statement>
         <p>
           Solve this Bernoulli equation by substitution.
-          <me>
+          <md>
             \frac{dy}{dt} + \frac{y}{t} = \frac{y^3}{t^2} 
-          </me>
+          </md>
         </p>
       </statement>
       <solution>
@@ -1279,9 +1279,9 @@
           In this Bernoulli equation, <m>n=3</m>, so the substitution
           is <m>v = y^{-2}</m>. The substitution produces a linear
           equation.
-          <me>
+          <md>
             \frac{dv}{dt} - \frac{2v}{t} = - \frac{2}{t^2}
-          </me>
+          </md>
           I proceed with the usual steps for linear equations. I
           identify the two coefficient functions.
           <md>
@@ -1291,38 +1291,38 @@
             </mrow>
           </md>
           Then I'll calculate the integrating factor. 
-          <me>
+          <md>
             \mu(t) = e^{\int \frac{-2}{t} dt} = e^{-2\ln |t|} =
             \frac{1}{t^2}
-          </me>
+          </md>
           Then I multiply the original equation by the integrating
           factor. 
-          <me>
+          <md>
             \frac{1}{t^2} \frac{dv}{dt} - \frac{2v}{t^3} = -
             \frac{2}{t^4}
-          </me>
+          </md>
           The left side becomes a product rule derivative.
-          <me>
+          <md>
             \frac{d}{dt} \left( \frac{1}{t^2} v \right) =
             - \frac{2}{t^4}
-          </me>
+          </md>
           Then I integrate. 
-          <me>
+          <md>
             \frac{1}{t^2} v = \frac{2}{3t^3} + c 
-          </me>
+          </md>
           Then I solve for <m>v</m>. 
-          <me>
+          <md>
             v = \frac{2}{3t} + ct^2 
-          </me>
+          </md>
           Then I can reverse the substitution.
-          <me>
+          <md>
             \frac{1}{y^2} = \frac{2}{3t} + ct^2 = \frac{2 +
             ct^3}{3t}
-          </me>
+          </md>
           Finally, I can solve for <m>y</m>
-          <me>
+          <md>
             y = \sqrt{\frac{3t}{2 + ct^3}}
-          </me>
+          </md>
         </p>
       </solution>
     </activity>
@@ -1330,9 +1330,9 @@
       <statement>
         <p>
           Solve this Bernoulli equation by substitution.
-          <me>
+          <md>
             \frac{dy}{dt} + \sin t y = t^2 y^4 
-          </me>
+          </md>
         </p>
       </statement>
       <solution>
@@ -1340,9 +1340,9 @@
           In this Bernoulli equation, <m>n=4</m>, so the substitution
           is <m>v = y^{-3}</m>. The substitution produces a linear
           equation.
-          <me>
+          <md>
             \frac{dv}{dt} -3 \sin t v = -3t^2 
-          </me>
+          </md>
           I proceed with the usual steps for linear equations. I
           identify the two coefficient functions.
           <md>
@@ -1352,41 +1352,41 @@
             </mrow>
           </md>
           Then I'll calculate the integrating factor. 
-          <me>
+          <md>
             \mu(t) = e^{\int -3 \sin t dt} = e^{3 \cos t} = 
-          </me>
+          </md>
           Then I multiply the original equation by the integrating
           factor. 
-          <me>
+          <md>
             e^{3 \cos t} \frac{dv}{dt} - 3e^{3 \cos t} \sin t v =
             -3e^{3 \cos t} t^2 
-          </me>
+          </md>
           The left side becomes a product rule derivative.
-          <me>
+          <md>
             \frac{d}{dt} \left( e^{3 \cos t} v \right) = -3e^{3 \cos
             t} t^2 
-          </me>
+          </md>
           Then I integrate. 
-          <me>
+          <md>
             v e^{3 \cos t} = \int -3e^{3 \cos t} t^2 dt 
-          </me>
+          </md>
           I have to leave the integral on the right, since I don't
           know any way to solve it with the techniques of elementary
           functions. Likely, this solution to the integral is some
           previously unknown function. However, I can solve for
           <m>v</m>. 
-          <me>
+          <md>
             v = e^{-3 \cos t} \int -3e^{3 \cos t} t^2 dt 
-          </me>
+          </md>
           Then I can reverse the substitution.
-          <me>
+          <md>
             \frac{1}{y^3} = e^{-3 \cos t} \int -3e^{3 \cos t} t^2 dt 
-          </me>
+          </md>
           Finally, I can solve for <m>y</m>
-          <me>
+          <md>
             y = \sqrt[3]{\frac{1}{e^{-3 \cos t} \int -3e^{3 \cos t}
             t^2 dt}} 
-          </me>
+          </md>
           This is an unwieldy solution; it would be quite difficult to
           investigate the properties of this strangely defined
           function. But it is a solution. 

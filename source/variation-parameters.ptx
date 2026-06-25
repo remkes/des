@@ -23,7 +23,7 @@
           <term>Wronskian</term> of this set of functions is defined
           to be the determinant of a matrix involving the <m>f_i</m>
           and their derivatives.
-          <me>
+          <md>
             W(f_1, f_2, \ldots, f_n) : = \left| \begin{matrix} 
               f_1 \amp \ldots \amp f_n \\ 
               f^\prime_1 \amp \ldots \amp f^\prime_n \\ 
@@ -31,7 +31,7 @@
               \ldots \amp \ldots \amp \ldots \\
               f^{(n-1)}_1 \amp \ldots \amp f^{(n-1)}_n 
             \end{matrix} \right|
-          </me>
+          </md>
         </p>
       </statement>
     </definition>
@@ -48,12 +48,12 @@
       For variation of parameters, I only need to the Wronskain of
       two functions.  I'll write this determinant explicitly for your
       convenience. 
-      <me>
+      <md>
         W(f_1,f_2) = \left| \begin{matrix} 
           f_1 \amp f_2 \\ 
           f_1^\prime \amp f_2^\prime 
         \end{matrix} \right| = f_1 f_2^\prime - f_2 f_1^\prime
-      </me>
+      </md>
     </p>
   </subsection>
   <subsection xml:id="subsection-technique-vop">
@@ -63,18 +63,18 @@
       parameters for first-order linear equations, described in <xref
       ref="subsection-integrating-factors" />. 
       Let <m>L</m> be the second order operator
-      <me>
+      <md>
         L = \frac{d^2}{dt^2} +P \frac{d}{dt} + Q
-      </me>.
+      </md>.
       Let <m>y_1</m> and <m>y_2</m> be solutions to the homogeneous
       equation <m>Ly=0</m>.  The general solution to the homogeneous
       equation is <m>Ay_1 + By_2</m>. The parameters are the constant 
       <m>A</m> and <m>B</m>. To <sq>vary the parameters</sq> is to
       replace the constants with functions. That is, I look for a
       solution which has the form 
-      <me>
+      <md>
         y_p = u_1 y_1 + u_2 y_2
-      </me>
+      </md>
       where <m>u_1(t)</m> and <m>u_2(t)</m> are unknown functions
       instead of unknown constant.  Then I put this form of <m>y_p</m>
       into the differential equation to try to determine what the
@@ -154,10 +154,10 @@
       + y_2 u_2^\prime = 0</m>. This restriction removes two terms
       from the previous equation and leaves me with a much easier
       equation.
-      <me>
+      <md>
         \left( y_1^\prime u_1^\prime + y_2^\prime u_2^\prime \right) =
         f
-      </me>
+      </md>
       Along with the restriction itself , I now have a linear system
       of two equations.
       <md>
@@ -169,7 +169,7 @@
         </mrow>
       </md>
       I can express this system as a matrix.
-      <me>
+      <md>
         \left( \begin{matrix}
           0 \\
           f
@@ -181,7 +181,7 @@
           u_1^\prime \\
           u_2^\prime
         \end{matrix} \right)
-      </me>
+      </md>
       Linear algebra then solves the system.  Conveniently, the
       determinant of the system is the Wronskian <m>W(y_1,y_2)</m>,
       which I will simply write <m>W</m> for the remainder of this
@@ -206,16 +206,16 @@
         </mrow>
       </md>
       I insert these <m>u_i</m> in the original expression.
-      <me>
+      <md>
         y_p = \left( -\int \frac{y_2 f}{W} dt \right) y_1 + \left(
         \int \frac{y_1 f}{W} dt \right) y_2
-      </me>
+      </md>
       Therefore, the general solution to the original equation <m>Ly =
       f</m> is 
-      <me>
+      <md>
         y_p = \left( -\int \frac{y_2 f}{W} dx \right) y_1 + \left(
         \int \frac{y_1 f}{W} dt \right) y_2 + Ay_1 + By_2
-      </me>.
+      </md>.
       Conveniently, I don't have to worry about constants of
       integration in either of the two integrals.  If I had a constant
       of integration, it would lead to a multiple of one of the
@@ -229,14 +229,14 @@
           undetermined coefficients, since the forcing term is
           exponential. However, I'll use variation of parameters to
           demonstrate. 
-          <me>
+          <md>
             y^{\prime\prime} - 2y^{\prime} + 2y = 2e^t
-          </me>
+          </md>
           First I solve the homogeneous equation by finding the roots
           of the characteristic equation.
-          <me>
+          <md>
             r^2 -2r +2 = 0 \implies r = 1 \pm \imath
-          </me>
+          </md>
           The roots are complex with <m>\alpha = 1</m> and <m>\beta =
           1</m>. Therefore, the solutions are products of exponentials
           and sinusoidal functions. 
@@ -288,16 +288,16 @@
           </md>
           Then I can replace <m>u_1</m> and <m>u_2</m> in the
           expression for the particular solution.
-          <me>
+          <md>
             y_p = 2\cos t e^t \cos t + 2 \sin t e^t \sin t =
             2e^t
-          </me>
+          </md>
           (I made use of <m>\sin^2 t + \cos^2 t = 1</m> in the
           previous calculation). Finally, the full solution is the
           particular solution plus the homogeneous solution.
-          <me>
+          <md>
             y = 2e^t + Ae^t \cos t + B e^t \sin t
-          </me>
+          </md>
         </p>
       </statement>
     </example>
@@ -308,14 +308,14 @@
           undetermined coefficients, since the forcing term is an
           exponential multiplied by a polynomial. However, again, I'll
           use variation of parameters to demonstrate. 
-          <me>
+          <md>
             y^{\prime\prime} - 4y^{\prime} + 4y = (t+1)e^{2t}
-          </me>
+          </md>
           First I solve the homogeneous equation by finding the roots
           of the characteristic equation.
-          <me>
+          <md>
             r^2 -4r +4 = 0 \implies r = 2
-          </me>
+          </md>
           The root is real and repeated.  Therefore, the solutions are
           exponential and exponential multiplied by <m>t</m>. 
           <md>
@@ -362,17 +362,17 @@
           </md>
           Then I can replace <m>u_1</m> and <m>u_2</m> in the
           expression for the particular solution.
-          <me>
+          <md>
             y_p = \left( \frac{-t^3}{3} - \frac{t^2}{2} \right)
             e^{2t} + \left( \frac{t^2}{2} + t \right) te^{2t}
             = \frac{t^3 e^{2t}}{6} + \frac{t^2e^2t}{2}
-          </me>
+          </md>
           Finally, the full solution is the particular solution plus
           the homogeneous solution.
-          <me>
+          <md>
             y = \frac{t^3 e^{2t}}{6} + \frac{t^2e^2t}{2} +
             Ae^{2t} + Bte^{2t}
-          </me>
+          </md>
         </p>
       </statement>
     </example>
@@ -381,14 +381,14 @@
         <p>
           This is (finally) an example that couldn't have used
           undetermined coefficients.
-          <me>
+          <md>
             y^{\prime\prime} + 9y = \csc 3t
-          </me>
+          </md>
           First I solve the homogeneous equation by finding the roots
           of the characteristic equation.
-          <me>
+          <md>
             r^2 + 9 = 0 \implies r = \pm 3\imath
-          </me>
+          </md>
           The roots are complex, with <m>\alpha = 0</m> and <m>\beta =
           3</m>.  Therefore, the solutions are just sinusoidal
           functions. (There is no exponential growth or decay in
@@ -431,16 +431,16 @@
           </md>
           Then I can replace <m>u_1</m> and <m>u_2</m> in the
           expression for the particular solution.
-          <me>
+          <md>
             y_p = \frac{-t}{3} \cos 3t + \frac{\sin 3t \ln
             |\sin 3t|}{9}
-          </me>
+          </md>
           Finally, the full solution is the particular solution plus
           the homogeneous solution.
-          <me>
+          <md>
             y = \frac{-t}{3} \cos 3t + \frac{\sin 3t \ln |\sin
             3t|}{9} + A \cos 3t + B \sin 3t
-          </me>
+          </md>
           One of the reasons that undetermined coefficients wouldn't
           have worked is that the form of the particular solution,
           <m>\ln |\sin 3t|</m>, is not a function likely to be
@@ -456,14 +456,14 @@
           integrals in the final solution.  We just have to live with
           these unexpressible function (or, I suppose, come up with
           new names for them.)
-          <me>
+          <md>
             y^{\prime\prime} - y = \frac{1}{t}
-          </me>
+          </md>
           First I solve the homogeneous equation by finding the roots
           of the characteristic equation.
-          <me>
+          <md>
             r^2 - 1 = 0 \implies r = \pm 1
-          </me>
+          </md>
           The roots are real. Therefore, the solutions are
           exponential functions.
           <md>
@@ -504,16 +504,16 @@
           </md>
           Then I can replace <m>u_1</m> and <m>u_2</m> in the
           expression for the particular solution.
-          <me>
+          <md>
             y_p = \frac{e^t}{2} \int \frac{e^{-t}}{t} dt -
             \frac{e^{-t}}{2} \int \frac{e^t}{t} dt
-          </me>
+          </md>
           Finally, the full solution is the particular solution plus
           the homogeneous solution.
-          <me>
+          <md>
             y = \frac{e^t}{2} \int \frac{e^{-t}}{t} dt -
             \frac{e^{-t}}{2} \int \frac{e^t}{t} dt + Ae^t + Be^{-t}
-          </me>
+          </md>
         </p>
       </statement>
     </example>

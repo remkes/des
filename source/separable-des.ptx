@@ -11,9 +11,9 @@
       <p>
         A <term>separable equation</term> is a DE which has the
         following form, for some expressions <m>f</m> and <m>g</m>.
-        <me>
+        <md>
           \frac{dy}{dt} = f(y) g(t)
-        </me>
+        </md>
       </p>
     </statement>
   </definition>
@@ -21,10 +21,10 @@
     <statement>
       <p>
         The equation 
-        <me>
+        <md>
           \frac{dy}{dt} = \left( y^2 + 2y - 1 \right) \left(
           \frac{1}{t^2 +1} \right) 
-        </me>
+        </md>
         is a separable equation. On the right side, there are two
         expressions, one only involving <m>y</m> and one only
         involving <m>t</m>, which are multiplied together. 
@@ -35,9 +35,9 @@
     <statement>
       <p>
         The equation 
-        <me>
+        <md>
           \frac{dy}{dt} = \sin y \left( e^{t^2 + 1} - t^2 \right) 
-        </me>
+        </md>
         is a separable equation. On the right side, there are two
         expressions, one only involving <m>y</m> and one only
         involving <m>t</m>, which are multiplied together.
@@ -47,9 +47,9 @@
   <example>
     <statement>
       <p>
-        <me>
+        <md>
           \frac{dy}{dt} = ty + t^2 y^2 + t^3 y^3 
-        </me>
+        </md>
         is not a separable equation, since there is no way to factor
         the right side into two multiplied expressions <m>f(y)
         g(t)</m>.  Even though each piece of the sum on right side has
@@ -66,24 +66,24 @@
     dependent variable and bring it to the left side. (I have to worry
     a bit about values of <m>y</m> that result in <m>g(y) = 0</m>, but
     I'll worry about that issue in a later section.)
-    <me>
+    <md>
       \frac{1}{f(y)} \frac{dy}{dt} = g(t)
-    </me>
+    </md>
     <m>y</m> is the dependent variable: the DE is built upon the
     assumption that <m>y</m> is some function of <m>t</m>. This means
     that both sides of the equations are functions of <m>t</m>; the
     left side implicity and the right side explicitly. Therefore, I'll
     integrate both sides in <m>t</m>.
-    <me>
+    <md>
       \int \frac{1}{f(y)} \frac{dy}{dt} dt  = \int g(t) dt
-    </me>
+    </md>
     Now I use a strange looking substitution <m>y = y(t)</m> on the
     left side of the integral. The differential piece of the
     substitution is <m>dy = \frac{dy}{dt} dt</m>, which conveniently
     replaces a big piece of the left side integral. 
-    <me>
+    <md>
       \int \frac{1}{f(y)} dy = \int g(t) dt  
-    </me>
+    </md>
     To finish, I do both the integrals. The result is some expression
     in <m>y</m> on the left and some function of <m>t</m> on the right.
     If I can, I simplify to solve for <m>y</m> on the left,

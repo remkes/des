@@ -46,9 +46,9 @@
       <p>
         Let <m>f,g</m> be integrable functions on <m>[0,\infty)</m>.
         Their convoluiton is defined by this integral.
-        <me>
+        <md>
           f \star g (t) = \int_0^t f(\tau) g(t-\tau) d \tau
-        </me>.
+        </md>.
       </p>
     </statement>
   </definition>
@@ -77,9 +77,9 @@
         </li>
         <li>
           The Laplace transform turns convolutions into products:
-          <me>
+          <md>
             \calL \left\{ f \star g \right\} = F(s) G(s)
-          </me>
+          </md>
         </li>
       </ul></p>
     </statement>
@@ -87,15 +87,15 @@
   <p>
     Here is an interesting question: if this is a product, what is the
     identity? That is, what function <m>g</m> satisfies
-    <me>
+    <md>
       f \star g = \int_0^t f(\tau) g(t-\tau) d \tau = f(t)
-    </me>?
+    </md>?
     In this question, the integral needs to evaluate <m>f(\tau)</m> at
     <m>\tau = t</m>. I know a <sq>function</sq> that does this:
     <m>\delta_0</m>.
-    <me>
+    <md>
       f \star \delta_0 = \int_0^t f(\tau) \delta_0 (t-\tau) d \tau = f(t)
-    </me>
+    </md>
   </p>
   <proposition>
     <statement>
@@ -107,15 +107,15 @@
   </proposition>
   <p>
     The convolution behaves well with differentiation.
-    <me>
+    <md>
       \frac{d}{dt} (f \star g) = \frac{df}{dt} \star g + f \star
       \frac{dg}{dt}
-    </me>
+    </md>
     It also behaves well with integration.
-    <me>
+    <md>
       \int_0^\infty f \star g dt = \int_0^\infty f(t) dt \int_0^\infty
       g(t) dt
-    </me>
+    </md>
     Finally, it lets me understand inverse Lapalce transforms of
     products. I'll show an example.
   </p>

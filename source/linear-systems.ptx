@@ -688,7 +688,7 @@
       analyze the behaviour. Then I can make the functions <m>x</m>
       and <m>y</m> the coordinates of a vector and write the system in
       terms of this matrix.
-      <me>
+      <md>
         \begin{pmatrix} 
           x_1^\prime \\ 
           x_2^\prime 
@@ -699,10 +699,10 @@
           x_1 \\ 
           x_2
         \end{pmatrix} 
-      </me>
+      </md>
       Let <m>v</m> be an eigenvector of the matrix and let
       <m>\lambda</m> be the corresponding eigenvectors.
-      <me>
+      <md>
         \begin{pmatrix} 
           x_1 \\
           x_2 
@@ -710,7 +710,7 @@
           e^{\lambda t} v_1 \\
           e^{\lambda t} v_1 
         \end{pmatrix} 
-      </me>
+      </md>
       To see why this is a solution, see what happens when the matrix
       acts on the vector.
       <md>

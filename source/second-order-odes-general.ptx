@@ -11,11 +11,11 @@
     <example>
       <statement>
         <p>
-          <me>
+          <md>
             \left( \frac{d^2 f}{dt^2} \right)^2 + \frac{\frac{df}{dt}
             - t^2 f^2}{\frac{df}{dt} - \frac{d^2 f}{dt^2}} = \frac{t^2
             - \sin t}{f}
-        </me>
+        </md>
         </p>
       </statement>
     </example>

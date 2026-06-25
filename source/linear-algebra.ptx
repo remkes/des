@@ -40,9 +40,9 @@
         vectors is a sum <m>\alpha_1v_1 + \alpha_2v_2 + \ldots +
         \alpha_kv_k</m> where <m>\alpha_i \in \RR</m>. These vectors
         are called <term>linearly independent</term> if the equation
-        <me>
+        <md>
           \alpha_1 v_1 + \alpha_2 v_2 + \ldots + \alpha_k v_k = 0
-        </me>
+        </md>
         has only the trivial solution, where all <m>\alpha_i =0</m>.
         Otherwise, the set of vectors is called <term>linearly
         dependent</term>. A maximal linearly independent set in

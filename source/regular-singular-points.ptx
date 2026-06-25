@@ -4,9 +4,9 @@
     <p>
       Let me remind you of the standard form for a homogeneous second
       order linear equation.
-      <me>
+      <md>
         y^{\prime \prime} + P(t) y^\prime + Q(t) y = 0
-      </me>
+      </md>
       Recall that this differential equation has a ordinary point if
       <m>P(t)</m> and <m>Q(t)</m> are analytic at that point. I've
       dealt with solutions at ordinary points; now I will consider
@@ -23,9 +23,9 @@
           Let <m>f(t)</m> be a function which is not defined at <m>t =
           t_0</m>. The function has a <term>pole</term> of order
           <m>d \in \NN</m> at <m>t_0</m> if the limit
-          <me>
+          <md>
             \lim_{t \rightarrow t_0} (t-t_0)^d f(t) 
-          </me>
+          </md>
           converges to a finite number, but does not converge for any
           integer exponent smaller than <m>d</m>. 
         </p>
@@ -33,9 +33,9 @@
     </definition>
     <p>
       The archetypical example is
-      <me>
+      <md>
         f(t) = \frac{1}{t^d}
-      </me>
+      </md>
       which has a pole of order <m>d</m> at <m>t=0</m>. However,
       functions which are not rational functions can also have poles.
       Having a pole of order <m>d</m> at a point means that, in some
@@ -68,11 +68,11 @@
     <example>
       <statement>
         <p>
-          <me>
+          <md>
             y^{\prime \prime} +
             \frac{y^\prime}{t^3(t-1)^2(t-2)(t-3)(t-4)} + \frac{y}{t^2
             (t-1)(t-2)^2 (t-3)^2 (t-4)^3} = 0
-          </me>
+          </md>
           All points other than <m>t=0,1,2,3,4</m> are ordinary
           points. Of the singular points, only <m>t=2,3</m> are
           regular singular points. The singular points <m>t=0,1</m>
@@ -87,15 +87,15 @@
     <example>
       <statement>
         <p>
-          <me>
+          <md>
             y^{\prime \prime} + \cot t y^\prime + y = 0
-          </me>
+          </md>
           I use a limit to analyze the singular points. I'll start
           wiht <m>t=0</m>. 
-          <me>
+          <md>
             \lim_{t \rightarrow 0} t \cot t = \lim_{t \rightarrow 0}
             \frac{ t \cos t}{\sin t} = 1
-          </me>
+          </md>
           The limit shows that <m>t \cot t</m> is analytic at
           <m>t=0</m> (equivalently, that <m>\cot t</m> has a pole of
           order 1), so <m>t=0</m> is a regular singular point. Since
@@ -118,16 +118,16 @@
         <p>
           Consider a second order homogeneous linear differential
           equation.
-          <me>
+          <md>
             y^{\prime \prime} + P(t) y^\prime + Q(t) = 0
-          </me>.
+          </md>.
           If <m>t_0</m> is a regular singular point of this equation,
           then there exists at least one (but possibly two) <m>r \in
           \RR</m> such that the differential equation has a series
           solution of this form (with <m>c_0 \neq 0)</m>).
-          <me>
+          <md>
             y = (t-t_0)^r \sum_{n=0}^\infty c_n (t-t_0)^n
-          </me>
+          </md>
           (Note that <m>r</m> can be any real number here: this
           doesn't need to be an integer power). 
         </p>
@@ -147,9 +147,9 @@
       <statement>
         <p>
           A <term>Laurent series</term> is a series of the form
-          <me>
+          <md>
             \sum_{n=-\infty}^\infty c_n (t-t_0)^n
-          </me>
+          </md>
           where <m>c_n \in \RR</m>. This is exactly the form of a
           Taylor series, but now negative exponents are also allowed. 
         </p>
@@ -253,9 +253,9 @@
       <statement>
         <p>
           The quadratic 
-          <me>
+          <md>
             r(r-1) + p_{-1}r + q_{-2} = 0 
-          </me>
+          </md>
           is called the <term>indicial equation</term>.
         </p>
       </statement>
@@ -505,9 +505,9 @@
     <example>
       <statement>
         <p>
-          <me>
+          <md>
             ty^{\prime \prime} + y = 0
-          </me>
+          </md>
           Here <m>P =0</m> and <m>Q=\frac{1}{t}</m>, so <m>p_{-1} =
           0</m> and <m>q_{-2} = 0</m>. That means the indicial
           equation is <m>r(r-1) = 0</m> with roots <m>r=0</m> and
@@ -661,9 +661,9 @@
               independent solution. If it doesn't, and both roots
               produce the solution <m>y_1</m>, then a second solution
               exists and has the form:
-              <me>
+              <md>
                 y_2 = a y_1 \ln t + \sum_{n=0}^\infty b_n t^{n+r_2}
-              </me>.
+              </md>.
               In this case, I would need to do extra work to find the
               constant <m>a</m> and the series coefficients
               <m>b_n</m>.
@@ -698,13 +698,13 @@
         <p>
           Assume that <m>y_1</m> is a solution of homogeneous linear
           second order DE of the form
-          <me>
+          <md>
             y^{\prime \prime} + P(t) y^\prime + Q(t) = 0
-          </me>.
+          </md>.
           Then a second linearly independent is given by the formula
-          <me>
+          <md>
             y_2 = y_1(t) \int \frac{e^{- \int P(t) dt}}{y_1^2(t)} dt
-          </me>.
+          </md>.
           This reduction of order technique is fairly impractical for
           series solution, since dividing by <m>y_1^2</m> and then
           integrating is a miserable calculation.

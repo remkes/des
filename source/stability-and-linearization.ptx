@@ -14,9 +14,9 @@
     </p>
     <p>
       I'll start with an autonomous first order equation. 
-      <me>
+      <md>
         \frac{dp}{dt} = f(p)
-      </me>
+      </md>
       For these autonomous equation, stability is a properties of the
       steady states. Recall that the steady states are the values of
       the population where the rate of change is zero; the population
@@ -88,9 +88,9 @@
     </p>
     <p>
       Let me take the same setup of an autonomous equation
-      <me>
+      <md>
         \frac{dp}{dt} = f(p)
-      </me>
+      </md>
       with steady state <m>P</m>. I'll assume that <m>f(p)</m> is an
       analytic function. I can define a new function <m>q(t) =
       p(t) - P</m>. I am essentially moving the steady state to zero
@@ -100,9 +100,9 @@
       difference is the subtraction of a constant. On the left, I can
       replace <m>p</m> by <m>P+q</m>. That gives a new autonomous
       differential equation.
-      <me>
+      <md>
         \frac{dq}{dt} = f(P + q)
-      </me>
+      </md>
       As desired, <m>q=0</m> is now the steady state of this new DE.
       Now I'm going to expand the function <m>f</m> as a taylor series
       centered at <m>P</m>. (Why would I want to expand <m>f</m> as a
@@ -111,24 +111,24 @@
       variable for this taylor series is <m>q</m>, not <m>t</m>. Here
       is the result, just showing the first two terms of the taylor
       series. 
-      <me>
+      <md>
         \frac{dq}{dt} = f(P + q) = f(P) + f^\prime(P) (P + q - P) +
         \ldots 
-      </me>
+      </md>
       Now <m>f(P) = 0</m> since <m>P</m> was, by definition, a steady
       state of the original autonomous DE. In the second term, the
       <m>P</m> cancels off. Let me make those adjustments. 
-      <me>
+      <md>
         \frac{dq}{dt} = f(P + q) = f(P) + f^\prime(P) (P + q - P) +
         \ldots = f^\prime(P) q + \ldots
-      </me>
+      </md>
       Now I want to take an approximation to the differential equation
       by ignoring everything past the first taylor series term. This
       is a severe approximaiton, but it is still quite useful. Here is
       the new approximated DE. 
-      <me>
+      <md>
         \frac{dq}{dt} \cong f^\prime(P) q 
-      </me>
+      </md>
     </p>
     <definition>
       <statement>
@@ -137,9 +137,9 @@
           steady state <m>P</m> is the related differential equation
           produced by taking only the first term of the taylor series
           of the right side. 
-          <me>
+          <md>
             \frac{dq}{dt} = f^\prime(P) q
-          </me>
+          </md>
         </p>
       </statement>
     </definition>
@@ -147,9 +147,9 @@
       The solution to the linearized DE is always an exponential
       function, since the approximate DE always has the form of the
       standard percentage growth differential equation. 
-      <me>
+      <md>
         q(t) = q_0 e^{f^\prime(P) t}
-      </me>
+      </md>
       Indeed, I can think of the linearization as the best
       approximation to the solution by an exponential function. 
     </p>

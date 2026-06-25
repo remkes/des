@@ -12,9 +12,9 @@
       <p>
         A function is <term>analytic</term> if it can be expressed as
         a <term>taylor series</term>.
-        <me>
+        <md>
           f(x) = \sum_{n=0}^\infty c_n (x-\alpha)^n
-        </me>
+        </md>
         A taylor series is centered at a point <m>\alpha</m>; if
         <m>\alpha = 0</m> I call it a <term>mcLaurin series</term>.
         A series defines a function on some domain
@@ -31,10 +31,10 @@
     convergence of a series. After some manipulation of those tests,
     (if the coefficients are non-zero) the radius of convergence is
     given by the formula
-    <me>
+    <md>
       R = \lim_{n \rightarrow \infty} \left| \frac{c_n}{c_{n+1}}
       \right| = \lim_{n \rightarrow \infty} \frac{1}{\sqrt[n]{|c_n|}}
-    </me>.
+    </md>.
     Inside the radius of convergence, the behaviour of a taylor series
     is very reasonable. I can add and subtract terms when the
     indices match. I can multiply series like polynomials, though
@@ -46,15 +46,15 @@
   <p>
     There are two important manupulation techniques for series. The
     first is adjustment on indices.
-    <me>
+    <md>
       \sum_{n=k}^\infty c_n x^n = \sum_{n=k+1}^\infty c_{n-1} x^{n-1}
       = \sum_{n=k-1}^\infty c_{n+1} x^{n+1}
-    </me>
+    </md>
     The second is removal of initial terms.
-    <me>
+    <md>
       \sum_{n=0}^\infty c_n x_n = c_0 + c_1 x + c_2 x^2 +
       \sum_{n=3}^\infty c_n x_n
-    </me>
+    </md>
     Inside the radius of convergence, the calculus of taylor series is
     well behaved. I can integrate and differentiate term-wise.
     <md>

@@ -30,9 +30,9 @@
     means finding a fixed formula <m>a_n = f(n)</m> that
     describes the <m>n</m>th term of the sequence. These can be easy
     or difficult to find. The fixed formula for Fibonnaci is
-    <me>
+    <md>
       f_n = \frac{(1+\sqrt{5})^n - (1-\sqrt{5})^n}{2^n \sqrt{5}}
-    </me>.
+    </md>.
     The coefficients of a taylor series are sequences of real numbers.
     In the use of taylor series in this course, sequences of
     coefficients will be presented as recurrence relations. I will

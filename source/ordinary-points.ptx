@@ -5,9 +5,9 @@
     <p>
       Consider a homogeneous linear second order differential
       equation.
-      <me>
+      <md>
         y^{\prime \prime} + P(t) y^\prime + Q(t) y= 0
-      </me>
+      </md>
       In a departure from the <xref ref="chapter-second-order-odes"
       />, I will now allow <m>P</m> and <m>Q</m> to be functions
       instead of just constants. Before I jump into the method of
@@ -57,17 +57,17 @@
         <p>
           I'll start with a simple and known DE, to see how the
           method works.
-          <me>
+          <md>
             y^{\prime \prime} + y = 0
-          </me>
+          </md>
           Both <m>P</m> and <m>Q</m> are constant, so they analytic
           everywhere, even in <m>\CC</m>. Since there are no singular
           points, I expect solutions which have Taylor series defined
           for all of <m>\RR</m>. I can centre them at <m>0</m> for
           convenience. I assume the solution has a Taylor series.
-          <me>
+          <md>
             y = \sum_{n=0}^\infty c_n t^n
-          </me>
+          </md>
           I put this into the DE and calcluate, keeping in mind the
           tools to manipulate the inidices of series.
           <md>
@@ -103,10 +103,10 @@
           </md>
           Now I rewrite this last equation in a slightly different
           form.
-          <me>
+          <md>
             \sum_{n=0}^\infty \left[ c_{n+2}(n+2)(n+1) + c_n \right]
             t^n = \sum_{n=0}^\infty 0 t^n
-          </me>
+          </md>
           I've  just written the constant function <m>0</m> as a
           series. Now, two series are only equal is every coefficient
           is the same. Therefore, I can take this equation and turn
@@ -114,10 +114,10 @@
           such equations (one for each natural number), but that's
           alright, since they have a pattern. For every <m>n \in
           \NN</m>, there is a recurrence relation.
-          <me>
+          <md>
             (n+1)(n+2)c_{n+2} + c_n = 0 \implies c_{n+2} =
             \frac{-c_n}{(n+1)(n+2)}
-          </me>
+          </md>
           To find the coefficients of the series that solves this DE,
           I have to solve this recurrence relation. I've essentially
           translated the problem: what was a differential equation
@@ -197,9 +197,9 @@
           <m>(2n+1)</m> to express the odd terms. Since the odd terms
           vanish, I can write the resulting series only involving even
           term.
-          <me>
+          <md>
             y = \sum_{n=0}^\infty \frac{(-1)^n}{(2n)!} t^{2n}
-          </me>
+          </md>
           This is exactly the Taylor series for cosine, which makes
           perfect sense, since cosine solves the original DE and
           matches the initial conditions I imposed.
@@ -211,9 +211,9 @@
         <p>
           This is the first example which has non-constant
           coefficients, since <m>Q = t</m>.
-          <me>
+          <md>
             y^{\prime \prime} + ty = 0
-          </me>
+          </md>
           <m>P=0</m> and <m>Q=t</m>, both of which are analytic
           everywhere, so I expect a series solution with infinite
           radius of convergence. I repeat the calculation from the
@@ -596,11 +596,11 @@
           the general solution. Note that I have to start the series
           at <m>n=2</m>, since the pattern doesn't hold before that
           point.
-          <me>
+          <md>
             y = c_0 \left[1 + \frac{t^2}{2} + \sum_{n=2}^\infty
             \frac{((-1)^n (2n-3)!}{2^{2n-2} n! (n-2)!} \right] + c_1
             t
-          </me>
+          </md>
           If I look at the radius of convergence (due to the
           factorials in numerator and denominators) I can calculate
           the expected value of <m>R=1</m>. Note that the second

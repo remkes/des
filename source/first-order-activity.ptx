@@ -703,7 +703,7 @@
           separable equations, the left integral can be treated as an
           integral in <m>y</m>.
           <md>
-            \int \frac{1}{y^2 - 2y = 15} = \int x dx 
+            \int \frac{1}{y^2 - 2y - 15} = \int x dx 
           </md>
           The left is a partial fractions integral; I asked a computer
           for the solution. The right is a power rule integral. 

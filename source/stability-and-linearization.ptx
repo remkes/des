@@ -3,7 +3,7 @@
   <subsection xml:id="subsection-stability">
     <title>Stability</title>
     <p>
-      <xref ref="section-qualitative-methods" /> introduced the indea
+      <xref ref="section-qualitative-methods" /> introduced the idea
       of analyzing a differential equation qualitatively, often
       without actually knowing the solution. In qualitative analysis,
       the goal is often describing a reasonable narrative for the
@@ -83,7 +83,7 @@
       Once I have identified a steady state of a DE system, my
       interest is often limited to the behaviour of initial values
       close to the steady state. This is the behaviour that stability
-      capture: whether the system approachs or diverges from the
+      captures: whether the system approachs or diverges from the
       steady state when its start a small distance away.
     </p>
     <p>
@@ -124,7 +124,7 @@
       </md>
       Now I want to take an approximation to the differential equation
       by ignoring everything past the first taylor series term. This
-      is a severe approximaiton, but it is still quite useful. Here is
+      is a severe approximation, but it is still quite useful. Here is
       the new approximated DE. 
       <md>
         \frac{dq}{dt} \cong f^\prime(P) q 
@@ -157,7 +157,7 @@
       Since it is an exponential function, this linearized solution is
       either exponential growth or decay, depending on the sign of
       <m>f^\prime(P)</m>. Therefore, the sign of <m>f^\prime(P)</m>
-      determines the stability: positive and the solution is unstabe,
+      determines the stability: positive and the solution is unstable,
       since exponential growth takes the solution away from the steady
       state; negative and the solution is stable, since exponential
       decay takes the solution towards the steady state. This can also
@@ -175,7 +175,7 @@
       mathematicians try to use, typically since they have elegant and
       accessible solutions. Everything else gets simply referred to a
       <sq>non-linear</sq>; in many ways, <sq>non-linear</sq> is a
-      synonmy for annoying and complicated. However, linear models
+      synonym for annoying and complicated. However, linear models
       only go so far and often the non-linearity holds the key to
       understanding a model. Even so, I often want to understand the
       linear part first and then figure out how to add in the

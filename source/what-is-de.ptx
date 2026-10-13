@@ -70,7 +70,7 @@
           variable. Note that <m>y(t)</m> is the function I am looking
           for; <m>f(y)</m> is also a function, but I'm only using that
           function to say that the right side of the equation is some
-          expression in the varialbe <m>y</m>. 
+          expression in the variable <m>y</m>. 
         </p>
       </statement>
     </definition>
@@ -101,7 +101,7 @@
           Finally, a linear equation is called
           <term>homogenous</term> if the term which is not multiplied
           by any derivative of the function (<m>c(t)</m> in the first
-          order equation, <m>d(t)</m> in the second order equation) 
+          order equation, <m>d(t)</m> in the second order equation) is
           <m>0</m>.
         </p>
       </statement>

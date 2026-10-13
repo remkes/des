@@ -91,14 +91,14 @@
     function will include a constant of integration that arises from
     the integration step as well. If I cannot solve for <m>y</m>, I
     can leave the solution implicit. Even if I can solve for <m>y</m>,
-    often the implicit for is preferred. 
+    often the implicit form is preferred. 
   </p>
   <p>
     I should make one note about the constant on integration that
     arises in this solution method (and in many other as well). Since
-    the constant of integraiton will eventually be determined by an
+    the constant of integration will eventually be determined by an
     initial value, mathematicians are often quite careless with the
-    artihmetic of this constant. For example, if the following
+    arithmetic of this constant. For example, if the following
     expression shows up <m>2(t+c)</m>, I would often simplify this to
     <m>2t+c</m> instead of <m>2t + 2c</m>, since whether I eventually
     figure out the constant from <m>c</m> or from <m>2c</m> later, its

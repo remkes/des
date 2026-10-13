@@ -113,7 +113,7 @@
           L(cy) \amp = cL(y)
         </mrow>
       </md>
-      Now consider both the homoegenous equation <m>Ly = 0</m> and a
+      Now consider both the homogeneous equation <m>Ly = 0</m> and a
       non-homogenous equation <m>Ly = Q(t)</m>. If <m>f</m> is a
       solution to the non-homogenous equation, then <m>Lf = Q(t)</m>,
       and if <m>g</m> is a solution to the homogenous equation, then

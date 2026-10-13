@@ -46,7 +46,7 @@
       only guarantees a tiny piece of a function as a solution.
       Existence (and later uniqueness) are only guaranteed very close
       to the initial value of the function. I do know that the
-      function is differentiable in this small inteval, but I don't
+      function is differentiable in this small interval, but I don't
       know anything else: outside the interval, anything could happen
       with the solution.
     </p>
@@ -268,7 +268,7 @@
           <md>
             \frac{dy}{dx} = x \sqrt{y}
           </md>
-          Let me considered the same example as before. This DE had
+          Let me considere the same example as before. This DE had
           multiple solutions for initial value <m>y(0) = 0</m>. The
           function <m>F(x,y) = x\sqrt{y}</m> has <m>y</m> derivative
           <m>\frac{\del F}{\del y} = \frac{x}{2\sqrt{y}}</m>, which is
